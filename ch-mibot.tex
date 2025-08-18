@@ -1,0 +1,82 @@
+\chapter{Design \& Deployment of MIBot for Human Feasibility Study}
+\label{ch:mibot}
+
+In this chapter we present the iterative development and evaluation of a single-prompted, LLM-based motivational interviewing chatbot designed to help ambivalent smokers resolve their ambivalence about quitting. While the system targets a specific use case, the principles and methods described here are readily transferable to other MI-based chatbots with different therapeutic objectives. The development and evaluation processes have been described in detail by \citet{mahmood-etal-2025-fully}, with no discussion of deployment. This chapter complements that work by focusing on the technologies, design considerations, and implementation choices underlying the chatbot's deployment.
+
+Section~\ref{sec:iterative-development} outlines the iterative prompt-engineering process, guided by expert feedback, that shaped the chatbot's MI skills. Section~\ref{sec:observers} describes the complete system architecture, which includes not only the prompted LLM instance, but also a set of \textit{observers} (modules that monitor specific aspects of the conversation in real time and can intervene to adjust its trajectory). Section~\ref{sec:deployment} describes the implementation of the chatbot using OpenAI APIs. We also highlight the balance between writing new pieces of the system by following DevOps best practices and maximizing reuse of legacy code. Section~\ref{sec:feasability} details the design of a human-trial feasibility study to assess the chatbot's effectiveness.  Chapter~\ref{ch:mibot-eval} reports the results of this feasibility study.
+
+
+
+
+\section{Chatbot Design Process}
+\label{sec:iterative-development}
+
+The design of MIBot followed a clinician-informed, iterative process, combining expertise in MI with prompt engineering for a state-of-the-art LLM \cite{openai2024gpt4ocard}. 
+
+
+\subsection{Iterative Prompt Development}
+MIBot's prompt was refined through structured feedback from both engineers and experienced MI clinicians who regularly met biweekly over the course of development. The process began with a minimal prompt that instructed the model to act as an MI counsellor. This baseline was tested through simulated counselling sessions with two types of test clients:
+
+\begin{enumerate}
+    \item \textbf{Virtual smoker clients}, which were separate GPT-4o instances that were given detailed backstories and instructed to role-play smokers with varying attitudes toward quitting. Chapter~\ref{ch:synthetic-smoker} describes in detail the creation of these basic LLM-based virtual smokers, and more research to improve them.
+    \item \textbf{Human role-playing as smokers} --- members of our research team who adopted smoker personas and talked to the chatbot to test how each version of the prompt behaved in different scenarios.
+\end{enumerate}
+
+After each testing cycle, transcripts were reviewed in bi-weekly meetings to identify shortcomings in the appropriate use of MI skills, adherence to MI principles, tone, pacing, and client engagement, among other aspects. These findings informed successive prompt revisions. 
+This process produced a series of targeted prompt revisions, the most consequential of which were:
+
+
+\begin{enumerate}
+    \item \textbf{Utterance Length Control.} Early versions tended toward long, paragraph-like responses, which risked dominating the conversation - which is the antithesis of MI, where the client is supposed to lead the contemplation/thinking.  The prompt was amended to include explicit length constraints (``Keep your responses short. Do not talk more than your client.'') and to encourage brevity while maintaining reflective depth.
+
+    \item \textbf{Accessible Language.} To ensure inclusivity across educational and socioeconomic backgrounds, clinicians requested avoidance of jargon and adaptation to the client's linguistic style. This was codified in the prompt as ``Avoid using complex terminology … maintain simplicity in the conversation.''
+
+    \item \textbf{Avoidance of Assumptions.} The model occasionally assumed the client's nicotine consumption patterns. The prompt was revised to explicitly instruct the counsellor that ``You don't know anything about the client's nicotine use yet'' to preserve an open, exploratory stance.
+
+    \item \textbf{Rapport-Building Before Smoking Focus.} Early-in-this-process prompts engaged with smoking behaviour too early, bypassing engagement and focusing stages. The revised prompt added guidance to ``open the conversation with a general greeting and friendly interaction'' before gradually steering toward smoking ambivalence.
+
+    \item \textbf{Guarding Against Premature Planning.} Planning is an MI process best introduced after sufficient evocation of Change Talk. The prompt included multi-step criteria for initiating planning, explicitly instructing the model to wait for reduced Sustain Talk and to confirm readiness before launching into planning and discussing concrete steps to take towards quitting.
+
+    
+\end{enumerate}
+
+
+
+This iterative process continued until virtual and role-played conversations consistently met MI quality expectations by informal consensus.   The final prompt incorporated detailed guidance on pacing, empathy, reflection types, and decision points to enter the planning phase.
+
+
+Tables~\ref{tab:initial-system-prompt} and \ref{tab:final-system-prompt} showcase how the prompt evolved from a simple instruction instructing the LLM about its role, vs. a comprehensive guideline in order to fix issues with the chatbot.
+
+\include{tab/initial-final-prompts}
+
+
+\begin{figure}[ht]
+  \centering
+  \includegraphics[width=0.9\linewidth]{fig/sysdiag.pdf} 
+  \caption{Overview of the MIBot system, taken from \citet{mahmood-etal-2025-fully}}
+  \label{fig:sysdiag}
+\end{figure}
+
+\section{Observers}
+\label{sec:observers}
+To enhance safety in the deployment of MIBot, the core counsellor agent was augmented with a set of \textit{observer agents} ---independent instances of GPT-4o prompted to monitor specific aspects of the conversation in real time.  The output of these agents could be used to intervene when necessary. Each observer was specialized through prompt engineering to perform a specific task in real-time.
+
+\subsection{Moderator}
+The \textit{Moderator} evaluates the counsellor's most recent utterance for potential harm, prior to displaying to the client. While OpenAI's internal safety systems mitigate many risks, they do not address all possible counterproductive counselling behaviours, such as inadvertently reinforcing \emph{sustain talk} or suggesting self-harm. The Moderator was deliberately configured for high sensitivity, accepting a higher false positive rate to reduce the risk of harmful or counter-productive content. If a counsellor's utterance is flagged, it is regenerated and re-evaluated, with up to five regeneration attempts permitted. In all study conversations, an acceptable utterance was produced within four attempts, and no session failed to pass moderation.
+
+\subsection{Off-Track Conversation Classifier}
+The \textit{Off-Track Classifier} detects when a client is steering the dialogue away from smoking cessation in a deliberate or sustained manner. Its prompt was tuned for low false positive rates to preserve conversational flexibility. In the feasibility study described in Chapter~\ref{ch:mibot-eval}, this observer's primary role was retrospective --- identifying conversations for exclusion where the participant was not engaging seriously with the intervention. In a live deployment, it could instead be used to trigger early termination or redirection to the main topic.
+
+\subsection{End Classifier \& Termination Process}
+The \textit{End Classifier} monitors both parties' dialogue to determine if the conversation is reaching a natural conclusion. It prioritizes the client's intent when making this determination, ensuring the conversation is not ended prematurely. Upon detecting an intent to close, it instructs the counsellor to deliver a concise summary of key discussion points --- a standard MI practice --- and to confirm with the client whether they wish to continue. If the client declines, the conversation is terminated and any post-session procedures, such as surveys, are initiated.
+
+
+\textbf{Design Rationale:} All observers were implemented as separate, stateless LLM calls, each with prompts tailored to their decision criteria. This modular approach allowed independent refinement of their sensitivity–specificity balance without impacting the primary counsellor prompt. The Moderator favoured recall over precision to err on the side of client safety, whereas the Off-Track Classifier did the opposite, favouring conversational autonomy. The End Classifier's logic explicitly distinguished between topic changes and true conversation endings, reducing false terminations.
+
+
+The prompted GPT-4o, together with observers, make up the complete MIBot system, as illustrated in Figure~\ref{fig:sysdiag}.
+
+
+\input{sec/mibot-deployment}
+
+\input{sec/feasibility}
