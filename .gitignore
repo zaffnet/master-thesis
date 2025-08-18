@@ -11,3 +11,6 @@
 *.run.xml
 *.synctex.gz
 *.toc
+*.ind
+*.ilg
+*.idx
