@@ -1,0 +1,38 @@
+\section{Feasibility Study with Human Smokers}
+\label{sec:feasability_study}
+\subsection{Participant Recruitment}
+\label{sec:recruitment}
+A total of 106 English-speaking participants were recruited to evaluate the capability of \sysname through the Prolific (www.prolific.com) online behavioural research platform \cite{peer2017beyond}. The criteria for inclusion in the study were that participants must be fluent in English, had a high approval rate on prior tasks performed on the Prolific platform, and must be current smokers of at least five cigarettes per day. This group was also filtered from a larger group of 159 participants to select those who exhibited low confidence that they will succeed in quitting\footnote{
+As the goal of MI is to resolve ambivalence, those who are very confident in succeeding in quitting are already in the state MI is meant for. So, we only include participants who exhibit low confidence ($\leq 5$ ). We also include `discordant' participants who have high confidence relative to their importance (confidence $>$ 5 and confidence $-$ importance $< 5$) as they don't think it is important to quit and, therefore, need MI-style counselling.}. Finally, the recruitment was set to enrol equal numbers of male and female participants. The exact balance was affected by the above filter, and so the final sex proportion was 54\% females and 46\% males. Participant ages ranged from 22–77 years old, with a median of 38 years (mean=40, SD=13). The median and mean time taken to complete the conversational part of the study was 19 minutes (SD=9). Appendix~\ref{appendix:participant_demographics} provides more details on participant demographics.
+
+\subsection{Study Design}
+\label{sec:evaluation}
+The study design followed a pattern commonly employed in MI research (e.g., \citealp{Valanis2001, doi:10.15288/jsads.2009.s16.106, 10.1093/alcalc/agw047, browne2022motivation, james2021improving}) and therapeutic chatbot evaluations (e.g., \citealp{info:doi/10.2196/49132, He2022}). Participants in our study were taken through the following four steps (a diagram view is available in Appendix~\ref{app:stud_flow}):\vspace{-0.2em}
+
+\begin{enumerate}
+[itemsep=1pt, parsep=0pt]
+    \item In a \textbf{pre-conversation survey}, participants rated themselves on the \textbf{readiness ruler} survey, which is often used in behaviour change \cite{rollnick1992development}. These are three numerical questions (scored from 0 to 10) measuring how \textit{important} it is for the participant to quit, how \textit{confident} they are that they will succeed, and how \textit{ready} they are to quit right now. The specific survey is given in Appendix~\ref{appendix:readiness_rulers}.
+
+    \item Participants then engaged in a \textbf{conversation} with the counsellor chatbot described in Section~\ref{sec:design}, through a text-based interface.
+
+    \item \textbf{Post conversation}, participants completed the readiness rulers again, provided feedback on the conversation itself, and responded to the CARE survey (\citealp{10.1093/fampra/cmh621, Bikker2015}), which measures their perceived empathy of the counsellor and is used to evaluate human clinical practitioners. It has 10 questions rated on a scale from 0 to 5 each (Appendix~\ref{appendix:care_questionnaire}).
+
+    \item \textbf{One week after} the conversation, participants again completed the readiness ruler and indicated if they made any quit attempts or changes in smoking habits.
+\end{enumerate}
+
+It has been shown that readiness to quit predicts quitting (\citealp{Boudreaux2012,10.1093/alcalc/agw047}), and the most predictive part of the ruler is the self-reported \textbf{confidence} to succeed, which we used as our primary metric for therapeutic effectiveness \citep{Gwaltney2009-wj,Abar2013}.
+
+
+\subsection{AutoMISC: Assessment of Counsellor and Client Language}
+\label{sec:automisc}
+\label{sec:automisc_val}
+
+In addition to the participant-reported effectiveness metrics described above, it is important to evaluate whether the counsellor's generated text adheres to the MI methodology to establish clinical validity. Assessment of client text can also offer direct evidence of success or failure in the counselling session, as discussed in Section~\ref{sec:MIdef}. Since we wanted to assess both counsellor and client utterances, we chose to use the original MI assessment rubric, the Motivational Interviewing Skills Code (MISC) version 2.5 \cite{MISC}.
+
+MISC classifies each \emph{utter\-ance} into pre\--defined categories based on the counsellor and client behaviours. Counsellor codes include the skills described in Section~\ref{sec:MIdef}, among others. MISC also provides transcript-level summary scores computed by aggregating the utterance-level annotations. Metrics to assess counsellor adherence to MI include \textbf{Percentage MI-Consistent Responses (\%MIC)}, where higher values indicate greater adherence, and \textbf{Reflection-to-Question Ratio (R:Q)}, where values between 1 and 2 are considered indicative of proficiency \cite{moyers2016miti}. For client language, the \textbf{Percentage Change Talk (\%CT)} is used, with higher values associated with improved behavioural outcomes \cite{Apodaca2009}.
+
+As described in Section~\ref{sec: BackgroundAutomEval}, it is difficult to label transcripts manually, so we developed \textbf{AutoMISC} to automate this process. AutoMISC processes a counselling session transcript by first parsing each speaker's turn into \textit{utterances} (individual units of thought). This is done by a separate prompted instance of GPT-4o, as is the next step: each counsellor utterance is classified into one of MI-Consistent (MICO), MI-Inconsistent (MIIN), Reflection (R), Question (Q), or Other (O).
+We found that including five previous conversation turns to classify the current utterance gave enough context to ensure high accuracy.
+Each client utterance is classified into one of Change Talk (C), Sustain Talk (S) or Neutral (N). These can then be computed into the transcript-level summary scores described above. The prompts for each instance of GPT-4o are listed in Appendix~\ref{appendix:automisc_prompts}.
+
+To validate the reliability of AutoMISC, its annotations were compared against four human annotators: two expert MI clinicians and two non-expert team members. Each annotator manually labelled ten of the 106 transcripts, a total of 821 utterances (580 from the automated counsellor, 241 from clients). The inter-rater agreement was measured pairwise using Cohen's $\kappa$ and for the group using Fleiss' $\kappa$. The overall Fleiss' $\kappa$ was \textbf{0.68} for counsellor codes and \textbf{0.67} for client codes, which indicates substantial agreement \cite{cohenrange}.  Appendix~\ref{appendix:automisc_val} provides more detail on the inter-rater agreement.
