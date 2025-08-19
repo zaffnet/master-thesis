@@ -1,66 +1,54 @@
 % !TeX TS-program = pdflatex
-% !BIB TS-program = biber
+% !BIB TS-program = bibtex
 % !TeX root = main.tex
 \documentclass[narrowmargins,twoside]{ut-thesis}
-% packages
-\usepackage[colorlinks=true, linkcolor=cyan, citecolor=cyan, urlcolor=cyan]{hyperref}
+
+% Basic packages
 \usepackage{sgame} % Martin Osborne's game package
 \usepackage{color} % needed by Martin Osborne's game package
+\usepackage{xcolor} % Extended color package
 \usepackage{float}
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{multirow}
+\usepackage{graphicx} % for embedding graphics
+\usepackage{subcaption} % for subfigures
+\usepackage{booktabs} % for pretty tables
+\usepackage{threeparttable}
+\usepackage{pdflscape}
+\usepackage{lipsum}
+\usepackage{array}
+\usepackage{caption}
+\usepackage{ragged2e}
+\usepackage{titlesec}
+\usepackage[most]{tcolorbox}
+\usepackage{tabularx}
+\usepackage{enumitem}
 
+% Bibliography setup
+\usepackage{natbib}
+\bibliographystyle{acl_natbib}
 
+% Margin notes
+\usepackage{marginnote}
+
+% Hyperref should come near the end
+\usepackage[colorlinks=true, linkcolor=cyan, citecolor=cyan, urlcolor=cyan]{hyperref}
+
+% Index package AFTER hyperref
+\usepackage{imakeidx}
+\makeindex[columns=3, title=Index of Key Terms, intoc]
+
+\hypersetup{
+  hyperindex=true
+}
+
+% xpatch for ref formatting
 \usepackage{xpatch}
 \xpretocmd{\ref}{\textbf\bgroup}{}{}
 \xapptocmd{\ref}{\egroup}{}{}
 
-\usepackage{subcaption}  % Add this to your preamble for subfigures
-\usepackage{graphicx}    % Likely already included
-
-\usepackage{booktabs}
-\usepackage{threeparttable}
-\usepackage{graphicx}  % for resizebox if using ultra-compact
-
-\usepackage{pdflscape}
-
-
-\usepackage{natbib}
-\bibliographystyle{acl_natbib}
-\renewcommand\cite{\citep}	% to get "(Author Year)" with natbib    
-\newcommand\shortcite{\citeyearpar}% to get "(Year)" with natbib    
-\newcommand\newcite{\citet}	% to get "Author (Year)" with natbib
-\newcommand{\citeposs}[1]{\citeauthor{#1}'s (\citeyear{#1})} % to get "Author's (Year)"
-
-\usepackage{graphicx} % for embedding graphics
-\usepackage{booktabs} % for pretty tables
-\usepackage{lipsum} % for gibberish text
-
-
-\newcommand\num{}
-\newcommand\SI{}
-\newcommand\percent{\%}
-
-\usepackage{xcolor}
-\usepackage{marginnote}
-\usepackage{imakeidx}
-\makeindex[columns=3, title=Index of Key Terms, intoc]
-
-
-\renewcommand*{\raggedleftmarginnote}{}
-\reversemarginpar % Optional: puts notes in left margin for one-sided documents
-
-% Custom margin note + index entry macro
-\newcommand{\margindex}[2][]{%
-  \marginnote{\scriptsize \textcolor{cyan}{\textbf{#2}}}%
-  \ifx\\#1\\%
-    \index{#2@\textcolor{cyan}{#2}}%
-  \else
-    \index{#1!#2@\textcolor{cyan}{#2}}%
-  \fi
-}
-
+% Geometry settings
 \geometry{
   inner=1.5in, % binding side
   outer=1in,   % fore-edge side
@@ -68,33 +56,51 @@
   bottom=1in,
   headsep=0.2in
 }
-\usepackage{array}
-\usepackage{caption}
-\usepackage{ragged2e}
 
-\usepackage{titlesec}
+% Custom commands
+\newcommand\num{}
+\newcommand\SI{}
+\newcommand\percent{\%}
+
+\renewcommand\cite{\citep}
+\newcommand\shortcite{\citeyearpar}
+\newcommand\newcite{\citet}
+\newcommand{\citeposs}[1]{\citeauthor{#1}'s (\citeyear{#1})}
+
+% Margin note settings
+\setlength{\marginparwidth}{0.8in}
+\setlength{\marginparsep}{0.2in}
+\renewcommand*{\raggedleftmarginnote}{}
+\reversemarginpar
+
+\newcommand{\margindex}[2][]{%
+  % #1 = optional parent category for hierarchical indexing
+  % #2 = term to display in margin and add to index
+  \marginnote{\scriptsize \textcolor{cyan}{\textbf{#2}}}%
+  \ifx\\#1\\%
+    \index{#2|hyperpage}%  % Simple index entry
+  \else
+    \index{#1!#2|hyperpage}%  % Hierarchical: parent!subentry
+  \fi
+}
+
+% Spacing and formatting
 \setlength{\parskip}{1em} 
 \titlespacing*{\section}{0pt}{*0}{0pt}
 \titlespacing*{\subsection}{0pt}{*0}{0pt}
 \titlespacing*{\subsubsection}{0pt}{*0}{0pt}
-
 \renewcommand{\baselinestretch}{0.99}
 \captionsetup{font=small,labelfont=bf}
 
-
-\usepackage[most]{tcolorbox}
-\usepackage{tabularx}
-\usepackage{enumitem}
+% Table column type
 \newcolumntype{Y}{>{\raggedright\arraybackslash}X}
 
-
-% author data
+% Author data
 \author{Zafarullah Mahmood}
 \title{A Fully Generative Motivational Interviewing Chatbot for Moving Smokers Towards the Decision to Quit and LLM-Based Synthetic Smokers}
 \degree{Master of Applied Science}
 \department[]{Edward S. Rogers Sr. Department of Electrical \& Computer Engineering}
 \gradyear{2025}
-% reference database
 
 \begin{document}
   \frontmatter
@@ -120,14 +126,11 @@
     \input{ch-synthetic-smoker-eval}
   \appendix
     \input{ap-code}
-\clearpage
+    \clearpage
     \printindex
   \backmatter
-
- \cleardoublepage
-\phantomsection
-\addcontentsline{toc}{chapter}{Bibliography}
-% \chapter*{Bibliography}
-\bibliography{main}
+    \cleardoublepage
+    \phantomsection
+    \addcontentsline{toc}{chapter}{Bibliography}
+    \bibliography{main}
 \end{document}
-
