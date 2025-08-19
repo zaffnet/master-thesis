@@ -2076,6 +2076,18 @@ distinguished between topic changes and true conversation endings, reducing fals
 The prompted GPT-4o, together with observers, constitute the complete MIBot system, as
 illustrated in Figure 3.1.
 
+containerization
+microservice
+
+Sanic
+
+Conversation
+obj
+Counsellor
+obj
+
+Observer obj
+
 3.3
 
 MIBot System Design
@@ -2158,11 +2170,15 @@ the CI/CD pipeline, but only the image with the production tag is used for deplo
 
 3.4
 
+Dockerfile
+
 Deploying MIBot to AWS
 
 MIBot is deployed as a service on Amazon Elastic Container Service (ECS). ECS is a fully
 managed service provided by Amazon Web Services (AWS) that “simplifies the deployment, management, and scaling of applications using containers” (?). We now discuss each component of
 ECS.
+
+ECS
 
 3.4. DEPLOYING MIBOT TO AWS
 
@@ -2208,7 +2224,6 @@ K
 20
 
 Figure 3.3: Containerized Sanic application.
-
 ECS Cluster
 
 Task Definition
@@ -2258,6 +2273,9 @@ Cloud Watch
 Figure 3.4: Containerized MIBot application deployed to ECS.
 
 3.4.1
+ECS Cluster
+
+Fargate
 
 Components of ECS
 
@@ -2274,6 +2292,8 @@ AWS Fargate also offers spot runs for cost optimization. In the FARGATE SPOT mod
 spare compute capacity. If a container receives no traffic in the last two hours and AWS reclaims
 the capacity, the task will be terminated. ECS will detect this event and will almost immediately
 instantiate a new task for the application.
+
+ECS Service
 
 2. ECS Service: Inside the ECS cluster, we created an ECS Service (mibot-v6-service). The
 ECS Service contains the deployment configuration of the application, for example, the number of
@@ -2307,6 +2327,8 @@ written to AWS CloudWatch for retrospective analysis of the system’s behaviour
 
 3.4.2
 
+ECS Task
+
 Other Components of the Deployment
 
 Load Balancer: We configured an Elastic Load Balancer (mibot-elb) with three subnets for
@@ -2317,6 +2339,8 @@ external users to connect to the service through a custom domain name (?). The A
 incoming HTTP requests to the ECS service’s target group and internal health check requests to
 the /health endpoint.
 
+ELB
+
 API Gateway: We also provisioned an AWS API Gateway, which acts as a reverse proxy and
 enables secure TLS termination and request throttling. The gateway exposes HTTPS endpoints for
 /chat, /get transcript, /health, /info, and /s3 upload. Each path includes OPTIONS methods
@@ -2324,12 +2348,16 @@ to enable cross-origin requests and defines the expected response headers. This 
 browsers from blocking requests due to Cross-Origin Resource Sharing (CORS) policies or displaying
 security warnings.
 
+API Gateway
+
 DataSync: Conversation transcripts and metadata are stored on both an encrypted EFS volume
 and AWS S3 only when the participant clicks on the final Submit button at the end of the study
 session. EFS acts as a redundant data layer in case the upload to S3 fails. For eventual consistency,
 we periodically copy files from EFS to S3 using AWS DataSync, which runs a daily CRON job.
 
 3.4.3
+
+DataSync
 
 Deployment Pipeline
 
@@ -2342,11 +2370,11 @@ fails health checks, the rollout is automatically rolled back to the previous st
 integrating the deployment pipeline into version control, we ensured automated deployments tied to
 code changes.
 
+CI/CD
+
 3.5. FEASIBILITY STUDY WITH HUMAN SMOKERS
 
 3.5
-
-27
 
 Feasibility Study with Human Smokers
 
@@ -2354,9 +2382,16 @@ The deployed MIBot system was used in a feasibility study with human smokers. Th
 study was to determine the impact of a single-session interaction with MIBot and assess its safety
 for delivery to ambivalent smokers in a real-world setting.
 
-3.5.1
+feasibility
+study
 
-Ethics Approval and Consent
+3.5.1
+Ethics
+proval
+
+27
+
+Ap-
 
 The protocol was approved by the University of Toronto Research Ethics Board under protocol number 49997 (approved August 3, 2024) and adhered to all institutional guidelines. Before participating
 in the study, prospective participants reviewed an online consent form that outlined study aims, procedures, compensation, potential risks, and data handling practices. Participation required explicit
@@ -2365,6 +2400,10 @@ smoking could cause stress or temporarily increase cravings. No personally ident
 was collected, and all data were de-identified prior to release.
 
 3.5.2
+Recruitment
+Prolific
+
+Ethics Approval and Consent
 
 Participant Recruitment
 
@@ -2373,6 +2412,11 @@ participant pools and built-in demographic filters. Prolific was chosen for its 
 and for its established use in prior MI chatbot studies (??). Participants received £5.50 for the main
 session and £1.00 for the follow-up survey, exceeding Prolific’s recommended hourly rates.
 Initial Screening Criteria
+
+Screening
+In-Study
+Screen
+
 Eligibility screening was implemented at two levels: (1) Prolific prescreen filters, applied before
 invitation to the study; and (2) an in-study screening step prior to chatbot interaction. The first set
 of filters required that all invitees be 18 years or older, be fluent in English, have an approval rate of
@@ -2540,11 +2584,18 @@ R:Q
 
 Figure 3.5: Overview of the feasibility study protocol.
 
+Pre-Surveys
+Study
+Procedure
+Post-Surveys
+Follow-Up
+
 The full study procedure comprised four major phases: (1) pre-conversation surveys; (2) a single
 text-based conversation with MIBot; (3) immediate post-conversation surveys; and (4) a one-week
 follow-up survey. Figure 3.5 illustrates the progression.
 
 Phase 1: Pre-Conversation Surveys:
+HSI
 
 Before interaction with MIBot, participants completed:
 
@@ -2592,6 +2643,9 @@ The Consultation and Relational Empathy (CARE) measure (??) assesses perceived e
 clinical encounters. Ten items evaluate the counsellor’s ability to make the participant feel at ease,
 listen actively, appreciate the participant as a whole person, and collaborate on problem-solving.
 Each question is rated on a 0-5 scale, with a total score range of 0-50.
+
+CARE
+
 3. Qualitative Feedback
 Three open-ended questions solicited subjective impressions:
 1. “What are three words that you would use to describe the chatbot?”
@@ -2604,6 +2658,9 @@ quantitative outcomes.
 At one week, participants reported whether they had made any quit attempts in the preceding
 seven days, the number of attempts, and whether any changes in smoking habits had occurred. This
 included partial changes such as a reduction in cigarettes per day.
+
+Qualitative
+Feedback
 
 3.5. FEASIBILITY STUDY WITH HUMAN SMOKERS
 
@@ -2731,8 +2788,6 @@ quit attempt in the week before the conversation (n = 34), who showed confidence
 
 Regression to
 Mean
-
-HSI
 
 4.1. PRIMARY OUTCOME: READINESS TO QUIT
 
@@ -4470,23 +4525,43 @@ feasibility study
 adherence to MI
 principles, 33
 Effect size, 46
+Ethics Approval, 27
 harm reduction
 behaviours, 42
-Heaviness of Smoking
-Index (HSI), 34
 MI fidelity, 46
 multivariate regression
 analysis, 46
+Participant
+Recruitment, 27
 perceived therapeutic
 empathy, 33
 primary outcome, 33
 regression to the
 mean, 34
 
+Study Procedure, 29
 thematic analysis, 43
 user segmentation, 45
 willing but unable
 profile, 44
+feasibility study, procedure
+One-Week Follow-Up,
+29
+Post-Conversation
+Surveys, 29
+Pre-Conversation
+Surveys, 29
+feasibility study,
+recruitment
+In-Study Screening, 27
+Prolific, 27
+Screening Criteria, 27
+feasibility study, surveys
+CARE Measure, 30
+Heaviness of Smoking
+Index (HSI), 29
+Qualitative Feedback,
+30
 LLMs
 chain-of-thought
 prompting, 8
@@ -4504,6 +4579,8 @@ reinforcement learning
 with human
 feedback (RLHF),
 2
+57
+
 retrieval augmented
 generation
 (RAG), 11
@@ -4523,8 +4600,6 @@ OARS model, 2
 principles, 6
 Readiness Ruler, 6
 reflections, 10
-57
-
 sustain talk, 2, 5
 MIBot
 clinician-informed, 19
@@ -4536,9 +4611,41 @@ single-prompt
 architecture, 19
 virtual smoker clients,
 20
+MIBot, architecture
+Conversation, 23
+Counsellor, 23
+Observer, 23
+MIBot, deployment
+Amazon Elastic
+Container Service
+(ECS), 24
+API Gateway, 26
+AWS DataSync, 26
+
+58
+
+containerized software
+system, 23
+Deployment Pipeline,
+26
+Dockerfile, 24
+Elastic Load Balancer
+(ELB), 26
+Python microservice,
+23
+Sanic, 23
+MIBot, deployment, ECS
+AWS Fargate, 25
+ECS Cluster, 25
+ECS Service, 25
+ECS Task Definition,
+26
 MIBot, Observers
 End Classifier, 22
 Moderator, 22
+
+INDEX OF KEY TERMS
+
 Off-Track Classifier, 22
 MIBot, prompt
 Accessible Language,
@@ -4558,6 +4665,7 @@ Big Five personality
 profiles, 13
 coherence, 14
 fine-tuning, 13
+
 human evaluation, 14
 linguistic style
 matching, 13
@@ -4566,20 +4674,13 @@ persona memory, 13
 persona profiles, 12
 prompt engineering, 12
 stereotypes, 14
-
-58
-
-INDEX OF KEY TERMS
-
 style transfer, 12
 talk therapy
 motivational
-
 interviewing (MI),
 1
 transformer
 autoregressive, 8
-
 multi-head
 self-attention, 8
 self-attention, 2
