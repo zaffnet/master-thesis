@@ -1,7 +1,7 @@
 \chapter{Evaluation of MIBot}
 \label{ch:mibot-eval}
 
-This chapter presents a comprehensive evaluation of MIBot's effectiveness through a \margindex{feasibility study}feasibility study with 106 smokers recruited via the \margindex[feasibility study]{Prolific platform}Prolific platform. Building on the system design and implementation described in previous chapters, we assess MIBot's performance across four critical dimensions established in the smoking cessation and motivational interviewing literature: behavioural change readiness, \margindex[feasibility study]{perceived therapeutic empathy}perceived therapeutic empathy, \margindex[feasibility study]{adherence to MI principles}adherence to MI principles, and elicitation of client change talk.
+This chapter presents a comprehensive evaluation of MIBot's effectiveness through a \margindex{feasibility study}feasibility study with 106 smokers recruited via the \margindex[feasibility study]{Prolific platform}[Prolific]Prolific platform. Building on the system design and implementation described in previous chapters, we assess MIBot's performance across four critical dimensions established in the smoking cessation and motivational interviewing literature: behavioural change readiness, \margindex[feasibility study]{perceived therapeutic empathy}[Perceived Empathy]perceived therapeutic empathy, \margindex[feasibility study]{adherence to MI principles}[MI Adherence]adherence to MI principles, and elicitation of client change talk.
 
 The chapter is organized to progress from primary outcomes through measurements of therapeutic process, and finally, to behavioural changes and user experiences. First, we report the primary outcome of changes in readiness to quit smoking (Section~\ref{sec:primary-outcome}). We then analyze how chatbot performed on perceived empathy, measured through the CARE scale and compare it to human healthcare professionals (Section~\ref{sec:perceived-empathy}). Next, we examine MIBot's adherence to MI principles through AutoMISC analysis, and examine if MIBot could maintain fidelity to therapeutic standards while successfully eliciting change talk from clients (Section~\ref{sec:mi-adherence}).
 
@@ -12,7 +12,7 @@ Following these core metrics, we investigate behavioural outcomes including quit
 
 \subsection{Overall Changes in Readiness Rulers}
 
-Table~\ref{table:mibot_ruler_summary} summarizes the mean (and standard deviation) of each readiness ruler before the conversation, immediately afterwards, and one week later.   The table includes the change between the pre-conversation metric and one week later ($\Delta$). The \margindex[feasibility study]{Wilcoxon signed-rank test}Wilcoxon signed-rank test was applied to assess the significance of the change. Participants' confidence increased markedly from a baseline mean of 2.8 to 4.5 one week later ($\Delta=1.66$, $p<10^{-9}$). This represents a $\sim$59\% relative improvement and constitutes our \margindex[feasibility study]{primary outcome}primary outcome measure, aligning with MI theory that confidence (self-efficacy) is a key predictor of behaviour change \citep{Gwaltney2009-wj,Abar2013}. Importance also increased, albeit more modestly ($\Delta=0.5$, $p<0.005$), while readiness exhibited a small, non-significant change ($\Delta=0.23$, $p=0.22$).
+Table~\ref{table:mibot_ruler_summary} summarizes the mean (and standard deviation) of each readiness ruler before the conversation, immediately afterwards, and one week later.   The table includes the change between the pre-conversation metric and one week later ($\Delta$). The \margindex[feasibility study]{Wilcoxon signed-rank test}[Wilcoxon Test]Wilcoxon signed-rank test was applied to assess the significance of the change. Participants' confidence increased markedly from a baseline mean of 2.8 to 4.5 one week later ($\Delta=1.66$, $p<10^{-9}$). This represents a $\sim$59\% relative improvement and constitutes our \margindex[feasibility study]{primary outcome}[Primary Outcome]primary outcome measure, aligning with MI theory that confidence (self-efficacy) is a key predictor of behaviour change \citep{Gwaltney2009-wj,Abar2013}. Importance also increased, albeit more modestly ($\Delta=0.5$, $p<0.005$), while readiness exhibited a small, non-significant change ($\Delta=0.23$, $p=0.22$).
 
 \begin{table}[ht!]
   \centering
@@ -46,7 +46,7 @@ Figure~\ref{fig:confidence_change_distribution} illustrates the distribution of 
 
 \subsection{Stratified Analysis by Baseline Characteristics}
 
-To understand which participants benefited most from MIBot, we stratified outcomes by baseline characteristics. Table~\ref{tab:baseline_confidence} shows that those starting with the lowest self-confidence ($n=31$, confidence $\leq 1$) experienced the largest improvement (+2.2 points), whereas participants with moderate or higher confidence gained about one and a half points. The three participants who began with very high confidence showed a decline, likely reflecting \margindex[feasibility study]{regression to the mean}regression to the mean. Baseline confidence correlated negatively with the change (Spearman $r=-0.21$, $p<0.05$), indicating that MIBot is most beneficial for participants who are least confident in their ability to quit.
+To understand which participants benefited most from MIBot, we stratified outcomes by baseline characteristics. Table~\ref{tab:baseline_confidence} shows that those starting with the lowest self-confidence ($n=31$, confidence $\leq 1$) experienced the largest improvement (+2.2 points), whereas participants with moderate or higher confidence gained about one and a half points. The three participants who began with very high confidence showed a decline, likely reflecting \margindex[feasibility study]{regression to the mean}[Regression to Mean]regression to the mean. Baseline confidence correlated negatively with the change (Spearman $r=-0.21$, $p<0.05$), indicating that MIBot is most beneficial for participants who are least confident in their ability to quit.
 
 \begin{table}[ht!]
   \centering
@@ -71,7 +71,7 @@ To understand which participants benefited most from MIBot, we stratified outcom
 
 
 
-Confidence changes varied across different smoking characteristics and quit history profiles. Participants were grouped by \margindex[feasibility study]{Heaviness of Smoking Index (HSI)}HSI (low 0--1, moderate 2--3, high 4--5, very high $\geq$ 6), daily cigarette consumption ($<$5, 5--9, 10--19, $\geq$20), whether they had made a quit attempt in the week before the study, and the number of prior attempts (0, 1--2, $\geq$3). The mean change in confidence for each subgroup is summarized in Table~\ref{tab:hsi_prequit}.
+Confidence changes varied across different smoking characteristics and quit history profiles. Participants were grouped by \margindex[feasibility study]{Heaviness of Smoking Index (HSI)}[HSI]HSI (low 0--1, moderate 2--3, high 4--5, very high $\geq$ 6), daily cigarette consumption ($<$5, 5--9, 10--19, $\geq$20), whether they had made a quit attempt in the week before the study, and the number of prior attempts (0, 1--2, $\geq$3). The mean change in confidence for each subgroup is summarized in Table~\ref{tab:hsi_prequit}.
 
 \begin{table}[ht!]
   \centering
@@ -87,13 +87,13 @@ Confidence changes varied across different smoking characteristics and quit hist
     \quad Low (0--1) & 28 & 3.5 (1.9) & 5.5 (2.3) & 4.9 (2.5) & +1.5 (2.7)** \\
     \quad Moderate (2--3) & 55 & 2.7 (2.0) & 4.1 (2.6) & 4.7 (2.9) & +2.0 (2.3)*** \\
     \quad High (4--5) & 21 & 2.5 (1.8) & 4.5 (2.3) & 3.3 (2.4) & +0.8 (2.1) \\
-    \quad Very high ($\geq6$) & 2 & 1.5 (2.1) & 4.0 (5.7) & 5.0 (2.8) & +3.5 (0.7) \\
+    \quad Very high ($\geq$6) & 2 & 1.5 (2.1) & 4.0 (5.7) & 5.0 (2.8) & +3.5 (0.7) \\
     \midrule
     \multicolumn{6}{l}{\textit{Daily cigarette consumption}} \\
     \quad $<$5 & 5 & 3.2 (1.3) & 5.2 (2.0) & 4.2 (2.6) & +1.0 (1.6) \\
     \quad 5--9 & 32 & 3.5 (2.5) & 5.2 (2.7) & 5.2 (3.0) & +1.7 (2.9)** \\
     \quad 10--19 & 38 & 2.8 (1.5) & 4.2 (2.5) & 4.5 (2.8) & +1.7 (2.1)*** \\
-    \quad $\geq20$ & 31 & 2.1 (1.6) & 4.2 (2.5) & 3.7 (2.3) & +1.7 (2.3)*** \\
+    \quad $\geq$20 & 31 & 2.1 (1.6) & 4.2 (2.5) & 3.7 (2.3) & +1.7 (2.3)*** \\
     \midrule
     \multicolumn{6}{l}{\textit{Pre-conversation quit attempt}} \\
     \quad Yes & 34 & 3.1 (1.6) & 5.1 (2.7) & 5.7 (2.6) & +2.6 (2.2)*** \\
@@ -102,7 +102,7 @@ Confidence changes varied across different smoking characteristics and quit hist
     \multicolumn{6}{l}{\textit{Number of prior attempts}} \\
     \quad 0 & 72 & 2.7 (2.1) & 4.3 (2.5) & 3.9 (2.6) & +1.2 (2.3)*** \\
     \quad 1--2 & 16 & 3.3 (1.6) & 6.1 (2.5) & 6.9 (2.4) & +3.6 (2.0)*** \\
-    \quad $\geq3$ & 18 & 2.8 (1.7) & 4.3 (2.6) & 4.7 (2.4) & +1.8 (2.0)** \\
+    \quad $\geq$3 & 18 & 2.8 (1.7) & 4.3 (2.6) & 4.7 (2.4) & +1.8 (2.0)** \\
     \bottomrule
   \end{tabular*}
   \caption{Longitudinal changes in quit confidence scores stratified by baseline smoking characteristics and quit history. Values represent self-reported confidence to quit smoking (0--10 scale) assessed at baseline (pre-conversation), immediately post-conversation, and at 1-week follow-up. Change scores represent the difference between baseline and 1-week follow-up assessments. SD = standard deviation. Wilcoxon signed-rank test: *** $p < 0.001$, ** $p < 0.01$, * $p < 0.05$, n.s. = not significant ($p \geq 0.05$).}
@@ -721,8 +721,8 @@ Together, these factors explained 34\% of variance in confidence change ($R^2=0.
 MIBot's performance compares favourably with established interventions:
 
 \begin{itemize}
-\item \textbf{\margindex[feasibility study]{Effect size}Effect size}: Cohen's $d=0.71$ for confidence change exceeds typical digital intervention effects ($d=0.2$--0.4) \citep{Whittaker2016}
-\item \textbf{\margindex[feasibility study]{MI fidelity}MI fidelity}: 95\% MI-consistent responses surpass typical human counsellor benchmarks (80--90\%) \citep{Moyers2016}
+\item \textbf{\margindex[feasibility study]{Effect size}[Effect Size]Effect size}: Cohen's $d=0.71$ for confidence change exceeds typical digital intervention effects ($d=0.2$--0.4) \citep{Whittaker2016}
+\item \textbf{\margindex[feasibility study]{MI fidelity}[MI Fidelity]MI fidelity}: 95\% MI-consistent responses surpass typical human counsellor benchmarks (80--90\%) \citep{Moyers2016}
 \item \textbf{Engagement}: 92\% enjoyment rate exceeds most digital health interventions (60--70\%) \citep{Perski2017}
 \item \textbf{Quit attempts}: 14.2\% new quit attempts align with brief intervention outcomes (10--20\%) \citep{Stead2013}
 \end{itemize}
