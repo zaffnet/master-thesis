@@ -73,16 +73,14 @@
 \renewcommand*{\raggedleftmarginnote}{}
 \reversemarginpar
 
-\newcommand{\margindex}[3][]{%
-  \ifx\\#3\\%
-    \marginnote{\scriptsize \textcolor{cyan}{\textbf{#2}}}%
-  \else
-    \marginnote{\scriptsize \textcolor{cyan}{\textbf{#3}}}%
-  \fi
+\newcommand{\margindex}[2][]{%
+  % #1 = optional parent category for hierarchical indexing
+  % #2 = term to display in margin and add to index
+  \marginnote{\scriptsize \textcolor{cyan}{\textbf{#2}}}%
   \ifx\\#1\\%
-    \index{#2|hyperpage}%
+    \index{#2|hyperpage}%  % Simple index entry
   \else
-    \index{#1!#2|hyperpage}%
+    \index{#1!#2|hyperpage}%  % Hierarchical: parent!subentry
   \fi
 }
 

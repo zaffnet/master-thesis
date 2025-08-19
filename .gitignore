@@ -14,3 +14,7 @@
 *.ind
 *.ilg
 *.idx
+.DS_Store
+.AppleDouble
+.LSOverride
+.vscode/
