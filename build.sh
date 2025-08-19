@@ -2,7 +2,9 @@
 
 # Default values
 USE_DOCKER=false
+CLEAN=false
 TEXLIVE_VERSION="texlive/texlive:TL2024-historic"
+MAIN_TEX_FILE="main"
 
 # Parse command line arguments
 while [[ $# -gt 0 ]]; do
@@ -11,10 +13,15 @@ while [[ $# -gt 0 ]]; do
             USE_DOCKER=true
             shift
             ;;
+        -c|--clean)
+            CLEAN=true
+            shift
+            ;;
         -h|--help)
             echo "Usage: $0 [OPTIONS]"
             echo "Options:"
             echo "  -d, --docker    Use Docker for compilation (default: use local pdflatex)"
+            echo "  -c, --clean     Clean up generated files before building"
             echo "  -h, --help      Show this help message"
             exit 0
             ;;
@@ -26,31 +33,46 @@ while [[ $# -gt 0 ]]; do
     esac
 done
 
-# Clean auxiliary files
-rm -f *.aux *.log *.out *.toc *.lof *.lot
+# Clean up generated files if the --clean flag is used
+if [ "$CLEAN" = true ]; then
+    echo "Cleaning up generated files..."
+    rm -f *.aux \
+          *.bbl \
+          *.bcf \
+          *.blg \
+          *.lof \
+          *.log \
+          *.lot \
+          *.out \
+          *.run.xml \
+          *.toc \
+          *.synctex.gz \
+          ${MAIN_TEX_FILE}.pdf
+fi
 
+# Build the project
 if [ "$USE_DOCKER" = true ]; then
     echo "Running LaTeX compilation with Docker ${TEXLIVE_VERSION}..."
     docker run --rm -v "$(pwd)":/workspace -w /workspace $TEXLIVE_VERSION bash -c "
-        pdflatex main.tex
-        bibtex main
-        pdflatex main.tex
-        makeindex main
-        pdflatex main.tex
+        pdflatex ${MAIN_TEX_FILE}.tex
+        bibtex ${MAIN_TEX_FILE}
+        pdflatex ${MAIN_TEX_FILE}.tex
+        makeindex ${MAIN_TEX_FILE}
+        pdflatex ${MAIN_TEX_FILE}.tex
     "
 else
     echo "Running LaTeX compilation locally..."
-    pdflatex main.tex
-    bibtex main
-    pdflatex main.tex
-    makeindex main
-    pdflatex main.tex
+    pdflatex ${MAIN_TEX_FILE}.tex
+    bibtex ${MAIN_TEX_FILE}
+    pdflatex ${MAIN_TEX_FILE}.tex
+    makeindex ${MAIN_TEX_FILE}
+    pdflatex ${MAIN_TEX_FILE}.tex
 fi
 
 if [ $? -eq 0 ]; then
     echo "Compilation completed successfully!"
-    if [ -f main.pdf ]; then
-        echo "PDF generated: main.pdf"
+    if [ -f ${MAIN_TEX_FILE}.pdf ]; then
+        echo "PDF generated: ${MAIN_TEX_FILE}.pdf"
     fi
 else
     echo "Compilation failed!"

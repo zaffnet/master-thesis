@@ -1,1 +1,0 @@
-rm -f *.aux *.log *.out *.toc *.lof *.lot

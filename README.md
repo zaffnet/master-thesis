@@ -26,13 +26,52 @@ The thesis is organized into the following chapters:
 
 ## Building the PDF
 
-To compile the thesis into a PDF, you will need a LaTeX distribution (e.g., TeX Live, MiKTeX) with `pdflatex` and `biber`. Run the following commands in the root of the repository:
+This project can be built locally or using Docker. In either case, the `build.sh` script is the recommended way to build the PDF.
+
+### Using the Build Script
+
+The `build.sh` script provides a convenient way to build the thesis. It supports local and Docker-based builds.
 
 ```bash
-pdflatex main.tex
-biber main
-pdflatex main.tex
-pdflatex main.tex
+./build.sh [OPTIONS]
 ```
 
-This will generate a `main.pdf` file containing the complete thesis.
+**Options:**
+
+*   `-d`, `--docker`: Use Docker for compilation. This is the recommended method if you do not have a local LaTeX installation.
+*   `-c`, `--clean`: Clean up all generated files before building. This includes the final PDF.
+*   `-h`, `--help`: Show the help message.
+
+### Local Build
+
+To build the project locally, you need a working LaTeX distribution.
+
+**Linux:**
+
+On Debian-based distributions (like Ubuntu), you can install the necessary packages with the following command:
+
+```bash
+sudo apt-get install texlive-full
+```
+
+**macOS:**
+
+On macOS, you can use [MacTeX](https://www.tug.org/mactex/).
+
+Once you have a LaTeX distribution installed, you can build the PDF by running:
+
+```bash
+./build.sh
+```
+
+### Docker Build
+
+If you have Docker installed, you can build the project without installing LaTeX locally. This is the recommended method.
+
+To build the PDF using Docker, run the following command:
+
+```bash
+./build.sh --docker
+```
+
+This will pull the necessary Docker image and compile the thesis. The final PDF will be available in the root of the repository. A `Dockerfile` is included in the repository for reference.
