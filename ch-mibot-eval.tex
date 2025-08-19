@@ -1,7 +1,7 @@
 \chapter{Evaluation of MIBot}
 \label{ch:mibot-eval}
 
-This chapter presents a comprehensive evaluation of MIBot's effectiveness through a \margindex{feasibility study}feasibility study with 106 smokers recruited via the \margindex[feasibility study]{Prolific platform}[Prolific]Prolific platform. Building on the system design and implementation described in previous chapters, we assess MIBot's performance across four critical dimensions established in the smoking cessation and motivational interviewing literature: behavioural change readiness, \margindex[feasibility study]{perceived therapeutic empathy}[Perceived Empathy]perceived therapeutic empathy, \margindex[feasibility study]{adherence to MI principles}[MI Adherence]adherence to MI principles, and elicitation of client change talk.
+This chapter presents a comprehensive evaluation of MIBot's effectiveness through a \margindex{feasibility study}feasibility study with 106 smokers. Building on the system design and implementation described in previous chapters, we assess MIBot's performance across four critical dimensions established in the smoking cessation and motivational interviewing literature: behavioural change readiness, \margindex[feasibility study]{perceived therapeutic empathy}[Perceived Empathy]perceived therapeutic empathy, \margindex[feasibility study]{adherence to MI principles}[MI Adherence]adherence to MI principles, and elicitation of client change talk.
 
 The chapter is organized to progress from primary outcomes through measurements of therapeutic process, and finally, to behavioural changes and user experiences. First, we report the primary outcome of changes in readiness to quit smoking (Section~\ref{sec:primary-outcome}). We then analyze how chatbot performed on perceived empathy, measured through the CARE scale and compare it to human healthcare professionals (Section~\ref{sec:perceived-empathy}). Next, we examine MIBot's adherence to MI principles through AutoMISC analysis, and examine if MIBot could maintain fidelity to therapeutic standards while successfully eliciting change talk from clients (Section~\ref{sec:mi-adherence}).
 
@@ -12,7 +12,7 @@ Following these core metrics, we investigate behavioural outcomes including quit
 
 \subsection{Overall Changes in Readiness Rulers}
 
-Table~\ref{table:mibot_ruler_summary} summarizes the mean (and standard deviation) of each readiness ruler before the conversation, immediately afterwards, and one week later.   The table includes the change between the pre-conversation metric and one week later ($\Delta$). The \margindex[feasibility study]{Wilcoxon signed-rank test}[Wilcoxon Test]Wilcoxon signed-rank test was applied to assess the significance of the change. Participants' confidence increased markedly from a baseline mean of 2.8 to 4.5 one week later ($\Delta=1.66$, $p<10^{-9}$). This represents a $\sim$59\% relative improvement and constitutes our \margindex[feasibility study]{primary outcome}[Primary Outcome]primary outcome measure, aligning with MI theory that confidence (self-efficacy) is a key predictor of behaviour change \citep{Gwaltney2009-wj,Abar2013}. Importance also increased, albeit more modestly ($\Delta=0.5$, $p<0.005$), while readiness exhibited a small, non-significant change ($\Delta=0.23$, $p=0.22$).
+Table~\ref{table:mibot_ruler_summary} summarizes the mean (and standard deviation) of each readiness ruler before the conversation, immediately afterwards, and one week later.   The table includes the change between the pre-conversation metric and one week later ($\Delta$). The Wilcoxon signed-rank test was applied to assess the significance of the change. Participants' confidence increased markedly from a baseline mean of 2.8 to 4.5 one week later ($\Delta=1.66$, $p<10^{-9}$). This represents a $\sim$59\% relative improvement and constitutes our \margindex[feasibility study]{primary outcome}[Primary Outcome]primary outcome measure, aligning with MI theory that confidence (self-efficacy) is a key predictor of behaviour change \citep{Gwaltney2009-wj,Abar2013}. Importance also increased, albeit more modestly ($\Delta=0.5$, $p<0.005$), while readiness exhibited a small, non-significant change ($\Delta=0.23$, $p=0.22$).
 
 \begin{table}[ht!]
   \centering
@@ -71,7 +71,7 @@ To understand which participants benefited most from MIBot, we stratified outcom
 
 
 
-Confidence changes varied across different smoking characteristics and quit history profiles. Participants were grouped by \margindex[feasibility study]{Heaviness of Smoking Index (HSI)}[HSI]HSI (low 0--1, moderate 2--3, high 4--5, very high $\geq$ 6), daily cigarette consumption ($<$5, 5--9, 10--19, $\geq$20), whether they had made a quit attempt in the week before the study, and the number of prior attempts (0, 1--2, $\geq$3). The mean change in confidence for each subgroup is summarized in Table~\ref{tab:hsi_prequit}.
+Confidence changes varied across different smoking characteristics and quit history profiles. Participants were grouped by HSI (low 0--1, moderate 2--3, high 4--5, very high $\geq$ 6), daily cigarette consumption ($<$5, 5--9, 10--19, $\geq$20), whether they had made a quit attempt in the week before the study, and the number of prior attempts (0, 1--2, $\geq$3). The mean change in confidence for each subgroup is summarized in Table~\ref{tab:hsi_prequit}.
 
 \begin{table}[ht!]
   \centering
@@ -383,21 +383,21 @@ The fully generative MIBot v6.3A chatbot scores higher on CARE, the measure of p
 \section{AutoMISC Analysis}
 \label{sec:mi-adherence}
 
-To evaluate the chatbot's adherence to MI principles, we analyzed counsellor and client utterances from the feasibility study transcripts (Section~\ref{sec:feasability}) using AutoMISC, an automated annotation system originally described in \citet{mahmood-etal-2025-fully}\footnote{A comprehensive description of the AutoMISC system by \citet{ali2025automated} is forthcoming}.
-The system assigns behavioural codes to each utterance: counsellor utterances are classified as \margindex[AutoMISC]{MI-Consistent (MICO)}MI-Consistent (MICO), \margindex[AutoMISC]{MI-Inconsistent (MIIN)}MI-Inconsistent (MIIN), \margindex[AutoMISC]{Reflection (R)}Reflection (R), \margindex[AutoMISC]{Question (Q)}Question (Q), or \margindex[AutoMISC]{Other (O)}Other (O), while client utterances are categorized as \margindex[AutoMISC]{change talk (C)}change talk (C), \margindex[AutoMISC]{sustain talk (S)}sustain talk (S), or \margindex[AutoMISC]{neutral (N)}neutral (N). Following annotation of all utterances, we computed per-transcript summary metrics to quantify MI adherence. These comprise:
+To evaluate the chatbot's adherence to MI principles, we analyzed counsellor and client utterances from the feasibility study transcripts (Section~\ref{sec:feasability}) using \margindex{AutoMISC}AutoMISC, an automated annotation system originally described in \citet{mahmood-etal-2025-fully}\footnote{A comprehensive description of the AutoMISC system by \citet{ali2025automated} is forthcoming}.
+The system assigns behavioural codes to each utterance: counsellor utterances are classified as MI-Consistent (MICO), MI-Inconsistent (MIIN), Reflection (R), Question (Q), or Other (O), while client utterances are categorized as change talk (C), sustain talk (S), or neutral (N). Following annotation of all utterances, we computed per-transcript summary metrics to quantify MI adherence. These comprise:
 
 \begin{itemize}
 
     \item \textbf{\margindex[AutoMISC]{Percentage MI-Consistent Responses (\%MIC)}Percentage MI-Consistent Responses (\%MIC):} The proportion of counsellor utterances that align with MI principles. Higher values indicate greater adherence to MI methodology.
     
-    \item \textbf{Reflection-to-Question Ratio (R:Q):} The ratio of counsellor utterances labelled as reflection (R) to those labelled as question (Q). This metric assesses the balance between reflective listening and questioning. Values between 1 and 2 are considered indicative of proficiency \citep{moyers2016}.
+    \item \textbf{\margindex[AutoMISC]{Reflection-to-Question Ratio (R:Q)}[R:Q]Reflection-to-Question Ratio (R:Q):} The ratio of counsellor utterances labelled as reflection (R) to those labelled as question (Q). This metric assesses the balance between reflective listening and questioning. Values between 1 and 2 are considered indicative of proficiency \citep{moyers2016miti}.
 
     \item \textbf{\margindex[AutoMISC]{Percentage Change Talk (\%CT)}Percentage Change Talk (\%CT):} The proportion of client utterances expressing motivation toward behaviour change. Higher values are associated with improved behavioural outcomes \citep{apodaca2009}.
 
 \end{itemize}
 
 \subsection{Contextualizing AutoMISC metrics with the HLQC Dataset}
-To provide a point of comparison for the MISC summary metrics, we also ran AutoMISC on the \margindex[AutoMISC]{HighLowQualityCounselling (HLQC) dataset}HighLowQualityCounselling (HLQC) dataset  \cite{perez-rosas-etal-2019-makes}, a publicly available\footnote{ \url{https://lit.eecs.umich.edu/downloads.html}} corpus of transcribed MI counselling demonstrations. The HLQC dataset comprises 155 high-quality (HLQC\_\textbf{HI}) and 104 low-quality (HLQC\_\textbf{LO}) transcripts sourced from public websites.
+To provide a point of comparison for the MISC summary metrics, we also ran AutoMISC on the HighLowQualityCounselling (HLQC) dataset  \cite{perez-rosas-etal-2019-makes}, a publicly available\footnote{ \url{https://lit.eecs.umich.edu/downloads.html}} corpus of transcribed MI counselling demonstrations. The HLQC dataset comprises 155 high-quality (HLQC\_\textbf{HI}) and 104 low-quality (HLQC\_\textbf{LO}) transcripts sourced from public websites.
 We computed summary scores separately for these subsets and then compared MIBot's summary metrics against those of both HLQC\_HI and HLQC\_LO.
 
 \subsection{Counsellor Behaviour Metrics}
@@ -698,7 +698,7 @@ Cross-tabulation revealed four \margindex[feasibility study]{user segmentation}u
   \label{table:user_segments}
 \end{table}
 
-\margindex[user segmentation]{Entertained Sceptics}``Entertained Sceptics''---those who enjoyed but didn't find it helpful---often wanted more directive advice or concrete tools rather than exploratory conversation.
+``Entertained Sceptics''---those who enjoyed but didn't find it helpful---often wanted more directive advice or concrete tools rather than exploratory conversation.
 
 \section{Discussion}
 \label{sec:discussion}
