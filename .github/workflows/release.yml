@@ -1,0 +1,33 @@
+name: Build and Release PDF
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build_and_release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Build PDF
+        run: |
+          docker run --rm -v "$(pwd)":/workspace -w /workspace texlive/texlive:TL2024-historic bash -c "
+              pdflatex main.tex
+              bibtex main
+              pdflatex main.tex
+              makeindex main
+              pdflatex main.tex
+          "
+      - name: Create Release
+        id: create_release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: main.pdf
+          tag_name: release-${{ github.run_id }}
+          body: |
+            Automated release of the PDF compiled from commit ${{ github.sha }}.
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
