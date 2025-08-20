@@ -1,2 +1,645 @@
-\chapter{Evaluation of Synthetic Smokers}
+\chapter{Validation of Synthetic Smokers}
 \label{sec:synethetic-smoker-eval}
+
+The previous chapter detailed the development methodology of the synthetic smoker, tracing its evolution from simple prompted personas to data-driven doppelgängers. The primary motivation behind this development was to create a reliable, controllable, and realistic simulation environment for testing and refining MIBot. This chapter presents the results and analysis of the experiments conducted to validate the synthetic smoker across its development phases.
+
+The validation process is divided into two main stages, mirroring the development timeline. The first stage focuses on validating the initial attempts to control specific behavioural attributes—namely verbosity and resistance—through prompt engineering, prior to the availability of human conversational data. The second stage focuses on the validation of "doppelgängers," which were created using data from the MIBot feasibility study to mirror specific human participants. This stage examines the fidelity of these doppelgängers through transcript replay experiments, incremental attribute installation, and their sensitivity to the quality of motivational interviewing.
+
+\section{Validating Initial Controllable Attributes (Phase 1)}
+
+Before the development of MIBot and the subsequent feasibility study, the initial objective was to create synthetic smokers that could provide a consistent testing environment. Early observations indicated challenges in managing the synthetic smoker's natural tendencies, particularly regarding their verbosity and their level of resistance to behavior change.
+
+\subsection{Controlling and Validating Verbosity}
+
+A significant challenge in early simulations was the tendency of Large Language Models (LLMs) to produce verbose, grammatically complete utterances. This contrasted sharply with the more casual, often shorter, text-based communication observed in human participants. Excessive verbosity from the synthetic smoker often led to the counsellor bot reciprocating with equally lengthy responses, resulting in conversations that did not reflect typical human interaction dynamics.
+
+\subsubsection{Methodology}
+
+To address this, several prompt engineering strategies were employed to reduce the synthetic smoker's utterance length. These included instructions to:
+\begin{itemize}
+    \item "Speak with more clarity rather than exhaustive detail."
+    \item "Imagine you're texting a friend. Keep it casual..."
+    \item Explicitly limiting the response length (e.g., "Number of sentences in your response must be between 1 and 4.")
+\end{itemize}
+Experiments were conducted using GPT-4 Turbo to compare the "default verbosity" (standard prompting) with "fixed verbosity" (prompts including length constraints and casual tone instructions). The validation involved analyzing the utterance length distribution, the total number of turns, and the total word count per conversation. Furthermore, the resilience and transferability of these prompting strategies were tested on the newer GPT-4 Omni model.
+
+\subsubsection{Results}
+
+The prompt engineering efforts successfully reduced the utterance length of the synthetic smoker. In the initial comparison using GPT-4 Turbo, the "fixed-verbosity" condition resulted in a significantly tighter and lower distribution of utterance lengths for both the client (synthetic smoker) and the counsellor compared to the "default-verbosity" condition.
+
+[Placeholder for Figure 4.1: Violin Plot of Utterance Length by Verbosity Level (Default vs. Fixed) using GPT-4 Turbo. Source: "Controlling \& Validating Verbosity in Synthetic Smokers" Slide 4]
+
+The analysis was expanded to compare these results across models (GPT-4 Turbo and GPT-4 Omni) and with data from actual human conversations categorized as "high-quality-human-MI" and "low-quality-human-MI" (Figure \ref{fig:verbosity_utterance_length}).
+
+% Placeholder for Figure 4.2
+\begin{figure}[h]
+    \centering
+    % \includegraphics{placeholder_figure_4_2.png}
+    \caption{Violin Plot of Utterance Length by Verbosity Level and Model, Compared with Human MI Conversations. (Source: Controlling \& Validating Verbosity in Synthetic Smokers slides, Slide 7)}
+    \label{fig:verbosity_utterance_length}
+\end{figure}
+
+The "fixed-verbosity" conditions (both GPT-4 Turbo and GPT-4 Omni) more closely resembled the utterance length distribution of human participants than the "default-verbosity" conditions. The installation of verbosity control proved transferable between models; the "fixed-verbosity" prompts yielded similar results when applied to GPT-4 Omni.
+
+However, analyzing the number of turns per conversation revealed a discrepancy. The simulated conversations, across all conditions, generally had fewer turns than the human conversations, particularly when compared to the high-quality human MI data (Figure \ref{fig:verbosity_num_turns}).
+
+% Placeholder for Figure 4.3
+\begin{figure}[h]
+    \centering
+    % \includegraphics{placeholder_figure_4_3.png}
+    \caption{Box Plot of Number of Turns per Conversation for different Verbosity Levels and Models. (Source: Controlling \& Validating Verbosity in Synthetic Smokers slides, Slide 8)}
+    \label{fig:verbosity_num_turns}
+\end{figure}
+
+\subsubsection{Analysis}
+
+The results demonstrate that prompt engineering can effectively control the verbosity of synthetic smokers, bringing their utterance lengths closer to human levels. The observed reciprocity, where the counsellor bot reduces its verbosity in response to the client bot, highlights the interactive dynamics of the simulation. While the utterance length was successfully controlled and the methodology proved transferable to newer models, the lower number of turns in simulations suggests potential differences in conversational flow or depth compared to human interactions.
+
+\subsection{Installing and Validating Resistance}
+
+To effectively test MIBot, the synthetic smoker needed to exhibit varying levels of resistance to quitting smoking. This section examines the experiments designed to install and validate high and low resistance levels.
+
+\subsubsection{Methodology}
+
+Resistance was installed via detailed prompts that provided the synthetic smoker with a backstory and a specific mindset regarding smoking cessation.
+\begin{itemize}
+    \item \textbf{High Resistance:} The prompt emphasized severe life stressors, skepticism towards therapy, anxiety when pressured to quit, and a belief that it was not the right time to change.
+    \item \textbf{Low Resistance:} The prompt described smoking as a habit formed through social interaction, recent concerning lab results, skepticism balanced by an openness to cutting back, and a willingness to try their best in the conversation.
+\end{itemize}
+Validation was conducted through two methods: analyzing the language used during conversations with a GPT-4 MI therapist (Change Talk vs. Sustain Talk) and evaluating self-reported readiness rulers (Importance, Confidence, Readiness) collected pre-conversation, post-conversation, and one week later (simulated).
+
+\subsubsection{Results}
+
+The analysis of conversational language showed a marked difference between the two conditions (Table \ref{tab:resistance_change_sustain}). The high-resistance smoker used substantially more Sustain Talk (44\%) than Change Talk (31\%). Conversely, the low-resistance smoker used significantly more Change Talk (61\%) than Sustain Talk (9\%).
+
+\begin{table}[h]
+\centering
+\caption{Percentage of Change Talk, Sustain Talk, and Neutral Talk for High and Low Resistance Synthetic Smokers.}
+\label{tab:resistance_change_sustain}
+\begin{tabular}{|l|c|c|c|}
+\hline
+\textbf{Smoker Type} & \textbf{Change Talk (\%)} & \textbf{Sustain Talk (\%)} & \textbf{Neutral (\%)} \\ \hline
+High resistance smoker & 31 & 44 & 25 \\ \hline
+Low resistance smoker & 61 & 9 & 30 \\ \hline
+\end{tabular}
+\end{table}
+
+The readiness ruler scores also reflected the installed resistance levels (Table \ref{tab:resistance_readiness_rulers}). The high-resistance smoker started with lower scores across all three metrics (I: 2.0, C: 1.0, R: 0.6) compared to the low-resistance smoker (I: 4.6, C: 2.6, R: 3.2). Both groups showed positive changes after the conversation and at the one-week follow-up.
+
+\begin{table}[h]
+\centering
+\caption{Readiness Ruler Scores (Importance, Confidence, Readiness) for High and Low Resistance Synthetic Smokers.}
+\label{tab:resistance_readiness_rulers}
+\begin{tabular}{|l|ccc|ccc|}
+\hline
+ & \multicolumn{3}{c|}{\textbf{Low Resistance}} & \multicolumn{3}{c|}{\textbf{High Resistance}} \\
+ & I & C & R & I & C & R \\ \hline
+Pre-conversation & 4.6 & 2.6 & 3.2 & 2.0 & 1.0 & 0.6 \\
+Post-conversation & 6.4 & 4.2 & 5.2 & 4.0 & 2.0 & 2.6 \\
+1-Week Later & 6.6 & 4.8 & 5.4 & 4.6 & 2.6 & 3.4 \\ \hline
+Delta (Week later - Pre) & 2.0 & 2.2 & 2.2 & 2.6 & 1.6 & 2.8 \\ \hline
+\end{tabular}
+\end{table}
+
+\subsubsection{Analysis}
+
+The distinct differences in Change/Sustain Talk and the starting readiness ruler scores confirm the successful installation of varying resistance levels through prompting. Interestingly, the high-resistance group exhibited a larger delta in Importance (+2.6) and Readiness (+2.8) compared to the low-resistance group, although their absolute scores remained lower. This suggests that the MI intervention was effective in shifting the perspective of the high-resistance smoker, even when starting from a position of strong skepticism.
+
+\section{Validating Synthetic Smoker Doppelgängers (Phase 2)}
+
+Following the completion of the MIBot feasibility study (MIV6.3A), real human data became available. This shifted the focus from creating generic personas to developing "doppelgängers"—synthetic smokers designed to mirror the attributes and behaviors of specific human participants. The goal was to create representative stand-ins that could facilitate rapid, iterative development of MIBot. This section details the validation experiments for these doppelgängers.
+
+\subsection{Transcript Autoplay (Consistency Check)}
+
+The initial validation step for doppelgängers was to assess whether an LLM, when provided with the context of a specific human participant, could consistently reproduce their outcomes if the conversation trajectory was fixed.
+
+\subsubsection{Methodology}
+
+In the "transcript autoplay" experiments, the LLM was given the pre-conversation readiness rulers of a human participant and the transcript of the MIBot-human conversation. The LLM was prompted to adopt the persona of the participant and, after processing the conversation, provide the post-conversation readiness rulers. This tests the model's ability to reason about the impact of the conversation on the participant's state of mind. We utilized Chain-of-Thought (CoT) prompting to encourage the model to articulate its reasoning before providing the numerical scores. We tested this with two levels of attribute installation: M2 (Pre-conversation rulers only) and M7 (All attributes, including HSI and demographics).
+
+\subsubsection{Results}
+
+The results of the autoplay experiments are summarized in Table \ref{tab:autoplay_results}, showing the Mean Absolute Error (MAE) and Pearson Correlation between the human outcomes and the LLM predictions.
+
+\begin{table}[h]
+\centering
+\caption{Mean Absolute Error (MAE) and Pearson Correlation for Post-Conversation Readiness Rulers in Transcript Autoplay Experiments.}
+\label{tab:autoplay_results}
+\begin{tabular}{|l|cc|cc|cc|}
+\hline
+ & \multicolumn{2}{c|}{\textbf{Post-Conf.}} & \multicolumn{2}{c|}{\textbf{Post-Import.}} & \multicolumn{2}{c|}{\textbf{Post-Read.}} \\
+Model & MAE & Corr. & MAE & Corr. & MAE & Corr. \\ \hline
+M2 (Rulers only, CoT) & 1.1 & 0.7 & 0.7 & 0.9 & 0.9 & 0.8 \\
+M7 (All Attributes, CoT) & 1.2 & 0.7 & 0.8 & 0.9 & 0.7 & 0.9 \\ \hline
+\end{tabular}
+\end{table}
+
+The models demonstrated high Pearson correlations, particularly for Post-Importance (0.9) and Post-Readiness (0.8-0.9), and relatively low Mean Absolute Errors. The correlation for Post-Confidence was slightly lower but still strong (0.7). The performance was similar whether only the pre-conversation rulers (M2) or all attributes (M7) were installed.
+
+\subsubsection{Analysis}
+
+The high correlation and low MAE indicate that when the conversation transcript is provided, the LLM can accurately predict the post-conversation readiness rulers reported by the human participants. This suggests that the model possesses the necessary reasoning capabilities to understand how the conversational dynamics influenced the participant's motivation and confidence. This serves as a crucial baseline, confirming the model's internal consistency before attempting to generate the conversation itself.
+
+\subsection{Incremental Attribute Installation}
+
+The next step involved having the doppelgänger actively participate in a conversation with MIBot, rather than just passively reading a transcript. Experiments were conducted to determine which attributes needed to be "installed" (provided in the prompt) to create a doppelgänger that behaved similarly to its human counterpart during a live interaction.
+
+\subsubsection{Methodology}
+
+We performed an incremental installation study, systematically adding participant attributes to the doppelgänger's prompt. The models were evaluated based on the MAE and Pearson correlation between the doppelgänger's outcomes (Post-conversation rulers, CARE, C:S ratio) and the human counterpart's outcomes. Key models included:
+\begin{itemize}
+    \item \textbf{M0 (Baseline):} No attributes installed.
+    \item \textbf{M2:} Pre-conversation Importance, Confidence, and Readiness installed.
+    \item \textbf{M7:} All attributes (Pre-conversation rulers, HSI metrics, Sex, Age) installed.
+\end{itemize}
+
+\subsubsection{Results}
+
+The results of the incremental installation during live conversations are presented in Table \ref{tab:incremental_installation}.
+
+\begin{table}[h]
+\centering
+\caption{MAE and Pearson Correlation for Key Metrics across Incremental Installation Models during Live Conversation.}
+\label{tab:incremental_installation}
+\begin{tabular}{|l|cc|cc|cc|cc|}
+\hline
+ & \multicolumn{2}{c|}{\textbf{Post-Conf.}} & \multicolumn{2}{c|}{\textbf{Post-Import.}} & \multicolumn{2}{c|}{\textbf{CARE}} & \multicolumn{2}{c|}{\textbf{C:S Ratio}} \\
+Model & MAE & Corr. & MAE & Corr. & MAE & Corr. & MAE & Corr. \\ \hline
+M0 & 1.6 & nan & 1.8 & -0.3 & 7.9 & -0.3 & 4.8 & -0.1 \\
+M2 & 1.2 & 0.7 & 0.8 & 0.9 & 8.3 & 0.3 & 3.5 & -0.2 \\
+M7 & 1.3 & 0.7 & 0.8 & 0.9 & 8.3 & 0.1 & 2.7 & 0.0 \\ \hline
+\end{tabular}
+\end{table}
+
+Installing the pre-conversation readiness rulers (M2) significantly improved the correlation and reduced the MAE for post-conversation Confidence and Importance compared to the baseline (M0). The correlations achieved in the live conversation (0.7 for Confidence, 0.9 for Importance) were comparable to those achieved in the autoplay condition. Adding demographic and smoking history information (M7) did not substantially change the outcomes for the readiness rulers. Notably, the correlation for the C:S ratio (Change vs. Sustain talk) remained near zero across all models, and the MAE for CARE scores remained high with negligible correlation.
+
+\subsubsection{Analysis}
+
+The pre-conversation readiness rulers are the most critical attributes for ensuring the doppelgänger's post-conversation self-reported outcomes align with their human counterparts. This suggests that the initial motivational state heavily influences the trajectory of the conversation and the final outcomes.
+
+However, the failure to achieve correlation in the C:S ratio indicates that while the doppelgängers might reach the same self-reported outcomes, the language they use during the conversation does not match their human counterparts based on these attributes alone. The poor results for CARE suggest difficulty in replicating the human perception of the therapist's empathy.
+
+\subsection{Validating and Installing Change Fraction}
+
+The discrepancy in the C:S ratio (or Change Fraction, defined as $CF = C / (C + S)$) observed in the incremental installation experiments led to a focused effort to understand and install this metric. Change Fraction is considered a crucial implicit measure of the client's readiness, reflected directly in their language.
+
+\subsubsection{Change Fraction in Human Data}
+
+We first analyzed the MIV6.3A human data (n=115, low-confidence participants) to validate Change Fraction as a relevant metric. The analysis revealed strong, statistically significant positive correlations between Change Fraction and several key attributes (Table \ref{tab:cf_human_correlation}).
+
+\begin{table}[h]
+\centering
+\caption{Correlation between Change Fraction and Smoker Attributes in MIV6.3A Human Participants (n=115).}
+\label{tab:cf_human_correlation}
+\begin{tabular}{|l|c|}
+\hline
+\textbf{Attribute} & \textbf{Correlation with Change Fraction (Spearman's coeff.)} \\ \hline
+Post-conversation Importance & 0.49 (****) \\
+Post-conversation Readiness & 0.48 (****) \\
+Pre-conversation Importance & 0.47 (****) \\
+Pre-conversation Readiness & 0.46 (****) \\
+Post-conversation Confidence & 0.41 (****) \\
+Change in Confidence (Delta) & 0.24 (**) \\ \hline
+\multicolumn{2}{l}{\footnotesize{****: P $\leq$ 0.0001, **: P $\leq$ 0.01}}
+\end{tabular}
+\end{table}
+
+This analysis confirms that in humans, the language used (CF) is strongly associated with their self-reported readiness and motivation.
+
+\subsubsection{Installing Change Fraction in Doppelgängers}
+
+We then conducted experiments to explicitly install the Change Fraction into the doppelgängers. We compared two sets of doppelgängers based on the MIV6.3A participants:
+\begin{itemize}
+    \item \textbf{Doppelgängers [1] (D1):} Installed Pre-conv. rulers, HSI, Sex, Age.
+    \item \textbf{Doppelgängers [2] (D2):} Installed all attributes in D1 PLUS a description of the C:S ratio (e.g., "You are 3x more likely to speak about changing your smoking behavior than sustaining it").
+\end{itemize}
+
+We evaluated the installation on both individual and population levels.
+
+\paragraph{Individual-Level Validation}
+
+At the individual level, we measured the Spearman correlation of outcome metrics between the humans and their corresponding doppelgängers (Table \ref{tab:cf_installation_individual}).
+
+\begin{table}[h]
+\centering
+\caption{Individual-level Validation: Spearman Correlation of outcome metrics between Humans and Doppelgängers (n=115).}
+\label{tab:cf_installation_individual}
+\begin{tabular}{|l|c|c|}
+\hline
+\textbf{Metric} & \textbf{D1 (No CF installed)} & \textbf{D2 (CF installed)} \\ \hline
+Change Fraction & 0.22 (*) & \textbf{0.57 (****)} \\
+Change in Confidence & 0.29 (**) & 0.25 (*) \\
+CARE & 0.04 (ns) & 0.00 (ns) \\ \hline
+\multicolumn{3}{l}{\footnotesize{****: P $\leq$ 0.0001, **: P $\leq$ 0.01, *: P $\leq$ 0.05, ns: P > 0.05}}
+\end{tabular}
+\end{table}
+
+Explicitly installing the Change Fraction (D2) significantly increased the correlation for Change Fraction from 0.22 to 0.57. The correlation for Change in Confidence remained modest, and the correlation for CARE remained negligible.
+
+\paragraph{Population-Level Validation}
+
+At the population level, we compared the mean and distribution of the Change Fraction (Table \ref{tab:cf_installation_population}).
+
+\begin{table}[h]
+\centering
+\caption{Population-level Validation: Mean Change Fraction.}
+\label{tab:cf_installation_population}
+\begin{tabular}{|l|c|}
+\hline
+\textbf{Group} & \textbf{Mean Change Fraction (Std)} \\ \hline
+Humans (MIV6.3A) & 0.59 (0.26) \\
+Doppelgängers [1] (D1) & 0.79 (0.12) \\
+Doppelgängers [2] (D2) & 0.76 (0.19) \\ \hline
+\end{tabular}
+\end{table}
+
+While the individual correlation improved, the population means for both D1 and D2 were substantially higher (0.79 and 0.76, respectively) than the human mean (0.59). The distribution of Change Fraction for the doppelgängers was skewed towards higher values compared to the human distribution (Figure \ref{fig:cf_distribution}).
+
+% Placeholder for Figure 4.4
+\begin{figure}[h]
+    \centering
+    % \includegraphics{placeholder_figure_4_4.png}
+    \caption{Distribution of Change Fraction for Human Participants vs. Synthetic Smoker Doppelgängers (D2). (Source: Effect of Good vs. Poor-Quality Therapy on Doppelgängers’ Behaviour, Slide 9 and 10)}
+    \label{fig:cf_distribution}
+\end{figure}
+
+\subsubsection{Analysis}
+
+Change Fraction is a valid and crucial metric for evaluating MI conversations. The experiments demonstrate that CF can be explicitly installed in doppelgängers, leading to a strong individual-level correlation with their human counterparts. This allows for the creation of doppelgängers that exhibit specific levels of change versus sustain talk.
+
+However, the population-level mismatch remains a significant limitation. Doppelgängers, even when instructed on their C:S ratio, tend to exhibit higher levels of Change Talk on average than the human participants they are modeled after. This suggests an inherent bias in the LLM towards pro-social or agreeable responses within the context of therapy, potentially overstating their readiness to change.
+
+\section{Sensitivity to Counselling Quality}
+
+A critical requirement for the synthetic smoker, if it is to be used for optimizing MIBot or training novice counsellors, is its ability to react differentially to good versus poor-quality therapy. This section investigates whether doppelgängers exhibit different behaviors and outcomes when interacting with a high-fidelity MI bot compared to a confrontational counsellor.
+
+\subsection{Methodology}
+
+We utilized the validated method of installing Change Fraction to create two distinct groups of doppelgängers based on the MIV6.3A dataset:
+\begin{enumerate}
+    \item \textbf{Sampling:} We sampled 25 participants from the top 25th percentile of Change Fraction (High-CF group) and 25 participants from the bottom 25th percentile (Low-CF group).
+    \item \textbf{Doppelgänger Creation:} Doppelgängers were created for each participant, installing pre-conversation surveys, readiness rulers, demographics, and their specific Change Fraction.
+    \item \textbf{Counsellor Conditions:} The doppelgängers interacted with two different counsellors:
+    \begin{itemize}
+        \item \textbf{Good MI (MIBot 6.3A):} The high-fidelity MI bot used in the feasibility study.
+        \item \textbf{Bad MI (Confrontational):} A bot prompted to act as a novice counsellor with no MI training. Its behavior was designed to be directive, judgmental, and confrontational (e.g., giving unsolicited advice, asking numerous closed questions, persuading rather than exploring).
+    \end{itemize}
+\end{enumerate}
+The outcomes evaluated were Change Fraction (CF), Change in Confidence (Delta Confidence, measured a week later), and CARE (empathy score).
+
+\subsection{Results}
+
+The results demonstrate that the doppelgängers responded differently to the Good and Bad MI counsellors (Table \ref{tab:good_vs_bad_mi}).
+
+\begin{table}[h]
+\centering
+\caption{Effect of Good vs. Poor-Quality Therapy on High-CF and Low-CF Doppelgängers (n=25 per group).}
+\label{tab:good_vs_bad_mi}
+\begin{tabular}{|l|l|c|c|c|}
+\hline
+\textbf{Counsellor} & \textbf{Participant Group} & \textbf{Change Fraction (CF)} & \textbf{Delta Confidence} & \textbf{CARE} \\ \hline
+\multirow{2}{*}{Good MI (MIBot 6.3A)} & High-CF Doppelgängers & 0.80 & 1.4 & 49.8 \\
+ & Low-CF Doppelgängers & 0.48 & 1.1 & 47.8 \\ \hline
+\multirow{2}{*}{Bad MI (Confrontational)} & High-CF Doppelgängers & 0.68 & 1.1 & 41.0 \\
+ & Low-CF Doppelgängers & 0.22 & 0.5 & 23.0 \\ \hline
+\end{tabular}
+\end{table}
+
+When interacting with the Bad MI counsellor, both groups showed reduced Change Fraction, smaller increases in confidence, and significantly lower CARE scores compared to their interactions with the Good MI bot.
+
+The impact was particularly pronounced for the Low-CF group. Their Change Fraction dropped from 0.48 (Good MI) to 0.22 (Bad MI), Delta Confidence dropped from 1.1 to 0.5, and the CARE score halved from 47.8 to 23.0. The High-CF group also showed reductions across all metrics, but the magnitude of the drop in CF and CARE was less severe than in the Low-CF group.
+
+\subsection{Analysis}
+
+These results indicate that the synthetic smoker doppelgängers are sensitive to the quality of counselling. They can detect and react negatively to confrontational and non-empathetic behavior, which manifests as increased Sustain Talk (lower CF), reduced confidence gains, and lower perceived empathy.
+
+The heightened sensitivity of the Low-CF group (representing more resistant individuals) to poor therapy aligns with MI principles, which emphasize the importance of avoiding confrontation when working with ambivalent clients, as it often evokes reactance and reinforces sustain talk. This experiment provides strong evidence for the validity of the synthetic smoker simulation and its potential utility as a tool for evaluating and refining conversational agents in behavioral health contexts.
+
+\section{Conclusion}
+
+\chapter{Validation of Synthetic Smokers}
+\label{ch:validation-of-synthetic-smokers}
+
+The previous chapter detailed the development methodology of the synthetic smoker, tracing its evolution from simple prompted personas to data-driven doppelgängers. The primary motivation behind this development was to create a reliable, controllable, and realistic simulation environment for testing and refining MIBot. This chapter presents the results and analysis of the experiments conducted to validate the synthetic smoker across its development phases.
+
+The validation process is divided into two main stages, mirroring the development timeline. The first stage focuses on validating the initial attempts to control specific behavioral attributes—namely verbosity and resistance—through prompt engineering, prior to the availability of human conversational data. The second stage focuses on the validation of "doppelgängers," which were created using data from the MIBot feasibility study to mirror specific human participants. This stage examines the fidelity of these doppelgängers through transcript replay experiments, incremental attribute installation, and their sensitivity to the quality of motivational interviewing.
+
+\section{Validating Initial Controllable Attributes (Phase 1)}
+
+Before the development of MIBot and the subsequent feasibility study, the initial objective was to create synthetic smokers that could provide a consistent testing environment. Early observations indicated challenges in managing the synthetic smoker's natural tendencies, particularly regarding their verbosity and their level of resistance to behavior change.
+
+\subsection{Controlling and Validating Verbosity}
+
+A significant challenge in early simulations was the tendency of Large Language Models (LLMs) to produce verbose, grammatically complete utterances. This contrasted sharply with the more casual, often shorter, text-based communication observed in human participants. Excessive verbosity from the synthetic smoker often led to the counsellor bot reciprocating with equally lengthy responses, resulting in conversations that did not reflect typical human interaction dynamics.
+
+\subsubsection{Methodology}
+
+To address this, several prompt engineering strategies were employed to reduce the synthetic smoker's utterance length. These included instructions to:
+\begin{itemize}
+    \item "Speak with more clarity rather than exhaustive detail."
+    \item "Imagine you're texting a friend. Keep it casual..."
+    \item Explicitly limiting the response length (e.g., "Number of sentences in your response must be between 1 and 4.")
+\end{itemize}
+Experiments were conducted using GPT-4 Turbo to compare the "default verbosity" (standard prompting) with "fixed verbosity" (prompts including length constraints and casual tone instructions). The validation involved analyzing the utterance length distribution, the total number of turns, and the total word count per conversation. Furthermore, the resilience and transferability of these prompting strategies were tested on the newer GPT-4 Omni model.
+
+\subsubsection{Results}
+
+The prompt engineering efforts successfully reduced the utterance length of the synthetic smoker. In the initial comparison using GPT-4 Turbo, the "fixed-verbosity" condition resulted in a significantly tighter and lower distribution of utterance lengths for both the client (synthetic smoker) and the counsellor compared to the "default-verbosity" condition.
+
+[Placeholder for Figure 4.1: Violin Plot of Utterance Length by Verbosity Level (Default vs. Fixed) using GPT-4 Turbo. Source: "Controlling \& Validating Verbosity in Synthetic Smokers" Slide 4]
+
+The analysis was expanded to compare these results across models (GPT-4 Turbo and GPT-4 Omni) and with data from actual human conversations categorized as "high-quality-human-MI" and "low-quality-human-MI" (Figure \ref{fig:verbosity_utterance_length}).
+
+% Placeholder for Figure 4.2
+\begin{figure}[h]
+    \centering
+    % \includegraphics{placeholder_figure_4_2.png}
+    \caption{Violin Plot of Utterance Length by Verbosity Level and Model, Compared with Human MI Conversations. (Source: Controlling \& Validating Verbosity in Synthetic Smokers slides, Slide 7)}
+    \label{fig:verbosity_utterance_length}
+\end{figure}
+
+The "fixed-verbosity" conditions (both GPT-4 Turbo and GPT-4 Omni) more closely resembled the utterance length distribution of human participants than the "default-verbosity" conditions. The installation of verbosity control proved transferable between models; the "fixed-verbosity" prompts yielded similar results when applied to GPT-4 Omni.
+
+However, analyzing the number of turns per conversation revealed a discrepancy. The simulated conversations, across all conditions, generally had fewer turns than the human conversations, particularly when compared to the high-quality human MI data (Figure \ref{fig:verbosity_num_turns}).
+
+% Placeholder for Figure 4.3
+\begin{figure}[h]
+    \centering
+    % \includegraphics{placeholder_figure_4_3.png}
+    \caption{Box Plot of Number of Turns per Conversation for different Verbosity Levels and Models. (Source: Controlling \& Validating Verbosity in Synthetic Smokers slides, Slide 8)}
+    \label{fig:verbosity_num_turns}
+\end{figure}
+
+\subsubsection{Analysis}
+
+The results demonstrate that prompt engineering can effectively control the verbosity of synthetic smokers, bringing their utterance lengths closer to human levels. The observed reciprocity, where the counsellor bot reduces its verbosity in response to the client bot, highlights the interactive dynamics of the simulation. While the utterance length was successfully controlled and the methodology proved transferable to newer models, the lower number of turns in simulations suggests potential differences in conversational flow or depth compared to human interactions.
+
+\subsection{Installing and Validating Resistance}
+
+To effectively test MIBot, the synthetic smoker needed to exhibit varying levels of resistance to quitting smoking. This section examines the experiments designed to install and validate high and low resistance levels.
+
+\subsubsection{Methodology}
+
+Resistance was installed via detailed prompts that provided the synthetic smoker with a backstory and a specific mindset regarding smoking cessation.
+\begin{itemize}
+    \item \textbf{High Resistance:} The prompt emphasized severe life stressors, skepticism towards therapy, anxiety when pressured to quit, and a belief that it was not the right time to change.
+    \item \textbf{Low Resistance:} The prompt described smoking as a habit formed through social interaction, recent concerning lab results, skepticism balanced by an openness to cutting back, and a willingness to try their best in the conversation.
+\end{itemize}
+Validation was conducted through two methods: analyzing the language used during conversations with a GPT-4 MI therapist (Change Talk vs. Sustain Talk) and evaluating self-reported readiness rulers (Importance, Confidence, Readiness) collected pre-conversation, post-conversation, and one week later (simulated).
+
+\subsubsection{Results}
+
+The analysis of conversational language showed a marked difference between the two conditions (Table \ref{tab:resistance_change_sustain}). The high-resistance smoker used substantially more Sustain Talk (44\%) than Change Talk (31\%). Conversely, the low-resistance smoker used significantly more Change Talk (61\%) than Sustain Talk (9\%).
+
+\begin{table}[h]
+\centering
+\caption{Percentage of Change Talk, Sustain Talk, and Neutral Talk for High and Low Resistance Synthetic Smokers.}
+\label{tab:resistance_change_sustain}
+\begin{tabular}{|l|c|c|c|}
+\hline
+\textbf{Smoker Type} & \textbf{Change Talk (\%)} & \textbf{Sustain Talk (\%)} & \textbf{Neutral (\%)} \\ \hline
+High resistance smoker & 31 & 44 & 25 \\ \hline
+Low resistance smoker & 61 & 9 & 30 \\ \hline
+\end{tabular}
+\end{table}
+
+The readiness ruler scores also reflected the installed resistance levels (Table \ref{tab:resistance_readiness_rulers}). The high-resistance smoker started with lower scores across all three metrics (I: 2.0, C: 1.0, R: 0.6) compared to the low-resistance smoker (I: 4.6, C: 2.6, R: 3.2). Both groups showed positive changes after the conversation and at the one-week follow-up.
+
+\begin{table}[h]
+\centering
+\caption{Readiness Ruler Scores (Importance, Confidence, Readiness) for High and Low Resistance Synthetic Smokers.}
+\label{tab:resistance_readiness_rulers}
+\begin{tabular}{|l|ccc|ccc|}
+\hline
+ & \multicolumn{3}{c|}{\textbf{Low Resistance}} & \multicolumn{3}{c|}{\textbf{High Resistance}} \\
+ & I & C & R & I & C & R \\ \hline
+Pre-conversation & 4.6 & 2.6 & 3.2 & 2.0 & 1.0 & 0.6 \\
+Post-conversation & 6.4 & 4.2 & 5.2 & 4.0 & 2.0 & 2.6 \\
+1-Week Later & 6.6 & 4.8 & 5.4 & 4.6 & 2.6 & 3.4 \\ \hline
+Delta (Week later - Pre) & 2.0 & 2.2 & 2.2 & 2.6 & 1.6 & 2.8 \\ \hline
+\end{tabular}
+\end{table}
+
+\subsubsection{Analysis}
+
+The distinct differences in Change/Sustain Talk and the starting readiness ruler scores confirm the successful installation of varying resistance levels through prompting. Interestingly, the high-resistance group exhibited a larger delta in Importance (+2.6) and Readiness (+2.8) compared to the low-resistance group, although their absolute scores remained lower. This suggests that the MI intervention was effective in shifting the perspective of the high-resistance smoker, even when starting from a position of strong skepticism.
+
+\section{Validating Synthetic Smoker Doppelgängers (Phase 2)}
+
+Following the completion of the MIBot feasibility study (MIV6.3A), real human data became available. This shifted the focus from creating generic personas to developing "doppelgängers"—synthetic smokers designed to mirror the attributes and behaviors of specific human participants. The goal was to create representative stand-ins that could facilitate rapid, iterative development of MIBot. This section details the validation experiments for these doppelgängers.
+
+\subsection{Transcript Autoplay (Consistency Check)}
+
+The initial validation step for doppelgängers was to assess whether an LLM, when provided with the context of a specific human participant, could consistently reproduce their outcomes if the conversation trajectory was fixed.
+
+\subsubsection{Methodology}
+
+In the "transcript autoplay" experiments, the LLM was given the pre-conversation readiness rulers of a human participant and the transcript of the MIBot-human conversation. The LLM was prompted to adopt the persona of the participant and, after processing the conversation, provide the post-conversation readiness rulers. This tests the model's ability to reason about the impact of the conversation on the participant's state of mind. We utilized Chain-of-Thought (CoT) prompting to encourage the model to articulate its reasoning before providing the numerical scores. We tested this with two levels of attribute installation: M2 (Pre-conversation rulers only) and M7 (All attributes, including HSI and demographics).
+
+\subsubsection{Results}
+
+The results of the autoplay experiments are summarized in Table \ref{tab:autoplay_results}, showing the Mean Absolute Error (MAE) and Pearson Correlation between the human outcomes and the LLM predictions.
+
+\begin{table}[h]
+\centering
+\caption{Mean Absolute Error (MAE) and Pearson Correlation for Post-Conversation Readiness Rulers in Transcript Autoplay Experiments.}
+\label{tab:autoplay_results}
+\begin{tabular}{|l|cc|cc|cc|}
+\hline
+ & \multicolumn{2}{c|}{\textbf{Post-Conf.}} & \multicolumn{2}{c|}{\textbf{Post-Import.}} & \multicolumn{2}{c|}{\textbf{Post-Read.}} \\
+Model & MAE & Corr. & MAE & Corr. & MAE & Corr. \\ \hline
+M2 (Rulers only, CoT) & 1.1 & 0.7 & 0.7 & 0.9 & 0.9 & 0.8 \\
+M7 (All Attributes, CoT) & 1.2 & 0.7 & 0.8 & 0.9 & 0.7 & 0.9 \\ \hline
+\end{tabular}
+\end{table}
+
+The models demonstrated high Pearson correlations, particularly for Post-Importance (0.9) and Post-Readiness (0.8-0.9), and relatively low Mean Absolute Errors. The correlation for Post-Confidence was slightly lower but still strong (0.7). The performance was similar whether only the pre-conversation rulers (M2) or all attributes (M7) were installed.
+
+\subsubsection{Analysis}
+
+The high correlation and low MAE indicate that when the conversation transcript is provided, the LLM can accurately predict the post-conversation readiness rulers reported by the human participants. This suggests that the model possesses the necessary reasoning capabilities to understand how the conversational dynamics influenced the participant's motivation and confidence. This serves as a crucial baseline, confirming the model's internal consistency before attempting to generate the conversation itself.
+
+\subsection{Incremental Attribute Installation}
+
+The next step involved having the doppelgänger actively participate in a conversation with MIBot, rather than just passively reading a transcript. Experiments were conducted to determine which attributes needed to be "installed" (provided in the prompt) to create a doppelgänger that behaved similarly to its human counterpart during a live interaction.
+
+\subsubsection{Methodology}
+
+We performed an incremental installation study, systematically adding participant attributes to the doppelgänger's prompt. The models were evaluated based on the MAE and Pearson correlation between the doppelgänger's outcomes (Post-conversation rulers, CARE, C:S ratio) and the human counterpart's outcomes. Key models included:
+\begin{itemize}
+    \item \textbf{M0 (Baseline):} No attributes installed.
+    \item \textbf{M2:} Pre-conversation Importance, Confidence, and Readiness installed.
+    \item \textbf{M7:} All attributes (Pre-conversation rulers, HSI metrics, Sex, Age) installed.
+\end{itemize}
+
+\subsubsection{Results}
+
+The results of the incremental installation during live conversations are presented in Table \ref{tab:incremental_installation}.
+
+\begin{table}[h]
+\centering
+\caption{MAE and Pearson Correlation for Key Metrics across Incremental Installation Models during Live Conversation.}
+\label{tab:incremental_installation}
+\begin{tabular}{|l|cc|cc|cc|cc|}
+\hline
+ & \multicolumn{2}{c|}{\textbf{Post-Conf.}} & \multicolumn{2}{c|}{\textbf{Post-Import.}} & \multicolumn{2}{c|}{\textbf{CARE}} & \multicolumn{2}{c|}{\textbf{C:S Ratio}} \\
+Model & MAE & Corr. & MAE & Corr. & MAE & Corr. & MAE & Corr. \\ \hline
+M0 & 1.6 & nan & 1.8 & -0.3 & 7.9 & -0.3 & 4.8 & -0.1 \\
+M2 & 1.2 & 0.7 & 0.8 & 0.9 & 8.3 & 0.3 & 3.5 & -0.2 \\
+M7 & 1.3 & 0.7 & 0.8 & 0.9 & 8.3 & 0.1 & 2.7 & 0.0 \\ \hline
+\end{tabular}
+\end{table}
+
+Installing the pre-conversation readiness rulers (M2) significantly improved the correlation and reduced the MAE for post-conversation Confidence and Importance compared to the baseline (M0). The correlations achieved in the live conversation (0.7 for Confidence, 0.9 for Importance) were comparable to those achieved in the autoplay condition. Adding demographic and smoking history information (M7) did not substantially change the outcomes for the readiness rulers. Notably, the correlation for the C:S ratio (Change vs. Sustain talk) remained near zero across all models, and the MAE for CARE scores remained high with negligible correlation.
+
+\subsubsection{Analysis}
+
+The pre-conversation readiness rulers are the most critical attributes for ensuring the doppelgänger's post-conversation self-reported outcomes align with their human counterparts. This suggests that the initial motivational state heavily influences the trajectory of the conversation and the final outcomes.
+
+However, the failure to achieve correlation in the C:S ratio indicates that while the doppelgängers might reach the same self-reported outcomes, the language they use during the conversation does not match their human counterparts based on these attributes alone. The poor results for CARE suggest difficulty in replicating the human perception of the therapist's empathy.
+
+\subsection{Validating and Installing Change Fraction}
+
+The discrepancy in the C:S ratio (or Change Fraction, defined as $CF = C / (C + S)$) observed in the incremental installation experiments led to a focused effort to understand and install this metric. Change Fraction is considered a crucial implicit measure of the client's readiness, reflected directly in their language.
+
+\subsubsection{Change Fraction in Human Data}
+
+We first analyzed the MIV6.3A human data (n=115, low-confidence participants) to validate Change Fraction as a relevant metric. The analysis revealed strong, statistically significant positive correlations between Change Fraction and several key attributes (Table \ref{tab:cf_human_correlation}).
+
+\begin{table}[h]
+\centering
+\caption{Correlation between Change Fraction and Smoker Attributes in MIV6.3A Human Participants (n=115).}
+\label{tab:cf_human_correlation}
+\begin{tabular}{|l|c|}
+\hline
+\textbf{Attribute} & \textbf{Correlation with Change Fraction (Spearman's coeff.)} \\ \hline
+Post-conversation Importance & 0.49 (****) \\
+Post-conversation Readiness & 0.48 (****) \\
+Pre-conversation Importance & 0.47 (****) \\
+Pre-conversation Readiness & 0.46 (****) \\
+Post-conversation Confidence & 0.41 (****) \\
+Change in Confidence (Delta) & 0.24 (**) \\ \hline
+\multicolumn{2}{l}{\footnotesize{****: P $\leq$ 0.0001, **: P $\leq$ 0.01}}
+\end{tabular}
+\end{table}
+
+This analysis confirms that in humans, the language used (CF) is strongly associated with their self-reported readiness and motivation.
+
+\subsubsection{Installing Change Fraction in Doppelgängers}
+
+We then conducted experiments to explicitly install the Change Fraction into the doppelgängers. We compared two sets of doppelgängers based on the MIV6.3A participants:
+\begin{itemize}
+    \item \textbf{Doppelgängers [1] (D1):} Installed Pre-conv. rulers, HSI, Sex, Age.
+    \item \textbf{Doppelgängers [2] (D2):} Installed all attributes in D1 PLUS a description of the C:S ratio (e.g., "You are 3x more likely to speak about changing your smoking behavior than sustaining it").
+\end{itemize}
+
+We evaluated the installation on both individual and population levels.
+
+\paragraph{Individual-Level Validation}
+
+At the individual level, we measured the Spearman correlation of outcome metrics between the humans and their corresponding doppelgängers (Table \ref{tab:cf_installation_individual}).
+
+\begin{table}[h]
+\centering
+\caption{Individual-level Validation: Spearman Correlation of outcome metrics between Humans and Doppelgängers (n=115).}
+\label{tab:cf_installation_individual}
+\begin{tabular}{|l|c|c|}
+\hline
+\textbf{Metric} & \textbf{D1 (No CF installed)} & \textbf{D2 (CF installed)} \\ \hline
+Change Fraction & 0.22 (*) & \textbf{0.57 (****)} \\
+Change in Confidence & 0.29 (**) & 0.25 (*) \\
+CARE & 0.04 (ns) & 0.00 (ns) \\ \hline
+\multicolumn{3}{l}{\footnotesize{****: P $\leq$ 0.0001, **: P $\leq$ 0.01, *: P $\leq$ 0.05, ns: P > 0.05}}
+\end{tabular}
+\end{table}
+
+Explicitly installing the Change Fraction (D2) significantly increased the correlation for Change Fraction from 0.22 to 0.57. The correlation for Change in Confidence remained modest, and the correlation for CARE remained negligible.
+
+\paragraph{Population-Level Validation}
+
+At the population level, we compared the mean and distribution of the Change Fraction (Table \ref{tab:cf_installation_population}).
+
+\begin{table}[h]
+\centering
+\caption{Population-level Validation: Mean Change Fraction.}
+\label{tab:cf_installation_population}
+\begin{tabular}{|l|c|}
+\hline
+\textbf{Group} & \textbf{Mean Change Fraction (Std)} \\ \hline
+Humans (MIV6.3A) & 0.59 (0.26) \\
+Doppelgängers [1] (D1) & 0.79 (0.12) \\
+Doppelgängers [2] (D2) & 0.76 (0.19) \\ \hline
+\end{tabular}
+\end{table}
+
+While the individual correlation improved, the population means for both D1 and D2 were substantially higher (0.79 and 0.76, respectively) than the human mean (0.59). The distribution of Change Fraction for the doppelgängers was skewed towards higher values compared to the human distribution (Figure \ref{fig:cf_distribution}).
+
+% Placeholder for Figure 4.4
+\begin{figure}[h]
+    \centering
+    % \includegraphics{placeholder_figure_4_4.png}
+    \caption{Distribution of Change Fraction for Human Participants vs. Synthetic Smoker Doppelgängers (D2). (Source: Effect of Good vs. Poor-Quality Therapy on Doppelgängers’ Behaviour, Slide 9 and 10)}
+    \label{fig:cf_distribution}
+\end{figure}
+
+\subsubsection{Analysis}
+
+Change Fraction is a valid and crucial metric for evaluating MI conversations. The experiments demonstrate that CF can be explicitly installed in doppelgängers, leading to a strong individual-level correlation with their human counterparts. This allows for the creation of doppelgängers that exhibit specific levels of change versus sustain talk.
+
+However, the population-level mismatch remains a significant limitation. Doppelgängers, even when instructed on their C:S ratio, tend to exhibit higher levels of Change Talk on average than the human participants they are modeled after. This suggests an inherent bias in the LLM towards pro-social or agreeable responses within the context of therapy, potentially overstating their readiness to change.
+
+\section{Sensitivity to Counselling Quality}
+
+A critical requirement for the synthetic smoker, if it is to be used for optimizing MIBot or training novice counsellors, is its ability to react differentially to good versus poor-quality therapy. This section investigates whether doppelgängers exhibit different behaviors and outcomes when interacting with a high-fidelity MI bot compared to a confrontational counsellor.
+
+\subsection{Methodology}
+
+We utilized the validated method of installing Change Fraction to create two distinct groups of doppelgängers based on the MIV6.3A dataset:
+\begin{enumerate}
+    \item \textbf{Sampling:} We sampled 25 participants from the top 25th percentile of Change Fraction (High-CF group) and 25 participants from the bottom 25th percentile (Low-CF group).
+    \item \textbf{Doppelgänger Creation:} Doppelgängers were created for each participant, installing pre-conversation surveys, readiness rulers, demographics, and their specific Change Fraction.
+    \item \textbf{Counsellor Conditions:} The doppelgängers interacted with two different counsellors:
+    \begin{itemize}
+        \item \textbf{Good MI (MIBot 6.3A):} The high-fidelity MI bot used in the feasibility study.
+        \item \textbf{Bad MI (Confrontational):} A bot prompted to act as a novice counsellor with no MI training. Its behavior was designed to be directive, judgmental, and confrontational (e.g., giving unsolicited advice, asking numerous closed questions, persuading rather than exploring).
+    \end{itemize}
+\end{enumerate}
+The outcomes evaluated were Change Fraction (CF), Change in Confidence (Delta Confidence, measured a week later), and CARE (empathy score).
+
+\subsection{Results}
+
+The results demonstrate that the doppelgängers responded differently to the Good and Bad MI counsellors (Table \ref{tab:good_vs_bad_mi}).
+
+\begin{table}[h]
+\centering
+\caption{Effect of Good vs. Poor-Quality Therapy on High-CF and Low-CF Doppelgängers (n=25 per group).}
+\label{tab:good_vs_bad_mi}
+\begin{tabular}{|l|l|c|c|c|}
+\hline
+\textbf{Counsellor} & \textbf{Participant Group} & \textbf{Change Fraction (CF)} & \textbf{Delta Confidence} & \textbf{CARE} \\ \hline
+\multirow{2}{*}{Good MI (MIBot 6.3A)} & High-CF Doppelgängers & 0.80 & 1.4 & 49.8 \\
+ & Low-CF Doppelgängers & 0.48 & 1.1 & 47.8 \\ \hline
+\multirow{2}{*}{Bad MI (Confrontational)} & High-CF Doppelgängers & 0.68 & 1.1 & 41.0 \\
+ & Low-CF Doppelgängers & 0.22 & 0.5 & 23.0 \\ \hline
+\end{tabular}
+\end{table}
+
+When interacting with the Bad MI counsellor, both groups showed reduced Change Fraction, smaller increases in confidence, and significantly lower CARE scores compared to their interactions with the Good MI bot.
+
+The impact was particularly pronounced for the Low-CF group. Their Change Fraction dropped from 0.48 (Good MI) to 0.22 (Bad MI), Delta Confidence dropped from 1.1 to 0.5, and the CARE score halved from 47.8 to 23.0. The High-CF group also showed reductions across all metrics, but the magnitude of the drop in CF and CARE was less severe than in the Low-CF group.
+
+\subsection{Analysis}
+
+These results indicate that the synthetic smoker doppelgängers are sensitive to the quality of counselling. They can detect and react negatively to confrontational and non-empathetic behavior, which manifests as increased Sustain Talk (lower CF), reduced confidence gains, and lower perceived empathy.
+
+The heightened sensitivity of the Low-CF group (representing more resistant individuals) to poor therapy aligns with MI principles, which emphasize the importance of avoiding confrontation when working with ambivalent clients, as it often evokes reactance and reinforces sustain talk. This experiment provides strong evidence for the validity of the synthetic smoker simulation and its potential utility as a tool for evaluating and refining conversational agents in behavioral health contexts.
+
+\section{Conclusion}
+
+This chapter presented the validation of the synthetic smoker across its development lifecycle. The initial experiments demonstrated that key behavioral attributes, such as verbosity and resistance, can be effectively controlled through prompt engineering.
+
+The development of data-driven doppelgängers showed that installing pre-conversation readiness rulers is crucial for aligning the doppelgänger's self-reported outcomes with their human counterparts, achieving high correlations in both transcript autoplay and live conversation scenarios. Furthermore, the explicit installation of Change Fraction was necessary to ensure that the language used by the doppelgänger during the conversation also correlated strongly with the human data (Spearman's coeff. 0.57).
+
+However, limitations remain. Individual-level correlation for CARE scores was negligible, and a population-level bias persists, with doppelgängers generally exhibiting higher average Change Talk than humans.
+
+Crucially, the validation experiments demonstrated that doppelgängers are sensitive to the quality of motivational interviewing. They react differently to high-fidelity MI compared to confrontational counselling, showing reduced positive outcomes and lower empathy scores when faced with poor therapeutic techniques. This sensitivity underscores the potential of synthetic smokers as a valid, reliable, and scalable tool for the continued development and optimization of MIBot.
