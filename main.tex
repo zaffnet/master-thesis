@@ -4,8 +4,7 @@
 \documentclass[narrowmargins,twoside]{ut-thesis}
 
 % Basic packages
-\usepackage{sgame} % Martin Osborne's game package
-\usepackage{color} % needed by Martin Osborne's game package
+\usepackage{color}
 \usepackage{xcolor} % Extended color package
 \usepackage{float}
 \usepackage{amsmath}
@@ -24,6 +23,7 @@
 \usepackage[most]{tcolorbox}
 \usepackage{tabularx}
 \usepackage{enumitem}
+\usepackage{xparse}
 
 % Bibliography setup
 \usepackage{natbib}
@@ -73,15 +73,16 @@
 \renewcommand*{\raggedleftmarginnote}{}
 \reversemarginpar
 
-\newcommand{\margindex}[2][]{%
-  % #1 = optional parent category for hierarchical indexing
-  % #2 = term to display in margin and add to index
-  \marginnote{\scriptsize \textcolor{cyan}{\textbf{#2}}}%
-  \ifx\\#1\\%
-    \index{#2|hyperpage}%  % Simple index entry
-  \else
-    \index{#1!#2|hyperpage}%  % Hierarchical: parent!subentry
-  \fi
+\NewDocumentCommand{\margindex}{O{} m o}{%
+  % #1 (O) = optional parent category for hierarchical indexing
+  % #2 (m) = term for the index
+  % #3 (o) = optional term for margin display
+  \marginnote{\scriptsize \textcolor{cyan}{\textbf{\IfNoValueTF{#3}{#2}{#3}}}}%
+  \IfNoValueTF{#1}{%
+    \index{#2|hyperpage}%
+  }{%
+    \index{#1!#2|hyperpage}%
+  }%
 }
 
 % Spacing and formatting
@@ -108,11 +109,14 @@
     \begin{abstract}
       \input{abstract}
     \end{abstract}
-    \begin{dedication}
-      Write later
-    \end{dedication}
+   \begin{dedication}
+  \begin{flushright}
+    \textit{To the children who aged too soon,\\
+    and the futures that never were.}
+  \end{flushright}
+\end{dedication}
     \begin{acknowledgements}
-      Write later
+      \input{acknowledgements}
     \end{acknowledgements}
     \tableofcontents
     \listoftables
@@ -124,6 +128,7 @@
     \input{ch-mibot-eval}
     \input{ch-synthetic-smoker}
     \input{ch-synthetic-smoker-eval}
+    \input{ch-conclusion}
   \appendix
     \input{ap-code}
     \clearpage
