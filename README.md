@@ -24,9 +24,22 @@ The thesis is organized into the following chapters:
 *   **Chapter 6: Synthetic Smoker Evaluation:** Validates the synthetic smokers by comparing them to human smokers.
 *   **Appendix:** Contains supplementary materials, including code.
 
-## Building the PDF
+## How to build this project and generate the PDF
+
+**tl;dr**
+
+```bash
+chmod +x build.sh
+./build.sh
+```
 
 This project can be built locally or using Docker. In either case, the `build.sh` script is the recommended way to build the PDF.
+
+After cloning the repository, Jules changes the permissions of the `build.sh` script to make it executable:
+
+```bash
+chmod +x build.sh
+```
 
 ### Using the Build Script
 
