@@ -1,7 +1,7 @@
 \chapter{Evaluation of MIBot}
 \label{ch:mibot-eval}
 
-This chapter presents a comprehensive evaluation of MIBot's effectiveness through a \margindex{feasibility study}feasibility study with 106 smokers. Building on the system design and implementation described in previous chapters, we assess MIBot's performance across four critical dimensions established in the smoking cessation and motivational interviewing literature: behavioural change readiness, \margindex[feasibility study]{perceived therapeutic empathy}[Perceived Empathy]perceived therapeutic empathy, \margindex[feasibility study]{adherence to MI principles}[MI Adherence]adherence to MI principles, and elicitation of client change talk.
+This chapter presents a comprehensive evaluation of MIBot's effectiveness through a \margindex{Feasibility Study}feasibility study with 106 smokers. Building on the system design and implementation described in previous chapters, we assess MIBot's performance across four critical dimensions established in the smoking cessation and motivational interviewing literature: behavioural change readiness, \margindex{Perceived Therapeutic Empathy}[Perceived Empathy]perceived therapeutic empathy, \margindex{MI Adherence}[MI Adherence]adherence to MI principles, and elicitation of client change talk.
 
 The chapter is organized to progress from primary outcomes through measurements of therapeutic process, and finally, to behavioural changes and user experiences. First, we report the primary outcome of changes in readiness to quit smoking (Section~\ref{sec:primary-outcome}). We then analyze how chatbot performed on perceived empathy, measured through the CARE scale and compare it to human healthcare professionals (Section~\ref{sec:perceived-empathy}). Next, we examine MIBot's adherence to MI principles through AutoMISC analysis, and examine if MIBot could maintain fidelity to therapeutic standards while successfully eliciting change talk from clients (Section~\ref{sec:mi-adherence}).
 
@@ -12,7 +12,7 @@ Following these core metrics, we investigate behavioural outcomes including quit
 
 \subsection{Overall Changes in Readiness Rulers}
 
-Table~\ref{table:mibot_ruler_summary} summarizes the mean (and standard deviation) of each readiness ruler before the conversation, immediately afterwards, and one week later.   The table includes the change between the pre-conversation metric and one week later ($\Delta$). The Wilcoxon signed-rank test was applied to assess the significance of the change. Participants' confidence increased markedly from a baseline mean of 2.8 to 4.5 one week later ($\Delta=1.66$, $p<10^{-9}$). This represents a $\sim$59\% relative improvement and constitutes our \margindex[feasibility study]{primary outcome}[Primary Outcome]primary outcome measure, aligning with MI theory that confidence (self-efficacy) is a key predictor of behaviour change \citep{Gwaltney2009-wj,Abar2013}. Importance also increased, albeit more modestly ($\Delta=0.5$, $p<0.005$), while readiness exhibited a small, non-significant change ($\Delta=0.23$, $p=0.22$).
+Table~\ref{table:mibot_ruler_summary} summarizes the mean (and standard deviation) of each readiness ruler before the conversation, immediately afterwards, and one week later.   The table includes the change between the pre-conversation metric and one week later ($\Delta$). The Wilcoxon signed-rank test was applied to assess the significance of the change. Participants' confidence increased markedly from a baseline mean of 2.8 to 4.5 one week later ($\Delta=1.66$, $p<10^{-9}$). This represents a $\sim$59\% relative improvement and constitutes our \margindex{Primary Outcome}[Primary Outcome]primary outcome measure, aligning with MI theory that confidence (self-efficacy) is a key predictor of behaviour change \citep{Gwaltney2009-wj,Abar2013}. Importance also increased, albeit more modestly ($\Delta=0.5$, $p<0.005$), while readiness exhibited a small, non-significant change ($\Delta=0.23$, $p=0.22$).
 
 \begin{table}[ht!]
   \centering
@@ -46,7 +46,7 @@ Figure~\ref{fig:confidence_change_distribution} illustrates the distribution of 
 
 \subsection{Stratified Analysis by Baseline Characteristics}
 
-To understand which participants benefited most from MIBot, we stratified outcomes by baseline characteristics. Table~\ref{tab:baseline_confidence} shows that those starting with the lowest self-confidence ($n=31$, confidence $\leq 1$) experienced the largest improvement (+2.2 points), whereas participants with moderate or higher confidence gained about one and a half points. The three participants who began with very high confidence showed a decline, likely reflecting \margindex[feasibility study]{regression to the mean}[Regression to Mean]regression to the mean. Baseline confidence correlated negatively with the change (Spearman $r=-0.21$, $p<0.05$), indicating that MIBot is most beneficial for participants who are least confident in their ability to quit.
+To understand which participants benefited most from MIBot, we stratified outcomes by baseline characteristics. Table~\ref{tab:baseline_confidence} shows that those starting with the lowest self-confidence ($n=31$, confidence $\leq 1$) experienced the largest improvement (+2.2 points), whereas participants with moderate or higher confidence gained about one and a half points. The three participants who began with very high confidence showed a decline, likely reflecting \margindex{Regression To The Mean}[Regression to Mean]regression to the mean. Baseline confidence correlated negatively with the change (Spearman $r=-0.21$, $p<0.05$), indicating that MIBot is most beneficial for participants who are least confident in their ability to quit.
 
 \begin{table}[ht!]
   \centering
@@ -388,11 +388,11 @@ The system assigns behavioural codes to each utterance: counsellor utterances ar
 
 \begin{itemize}
 
-    \item \textbf{\margindex[AutoMISC]{Percentage MI-Consistent Responses (\%MIC)}Percentage MI-Consistent Responses (\%MIC):} The proportion of counsellor utterances that align with MI principles. Higher values indicate greater adherence to MI methodology.
+    \item \textbf{\margindex{Percentage MI-Consistent Responses (\%MIC)}Percentage MI-Consistent Responses (\%MIC):} The proportion of counsellor utterances that align with MI principles. Higher values indicate greater adherence to MI methodology.
     
-    \item \textbf{\margindex[AutoMISC]{Reflection-to-Question Ratio (R:Q)}[R:Q]Reflection-to-Question Ratio (R:Q):} The ratio of counsellor utterances labelled as reflection (R) to those labelled as question (Q). This metric assesses the balance between reflective listening and questioning. Values between 1 and 2 are considered indicative of proficiency \citep{moyers2016miti}.
+    \item \textbf{\margindex{Reflection-to-Question Ratio (R:Q)}[R:Q]Reflection-to-Question Ratio (R:Q):} The ratio of counsellor utterances labelled as reflection (R) to those labelled as question (Q). This metric assesses the balance between reflective listening and questioning. Values between 1 and 2 are considered indicative of proficiency \citep{moyers2016miti}.
 
-    \item \textbf{\margindex[AutoMISC]{Percentage Change Talk (\%CT)}Percentage Change Talk (\%CT):} The proportion of client utterances expressing motivation toward behaviour change. Higher values are associated with improved behavioural outcomes \citep{apodaca2009}.
+    \item \textbf{\margindex{Percentage Change Talk (\%CT)}Percentage Change Talk (\%CT):} The proportion of client utterances expressing motivation toward behaviour change. Higher values are associated with improved behavioural outcomes \citep{apodaca2009}.
 
 \end{itemize}
 
@@ -539,7 +539,7 @@ Participants who made quit attempts post-conversation showed larger confidence g
 
 \subsection{Self-Reported Behavioural Changes}
 
-Beyond formal quit attempts, participants reported various \margindex[feasibility study]{harm reduction behaviours}harm reduction behaviours. Analysis of open-ended responses revealed five main categories of behavioural change:
+Beyond formal quit attempts, participants reported various \margindex{Harm Reduction Behaviours}harm reduction behaviours. Analysis of open-ended responses revealed five main categories of behavioural change:
 
 \begin{enumerate}
 \item \textbf{Reduced consumption} (42\% of participants): ``Cut down from 20 to 12 cigarettes a day''
@@ -583,7 +583,7 @@ Longer conversations correlated with better outcomes ($r=0.20$ for confidence ch
 
 \subsection{Qualitative Thematic Analysis}
 
-To understand the qualitative aspects of the conversations, a \margindex[feasibility study]{thematic analysis}thematic analysis was performed on the full corpus of transcripts. The analysis was conducted by two researchers who independently reviewed the transcripts to identify recurring patterns and themes. They then met to compare their findings, discuss discrepancies, and collaboratively develop a final set of themes that characterized successful therapeutic engagement. This process revealed four recurring patterns:
+To understand the qualitative aspects of the conversations, a \margindex{Thematic Analysis}thematic analysis was performed on the full corpus of transcripts. The analysis was conducted by two researchers who independently reviewed the transcripts to identify recurring patterns and themes. They then met to compare their findings, discuss discrepancies, and collaboratively develop a final set of themes that characterized successful therapeutic engagement. This process revealed four recurring patterns:
 
 \subsubsection{Stress and Coping Narratives}
 
@@ -620,7 +620,7 @@ The chatbot's responses frequently normalized ambivalence instead of trying to r
 
 \subsubsection{Success Stories}
 
-The most dramatic success involved a 34-year-old participant who entered with confidence of 1/10 but importance of 9/10---a classic \margindex[feasibility study]{willing but unable profile}``willing but unable'' profile. Through 142 utterances, the conversation systematically addressed self-efficacy barriers:
+The most dramatic success involved a 34-year-old participant who entered with confidence of 1/10 but importance of 9/10---a classic \margindex{Willing But Unable Profile}``willing but unable'' profile. Through 142 utterances, the conversation systematically addressed self-efficacy barriers:
 
 \begin{enumerate}
 \item Explored past quit attempts to identify what worked
@@ -677,7 +677,7 @@ Three open-ended questions captured immediate post-conversation reactions. Thema
 
 Based on feedback analysis, we derived two binary metrics: ``LikedBot'' (92\% positive) and ``FoundBotHelpful'' (66\% positive). The discrepancy suggests that while MIBot creates an engaging experience, translating engagement into perceived therapeutic value remains challenging.
 
-Cross-tabulation revealed four \margindex[feasibility study]{user segmentation}user segments:
+Cross-tabulation revealed four \margindex{User Segmentation}user segments:
 
 \begin{table}[ht]
   \centering
@@ -705,7 +705,7 @@ Cross-tabulation revealed four \margindex[feasibility study]{user segmentation}u
 
 \subsection{Synthesis of Findings}
 
-\margindex[feasibility study]{multivariate regression analysis}Multivariate regression analysis identified the strongest predictors of confidence improvement:
+\margindex{Multivariate Regression Analysis}Multivariate regression analysis identified the strongest predictors of confidence improvement:
 
 \begin{enumerate}
 \item \textbf{Low baseline confidence} ($\beta=-0.31$, $p<0.001$): Greatest gains for those starting lowest
@@ -722,8 +722,8 @@ Together, these factors explained 34\% of variance in confidence change ($R^2=0.
 MIBot's performance compares favourably with established interventions:
 
 \begin{itemize}
-\item \textbf{\margindex[feasibility study]{Effect size}[Effect Size]Effect size}: Cohen's $d=0.71$ for confidence change exceeds typical digital intervention effects ($d=0.2$--0.4) \citep{Whittaker2016}
-\item \textbf{\margindex[feasibility study]{MI fidelity}[MI Fidelity]MI fidelity}: 95\% MI-consistent responses surpass typical human counsellor benchmarks (80--90\%) \citep{Moyers2016}
+\item \textbf{\margindex{Effect Size}[Effect Size]Effect size}: Cohen's $d=0.71$ for confidence change exceeds typical digital intervention effects ($d=0.2$--0.4) \citep{Whittaker2016}
+\item \textbf{\margindex{MI Fidelity}[MI Fidelity]MI fidelity}: 95\% MI-consistent responses surpass typical human counsellor benchmarks (80--90\%) \citep{Moyers2016}
 \item \textbf{Engagement}: 92\% enjoyment rate exceeds most digital health interventions (60--70\%) \citep{Perski2017}
 \item \textbf{Quit attempts}: 14.2\% new quit attempts align with brief intervention outcomes (10--20\%) \citep{Stead2013}
 \end{itemize}

@@ -57,7 +57,7 @@ if [ "$USE_DOCKER" = true ]; then
         pdflatex ${MAIN_TEX_FILE}.tex
         bibtex ${MAIN_TEX_FILE}
         pdflatex ${MAIN_TEX_FILE}.tex
-        makeindex ${MAIN_TEX_FILE}
+        makeindex -s gind.ist ${MAIN_TEX_FILE}
         pdflatex ${MAIN_TEX_FILE}.tex
     "
 else
@@ -65,7 +65,7 @@ else
     pdflatex ${MAIN_TEX_FILE}.tex
     bibtex ${MAIN_TEX_FILE}
     pdflatex ${MAIN_TEX_FILE}.tex
-    makeindex ${MAIN_TEX_FILE}
+    makeindex -s gind.ist ${MAIN_TEX_FILE}
     pdflatex ${MAIN_TEX_FILE}.tex
 fi
 
