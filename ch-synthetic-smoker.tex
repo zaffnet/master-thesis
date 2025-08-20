@@ -1,2 +1,193 @@
 \chapter{Development of Synthetic Smokers}
 \label{ch:synthetic-smoker}
+
+The iterative development of MIBot, as described in (Chapter~\ref{ch:mibot}), required that we extensively test it after every change in its prompt. To automate the testing of some aspects of the chatbot's behaviour, we started the development of ``synthetic smokers.''\footnote{It is worth mentioning that we also utilized human role-playing as smokers during our testing of MIBot.} A Synthetic Smoker, in the context of this research, is a prompted instance of an LLM tasked to simulate the behaviour, language, and psychological responses of a human smoker engaged in a counselling session.
+
+The development of these LLM-based agents served a dual purpose. Originally, they were designed to serve as an essential testbed for evaluating MIBot's adherence to MI principles and ruling out any gleaning safety issues. But this research evolved into an exploration of a novel methodological concept: the creation of ``doppelgängers,'' or digital behavioural twins, which could potentially stand in for human participants in the early stages of intervention development.
+
+This chapter details the iterative development journey of the synthetic smoker, divided into two main phases. Phase 1 focuses on creating functional, prompt-based synthetic smokers and addressing fundamental challenges in controlling their behaviour. Phase 2 describes the shift towards creating and validating doppelgängers by \emph{installing} attributes from human participants of the MIBot feasibility study (Section~\ref{sec:feasibility}). We focus here on the methodologies, our design choices and exploration on how to increase the fidelity of these synthetic smokers; the validation and results of these experiments will be discussed later in Chapter~\ref{ch:synthetic-smoker-eval}.
+
+\section{Phase 1: Initial Attempts and Behavioural Control}
+The initial goal was pragmatic: to create a conversational partner that could interact with MIBot prototypes, allowing the engineering team to test conversational flow and MI adherence in a controlled environment.
+
+\subsection{Early Prompting Methodology}
+Our first attempts relied on straightforward prompting of a state-of-the-art LLM (viz. GPT-4 Turbo). We constructed ``backstories,'' instructing the LLM to adopt the persona of a smoker with specific demographic information, smoking history, and levels of ambivalence regarding quitting.
+
+\includesystemprompt{Example of a prompt used by the synthetic smoker}{prompts/synthetic_smoker_prompt_0.txt}
+
+While this approach produced functional conversational agents, we quickly identified limitations in their realism. The two most prominent issues were excessive \textbf{verbosity} and difficulty in controlling \textbf{resistance to change}.
+
+\subsection{The Challenge of Verbosity}
+A recurring issue was the synthetic smoker's tendency towards excessive verbosity. The synthetic smokers often produced long, detailed utterances. Furthermore, we observed a phenomenon of reciprocal verbosity: when the synthetic smoker was verbose, MIBot tended to reciprocate with equally long responses. This resulted in conversations that felt unnatural and overwhelming, deviating significantly from typical human therapeutic interactions.
+
+To create a realistic testing environment, controlling the synthetic smoker's verbosity was crucial.
+
+\subsubsection*{Prompt Engineering for Verbosity Control}
+We included several hints in the prompt to constrain the output length and encourage a more natural, text-based conversational style. For example, we added the following phrases to the prompt:
+
+\begin{enumerate}
+    \item \textbf{Brevity and Clarity:} \textit{``In your response, speak with more clarity rather than exhaustive detail.''}
+
+    \item \textbf{Simulating Text Communication:} \textit{``Imagine you're texting a friend. Keep it casual, just like you would on iMessage$\cdots$''}
+
+    \item \textbf{Emotional Expression:} \textit{``Don't hesitate to use emojis to express how you feel.''}
+
+    \item \textbf{Sentence Constraints:} \textit{``Number of sentences in your response must be between 1 and 4.''}
+\end{enumerate}
+
+We conducted experiments to verify the effectiveness of these modifications, comparing the unmodified synthetic smokers language with that of ``fixed-verbosity'' smokers. We also analyzed the transferability of these prompts across different LLMs (e.g., GPT-4 Turbo and GPT-4 Omni) to ensure our prompting methodology was robust against model updates.
+
+\subsection{The Challenge of Resistance}
+In addition to verbosity, achieving realistic patterns of resistance to change and ambivalence proved difficult, which align with new findings that LLMs exhibit high degree of agreebleness bias \cite{Salecha_2024}. This agreeableness bias, which sometimes resulted in synthetic smokers who were too easily persuaded to quit, failed to adequately challenge MIBot's MI skills. To mitigate this issue, we developed a methodology to explicitly install varying levels of resistance through detailed backstories.
+
+\subsubsection*{Installing Resistance via Backstories}
+We designed distinct prompts to create ``high-resistance'' and ``low-resistance'' synthetic smokers, i.e., those who would show more sustain talk as compared to low and vice-versa. This was achieved not by explicitly instructing the model to ``be resistant,'' but by embedding psychological contexts and life stressors into the backstory that naturally lead to resistance.
+
+\textbf{High-Resistance Prompt:} This backstory focused on severe life stress (e.g., workplace issues, being ignored for a promotion) and a strong reliance on smoking as a coping mechanism. The prompt emphasized skepticism towards therapy, anxiety when lectured about quitting, and a belief that the timing was wrong for a quit attempt. For example:
+
+\begin{quote}
+\textit{``Going into this conversation with a therapist, you feel highly skeptical. You get anxious when people lecture you on quitting smoking, as if you have not already tried it. Every time someone mentions quitting, you want to light up even more... You do not want to commit to a change, however small, that you may not be able to fulfill.''}  
+\end{quote}
+
+\textbf{Low-Resistance Prompt:} This backstory characterized smoking as a habit developed gradually (e.g., through social interactions at work) rather than a critical coping mechanism. While the smoker finds it relaxing, recent negative health feedback (e.g., poor lab tests) has prompted contemplation. The mindset installed was one of indecision rather than firm resistance:
+
+\begin{quote}
+\textit{``You are skeptical about whether you should quit smoking as you find it very relaxing, but the lab results did make you wonder if it's time to cut back on it. Going into this conversation, you are undecided and don't know what the right approach is to this...''}  
+\end{quote}
+
+
+X.2.3.2 Methodology for Validating Resistance Installation
+To verify that these backstories successfully induced the intended levels of resistance, we designed a validation process involving two key components:
+
+To test our success in creating synthetic smokers with varying levels of resistance to change, we conducted a small experiment. The high- and low-resistance smokers were engaged in conversations with MIBot). The transcripts were analyzed to measure the proportion of change talk and sustain talk. We hypothesized that high-resistance smokers would exhibit significantly more sustain talk and less change talk than low-resistance smokers. We also conducted an experiment where synthetic smokers were asked to report their readiness to quit before and after the conversation with MIBot. Specifically, we asked the three questions and expected numerical answers from the synthetic smoker, both before and after the conversation.  This involved specific prompting techniques, including chain-of-thought reasoning, to ensure the synthetic smoker reflected deeply on its installed backstory and the conversation it had before providing a numerical score:
+
+a methodology to enable synthetic smokers to complete the standard readiness ruler surveys (Importance, Confidence, Readiness). This involved specific prompting techniques, including Chain-of-Thought reasoning, to ensure the LLM reflected deeply on its installed backstory before providing a numerical score:
+
+\begin{quote}
+    \textit{``As you contemplate each question, try to break down your concerns and feelings into smaller, more specific thoughts... You're encouraged to first provide your step-by-step reasoning before you provide the numerical answer.''}
+\end{quote}
+
+
+The synthetic smokers completed these rulers pre-conversation, post-conversation, and one week later (simulated by telling it that ``a week has passed...''). This allowed us to check if the installed resistance levels were reflected in their baseline scores and their response to the intervention.
+
+
+\section{Phase 2: The Shift to Realism and Introducing the Doppelgänger}
+While the controlled synthetic smokers of Phase 1 provided a useful testbed, they remained generic personas. This inspired us to take up the challenge to create realistic synthetic smokers --- those which can replace human participants in clinical studies. Further, our experiments with installing resistance showed encouraging signs that LLM-based synthetic smokers could fill out post-conversation readiness rulers that reflected their backstory and other installed attributes. So, we decided to create a set of synthetic smokers by installing attributes from real human smokers.
+
+
+This requirement of data containing attributes of real human smokers  such as pre- and post-conversation readiness rulers was addressed by the completion of the MIBot v6.3A feasibility study (Section~\ref{sec:feasibility}). This study provided a rich dataset of 106 MIBot-human interactions, including pre- and post-conversation readiness rulers (\emph{importance}, \emph{confidence}, \emph{readiness}), demographic data, smoking history (e.g., Heaviness of Smoking Index --- HSI), and complete conversation transcripts. Thus, we moved away from creating generic synthetic smokers towards creating ``doppelgängers.''
+
+\subsubsection*{Defining the doppelgänger}
+For the rest of our discussion, we define a doppelgänger as a synthetic smoker designed to be a ``behavioural twin'' of a specific human participant from the feasibility study, although the definition can be extended to other types of participants and studies. The goal is then to create an agent that, when exposed to MI counselling, behaves similarly to its human counterpart in terms of language use, psychological profile, and changes in readiness to quit.
+
+The motivation for developing doppelgängers extends beyond simple testing. Validated doppelgängers can allow for simulated trials and enable researchers to test hypotheses and refine interventions rapidly before engaging human participants. Furthermore, they offer a potential pathway for optimizing chatbots using reinforcement learning, where the doppelgänger's positive response serves as the reward signal for the counsellor bot.
+
+\subsubsection*{The Concept of ``Installation''}
+We refer to the process of configuring in LLM a human behaviour or attribute as ``installation.'' Typically, this is done via prompting --- telling the doppelgänger a fact about it or how it behaves. In order to create a set of doppelgängers, this process involves data collection from humans and telling the doppelgänger about attributes and behaviours it possess from the observation made while studing its human twin..
+
+Typical attributes that we installed in synthetic doppelgängers were demographics (sex and age), smoking behaviour (heaviness of smoking index, cigarettes per day, recent quit attempts, etc.) and psychological state (pre-conversation readiness rulers), among other things.
+
+
+Throughout our quest to develop and test these synthetic smoker doppelgängers, we tried to answer the following research questions:
+
+\begin{enumerate}
+    \item \textbf{RQ1:} Can LLM-based synthetic smoker doppelgängers report the same level of change as their human twins after an intervention (a conversation with MIBot, e.g.)?
+
+    \item \textbf{RQ2:} How to measure doppelgängers' fidelity? In other words, how to validate the created synthetic smokers in terms of how closely they behave to their human twins?
+
+    \item \textbf{RQ3:} Which attributes are necessary to install to create high-fidelity doppelgängers?
+\end{enumerate}
+
+
+
+We describe our experiments to answer \textbf{RQ1} in Section~\ref{sec:transcript-autoplay}. We then establish our validation methods and metrics of fidelity (\textbf{RQ2}) for synthetic smokers in Section~\ref{sec:synthetic-smoker-validation}. Finally, we answer \textbf{RQ3} in Section~\ref{sec:incremental_installation} by incrementally installing relevant attributes to doppelgangers and measuring their closeness to their human twins using the metrics established in Section~\ref{sec:synthetic-smoker-validation}.
+
+
+\subsection{The Transcript Autoplay Experiment (Baseline Check)}
+\label{sec:transcript-autoplay}
+Before attempting to have doppelgängers engage in novel conversations, we needed to establish a baseline understanding of the LLM's ability to model the psychological impact of a conversation and contextualize the numerical readiness rulers with other installed attributes. We designed the ``transcript autoplay'' experiment for this purpose.
+
+\textbf{Rationale:} 
+
+If an LLM-based synthetic smoker is given the pre-conversation attributes of a human participant and the exact transcript of the MIBot-human conversation (acting as if the LLM itself is speaking the human's lines), can it accurately reproduce the human's post-conversation readiness rulers?
+
+\textbf{Methodology:}
+\begin{enumerate}
+    \item Install the pre-conversation attributes of a specific human participant.
+    \item Feed the transcript of the actual conversation sequentially to the Doppelgänger, framing it as a dialogue the doppelgänger is participating in.
+    \item After the conversation concludes, ask the doppelgänger to complete the post-conversation readiness rulers.
+\end{enumerate}
+
+This experiment served as a confidence check on the LLM's ability to infer the psychological state resulting from the conversation.
+
+
+
+\subsection{Establishing Metrics for Fidelity}
+\label{sec:synthetic-smoker-validation}
+To develop \emph{useful} doppelgängers, we needed clear measurements to determine how closely they matched their human twins. For this, we relied on the correlation of different post-conversation outcomes between humans and their doppelgangers. The core idea is that \emph{if} our methodology of creating synthetic smokers is sound, and \emph{if} the same pre-conversation \emph{state} (readiness ruler, HSI, demographic attributes, etc.) is installed in the doppelganger as it was for its human twins, \emph{then} the post-conversation outcome for both the doppelgangers and human twins should match. 
+
+Ideally, the post-conversation outcomes should precisely match, and we should use a distance metric rather than mere correlation. But we were skeptical that this could be a hard constraint as LLMs may have their own `\textit{scaling factor}'. Further, because we do not have a baseline on how close is close enough for each metric, we chose measures of correlation as a soft target for measuring validity.
+
+Thus, we calculated the correlation between both the explicit and implicit post-conversation outcomes
+
+
+\textbf{Explicit Metrics:} These include the post-conversation readiness rulers and the CARE (empathy) survey. A successful doppelgänger should report scores similar to those reported by its human twin after interacting with MIBot.
+
+\textbf{Implicit Metrics and the Change Fraction (\%CT):} Relying solely on explicit metrics presents a risk, as LLMs might fabricate self-reported scores that do not reflect their conversational behaviour. Therefore, we required implicit metrics grounded in the language of the conversation. In MI, the balance between Change Talk (C; language favouring change) and Sustain Talk (S; language favouring the status quo) is a key indicator of motivation. We adopted the ``Change Fraction'' (\%CT) metric. It is also called ``Percenatge Change Talk'':
+
+$$ \%CT = \frac{C}{C + S} $$
+
+\%CT is closely tied to the client's language and is less susceptible to fabrication than self-reported rulers. To validate its use, we analyzed the human data from the MIBot v6.3A study. We found that \%CT correlated strongly with pre- and post-conversation readiness rulers (e.g., a 0.41 correlation with post-conversation confidence). This confirmed that \%CT is a valid, implicit metric capturing the client's readiness via their language, making it a critical metric for doppelgänger development.
+
+
+\subsection{Incremental Attribute Installation}
+\label{sec:incremental_installation}
+The next stage involved having the doppelgängers converse freely with MIBot. We adopted an incremental installation approach to understand the contribution of different attributes to the fidelity of the doppelgänger.
+
+\textbf{Rationale:}
+We sought to determine the minimum set of attributes necessary to create a well-matched Doppelgänger. Is installing the pre-conversation state sufficient, or are behavioural attributes also required?
+
+\textbf{Methodology:}
+We conducted experiments where different sets of attributes were installed iteratively:
+
+\begin{enumerate}
+    \item Basic Installation: Installing only demographics, HSI, and pre-conversation readiness rulers, and no post-conversation outcomes
+    \item Extended Installation (Installing \%CT): Apart from installing everything from basic installation, we also installed \%CT Although it is not part of the Recognizing \%CT as a key behavioural marker, we explored explicitly installing it. We augmented the prompt with the target \%CT of human counterpart (derived from MIV6.3A data) and later with \%CT. We then measured the post-conversation \%CT of the doppelganger. 
+\end{enumerate}
+
+
+This process aimed to refine the installation methodology, moving towards Doppelgängers that matched their human counterparts on both implicit (\%CT) and explicit (readiness rulers) metrics.
+
+\subsection{Sensitivity to Counsellor Quality (Good Bot vs. Bad Bot)}
+A crucial requirement for a useful doppelgänger is that it must be sensitive to the quality of the therapy it receives. A realistic simulation should respond positively to good MI and negatively (e.g., with increased resistance or lower empathy scores) to poor MI.
+
+\textbf{Rationale:}
+
+If doppelgängers are to be used for training MIBot or optimizing strategies, they must react appropriately to different therapeutic qualities.
+
+\textbf{Methodology:}
+To test this, we designed an experiment comparing the effects of ``high-quality'' versus ``low-quality'' therapy.
+
+\begin{enumerate}
+    \item \textbf{Selecting a ``high-quality'' therapist}: Recognizing that MIBot v6.3A already is effective and adheres to MI principles \cite{mahmood-etal-2025-fully}, we used it in place of a ``high-quality'' therapist.
+    
+    \item \textbf{Creating a ``low-quality'' MIBot}: We developed a prompt for a ``low-quality'' counsellor, designed to be antithetical to MI principles: directive, judgmental, and confrontational. The prompt instructed the bot to occasionally give advice without permission, ask closed questions, and use pressuring language.
+
+    \item \textbf{Sampling Participants:} From the MIV6.3A human feasibility study data, we created two groups of participants based on their observed behaviour:
+
+    \begin{itemize}
+        \item High \%CT Group: Participants from the top 25th percentile of Change Fraction in MIV6.3A.
+        \item Low \%CT Group: Participants from the bottom 25th percentile of Change Fraction in MIV6.3A.
+    \end{itemize}
+
+
+
+    \item \textbf{Creating doppelgängers:} We created doppelgängers for participants in both groups, using the enhanced installation process (including the \%CT).
+
+    \item \textbf{Conversation between the counsellor chatbot and doppelgangers}: The high and low \%CT doppelgängers were then made to have conversations with both the \textit{high-} and \textit{low-} quality counsellors.
+\end{enumerate}
+
+We hypothesized that both groups would exhibit lower \%CT, smaller changes in confidence, and lower CARE scores when interacting with the ``low-quality'' counsellor chatbot compared to the ``high-quality'' MIBot.
+
+From the very beginning, we have alluded to the fact that the biggest challenge in creating doppelgangers is the correct and effective installation of these attributes and the validation of the installation. Through a series of experiments that tried to answer these questions, we developed a methodology for creating synthetic smokers grounded in real human data and ways to validate them. This process has laid the groundwork for exploring the use of digital behavioural twins in therapeutic research. The next chapter will detail the formal validation of these doppelgängers, analyzing the results of the experiments described here to assess how closely they match their human counterparts.
+
