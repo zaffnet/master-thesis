@@ -35,7 +35,7 @@ chmod +x build.sh
 
 This project can be built locally or using Docker. In either case, the `build.sh` script is the recommended way to build the PDF.
 
-After cloning the repository, Jules changes the permissions of the `build.sh` script to make it executable:
+After cloning the repository, Jules changes the permissions of the `build.sh` script, so to make it executable:
 
 ```bash
 chmod +x build.sh
