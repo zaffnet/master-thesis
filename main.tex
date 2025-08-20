@@ -5,7 +5,7 @@
 
 % Basic packages
 \usepackage{color}
-\usepackage{xcolor} % Extended color package
+\usepackage{xcolor}
 \usepackage{float}
 \usepackage{amsmath}
 \usepackage{amssymb}
@@ -34,10 +34,11 @@
 
 % Hyperref should come near the end
 \usepackage[colorlinks=true, linkcolor=cyan, citecolor=cyan, urlcolor=cyan]{hyperref}
+\usepackage[colorinlistoftodos]{todonotes}
 
 % Index package AFTER hyperref
 \usepackage{imakeidx}
-\makeindex[columns=3, title=Index of Key Terms, intoc]
+\makeindex[columns=2, title=Index of Key Terms, intoc]
 
 \hypersetup{
   hyperindex=true
@@ -67,7 +68,37 @@
 \newcommand\newcite{\citet}
 \newcommand{\citeposs}[1]{\citeauthor{#1}'s (\citeyear{#1})}
 
-% Margin note settings
+
+\usepackage[utf8]{inputenc}
+\usepackage{listings}
+\tcbuselibrary{listings}
+
+\lstdefinestyle{promptstyle}{
+  language={},
+  basicstyle=\ttfamily\small,
+  breaklines=true,            % THIS IS THE KEY FOR WORD WRAPPING
+  postbreak=\mbox{\textcolor{red}{$\hookrightarrow$}\space}, % Show a symbol for wrapped lines
+  showstringspaces=false,     % Don't put special marks for spaces
+  columns=fullflexible,
+  keepspaces=true,
+}
+
+\newtcbinputlisting{\includesystemprompt}[3][]{
+  listing only,
+  listing file={#3},
+  listing options={style=promptstyle},
+  % Box styling
+  title=#2,
+  colback=gray!10,
+  colframe=gray!75!black, 
+  fonttitle=\bfseries,
+  arc=2mm,     
+  boxrule=1pt,
+  breakable=true,  
+  boxsep=0mm,
+  #1
+}
+
 \setlength{\marginparwidth}{0.8in}
 \setlength{\marginparsep}{0.2in}
 \renewcommand*{\raggedleftmarginnote}{}
