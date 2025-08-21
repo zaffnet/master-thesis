@@ -11,7 +11,7 @@ The core of MIBot is a lightweight Python web application built with the \margin
 \begin{figure}[ht]
   \centering
   \includegraphics[width=0.7\linewidth]{fig/microservice.drawio.pdf} 
-  \caption{Overview of the Sanic application that contains MIBot code and exposes REST APIs.}
+  \caption[MIBot Sanic Application Overview]{An overview of the Sanic web application that encapsulates the MIBot code. The application exposes REST APIs for external interactions, such as handling chat messages and providing conversation transcripts.}
   \label{fig:microservice}
 \end{figure}
 An overview of the application's architecture is presented in Figure~\ref{fig:microservice}. When a user sends a request to the \texttt{/chat} endpoint containing their message and \texttt{client\_id}, the web server updates the state of the \margindex[MIBot, Architecture]{conversation}[Conversation] and requests the next turn from it. The \texttt{Conversation} object relays this to the \margindex[MIBot, Architecture]{counsellor}[Counsellor]\texttt{Counsellor}, which in turn sends a request to the OpenAI API with the accumulated conversation history and the current client message, and receives a response containing the generated counsellor turn.
@@ -25,7 +25,7 @@ A single \texttt{Sanic} app can handle multiple clients at once by creating repl
 \begin{figure}[ht]
   \centering
   \includegraphics[width=0.7\linewidth]{fig/container.drawio.pdf} 
-  \caption{Containerized Sanic application.}
+  \caption[Containerized MIBot Application]{The containerized Sanic application for MIBot. The application is packaged in a Docker container for reproducibility and ease of deployment, with the container image stored in Amazon Elastic Container Registry (ECR).}
   \label{fig:containerization}
 \end{figure}
 
@@ -42,7 +42,7 @@ MIBot is deployed as a service on Amazon \margindex[MIBot, Deployment]{amazon el
 \begin{figure}[ht]
   \centering
   \includegraphics[width=0.99\linewidth]{fig/deployment.drawio.pdf} 
-  \caption{Containerized MIBot application deployed to ECS.}
+  \caption[MIBot Deployment on AWS ECS]{An overview of the deployment of the containerized MIBot application on Amazon Elastic Container Service (ECS). The diagram shows the key components, including the ECS cluster, the ECS service, and the ECS task definition, as well as the interaction with other AWS services like Elastic Load Balancer (ELB) and API Gateway.}
   \label{fig:ecs-components}
 \end{figure}
 
