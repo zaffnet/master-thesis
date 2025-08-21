@@ -12,6 +12,7 @@
 \usepackage{multirow}
 \usepackage{graphicx} % for embedding graphics
 \usepackage{subcaption} % for subfigures
+\usepackage{subfig}
 \usepackage{booktabs} % for pretty tables
 \usepackage{threeparttable}
 \usepackage{pdflscape}
@@ -40,6 +41,10 @@
 % Index package AFTER hyperref
 \usepackage{imakeidx}
 \makeindex[columns=2, title=Index of Key Terms, intoc]
+
+\hypersetup{
+  hyperindex=true
+}
 
 % xpatch for ref formatting
 \usepackage{xpatch}
