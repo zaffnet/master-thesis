@@ -232,7 +232,7 @@ Delta (Week - Pre) & 2.0 & 2.2 & 2.2 & 2.6 & 1.6 & 2.8 \\ \bottomrule
 \end{tabular}
 \end{table}
 
-The High Resistance smoker reported significantly lower baseline scores. While both personas showed an increase in readiness after the MI session (Delta), the absolute levels remained distinct. This experiment demonstrated that LLMs could provide coherent self-reported behavioral data consistent with their installed attributes.
+The High Resistance smoker reported significantly lower baseline scores. While both personas showed an increase in readiness after the MI session (Delta), the absolute levels remained distinct. This experiment demonstrated that LLMs could provide coherent self-reported behavioural data consistent with their installed attributes.
 
 \section{Scaling Attributes and the Doppelgänger Methodology}
 \label{sec:synthetic-smoker-doppelganger}
@@ -241,18 +241,17 @@ Having established control over foundational attributes, the next challenge was 
 
 \subsection{Identifying Key Metrics: Percentage Change Talk}
 
-To validate doppelgängers effectively, a robust, objective metric grounded in conversational language was needed. We identified the Percentage Change Talk (CF, or \%CT, calculated as CT / (CT + ST)) as a primary candidate, as it is strongly associated with behavioral change outcomes in MI.
+To validate doppelgängers effectively, a robust, objective metric grounded in conversational language was needed. We identified the Percentage Change Talk (CF, or \%CT, calculated as CT / (CT + ST)) as a primary candidate, as it is strongly associated with behavioural change outcomes in MI \cite{Barnett2014,Houck2018,Moyers2009,Baer2008}.
 
 \subsubsection{Rationale}
-If CF is a valid proxy for a client's internal state, it should correlate with established metrics of readiness in human participants.
+If \%CT is a valid proxy for a client's internal state, it should correlate with established metrics of readiness in human participants.
 
 \subsubsection{Methodology and Results}
-We analyzed the data from the MIBot v6.3A study (N=106 participants)~\citep{mahmood-etal-2025-fully}. The analysis confirmed strong, statistically significant correlations between CF and all readiness rulers (Table~\ref{tab:ct-correlation}). For example, the correlation with Post-conversation confidence was 0.41 ($p < 0.0001$). This established CF as a crucial, language-based metric for validation.
+We analyzed the data from the MIBot v6.3A study (N=106 participants). The analysis confirmed strong, statistically significant correlations between CF and all readiness rulers (Table~\ref{tab:ct-correlation}). For example, the correlation with Post-conversation confidence was 0.41 ($p < 0.0001$). This established CF as a crucial, language-based metric for validation.
 
 % Data from "Finding Smoker Attributes that Correlate with Change Talk" Slide 5
 \begin{table}[h!]
 \centering
-\caption[Correlation of Change Fraction with Human Smoker Attributes]{Correlation between Percentage Change Talk (CF) and various human smoker attributes from the MIBot dataset (N=106). The table shows a strong positive correlation between the language used by participants and their self-reported readiness and motivation.}
 \label{tab:ct-correlation}
 \begin{tabular}{@{}ll@{}}
 \toprule
@@ -264,8 +263,9 @@ Post-conversation Confidence & 0.41 (****) \\
 Change in Confidence (Post - Pre) & 0.24 (**) \\
 CARE (Perceived Empathy) & 0.15 (ns) \\
 \bottomrule
-\multicolumn{2}{l}{\footnotesize{ns: P > 0.05, **: P $\le$ 0.01, ****: P $\le$ 0.0001}}
+\multicolumn{2}{l}{\footnotesize{ns: P $>$ 0.05, **: P $\le$ 0.01, ****: P $\le$ 0.0001}}
 \end{tabular}
+\caption[Correlation of Change Fraction with Human Smoker Attributes]{Correlation between Percentage Change Talk (CF) and various human smoker attributes from the MIBot dataset (N=106). The table shows a strong positive correlation between the language used by participants and their self-reported readiness and motivation.}
 \end{table}
 
 \subsection{The Doppelgänger Methodology}
