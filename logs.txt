@@ -1,0 +1,3912 @@
+Cleaning up generated files...
+Running LaTeX compilation locally...
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex)
+ restricted \write18 enabled.
+entering extended mode
+(./main.tex
+LaTeX2e <2023-11-01> patch level 1
+L3 programming layer <2024-01-22>
+(./ut-thesis.cls
+Document Class: ut-thesis 2024/07/26 v3.1.8 University of Toronto thesis class
+(/usr/share/texlive/texmf-dist/tex/latex/base/book.cls
+Document Class: book 2023/05/17 v1.4n Standard LaTeX document class
+(/usr/share/texlive/texmf-dist/tex/latex/base/bk10.clo))
+(/usr/share/texlive/texmf-dist/tex/latex/textcase/textcase.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/geometry/geometry.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/iftex/ifvtex.sty
+(/usr/share/texlive/texmf-dist/tex/generic/iftex/iftex.sty)))
+(/usr/share/texlive/texmf-dist/tex/latex/setspace/setspace.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/color.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/color.cfg)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-def/pdftex.def)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/mathcolor.ltx))
+(/usr/share/texlive/texmf-dist/tex/latex/xcolor/xcolor.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/color.cfg)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/mathcolor.ltx))
+(/usr/share/texlive/texmf-dist/tex/latex/float/float.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
+For additional information on amsmath, use the `?' option.
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amssymb.sty
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amsfonts.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/multirow/multirow.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/graphics.cfg)))
+(/usr/share/texlive/texmf-dist/tex/latex/caption/subcaption.sty
+(/usr/share/texlive/texmf-dist/tex/latex/caption/caption.sty
+(/usr/share/texlive/texmf-dist/tex/latex/caption/caption3.sty)))
+(/usr/share/texlive/texmf-dist/tex/latex/booktabs/booktabs.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/threeparttable/threeparttable.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/pdflscape/pdflscape.sty
+(/usr/share/texlive/texmf-dist/tex/latex/pdflscape/pdflscape-nometadata.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/lscape.sty)))
+(/usr/share/texlive/texmf-dist/tex/latex/lipsum/lipsum.sty
+(/usr/share/texlive/texmf-dist/tex/latex/l3packages/l3keys2e/l3keys2e.sty
+(/usr/share/texlive/texmf-dist/tex/latex/l3kernel/expl3.sty
+(/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def)))
+(/usr/share/texlive/texmf-dist/tex/latex/lipsum/lipsum.ltd.tex))
+(/usr/share/texlive/texmf-dist/tex/latex/tools/array.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/ragged2e/ragged2e.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/titlesec/titlesec.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/tcolorbox/tcolorbox.sty
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfutil-latex.def)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfrcs.code.tex
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/pgf.revision.tex)))
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/basiclayer/pgfcore.sty
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/systemlayer/pgfsys.sty
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsys.code.tex
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfkeyslibraryfiltered
+.code.tex)) (/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgf.cfg)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-pdftex.def
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-common-pdf.de
+f)))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftpath.code.
+tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.code.
+tex))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcore.code.tex
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.code.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.basic.code
+.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.trigonomet
+ric.code.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.random.cod
+e.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.comparison
+.code.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.base.code.
+tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.round.code
+.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.misc.code.
+tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.integerari
+thmetics.code.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathcalc.code.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfint.code.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.code.te
+x)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathconstruct.
+code.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathusage.code
+.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorescopes.code.te
+x)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphicstate.c
+ode.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransformation
+s.code.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorequick.code.tex
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreobjects.code.t
+ex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathprocessing
+.code.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorearrows.code.te
+x)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreshade.code.tex
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreimage.code.tex
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreexternal.code.
+tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorelayers.code.te
+x)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransparency.c
+ode.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepatterns.code.
+tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorerdf.code.tex))
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmoduleshapes.code.tex
+) (/usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmoduleplot.code.tex
+)
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-0-65
+.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-1-18
+.sty)) (/usr/share/texlive/texmf-dist/tex/latex/tools/verbatim.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/environ/environ.sty
+(/usr/share/texlive/texmf-dist/tex/latex/trimspaces/trimspaces.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/etoolbox/etoolbox.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/tcolorbox/tcbraster.code.tex
+Library (tcolorbox): 'tcbraster.code.tex' version '6.2.0'
+) (/usr/share/texlive/texmf-dist/tex/latex/tcolorbox/tcbskins.code.tex
+Library (tcolorbox): 'tcbskins.code.tex' version '6.2.0'
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/utilities/pgffor.sty
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/utilities/pgfkeys.sty
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex))
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/math/pgfmath.sty
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgffor.code.tex))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/tikz.code.tex
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/pgflibraryplothandlers
+.code.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmodulematrix.code.tex
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibrarytopaths.code.tex)))
+(/usr/share/texlive/texmf-dist/tex/latex/tikzfill/tikzfill.image.sty
+(/usr/share/texlive/texmf-dist/tex/latex/tikzfill/tikzfill-common.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/tikzfill/tikzlibraryfill.image.code.te
+x)) (/usr/share/texlive/texmf-dist/tex/latex/tcolorbox/tcbskinsjigsaw.code.tex
+Library (tcolorbox): 'tcbskinsjigsaw.code.tex' version '6.2.0'
+)) (/usr/share/texlive/texmf-dist/tex/latex/tcolorbox/tcbbreakable.code.tex
+Library (tcolorbox): 'tcbbreakable.code.tex' version '6.2.0'
+(/usr/share/texlive/texmf-dist/tex/latex/pdfcol/pdfcol.sty
+(/usr/share/texlive/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/infwarerr/infwarerr.sty)))
+(/usr/share/texlive/texmf-dist/tex/latex/tcolorbox/tcbhooks.code.tex
+Library (tcolorbox): 'tcbhooks.code.tex' version '6.2.0'
+) (/usr/share/texlive/texmf-dist/tex/latex/tcolorbox/tcbtheorems.code.tex
+Library (tcolorbox): 'tcbtheorems.code.tex' version '6.2.0'
+) (/usr/share/texlive/texmf-dist/tex/latex/tcolorbox/tcbfitting.code.tex
+Library (tcolorbox): 'tcbfitting.code.tex' version '6.2.0'
+) (/usr/share/texlive/texmf-dist/tex/latex/tcolorbox/tcblistingsutf8.code.tex
+Library (tcolorbox): 'tcblistingsutf8.code.tex' version '6.2.0'
+(/usr/share/texlive/texmf-dist/tex/latex/tcolorbox/tcblistings.code.tex
+Library (tcolorbox): 'tcblistings.code.tex' version '6.2.0'
+(/usr/share/texlive/texmf-dist/tex/latex/listings/listings.sty
+(/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/listings/listings.cfg))
+(/usr/share/texlive/texmf-dist/tex/latex/tcolorbox/tcblistingscore.code.tex
+Library (tcolorbox): 'tcblistingscore.code.tex' version '6.2.0'
+(/usr/share/texlive/texmf-dist/tex/latex/tcolorbox/tcbprocessing.code.tex
+Library (tcolorbox): 'tcbprocessing.code.tex' version '6.2.0'
+))) (/usr/share/texlive/texmf-dist/tex/latex/listingsutf8/listingsutf8.sty
+(/usr/share/texlive/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/stringenc/stringenc.sty
+(/usr/share/texlive/texmf-dist/tex/generic/pdfescape/pdfescape.sty))))
+(/usr/share/texlive/texmf-dist/tex/latex/tcolorbox/tcbexternal.code.tex
+Library (tcolorbox): 'tcbexternal.code.tex' version '6.2.0'
+) (/usr/share/texlive/texmf-dist/tex/latex/tcolorbox/tcbmagazine.code.tex
+Library (tcolorbox): 'tcbmagazine.code.tex' version '6.2.0'
+) (/usr/share/texlive/texmf-dist/tex/latex/tcolorbox/tcbvignette.code.tex
+Library (tcolorbox): 'tcbvignette.code.tex' version '6.2.0'
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibraryfadings.code.tex
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/pgflibraryfadings.code
+.tex))) (/usr/share/texlive/texmf-dist/tex/latex/tcolorbox/tcbposter.code.tex
+Library (tcolorbox): 'tcbposter.code.tex' version '6.2.0'
+)) (/usr/share/texlive/texmf-dist/tex/latex/tools/tabularx.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/enumitem/enumitem.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/l3packages/xparse/xparse.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/fancyvrb/fancyvrb.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/natbib/natbib.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/marginnote/marginnote.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref.sty
+(/usr/share/texlive/texmf-dist/tex/latex/kvsetkeys/kvsetkeys.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/hycolor/hycolor.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/auxhook/auxhook.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
+(/usr/share/texlive/texmf-dist/tex/latex/refcount/refcount.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
+(/usr/share/texlive/texmf-dist/tex/latex/kvoptions/kvoptions.sty)))
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/pd1enc.def)
+(/usr/share/texlive/texmf-dist/tex/generic/intcalc/intcalc.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/puenc.def)
+(/usr/share/texlive/texmf-dist/tex/latex/url/url.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/bitset/bitset.sty
+(/usr/share/texlive/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/base/atbegshi-ltx.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hpdftex.def
+(/usr/share/texlive/texmf-dist/tex/latex/base/atveryend-ltx.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
+(/usr/share/texlive/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty)))
+(/usr/share/texlive/texmf-dist/tex/latex/todonotes/todonotes.sty
+(/usr/share/texlive/texmf-dist/tex/latex/base/ifthen.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/xkeyval/xkeyval.sty
+(/usr/share/texlive/texmf-dist/tex/generic/xkeyval/xkeyval.tex
+(/usr/share/texlive/texmf-dist/tex/generic/xkeyval/xkvutils.tex)))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibrarypositioning.code.tex)
+(/usr/share/texlive/texmf-dist/tex/latex/tools/calc.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/imakeidx/imakeidx.sty
+(/usr/share/texlive/texmf-dist/tex/generic/iftex/ifxetex.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/iftex/ifluatex.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/tools/multicol.sty))
+Writing index file main.idx
+(/usr/share/texlive/texmf-dist/tex/latex/xpatch/xpatch.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty)
+No file main.aux.
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+(/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+(/usr/share/texlive/texmf-dist/tex/latex/grfext/grfext.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg))
+[1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
+Underfull \hbox (badness 10000) in paragraph at lines 137--137
+|\OT1/cmr/bx/n/14.4 Abstract|
+(./abstract.tex) [2] [3]
+Underfull \hbox (badness 10000) in paragraph at lines 146--146
+[]\OT1/cmr/bx/n/14.4 Acknowledgements|
+(./acknowledgements.tex) [4]
+No file main.toc.
+[5]
+No file main.lot.
+[6]
+No file main.lof.
+[7] (./ch-intro.tex
+Chapter 1.
+
+Package natbib Warning: Citation `poirier2019estimates' on page 1 undefined on
+input line 5.
+
+
+Package natbib Warning: Citation `cpac2020lung' on page 1 undefined on input li
+ne 5.
+
+
+Package natbib Warning: Citation `beck2011cognitive' on page 1 undefined on inp
+ut line 7.
+
+
+Package natbib Warning: Citation `hayes1999acceptance' on page 1 undefined on i
+nput line 7.
+
+
+Package natbib Warning: Citation `miller2012motivational' on page 1 undefined o
+n input line 7.
+
+
+Package natbib Warning: Citation `llewellyn2017economic' on page 1 undefined on
+ input line 7.
+
+
+Package natbib Warning: Citation `crosato2011rural' on page 1 undefined on inpu
+t line 7.
+
+
+Package natbib Warning: Citation `jones2021mental' on page 1 undefined on input
+ line 7.
+
+
+Package natbib Warning: Citation `firstnationshealth2023' on page 1 undefined o
+n input line 7.
+
+
+Package natbib Warning: Citation `turner2018poverty' on page 1 undefined on inp
+ut line 7.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 10--10
+[]|[]\OT1/cmr/bx/n/7 Chatbot-
+
+Underfull \hbox (badness 10000) in paragraph at lines 10--10
+\OT1/cmr/bx/n/7 based Coun-
+
+Package natbib Warning: Citation `torous2017digital' on page 1 undefined on inp
+ut line 10.
+
+
+Package natbib Warning: Citation `miner2016smartphone' on page 1 undefined on i
+nput line 10.
+
+
+Package natbib Warning: Citation `miller1991motivational' on page 1 undefined o
+n input line 16.
+
+
+Package natbib Warning: Citation `MillerRollnick2013' on page 1 undefined on in
+put line 16.
+
+
+Package natbib Warning: Citation `bischof2021evidence' on page 1 undefined on i
+nput line 17.
+
+
+Package natbib Warning: Citation `hettema2005meta' on page 1 undefined on input
+ line 17.
+
+
+Package natbib Warning: Citation `rollnick2008motivational' on page 1 undefined
+ on input line 19.
+
+
+Package natbib Warning: Citation `Miller_2023' on page 1 undefined on input lin
+e 19.
+
+[1]
+
+Package natbib Warning: Citation `brown2023mi' on page 2 undefined on input lin
+e 22.
+
+
+Package natbib Warning: Citation `Abar2013' on page 2 undefined on input line 2
+2.
+
+
+Package natbib Warning: Citation `Gwaltney2009-wj' on page 2 undefined on input
+ line 22.
+
+
+Package natbib Warning: Citation `apodaca2009mechanisms' on page 2 undefined on
+ input line 22.
+
+
+Package natbib Warning: Citation `vaswani2017attention' on page 2 undefined on
+input line 25.
+
+
+Package natbib Warning: Citation `openai2023gpt4' on page 2 undefined on input
+line 25.
+
+
+Package natbib Warning: Citation `miner2020artificial' on page 2 undefined on i
+nput line 25.
+
+
+Package natbib Warning: Citation `torous2023generative' on page 2 undefined on
+input line 25.
+
+
+Package natbib Warning: Citation `vaswani2017attention' on page 2 undefined on
+input line 27.
+
+
+Package natbib Warning: Citation `valentino2024evaluating' on page 2 undefined
+on input line 27.
+
+
+Package natbib Warning: Citation `10.5555/3600270.3602281' on page 2 undefined
+on input line 27.
+
+
+Package natbib Warning: Citation `gilson2023empathy' on page 2 undefined on inp
+ut line 27.
+
+
+Package natbib Warning: Citation `vaswani2017attention' on page 2 undefined on
+input line 34.
+
+
+Package natbib Warning: Citation `vaswani2017attention' on page 2 undefined on
+input line 34.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 40--40
+[]|[]\OT1/cmr/bx/n/7 Syn-thetic
+[2]
+
+LaTeX Warning: Reference `ch:background' on page 3 undefined on input line 61.
+
+
+LaTeX Warning: Reference `ch:mibot' on page 3 undefined on input line 61.
+
+
+LaTeX Warning: Reference `ch:mibot-eval' on page 3 undefined on input line 61.
+
+) (./ch-background.tex [3 <./fig/transformer_architecture.png>] [4]
+Chapter 2.
+
+Package natbib Warning: Citation `Miller1983' on page 5 undefined on input line
+ 7.
+
+
+Package natbib Warning: Citation `MillerRollnick2023' on page 5 undefined on in
+put line 7.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 7--7
+[]|[]\OT1/cmr/bx/n/7 Client-
+
+Package natbib Warning: Citation `MillerRollnick2002' on page 5 undefined on in
+put line 7.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 7--7
+[]|[]\OT1/cmr/bx/n/7 Guid-ing
+
+Package natbib Warning: Citation `MillerRose2009' on page 5 undefined on input
+line 7.
+
+
+LaTeX Warning: Reference `tab:change_sustain_talk' on page 5 undefined on input
+ line 7.
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd)
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd)
+Overfull \hbox (1.48273pt too wide) in paragraph at lines 20--20
+[]|\OT1/cmr/bx/n/10 Counsellor|
+
+Package natbib Warning: Citation `MillerRollnick2013' on page 5 undefined on in
+put line 32.
+
+
+Package natbib Warning: Citation `MillerRollnick2013' on page 5 undefined on in
+put line 32.
+
+
+Package natbib Warning: Citation `Rollnick1995' on page 5 undefined on input li
+ne 32.
+
+
+LaTeX Warning: Reference `tab:mi_skill_examples' on page 5 undefined on input l
+ine 32.
+
+[5]
+Underfull \hbox (badness 10000) in paragraph at lines 35--35
+[]|[]\OT1/cmr/bx/n/7 Am-biva-lent
+
+Package natbib Warning: Citation `Rollnick1997' on page 6 undefined on input li
+ne 35.
+
+
+Package natbib Warning: Citation `MillerRollnick2023' on page 6 undefined on in
+put line 35.
+
+
+Package natbib Warning: Citation `MillerRose2009' on page 6 undefined on input
+line 35.
+
+
+Overfull \hbox (1.03578pt too wide) in paragraph at lines 35--36
+[]\OT1/cmr/m/n/10 MI's em-pa-thetic, autonomy-supportive at-mo-sphere is par-ti
+c-u-larly im-por-tant for |[][]\OT1/cmr/m/it/10 am-biva-lent smok-
+
+Underfull \hbox (badness 10000) in paragraph at lines 45--45
+[]|\OT1/cmr/bx/n/10 Open-ended Ques-
+
+Package natbib Warning: Citation `Houck2010' on page 6 undefined on input line
+66.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 68--68
+[]|[]\OT1/cmr/bx/n/7 Readi-ness
+
+Package natbib Warning: Citation `Boudreaux2012' on page 6 undefined on input l
+ine 68.
+
+[6]
+
+Package natbib Warning: Citation `Babb2017' on page 7 undefined on input line 7
+1.
+
+
+Package natbib Warning: Citation `Heckman2010' on page 7 undefined on input lin
+e 73.
+
+
+Package natbib Warning: Citation `Lindson2015' on page 7 undefined on input lin
+e 73.
+
+
+Package natbib Warning: Citation `Lindson2015' on page 7 undefined on input lin
+e 75.
+
+
+Package natbib Warning: Citation `zanjani2008effectiveness' on page 7 undefined
+ on input line 75.
+
+
+Package natbib Warning: Citation `Boudreaux2012' on page 7 undefined on input l
+ine 78.
+
+
+Package natbib Warning: Citation `Hettema2005' on page 7 undefined on input lin
+e 78.
+
+
+Package natbib Warning: Citation `West2006' on page 7 undefined on input line 7
+8.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 84--84
+[]|[]\OT1/cmr/bx/n/7 Foun-da-tional
+
+Package natbib Warning: Citation `stanfordCRFM2021' on page 7 undefined on inpu
+t line 84.
+
+
+LaTeX Warning: Reference `ssec:transformers' on page 7 undefined on input line
+84.
+
+
+Package natbib Warning: Citation `brown2020language' on page 7 undefined on inp
+ut line 86.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 86--86
+[]|[]\OT1/cmr/bx/n/7 Few-Shot
+
+Underfull \hbox (badness 10000) in paragraph at lines 86--86
+[]|[]\OT1/cmr/bx/n/7 In-Context
+
+Package natbib Warning: Citation `xie-etal-2024-shot-dialogue' on page 7 undefi
+ned on input line 86.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 86--86
+[]|[]\OT1/cmr/bx/n/7 Expert-
+
+Underfull \hbox (badness 10000) in paragraph at lines 86--86
+\OT1/cmr/bx/n/7 Informed
+
+Package natbib Warning: Citation `10.5555/3600270.3602070' on page 7 undefined
+on input line 86.
+
+[7]
+
+Package natbib Warning: Citation `fernandez-etal-2025-lamia' on page 8 undefine
+d on input line 89.
+
+
+Package natbib Warning: Citation `10.5555/3600270.3602070' on page 8 undefined
+on input line 89.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 89--89
+[]|[]\OT1/cmr/bx/n/7 Pol-icy Mod-
+
+Package natbib Warning: Citation `du-etal-2024-rewarding' on page 8 undefined o
+n input line 89.
+
+
+Package natbib Warning: Citation `vaswani2017attention' on page 8 undefined on
+input line 94.
+
+
+Package natbib Warning: Citation `vaswani2017attention' on page 8 undefined on
+input line 94.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 94--94
+[]|[]\OT1/cmr/bx/n/7 Multi-Head
+
+Package natbib Warning: Citation `brown2020language' on page 8 undefined on inp
+ut line 99.
+
+
+Package natbib Warning: Citation `openai2023gpt4' on page 8 undefined on input
+line 99.
+
+
+Package natbib Warning: Citation `chowdhery2022palm' on page 8 undefined on inp
+ut line 103.
+
+
+Package natbib Warning: Citation `geminiteam2025geminifamilyhighlycapable' on p
+age 8 undefined on input line 103.
+
+
+Package natbib Warning: Citation `52065' on page 8 undefined on input line 103.
+
+
+
+Package natbib Warning: Citation `berti2025emergentabilitieslargelanguage' on p
+age 8 undefined on input line 103.
+
+
+Package natbib Warning: Citation `Weizenbaum1966' on page 8 undefined on input
+line 107.
+
+
+Package natbib Warning: Citation `10.5555/212154.212175' on page 8 undefined on
+ input line 107.
+
+
+Package natbib Warning: Citation `Colby1971' on page 8 undefined on input line
+107.
+
+[8]
+
+Package natbib Warning: Citation `Hartman1986' on page 9 undefined on input lin
+e 110.
+
+
+Package natbib Warning: Citation `Sampson1986' on page 9 undefined on input lin
+e 110.
+
+
+Package natbib Warning: Citation `ServanSchreiber1986' on page 9 undefined on i
+nput line 110.
+
+
+Package natbib Warning: Citation `Selmi1990' on page 9 undefined on input line
+110.
+
+
+Package natbib Warning: Citation `Proudfoot2003' on page 9 undefined on input l
+ine 110.
+
+
+Package natbib Warning: Citation `Fitzpatrick2017' on page 9 undefined on input
+ line 113.
+
+
+Package natbib Warning: Citation `Chang2024' on page 9 undefined on input line
+113.
+
+
+Package natbib Warning: Citation `Fitzpatrick2017' on page 9 undefined on input
+ line 113.
+
+
+Package natbib Warning: Citation `Chang2024' on page 9 undefined on input line
+113.
+
+
+Package natbib Warning: Citation `almusharraf2018motivating' on page 9 undefine
+d on input line 115.
+
+
+Package natbib Warning: Citation `LIMPANOPPARAT2024100081' on page 9 undefined
+on input line 117.
+
+[9]
+
+Package natbib Warning: Citation `mahmood-etal-2025-fully' on page 10 undefined
+ on input line 123.
+
+
+Package natbib Warning: Citation `kian2024can' on page 10 undefined on input li
+ne 123.
+
+
+Package natbib Warning: Citation `Ye2025' on page 10 undefined on input line 12
+3.
+
+
+Package natbib Warning: Citation `shen-etal-2020-counseling' on page 10 undefin
+ed on input line 123.
+
+
+Package natbib Warning: Citation `shen-etal-2020-counseling' on page 10 undefin
+ed on input line 123.
+
+
+Package natbib Warning: Citation `brown2023motivational' on page 10 undefined o
+n input line 123.
+
+
+Package natbib Warning: Citation `Saiyed2022' on page 10 undefined on input lin
+e 126.
+
+
+Package natbib Warning: Citation `Meyer2025' on page 10 undefined on input line
+ 128.
+
+
+Package natbib Warning: Citation `BienerAbrams1991' on page 10 undefined on inp
+ut line 128.
+
+
+Package natbib Warning: Citation `Meyer2025' on page 10 undefined on input line
+ 128.
+
+
+Package natbib Warning: Citation `doi:10.1056/AIoa2400802' on page 10 undefined
+ on input line 131.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 131--131
+[]|[]\OT1/cmr/bx/n/7 Ther-a-peu-tic
+[10]
+
+Package natbib Warning: Citation `corda2024context' on page 11 undefined on inp
+ut line 133.
+
+
+LaTeX Warning: Reference `sec:background_synthetic_validation' on page 11 undef
+ined on input line 137.
+
+
+Package natbib Warning: Citation `Scholich2025' on page 11 undefined on input l
+ine 137.
+
+
+Package natbib Warning: Citation `Li2023' on page 11 undefined on input line 14
+1.
+
+
+Package natbib Warning: Citation `Amugongo2025RAG' on page 11 undefined on inpu
+t line 141.
+
+
+Package natbib Warning: Citation `SEITZ2024100067' on page 11 undefined on inpu
+t line 144.
+
+
+Package natbib Warning: Citation `Scholich2025' on page 11 undefined on input l
+ine 144.
+
+
+Underfull \hbox (badness 6461) in paragraph at lines 148--148
+[]|[]\OT1/cmr/bx/n/7 Per-sona Cre-
+
+Package natbib Warning: Citation `zhang-etal-2018-personalizing' on page 11 und
+efined on input line 148.
+
+
+Underfull \hbox (badness 6412) in paragraph at lines 148--148
+[]|[]\OT1/cmr/bx/n/7 Per-sona Pro-
+
+Package natbib Warning: Citation `roller-etal-2021-recipes' on page 11 undefine
+d on input line 148.
+
+
+Package natbib Warning: Citation `li-etal-2016-persona' on page 11 undefined on
+ input line 148.
+
+
+Package natbib Warning: Citation `kim-etal-2020-will' on page 11 undefined on i
+nput line 148.
+
+
+Package natbib Warning: Citation `song-etal-2020-profile' on page 11 undefined
+on input line 148.
+
+[11]
+Underfull \hbox (badness 1009) in paragraph at lines 151--151
+[]|[]\OT1/cmr/bx/n/7 Prompt En-gi-
+
+Package natbib Warning: Citation `10.5555/3600270.3602281' on page 12 undefined
+ on input line 151.
+
+
+Package natbib Warning: Citation `madotto-etal-2019-personalizing' on page 12 u
+ndefined on input line 151.
+
+
+Package natbib Warning: Citation `liu-etal-2024-evaluating-large' on page 12 un
+defined on input line 151.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 153--153
+[]|[]\OT1/cmr/bx/n/7 Be-havioural
+
+Underfull \hbox (badness 10000) in paragraph at lines 153--153
+\OT1/cmr/bx/n/7 Ex-em-pli-fi-ca-
+
+Package natbib Warning: Citation `joshi-etal-2023-persona' on page 12 undefined
+ on input line 153.
+
+
+Package natbib Warning: Citation `gururangan-etal-2020-dont' on page 12 undefin
+ed on input line 153.
+
+
+Package natbib Warning: Citation `yang-etal-2023-large' on page 12 undefined on
+ input line 153.
+
+
+Package natbib Warning: Citation `niu-bansal-2018-polite' on page 12 undefined
+on input line 158.
+
+
+Package natbib Warning: Citation `sudhakar-etal-2019-transforming' on page 12 u
+ndefined on input line 158.
+
+
+Package natbib Warning: Citation `niu-bansal-2018-polite' on page 12 undefined
+on input line 158.
+
+
+Package natbib Warning: Citation `zhong-etal-2021-stylized' on page 12 undefine
+d on input line 158.
+
+
+Package natbib Warning: Citation `zhong-etal-2021-stylized' on page 12 undefine
+d on input line 158.
+
+
+Package natbib Warning: Citation `li-etal-2016-persona' on page 12 undefined on
+ input line 160.
+
+
+Package natbib Warning: Citation `roller-etal-2021-recipes' on page 12 undefine
+d on input line 160.
+
+
+Overfull \hbox (3.01967pt too wide) in paragraph at lines 160--161
+\OT1/cmr/m/n/10 train-ing on di-a-logues where an agent con-sis-tently speaks w
+ith a given per-sona (or on mono-logues/writ-
+[12]
+
+Package natbib Warning: Citation `shuster2022blenderbot3deployedconversational'
+ on page 13 undefined on input line 164.
+
+
+Package natbib Warning: Citation `xu-etal-2022-beyond' on page 13 undefined on
+input line 164.
+
+
+Package natbib Warning: Citation `shuster2022blenderbot3deployedconversational'
+ on page 13 undefined on input line 164.
+
+
+Package natbib Warning: Citation `shuster2022blenderbot3deployedconversational'
+ on page 13 undefined on input line 164.
+
+
+Package natbib Warning: Citation `xu-etal-2022-beyond' on page 13 undefined on
+input line 164.
+
+
+Package natbib Warning: Citation `kimara-etal-2025-personaAI' on page 13 undefi
+ned on input line 166.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 169--169
+[]|[]\OT1/cmr/bx/n/7 Log-i-cal Con-
+
+Package natbib Warning: Citation `welleck-etal-2019-dialogueNLI' on page 13 und
+efined on input line 169.
+
+
+Package natbib Warning: Citation `li-etal-2020-dont' on page 13 undefined on in
+put line 169.
+
+
+Package natbib Warning: Citation `kim-etal-2020-will' on page 13 undefined on i
+nput line 169.
+
+
+Package natbib Warning: Citation `kim-etal-2020-will' on page 13 undefined on i
+nput line 169.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 171--171
+[]|[]\OT1/cmr/bx/n/7 Lin-guis-tic
+
+Underfull \hbox (badness 10000) in paragraph at lines 171--171
+\OT1/cmr/bx/n/7 Style Match-
+
+Package natbib Warning: Citation `jiang-etal-2023-personallm' on page 13 undefi
+ned on input line 171.
+
+
+Package natbib Warning: Citation `jiang-etal-2023-personallm' on page 13 undefi
+ned on input line 171.
+
+
+Package natbib Warning: Citation `jiang-etal-2023-personallm' on page 13 undefi
+ned on input line 171.
+
+[13]
+
+Package natbib Warning: Citation `shu-etal-2024-personality-tests' on page 14 u
+ndefined on input line 174.
+
+
+Package natbib Warning: Citation `shu-etal-2024-personality-tests' on page 14 u
+ndefined on input line 174.
+
+
+Package natbib Warning: Citation `jiang-etal-2023-personallm' on page 14 undefi
+ned on input line 174.
+
+
+Package natbib Warning: Citation `liu-etal-2024-personagym' on page 14 undefine
+d on input line 174.
+
+
+Package natbib Warning: Citation `liu-etal-2024-evaluating-large' on page 14 un
+defined on input line 178.
+
+
+Package natbib Warning: Citation `gupta-etal-2024-bias' on page 14 undefined on
+ input line 182.
+
+
+Package natbib Warning: Citation `smith-etal-2020-mitigating' on page 14 undefi
+ned on input line 182.
+
+[14]
+
+Package natbib Warning: Citation `Argyle2023' on page 15 undefined on input lin
+e 195.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 195--195
+[]|[]\OT1/cmr/bx/n/7 Al-go-rith-mic
+
+Package natbib Warning: Citation `Aher2023' on page 15 undefined on input line
+200.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 200--200
+[]|[]\OT1/cmr/bx/n/7 Hyper-
+[15]
+
+Package natbib Warning: Citation `Park2023' on page 16 undefined on input line
+203.
+
+[16]
+
+Package natbib Warning: Citation `Haider2025' on page 17 undefined on input lin
+e 208.
+
+
+Package natbib Warning: Citation `Oncu2025' on page 17 undefined on input line
+210.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 210--210
+[]|[]\OT1/cmr/bx/n/7 stan-dard-ized
+[17]) (./ch-mibot.tex [18]
+Chapter 3.
+
+Package natbib Warning: Citation `Babb2017' on page 19 undefined on input line
+4.
+
+
+Package natbib Warning: Citation `West2006' on page 19 undefined on input line
+4.
+
+
+Package natbib Warning: Citation `info:doi/10.2196/49132' on page 19 undefined
+on input line 6.
+
+
+Package natbib Warning: Citation `mahmood-etal-2025-fully' on page 19 undefined
+ on input line 6.
+
+
+LaTeX Warning: Reference `sec:iterative-development' on page 19 undefined on in
+put line 8.
+
+
+LaTeX Warning: Reference `sec:observers' on page 19 undefined on input line 8.
+
+
+LaTeX Warning: Reference `sec:deployment' on page 19 undefined on input line 8.
+
+
+
+LaTeX Warning: Reference `sec:feasibility' on page 19 undefined on input line 8
+.
+
+
+LaTeX Warning: Reference `ch:mibot-eval' on page 19 undefined on input line 8.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 16--16
+[]|[]\OT1/cmr/bx/n/7 Clinician-
+
+Package natbib Warning: Citation `openai2024gpt4ocard' on page 19 undefined on
+input line 16.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 21--21
+[]|[]\OT1/cmr/bx/n/7 Single-Prompt
+[19]
+
+LaTeX Warning: Reference `ch:synthetic-smoker' on page 20 undefined on input li
+ne 27.
+
+
+Underfull \hbox (badness 3343) in paragraph at lines 28--28
+[]|[]\OT1/cmr/bx/n/7 Hu-man Role-
+
+Underfull \hbox (badness 10000) in paragraph at lines 36--36
+[]|[]\OT1/cmr/bx/n/7 Length
+
+Underfull \hbox (badness 10000) in paragraph at lines 38--38
+[]|[]\OT1/cmr/bx/n/7 Ac-ces-si-ble
+
+Underfull \hbox (badness 10000) in paragraph at lines 40--40
+[]|[]\OT1/cmr/bx/n/7 No As-sump-
+
+LaTeX Warning: Reference `tab:initial-system-prompt' on page 20 undefined on in
+put line 54.
+
+
+LaTeX Warning: Reference `tab:final-system-prompt' on page 20 undefined on inpu
+t line 54.
+
+[20] (./tab/initial-final-prompts.tex
+(/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd)) [21]
+
+pdfTeX warning: pdflatex (file ./fig/sysdiag.pdf): PDF inclusion: found PDF ver
+sion <1.7>, but at most version <1.5> allowed
+
+Package natbib Warning: Citation `mahmood-etal-2025-fully' on page 22 undefined
+ on input line 62.
+
+
+Package natbib Warning: Citation `mahmood-etal-2025-fully' on page 22 undefined
+ on input line 62.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 68--68
+[]|[]\OT1/cmr/bx/n/7 Ob-server
+
+LaTeX Warning: Reference `ch:mibot-eval' on page 22 undefined on input line 74.
+
+
+[22 <./fig/sysdiag.pdf>]
+
+LaTeX Warning: Reference `fig:sysdiag' on page 23 undefined on input line 83.
+
+(./sec/mibot-deployment.tex
+Underfull \hbox (badness 10000) in paragraph at lines 8--8
+[]|[]\OT1/cmr/bx/n/7 Con-tainer-iza-
+
+Package natbib Warning: Citation `pi_sanic' on page 23 undefined on input line
+10.
+
+
+
+pdfTeX warning: pdflatex (file ./fig/microservice.drawio.pdf): PDF inclusion: f
+ound PDF version <1.7>, but at most version <1.5> allowed
+
+LaTeX Warning: Reference `fig:microservice' on page 23 undefined on input line
+17.
+
+
+Overfull \hbox (5.24063pt too wide) in paragraph at lines 19--20
+[]\OT1/cmr/m/n/10 Each |[][] at-tached to the \OT1/cmtt/m/n/10 Conversation \OT
+1/cmr/m/n/10 in-her-its from a base class defin-ing an asyn-chronous \OT1/cmtt/
+m/n/10 observe()
+
+LaTeX Warning: Reference `sec:feasibility' on page 23 undefined on input line 2
+1.
+
+
+
+pdfTeX warning: pdflatex (file ./fig/container.drawio.pdf): PDF inclusion: foun
+d PDF version <1.7>, but at most version <1.5> allowed
+
+Package natbib Warning: Citation `sloane2025containerization' on page 23 undefi
+ned on input line 32.
+
+[23]
+
+Package natbib Warning: Citation `aws-ecs-getting-started' on page 24 undefined
+ on input line 39.
+
+
+
+pdfTeX warning: pdflatex (file ./fig/deployment.drawio.pdf): PDF inclusion: fou
+nd PDF version <1.7>, but at most version <1.5> allowed
+
+Overfull \hbox (18.70323pt too wide) in paragraph at lines 49--50
+[] []\OT1/cmr/bx/n/10 1. ECS Clus-ter:[] \OT1/cmr/m/n/10 To de-ploy MI-Bot to E
+CS, we first pro-vi-sioned an |[][]\OT1/cmr/bx/n/10 ECS clus-ter \OT1/cmr/m/n/1
+0 (\OT1/cmtt/m/n/10 mibot-v6-cluster\OT1/cmr/m/n/10 ).
+[24 <./fig/microservice.drawio.pdf>] [25 <./fig/container.drawio.pdf> <./fig/de
+ployment.drawio.pdf>]
+
+Package natbib Warning: Citation `aws_alb' on page 26 undefined on input line 5
+9.
+
+
+Package natbib Warning: Citation `shopify_domain_seo' on page 26 undefined on i
+nput line 59.
+
+) (./sec/feasibility.tex
+Underfull \hbox (badness 10000) in paragraph at lines 3--3
+[]|[]\OT1/cmr/bx/n/7 Fea-si-bil-ity
+[26]
+Underfull \hbox (badness 10000) in paragraph at lines 6--6
+[]|[]\OT1/cmr/bx/n/7 ethics ap-
+
+Package natbib Warning: Citation `brown2023motivational' on page 27 undefined o
+n input line 10.
+
+
+Package natbib Warning: Citation `info:doi/10.2196/20251' on page 27 undefined
+on input line 10.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 14--14
+[]|[]\OT1/cmr/bx/n/7 In-Study
+
+LaTeX Warning: Reference `tab:participant-characteristics' on page 27 undefined
+ on input line 20.
+
+
+LaTeX Warning: Reference `subsec:readiness-ruler' on page 27 undefined on input
+ line 91.
+
+[27] [28]
+
+pdfTeX warning: pdflatex (file ./fig/feasibility_study_flow.pdf): PDF inclusion
+: found PDF version <1.7>, but at most version <1.5> allowed
+
+Underfull \hbox (badness 10000) in paragraph at lines 105--105
+[]|[]\OT1/cmr/bx/n/7 study pro-ce-
+
+LaTeX Warning: Reference `fig:study-flow' on page 29 undefined on input line 10
+5.
+
+
+Package natbib Warning: Citation `heatherton1989measuring' on page 29 undefined
+ on input line 112.
+
+
+LaTeX Warning: Reference `subsec:readiness-ruler' on page 29 undefined on input
+ line 119.
+
+
+LaTeX Warning: Reference `subsec:care' on page 29 undefined on input line 126.
+
+[29 <./fig/feasibility_study_flow.pdf>]
+
+Package natbib Warning: Citation `rollnick1992development' on page 30 undefined
+ on input line 138.
+
+
+Package natbib Warning: Citation `Gwaltney2009-wj' on page 30 undefined on inpu
+t line 145.
+
+
+Package natbib Warning: Citation `Abar2013' on page 30 undefined on input line
+145.
+
+
+Package natbib Warning: Citation `mercer2004consultation' on page 30 undefined
+on input line 149.
+
+
+Package natbib Warning: Citation `bikker2015measuring' on page 30 undefined on
+input line 149.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 152--152
+[]|[]\OT1/cmr/bx/n/7 qual-i-ta-tive
+
+Package natbib Warning: Citation `Houck2010' on page 30 undefined on input line
+ 165.
+
+
+Package natbib Warning: Citation `ali2025automated' on page 30 undefined on inp
+ut line 165.
+
+
+Package natbib Warning: Citation `mahmood-etal-2025-fully' on page 30 undefined
+ on input line 165.
+
+
+Package natbib Warning: Citation `mahmood-etal-2025-fully' on page 30 undefined
+ on input line 165.
+
+[30])) (./ch-mibot-eval.tex [31]
+Chapter 4.
+
+Underfull \hbox (badness 10000) in paragraph at lines 4--4
+[]|[]\OT1/cmr/bx/n/7 Fea-si-bil-ity
+
+LaTeX Warning: Reference `sec:primary-outcome' on page 32 undefined on input li
+ne 6.
+
+
+LaTeX Warning: Reference `sec:perceived-empathy' on page 32 undefined on input
+line 6.
+
+
+LaTeX Warning: Reference `sec:mi-adherence' on page 32 undefined on input line
+6.
+
+
+LaTeX Warning: Reference `sec:behavioural-outcomes' on page 32 undefined on inp
+ut line 8.
+
+
+LaTeX Warning: Reference `sec:conversation-dynamics' on page 32 undefined on in
+put line 8.
+
+
+LaTeX Warning: Reference `sec:case-studies' on page 32 undefined on input line
+8.
+
+
+LaTeX Warning: Reference `sec:feedback' on page 32 undefined on input line 8.
+
+
+LaTeX Warning: Reference `sec:synthesis' on page 32 undefined on input line 8.
+
+
+LaTeX Warning: Reference `table:mibot_ruler_summary' on page 32 undefined on in
+put line 15.
+
+
+Underfull \hbox (badness 1314) in paragraph at lines 15--15
+[]|[]\OT1/cmr/bx/n/7 Pri-mary Out-
+
+Package natbib Warning: Citation `Gwaltney2009-wj' on page 32 undefined on inpu
+t line 15.
+
+
+Package natbib Warning: Citation `Abar2013' on page 32 undefined on input line
+15.
+
+
+LaTeX Warning: Reference `fig:confidence_change_distribution' on page 32 undefi
+ned on input line 36.
+
+[32]
+
+LaTeX Warning: Reference `tab:baseline_confidence' on page 33 undefined on inpu
+t line 49.
+
+
+Underfull \hbox (badness 2158) in paragraph at lines 49--49
+[]|[]\OT1/cmr/bx/n/7 Re-gres-sion to
+
+LaTeX Warning: Reference `tab:hsi_prequit' on page 33 undefined on input line 7
+4.
+
+[33 <./fig/2024-11-14-MIV6.3A-2024-11-22-MIV6.3A_ruler_deltas_delta_with_week_l
+ater_keep_high_conf_False_change.png>] [34]
+
+Package natbib Warning: Citation `10.1093/fampra/cmh621' on page 35 undefined o
+n input line 154.
+
+
+LaTeX Warning: Reference `table:care_comparison' on page 35 undefined on input
+line 154.
+
+
+Package natbib Warning: Citation `Bikker2015' on page 35 undefined on input lin
+e 154.
+
+
+Package natbib Warning: Citation `Bikker2015' on page 35 undefined on input lin
+e 169.
+
+
+Package natbib Warning: Citation `Bikker2015' on page 35 undefined on input lin
+e 169.
+
+[35]
+Underfull \hbox (badness 10000) in paragraph at lines 187--187
+[]\OT1/cmr/m/n/7 being in-ter-ested in
+
+Underfull \hbox (badness 10000) in paragraph at lines 188--188
+[]\OT1/cmr/m/n/7 fully un-der-stand-ing
+
+LaTeX Warning: Float too large for page by 68.98543pt on input line 254.
+
+[36]
+
+LaTeX Warning: Reference `table:care_question_means' on page 37 undefined on in
+put line 285.
+
+
+Package natbib Warning: Citation `sabour-etal-2024-emobench' on page 37 undefin
+ed on input line 288.
+
+
+Package natbib Warning: Citation `Yang2024' on page 37 undefined on input line
+288.
+
+
+LaTeX Warning: Reference `tab:care_comprehensive' on page 37 undefined on input
+ line 288.
+
+
+Package natbib Warning: Citation `brown2023mi' on page 37 undefined on input li
+ne 301.
+
+
+LaTeX Warning: Reference `fig:confidence_distributions' on page 37 undefined on
+ input line 338.
+
+[37]
+
+LaTeX Warning: Reference `fig:care_distributions' on page 38 undefined on input
+ line 373.
+
+
+LaTeX Warning: Reference `fig:care_questions' on page 38 undefined on input lin
+e 375.
+
+[38 <./fig/MIV5.2_ruler_deltas_delta_with_week_later_keep_high_conf_False_chang
+e.png> <./fig/MIV5.2_care_scores_histogram.png> <./fig/2024-11-14-MIV6.3A-2024-
+11-22-MIV6.3A_care_scores_histogram.png>]
+
+Package natbib Warning: Citation `brown2023mi' on page 39 undefined on input li
+ne 381.
+
+
+LaTeX Warning: Reference `sec:feasability' on page 39 undefined on input line 3
+86.
+
+
+Package natbib Warning: Citation `mahmood-etal-2025-fully' on page 39 undefined
+ on input line 386.
+
+
+Package natbib Warning: Citation `ali2025automated' on page 39 undefined on inp
+ut line 386.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 391--391
+[]|[]\OT1/cmr/bx/n/7 per-cent-age
+
+Underfull \hbox (badness 10000) in paragraph at lines 391--391
+\OT1/cmr/bx/n/7 MI-consistent
+
+Underfull \hbox (badness 10000) in paragraph at lines 391--391
+\OT1/cmr/bx/n/7 re-sponses
+[39 <./fig/combined_care_scores_with_improvement.png>]
+
+Package natbib Warning: Citation `moyers2016miti' on page 40 undefined on input
+ line 393.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 395--395
+[]|[]\OT1/cmr/bx/n/7 per-cent-age
+
+Underfull \hbox (badness 10000) in paragraph at lines 395--395
+\OT1/cmr/bx/n/7 change talk
+
+Package natbib Warning: Citation `apodaca2009' on page 40 undefined on input li
+ne 395.
+
+
+Package natbib Warning: Citation `perez-rosas-etal-2019-makes' on page 40 undef
+ined on input line 400.
+
+
+LaTeX Warning: Reference `table:automisc_summary' on page 40 undefined on input
+ line 404.
+
+
+Package natbib Warning: Citation `moyers2016miti' on page 40 undefined on input
+ line 404.
+
+
+LaTeX Warning: Reference `fig:misc_distributions' on page 40 undefined on input
+ line 423.
+
+
+LaTeX Warning: Reference `fig:misc_distributions' on page 40 undefined on input
+ line 470.
+
+
+LaTeX Warning: Reference `table:quit_attempts' on page 40 undefined on input li
+ne 516.
+
+[40]
+
+Package natbib Warning: Citation `Bandura1986' on page 41 undefined on input li
+ne 538.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 542--542
+[]|[]\OT1/cmr/bx/n/7 harm re-
+
+Underfull \hbox (badness 10000) in paragraph at lines 542--542
+\OT1/cmr/bx/n/7 duc-tion
+
+Package natbib Warning: Citation `Abrams2018' on page 41 undefined on input lin
+e 552.
+
+[41 <./fig/mic.png> <./fig/rq.png> <./fig/ct.png>]
+
+LaTeX Warning: Reference `table:conversation_metrics' on page 42 undefined on i
+nput line 559.
+
+[42] [43]
+Underfull \hbox (badness 7468) in paragraph at lines 680--680
+[]|[]\OT1/cmr/bx/n/7 user seg-men-
+
+Underfull \hbox (badness 10000) in paragraph at lines 708--708
+[]|[]\OT1/cmr/bx/n/7 mul-ti-vari-ate
+
+Underfull \hbox (badness 10000) in paragraph at lines 708--708
+\OT1/cmr/bx/n/7 re-gres-sion
+[44]
+
+Package natbib Warning: Citation `Whittaker2016' on page 45 undefined on input
+line 725.
+
+
+Package natbib Warning: Citation `Moyers2016' on page 45 undefined on input lin
+e 726.
+
+
+Package natbib Warning: Citation `Perski2017' on page 45 undefined on input lin
+e 727.
+
+
+Package natbib Warning: Citation `Stead2013' on page 45 undefined on input line
+ 728.
+
+[45]) (./ch-synthetic-smoker-2.tex [46]
+Chapter 5.
+
+LaTeX Warning: Reference `ch:mibot' on page 47 undefined on input line 4.
+
+
+Package natbib Warning: Citation `Cronbach1955' on page 47 undefined on input l
+ine 18.
+
+[47]
+Overfull \hbox (8.08995pt too wide) in paragraph at lines 31--32
+[]\OT1/cmr/bx/n/10 Psychological: \OT1/cmr/m/n/10 re-sis-tance to change, mo-ti
+-va-tion lev-els (e.g., op-er-a-tional-ized by pre-conversation
+[48]
+
+Package natbib Warning: Citation `loevinger1957objective' on page 49 undefined
+on input line 60.
+
+
+Package natbib Warning: Citation `borsboom2004concept' on page 49 undefined on
+input line 60.
+
+[49]
+
+Package natbib Warning: Citation `liu2024evaluating' on page 50 undefined on in
+put line 109.
+
+[50]
+
+LaTeX Warning: Reference `ch:background' on page 51 undefined on input line 140
+.
+
+[51]
+
+Package natbib Warning: Citation `perez2019what' on page 52 undefined on input
+line 159.
+
+
+LaTeX Warning: Reference `fig:verbosity-comparison' on page 52 undefined on inp
+ut line 163.
+
+
+LaTeX Warning: Reference `tab:resistance-ct-st' on page 52 undefined on input l
+ine 196.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[52]
+
+LaTeX Warning: Reference `tab:resistance-readiness-rulers' on page 53 undefined
+ on input line 217.
+
+
+Package natbib Warning: Citation `mahmood-etal-2025-fully' on page 53 undefined
+ on input line 250.
+
+
+LaTeX Warning: Reference `tab:ct-correlation' on page 53 undefined on input lin
+e 250.
+
+[53]
+
+LaTeX Warning: Reference `tab:doppelganger-correlations' on page 54 undefined o
+n input line 294.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[54]
+
+LaTeX Warning: Reference `tab:good-vs-bad-counselling' on page 55 undefined on
+input line 350.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[55]
+
+Package natbib Warning: Citation `cheng2023gpatients' on page 56 undefined on i
+nput line 377.
+
+
+Package natbib Warning: Citation `liu2024evaluating' on page 56 undefined on in
+put line 385.
+
+
+Overfull \hbox (17.79634pt too wide) in paragraph at lines 389--390
+\OT1/cmr/m/n/10 While lin-guis-tic fi-delity (%CT) was high, the fi-delity of s
+elf-reported in-ter-nal state changes ($^^A$Confidence)
+[56]) (./ch-synthetic-smoker-eval.tex [57]
+Chapter 6.
+
+Overfull \hbox (1.04752pt too wide) in paragraph at lines 6--7
+\OT1/cmr/m/n/10 first stage fo-cuses on val-i-dat-ing the ini-tial at-tempts to
+ con-trol spe-cific be-havioural at-tributes|namely
+[58]
+
+LaTeX Warning: Reference `fig:verbosity_utterance_length' on page 59 undefined
+on input line 32.
+
+
+LaTeX Warning: Reference `fig:verbosity_num_turns' on page 59 undefined on inpu
+t line 44.
+
+[59]
+
+LaTeX Warning: Reference `tab:resistance_change_sustain' on page 60 undefined o
+n input line 73.
+
+
+LaTeX Warning: Reference `tab:resistance_readiness_rulers' on page 60 undefined
+ on input line 87.
+
+[60]
+
+LaTeX Warning: Reference `tab:autoplay_results' on page 61 undefined on input l
+ine 122.
+
+[61]
+
+LaTeX Warning: Reference `tab:incremental_installation' on page 62 undefined on
+ input line 158.
+
+
+LaTeX Warning: Reference `tab:cf_human_correlation' on page 62 undefined on inp
+ut line 188.
+
+[62]
+
+LaTeX Warning: Reference `tab:cf_installation_individual' on page 63 undefined
+on input line 221.
+
+
+LaTeX Warning: Reference `tab:cf_installation_population' on page 63 undefined
+on input line 241.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+LaTeX Warning: Reference `fig:cf_distribution' on page 63 undefined on input li
+ne 256.
+
+[63]
+
+LaTeX Warning: Reference `tab:good_vs_bad_mi' on page 64 undefined on input lin
+e 292.
+
+
+Overfull \hbox (78.91121pt too wide) in paragraph at lines 298--306
+ [][]
+[64] [65]
+Chapter 7.
+[66]
+
+LaTeX Warning: Reference `fig:verbosity_utterance_length' on page 67 undefined
+on input line 351.
+
+
+LaTeX Warning: Reference `fig:verbosity_num_turns' on page 67 undefined on inpu
+t line 363.
+
+[67]
+
+LaTeX Warning: Reference `tab:resistance_change_sustain' on page 68 undefined o
+n input line 392.
+
+
+LaTeX Warning: Reference `tab:resistance_readiness_rulers' on page 68 undefined
+ on input line 406.
+
+[68]
+
+LaTeX Warning: Reference `tab:autoplay_results' on page 69 undefined on input l
+ine 441.
+
+[69]
+
+LaTeX Warning: Reference `tab:incremental_installation' on page 70 undefined on
+ input line 477.
+
+
+LaTeX Warning: Reference `tab:cf_human_correlation' on page 70 undefined on inp
+ut line 507.
+
+[70]
+
+LaTeX Warning: Reference `tab:cf_installation_individual' on page 71 undefined
+on input line 540.
+
+
+LaTeX Warning: Reference `tab:cf_installation_population' on page 71 undefined
+on input line 560.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+LaTeX Warning: Reference `fig:cf_distribution' on page 71 undefined on input li
+ne 575.
+
+[71]
+
+LaTeX Warning: Reference `tab:good_vs_bad_mi' on page 72 undefined on input lin
+e 611.
+
+
+Overfull \hbox (78.91121pt too wide) in paragraph at lines 617--625
+ [][]
+[72]) (./ch-conclusion.tex [73] [74]
+Chapter 8.
+[75]) (./ap-code.tex [76]
+Appendix A.
+) [77] (./main.ind [78]) [79]
+No file main.bbl.
+
+Package natbib Warning: There were undefined citations.
+
+(./main.aux (./tab/initial-final-prompts.aux))
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+
+Package rerunfilecheck Warning: File `main.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+ )
+(see the transcript file for additional information) </home/jules/.texlive2023/
+texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1000.600pk> </home/jules/.texlive2023
+/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1200.600pk></usr/share/texlive/texmf
+-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/
+fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/
+type1/public/amsfonts/cm/cmbx7.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
+ublic/amsfonts/cm/cmbx8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/a
+msfonts/cm/cmbx9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
+/cm/cmcsc10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
+mex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.
+pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></u
+sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/shar
+e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texli
+ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/share/texlive/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/
+fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/t
+ype1/public/amsfonts/cm/cmr5.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
+lic/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsf
+onts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/
+cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb
+></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr
+/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/share/
+texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texlive
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-
+dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fo
+nts/type1/public/amsfonts/cm/cmsy9.pfb></usr/share/texlive/texmf-dist/fonts/typ
+e1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
+lic/amsfonts/cm/cmti7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ams
+fonts/cm/cmti9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/c
+m/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt
+8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10
+.pfb>
+Output written on main.pdf (86 pages, 6363367 bytes).
+Transcript written on main.log.
+This is BibTeX, Version 0.99d (TeX Live 2023/Debian)
+The top-level auxiliary file: main.aux
+The style file: acl_natbib.bst
+Database file #1: main.bib
+Repeated entry---line 2400 of file main.bib
+ : @article{moyers2016miti
+ :                        ,
+I'm skipping whatever remains of this entry
+Warning--I didn't find a database entry for "kimara-etal-2025-personaAI"
+Warning--I didn't find a database entry for "gupta-etal-2024-bias"
+Warning--I didn't find a database entry for "info:doi/10.2196/49132"
+Warning--I didn't find a database entry for "mercer2004consultation"
+Warning--I didn't find a database entry for "bikker2015measuring"
+Warning--I didn't find a database entry for "Bandura1986"
+Warning--I didn't find a database entry for "Abrams2018"
+Warning--I didn't find a database entry for "Whittaker2016"
+Warning--I didn't find a database entry for "Perski2017"
+Warning--I didn't find a database entry for "Stead2013"
+Warning--I didn't find a database entry for "liu2024evaluating"
+Warning--I didn't find a database entry for "perez2019what"
+Warning--I didn't find a database entry for "cheng2023gpatients"
+Name 5 in "Ali, Soliman and Zhu, Jiading and Guo, Alex and Ye, Xiao Nan and Gu, Qilin, and Wolff, Jodi and Cooper, Carolynne and Melamed, Osnat C. and Selby, Peter and Rose, Jonathan" has a comma at the end for entry ali2025automated
+while executing---line 1836 of file acl_natbib.bst
+Name 5 in "Ali, Soliman and Zhu, Jiading and Guo, Alex and Ye, Xiao Nan and Gu, Qilin, and Wolff, Jodi and Cooper, Carolynne and Melamed, Osnat C. and Selby, Peter and Rose, Jonathan" has a comma at the end for entry ali2025automated
+while executing---line 1920 of file acl_natbib.bst
+Name 5 in "Ali, Soliman and Zhu, Jiading and Guo, Alex and Ye, Xiao Nan and Gu, Qilin, and Wolff, Jodi and Cooper, Carolynne and Melamed, Osnat C. and Selby, Peter and Rose, Jonathan" has a comma at the end for entry ali2025automated
+while executing---line 1920 of file acl_natbib.bst
+Warning--empty year in aws-ecs-getting-started
+Warning--can't use both volume and number fields in Miller1983
+Warning--empty journal in turner2018poverty
+Warning--empty journal in rollnick2008motivational
+Warning--can't use both volume and number fields in zhong-etal-2021-stylized
+(There were 4 error messages)
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex)
+ restricted \write18 enabled.
+entering extended mode
+(./main.tex
+LaTeX2e <2023-11-01> patch level 1
+L3 programming layer <2024-01-22>
+(./ut-thesis.cls
+Document Class: ut-thesis 2024/07/26 v3.1.8 University of Toronto thesis class
+(/usr/share/texlive/texmf-dist/tex/latex/base/book.cls
+Document Class: book 2023/05/17 v1.4n Standard LaTeX document class
+(/usr/share/texlive/texmf-dist/tex/latex/base/bk10.clo))
+(/usr/share/texlive/texmf-dist/tex/latex/textcase/textcase.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/geometry/geometry.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/iftex/ifvtex.sty
+(/usr/share/texlive/texmf-dist/tex/generic/iftex/iftex.sty)))
+(/usr/share/texlive/texmf-dist/tex/latex/setspace/setspace.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/color.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/color.cfg)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-def/pdftex.def)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/mathcolor.ltx))
+(/usr/share/texlive/texmf-dist/tex/latex/xcolor/xcolor.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/color.cfg)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/mathcolor.ltx))
+(/usr/share/texlive/texmf-dist/tex/latex/float/float.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
+For additional information on amsmath, use the `?' option.
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amssymb.sty
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amsfonts.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/multirow/multirow.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/graphics.cfg)))
+(/usr/share/texlive/texmf-dist/tex/latex/caption/subcaption.sty
+(/usr/share/texlive/texmf-dist/tex/latex/caption/caption.sty
+(/usr/share/texlive/texmf-dist/tex/latex/caption/caption3.sty)))
+(/usr/share/texlive/texmf-dist/tex/latex/booktabs/booktabs.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/threeparttable/threeparttable.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/pdflscape/pdflscape.sty
+(/usr/share/texlive/texmf-dist/tex/latex/pdflscape/pdflscape-nometadata.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/lscape.sty)))
+(/usr/share/texlive/texmf-dist/tex/latex/lipsum/lipsum.sty
+(/usr/share/texlive/texmf-dist/tex/latex/l3packages/l3keys2e/l3keys2e.sty
+(/usr/share/texlive/texmf-dist/tex/latex/l3kernel/expl3.sty
+(/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def)))
+(/usr/share/texlive/texmf-dist/tex/latex/lipsum/lipsum.ltd.tex))
+(/usr/share/texlive/texmf-dist/tex/latex/tools/array.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/ragged2e/ragged2e.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/titlesec/titlesec.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/tcolorbox/tcolorbox.sty
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfutil-latex.def)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfrcs.code.tex
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/pgf.revision.tex)))
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/basiclayer/pgfcore.sty
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/systemlayer/pgfsys.sty
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsys.code.tex
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfkeyslibraryfiltered
+.code.tex)) (/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgf.cfg)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-pdftex.def
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-common-pdf.de
+f)))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftpath.code.
+tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.code.
+tex))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcore.code.tex
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.code.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.basic.code
+.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.trigonomet
+ric.code.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.random.cod
+e.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.comparison
+.code.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.base.code.
+tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.round.code
+.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.misc.code.
+tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.integerari
+thmetics.code.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathcalc.code.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfint.code.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.code.te
+x)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathconstruct.
+code.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathusage.code
+.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorescopes.code.te
+x)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphicstate.c
+ode.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransformation
+s.code.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorequick.code.tex
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreobjects.code.t
+ex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathprocessing
+.code.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorearrows.code.te
+x)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreshade.code.tex
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreimage.code.tex
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreexternal.code.
+tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorelayers.code.te
+x)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransparency.c
+ode.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepatterns.code.
+tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorerdf.code.tex))
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmoduleshapes.code.tex
+) (/usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmoduleplot.code.tex
+)
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-0-65
+.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-1-18
+.sty)) (/usr/share/texlive/texmf-dist/tex/latex/tools/verbatim.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/environ/environ.sty
+(/usr/share/texlive/texmf-dist/tex/latex/trimspaces/trimspaces.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/etoolbox/etoolbox.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/tcolorbox/tcbraster.code.tex
+Library (tcolorbox): 'tcbraster.code.tex' version '6.2.0'
+) (/usr/share/texlive/texmf-dist/tex/latex/tcolorbox/tcbskins.code.tex
+Library (tcolorbox): 'tcbskins.code.tex' version '6.2.0'
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/utilities/pgffor.sty
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/utilities/pgfkeys.sty
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex))
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/math/pgfmath.sty
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgffor.code.tex))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/tikz.code.tex
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/pgflibraryplothandlers
+.code.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmodulematrix.code.tex
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibrarytopaths.code.tex)))
+(/usr/share/texlive/texmf-dist/tex/latex/tikzfill/tikzfill.image.sty
+(/usr/share/texlive/texmf-dist/tex/latex/tikzfill/tikzfill-common.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/tikzfill/tikzlibraryfill.image.code.te
+x)) (/usr/share/texlive/texmf-dist/tex/latex/tcolorbox/tcbskinsjigsaw.code.tex
+Library (tcolorbox): 'tcbskinsjigsaw.code.tex' version '6.2.0'
+)) (/usr/share/texlive/texmf-dist/tex/latex/tcolorbox/tcbbreakable.code.tex
+Library (tcolorbox): 'tcbbreakable.code.tex' version '6.2.0'
+(/usr/share/texlive/texmf-dist/tex/latex/pdfcol/pdfcol.sty
+(/usr/share/texlive/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/infwarerr/infwarerr.sty)))
+(/usr/share/texlive/texmf-dist/tex/latex/tcolorbox/tcbhooks.code.tex
+Library (tcolorbox): 'tcbhooks.code.tex' version '6.2.0'
+) (/usr/share/texlive/texmf-dist/tex/latex/tcolorbox/tcbtheorems.code.tex
+Library (tcolorbox): 'tcbtheorems.code.tex' version '6.2.0'
+) (/usr/share/texlive/texmf-dist/tex/latex/tcolorbox/tcbfitting.code.tex
+Library (tcolorbox): 'tcbfitting.code.tex' version '6.2.0'
+) (/usr/share/texlive/texmf-dist/tex/latex/tcolorbox/tcblistingsutf8.code.tex
+Library (tcolorbox): 'tcblistingsutf8.code.tex' version '6.2.0'
+(/usr/share/texlive/texmf-dist/tex/latex/tcolorbox/tcblistings.code.tex
+Library (tcolorbox): 'tcblistings.code.tex' version '6.2.0'
+(/usr/share/texlive/texmf-dist/tex/latex/listings/listings.sty
+(/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/listings/listings.cfg))
+(/usr/share/texlive/texmf-dist/tex/latex/tcolorbox/tcblistingscore.code.tex
+Library (tcolorbox): 'tcblistingscore.code.tex' version '6.2.0'
+(/usr/share/texlive/texmf-dist/tex/latex/tcolorbox/tcbprocessing.code.tex
+Library (tcolorbox): 'tcbprocessing.code.tex' version '6.2.0'
+))) (/usr/share/texlive/texmf-dist/tex/latex/listingsutf8/listingsutf8.sty
+(/usr/share/texlive/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/stringenc/stringenc.sty
+(/usr/share/texlive/texmf-dist/tex/generic/pdfescape/pdfescape.sty))))
+(/usr/share/texlive/texmf-dist/tex/latex/tcolorbox/tcbexternal.code.tex
+Library (tcolorbox): 'tcbexternal.code.tex' version '6.2.0'
+) (/usr/share/texlive/texmf-dist/tex/latex/tcolorbox/tcbmagazine.code.tex
+Library (tcolorbox): 'tcbmagazine.code.tex' version '6.2.0'
+) (/usr/share/texlive/texmf-dist/tex/latex/tcolorbox/tcbvignette.code.tex
+Library (tcolorbox): 'tcbvignette.code.tex' version '6.2.0'
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibraryfadings.code.tex
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/pgflibraryfadings.code
+.tex))) (/usr/share/texlive/texmf-dist/tex/latex/tcolorbox/tcbposter.code.tex
+Library (tcolorbox): 'tcbposter.code.tex' version '6.2.0'
+)) (/usr/share/texlive/texmf-dist/tex/latex/tools/tabularx.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/enumitem/enumitem.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/l3packages/xparse/xparse.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/fancyvrb/fancyvrb.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/natbib/natbib.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/marginnote/marginnote.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref.sty
+(/usr/share/texlive/texmf-dist/tex/latex/kvsetkeys/kvsetkeys.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/hycolor/hycolor.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/auxhook/auxhook.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
+(/usr/share/texlive/texmf-dist/tex/latex/refcount/refcount.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
+(/usr/share/texlive/texmf-dist/tex/latex/kvoptions/kvoptions.sty)))
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/pd1enc.def)
+(/usr/share/texlive/texmf-dist/tex/generic/intcalc/intcalc.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/puenc.def)
+(/usr/share/texlive/texmf-dist/tex/latex/url/url.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/bitset/bitset.sty
+(/usr/share/texlive/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/base/atbegshi-ltx.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hpdftex.def
+(/usr/share/texlive/texmf-dist/tex/latex/base/atveryend-ltx.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
+(/usr/share/texlive/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty)))
+(/usr/share/texlive/texmf-dist/tex/latex/todonotes/todonotes.sty
+(/usr/share/texlive/texmf-dist/tex/latex/base/ifthen.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/xkeyval/xkeyval.sty
+(/usr/share/texlive/texmf-dist/tex/generic/xkeyval/xkeyval.tex
+(/usr/share/texlive/texmf-dist/tex/generic/xkeyval/xkvutils.tex)))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibrarypositioning.code.tex)
+(/usr/share/texlive/texmf-dist/tex/latex/tools/calc.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/imakeidx/imakeidx.sty
+(/usr/share/texlive/texmf-dist/tex/generic/iftex/ifxetex.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/iftex/ifluatex.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/tools/multicol.sty))
+Writing index file main.idx
+(/usr/share/texlive/texmf-dist/tex/latex/xpatch/xpatch.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty) (./main.aux
+(./tab/initial-final-prompts.aux)
+
+LaTeX Warning: Label `fig:verbosity_utterance_length' multiply defined.
+
+
+LaTeX Warning: Label `fig:verbosity_num_turns' multiply defined.
+
+
+LaTeX Warning: Label `tab:resistance_change_sustain' multiply defined.
+
+
+LaTeX Warning: Label `tab:resistance_readiness_rulers' multiply defined.
+
+
+LaTeX Warning: Label `tab:autoplay_results' multiply defined.
+
+
+LaTeX Warning: Label `tab:incremental_installation' multiply defined.
+
+
+LaTeX Warning: Label `tab:cf_human_correlation' multiply defined.
+
+
+LaTeX Warning: Label `tab:cf_installation_individual' multiply defined.
+
+
+LaTeX Warning: Label `tab:cf_installation_population' multiply defined.
+
+
+LaTeX Warning: Label `fig:cf_distribution' multiply defined.
+
+
+LaTeX Warning: Label `tab:good_vs_bad_mi' multiply defined.
+
+)
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+(/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+(/usr/share/texlive/texmf-dist/tex/latex/grfext/grfext.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg))
+(./main.out) (./main.out) [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
+]
+Underfull \hbox (badness 10000) in paragraph at lines 137--137
+|\OT1/cmr/bx/n/14.4 Abstract|
+(./abstract.tex) [2] [3]
+Underfull \hbox (badness 10000) in paragraph at lines 146--146
+[]\OT1/cmr/bx/n/14.4 Acknowledgements|
+(./acknowledgements.tex) [4] (./main.toc
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd)
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd) [5] [6] [7] [8])
+[9] (./main.lot
+
+Package natbib Warning: Citation `Bikker2015' on page x undefined on input line
+ 14.
+
+[10] [11]) [12] (./main.lof
+
+Package natbib Warning: Citation `vaswani2017attention' on page xiii undefined
+on input line 2.
+
+
+Package natbib Warning: Citation `mahmood-etal-2025-fully' on page xiii undefin
+ed on input line 5.
+
+[13]
+Overfull \hbox (2.57071pt too wide) in paragraph at lines 22--22
+ \OT1/cmr/m/n/10 pelg^^?angers (D2). (Source: Ef-fect of Good vs. Poor-Quality
+Ther-apy on Dop-pelg^^?angers'
+
+Overfull \hbox (2.57071pt too wide) in paragraph at lines 26--26
+ \OT1/cmr/m/n/10 pelg^^?angers (D2). (Source: Ef-fect of Good vs. Poor-Quality
+Ther-apy on Dop-pelg^^?angers'
+) [14] (./ch-intro.tex
+Chapter 1.
+
+Package natbib Warning: Citation `poirier2019estimates' on page 1 undefined on
+input line 5.
+
+
+Package natbib Warning: Citation `cpac2020lung' on page 1 undefined on input li
+ne 5.
+
+
+Package natbib Warning: Citation `beck2011cognitive' on page 1 undefined on inp
+ut line 7.
+
+
+Package natbib Warning: Citation `hayes1999acceptance' on page 1 undefined on i
+nput line 7.
+
+
+Package natbib Warning: Citation `miller2012motivational' on page 1 undefined o
+n input line 7.
+
+
+Package natbib Warning: Citation `llewellyn2017economic' on page 1 undefined on
+ input line 7.
+
+
+Package natbib Warning: Citation `crosato2011rural' on page 1 undefined on inpu
+t line 7.
+
+
+Package natbib Warning: Citation `jones2021mental' on page 1 undefined on input
+ line 7.
+
+
+Package natbib Warning: Citation `firstnationshealth2023' on page 1 undefined o
+n input line 7.
+
+
+Package natbib Warning: Citation `turner2018poverty' on page 1 undefined on inp
+ut line 7.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 10--10
+[]|[]\OT1/cmr/bx/n/7 Chatbot-
+
+Underfull \hbox (badness 10000) in paragraph at lines 10--10
+\OT1/cmr/bx/n/7 based Coun-
+
+Package natbib Warning: Citation `torous2017digital' on page 1 undefined on inp
+ut line 10.
+
+
+Package natbib Warning: Citation `miner2016smartphone' on page 1 undefined on i
+nput line 10.
+
+
+Package natbib Warning: Citation `miller1991motivational' on page 1 undefined o
+n input line 16.
+
+
+Package natbib Warning: Citation `MillerRollnick2013' on page 1 undefined on in
+put line 16.
+
+
+Package natbib Warning: Citation `bischof2021evidence' on page 1 undefined on i
+nput line 17.
+
+
+Package natbib Warning: Citation `hettema2005meta' on page 1 undefined on input
+ line 17.
+
+
+Package natbib Warning: Citation `rollnick2008motivational' on page 1 undefined
+ on input line 19.
+
+
+Package natbib Warning: Citation `Miller_2023' on page 1 undefined on input lin
+e 19.
+
+[1]
+
+Package natbib Warning: Citation `brown2023mi' on page 2 undefined on input lin
+e 22.
+
+
+Package natbib Warning: Citation `Abar2013' on page 2 undefined on input line 2
+2.
+
+
+Package natbib Warning: Citation `Gwaltney2009-wj' on page 2 undefined on input
+ line 22.
+
+
+Package natbib Warning: Citation `apodaca2009mechanisms' on page 2 undefined on
+ input line 22.
+
+
+Package natbib Warning: Citation `vaswani2017attention' on page 2 undefined on
+input line 25.
+
+
+Package natbib Warning: Citation `openai2023gpt4' on page 2 undefined on input
+line 25.
+
+
+Package natbib Warning: Citation `miner2020artificial' on page 2 undefined on i
+nput line 25.
+
+
+Package natbib Warning: Citation `torous2023generative' on page 2 undefined on
+input line 25.
+
+
+Package natbib Warning: Citation `vaswani2017attention' on page 2 undefined on
+input line 27.
+
+
+Package natbib Warning: Citation `valentino2024evaluating' on page 2 undefined
+on input line 27.
+
+
+Package natbib Warning: Citation `10.5555/3600270.3602281' on page 2 undefined
+on input line 27.
+
+
+Package natbib Warning: Citation `gilson2023empathy' on page 2 undefined on inp
+ut line 27.
+
+
+Package natbib Warning: Citation `vaswani2017attention' on page 2 undefined on
+input line 34.
+
+
+Package natbib Warning: Citation `vaswani2017attention' on page 2 undefined on
+input line 34.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 40--40
+[]|[]\OT1/cmr/bx/n/7 Syn-thetic
+[2]) (./ch-background.tex [3 <./fig/transformer_architecture.png>] [4]
+Chapter 2.
+
+Package natbib Warning: Citation `Miller1983' on page 5 undefined on input line
+ 7.
+
+
+Package natbib Warning: Citation `MillerRollnick2023' on page 5 undefined on in
+put line 7.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 7--7
+[]|[]\OT1/cmr/bx/n/7 Client-
+
+Package natbib Warning: Citation `MillerRollnick2002' on page 5 undefined on in
+put line 7.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 7--7
+[]|[]\OT1/cmr/bx/n/7 Guid-ing
+
+Package natbib Warning: Citation `MillerRose2009' on page 5 undefined on input
+line 7.
+
+
+Overfull \hbox (1.48273pt too wide) in paragraph at lines 20--20
+[]|\OT1/cmr/bx/n/10 Counsellor|
+
+Package natbib Warning: Citation `MillerRollnick2013' on page 5 undefined on in
+put line 32.
+
+
+Package natbib Warning: Citation `MillerRollnick2013' on page 5 undefined on in
+put line 32.
+
+
+Package natbib Warning: Citation `Rollnick1995' on page 5 undefined on input li
+ne 32.
+
+[5]
+Underfull \hbox (badness 10000) in paragraph at lines 35--35
+[]|[]\OT1/cmr/bx/n/7 Am-biva-lent
+
+Package natbib Warning: Citation `Rollnick1997' on page 6 undefined on input li
+ne 35.
+
+
+Package natbib Warning: Citation `MillerRollnick2023' on page 6 undefined on in
+put line 35.
+
+
+Package natbib Warning: Citation `MillerRose2009' on page 6 undefined on input
+line 35.
+
+
+Overfull \hbox (1.03578pt too wide) in paragraph at lines 35--36
+[]\OT1/cmr/m/n/10 MI's em-pa-thetic, autonomy-supportive at-mo-sphere is par-ti
+c-u-larly im-por-tant for |[][]\OT1/cmr/m/it/10 am-biva-lent smok-
+
+Underfull \hbox (badness 10000) in paragraph at lines 45--45
+[]|\OT1/cmr/bx/n/10 Open-ended Ques-
+
+Package natbib Warning: Citation `Houck2010' on page 6 undefined on input line
+66.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 68--68
+[]|[]\OT1/cmr/bx/n/7 Readi-ness
+
+Package natbib Warning: Citation `Boudreaux2012' on page 6 undefined on input l
+ine 68.
+
+[6]
+
+Package natbib Warning: Citation `Babb2017' on page 7 undefined on input line 7
+1.
+
+
+Package natbib Warning: Citation `Heckman2010' on page 7 undefined on input lin
+e 73.
+
+
+Package natbib Warning: Citation `Lindson2015' on page 7 undefined on input lin
+e 73.
+
+
+Package natbib Warning: Citation `Lindson2015' on page 7 undefined on input lin
+e 75.
+
+
+Package natbib Warning: Citation `zanjani2008effectiveness' on page 7 undefined
+ on input line 75.
+
+
+Package natbib Warning: Citation `Boudreaux2012' on page 7 undefined on input l
+ine 78.
+
+
+Package natbib Warning: Citation `Hettema2005' on page 7 undefined on input lin
+e 78.
+
+
+Package natbib Warning: Citation `West2006' on page 7 undefined on input line 7
+8.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 84--84
+[]|[]\OT1/cmr/bx/n/7 Foun-da-tional
+
+Package natbib Warning: Citation `stanfordCRFM2021' on page 7 undefined on inpu
+t line 84.
+
+
+Package natbib Warning: Citation `brown2020language' on page 7 undefined on inp
+ut line 86.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 86--86
+[]|[]\OT1/cmr/bx/n/7 Few-Shot
+
+Underfull \hbox (badness 10000) in paragraph at lines 86--86
+[]|[]\OT1/cmr/bx/n/7 In-Context
+
+Package natbib Warning: Citation `xie-etal-2024-shot-dialogue' on page 7 undefi
+ned on input line 86.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 86--86
+[]|[]\OT1/cmr/bx/n/7 Expert-
+
+Underfull \hbox (badness 10000) in paragraph at lines 86--86
+\OT1/cmr/bx/n/7 Informed
+
+Package natbib Warning: Citation `10.5555/3600270.3602070' on page 7 undefined
+on input line 86.
+
+[7]
+
+Package natbib Warning: Citation `fernandez-etal-2025-lamia' on page 8 undefine
+d on input line 89.
+
+
+Package natbib Warning: Citation `10.5555/3600270.3602070' on page 8 undefined
+on input line 89.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 89--89
+[]|[]\OT1/cmr/bx/n/7 Pol-icy Mod-
+
+Package natbib Warning: Citation `du-etal-2024-rewarding' on page 8 undefined o
+n input line 89.
+
+
+Package natbib Warning: Citation `vaswani2017attention' on page 8 undefined on
+input line 94.
+
+
+Package natbib Warning: Citation `vaswani2017attention' on page 8 undefined on
+input line 94.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 94--94
+[]|[]\OT1/cmr/bx/n/7 Multi-Head
+
+Package natbib Warning: Citation `brown2020language' on page 8 undefined on inp
+ut line 99.
+
+
+Package natbib Warning: Citation `openai2023gpt4' on page 8 undefined on input
+line 99.
+
+
+Package natbib Warning: Citation `chowdhery2022palm' on page 8 undefined on inp
+ut line 103.
+
+
+Package natbib Warning: Citation `geminiteam2025geminifamilyhighlycapable' on p
+age 8 undefined on input line 103.
+
+
+Package natbib Warning: Citation `52065' on page 8 undefined on input line 103.
+
+
+
+Package natbib Warning: Citation `berti2025emergentabilitieslargelanguage' on p
+age 8 undefined on input line 103.
+
+
+Package natbib Warning: Citation `Weizenbaum1966' on page 8 undefined on input
+line 107.
+
+
+Package natbib Warning: Citation `10.5555/212154.212175' on page 8 undefined on
+ input line 107.
+
+
+Package natbib Warning: Citation `Colby1971' on page 8 undefined on input line
+107.
+
+[8]
+
+Package natbib Warning: Citation `Hartman1986' on page 9 undefined on input lin
+e 110.
+
+
+Package natbib Warning: Citation `Sampson1986' on page 9 undefined on input lin
+e 110.
+
+
+Package natbib Warning: Citation `ServanSchreiber1986' on page 9 undefined on i
+nput line 110.
+
+
+Package natbib Warning: Citation `Selmi1990' on page 9 undefined on input line
+110.
+
+
+Package natbib Warning: Citation `Proudfoot2003' on page 9 undefined on input l
+ine 110.
+
+
+Package natbib Warning: Citation `Fitzpatrick2017' on page 9 undefined on input
+ line 113.
+
+
+Package natbib Warning: Citation `Chang2024' on page 9 undefined on input line
+113.
+
+
+Package natbib Warning: Citation `Fitzpatrick2017' on page 9 undefined on input
+ line 113.
+
+
+Package natbib Warning: Citation `Chang2024' on page 9 undefined on input line
+113.
+
+
+Package natbib Warning: Citation `almusharraf2018motivating' on page 9 undefine
+d on input line 115.
+
+
+Package natbib Warning: Citation `LIMPANOPPARAT2024100081' on page 9 undefined
+on input line 117.
+
+[9]
+
+Package natbib Warning: Citation `mahmood-etal-2025-fully' on page 10 undefined
+ on input line 123.
+
+
+Package natbib Warning: Citation `kian2024can' on page 10 undefined on input li
+ne 123.
+
+
+Package natbib Warning: Citation `Ye2025' on page 10 undefined on input line 12
+3.
+
+
+Package natbib Warning: Citation `shen-etal-2020-counseling' on page 10 undefin
+ed on input line 123.
+
+
+Package natbib Warning: Citation `shen-etal-2020-counseling' on page 10 undefin
+ed on input line 123.
+
+
+Package natbib Warning: Citation `brown2023motivational' on page 10 undefined o
+n input line 123.
+
+
+Package natbib Warning: Citation `Saiyed2022' on page 10 undefined on input lin
+e 126.
+
+
+Package natbib Warning: Citation `Meyer2025' on page 10 undefined on input line
+ 128.
+
+
+Package natbib Warning: Citation `BienerAbrams1991' on page 10 undefined on inp
+ut line 128.
+
+
+Package natbib Warning: Citation `Meyer2025' on page 10 undefined on input line
+ 128.
+
+
+Package natbib Warning: Citation `doi:10.1056/AIoa2400802' on page 10 undefined
+ on input line 131.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 131--131
+[]|[]\OT1/cmr/bx/n/7 Ther-a-peu-tic
+[10]
+
+Package natbib Warning: Citation `corda2024context' on page 11 undefined on inp
+ut line 133.
+
+
+Package natbib Warning: Citation `Scholich2025' on page 11 undefined on input l
+ine 137.
+
+
+Package natbib Warning: Citation `Li2023' on page 11 undefined on input line 14
+1.
+
+
+Package natbib Warning: Citation `Amugongo2025RAG' on page 11 undefined on inpu
+t line 141.
+
+
+Package natbib Warning: Citation `SEITZ2024100067' on page 11 undefined on inpu
+t line 144.
+
+
+Package natbib Warning: Citation `Scholich2025' on page 11 undefined on input l
+ine 144.
+
+
+Underfull \hbox (badness 6461) in paragraph at lines 148--148
+[]|[]\OT1/cmr/bx/n/7 Per-sona Cre-
+
+Package natbib Warning: Citation `zhang-etal-2018-personalizing' on page 11 und
+efined on input line 148.
+
+
+Underfull \hbox (badness 6412) in paragraph at lines 148--148
+[]|[]\OT1/cmr/bx/n/7 Per-sona Pro-
+
+Package natbib Warning: Citation `roller-etal-2021-recipes' on page 11 undefine
+d on input line 148.
+
+
+Package natbib Warning: Citation `li-etal-2016-persona' on page 11 undefined on
+ input line 148.
+
+
+Package natbib Warning: Citation `kim-etal-2020-will' on page 11 undefined on i
+nput line 148.
+
+
+Package natbib Warning: Citation `song-etal-2020-profile' on page 11 undefined
+on input line 148.
+
+[11]
+Underfull \hbox (badness 1009) in paragraph at lines 151--151
+[]|[]\OT1/cmr/bx/n/7 Prompt En-gi-
+
+Package natbib Warning: Citation `10.5555/3600270.3602281' on page 12 undefined
+ on input line 151.
+
+
+Package natbib Warning: Citation `madotto-etal-2019-personalizing' on page 12 u
+ndefined on input line 151.
+
+
+Package natbib Warning: Citation `liu-etal-2024-evaluating-large' on page 12 un
+defined on input line 151.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 153--153
+[]|[]\OT1/cmr/bx/n/7 Be-havioural
+
+Underfull \hbox (badness 10000) in paragraph at lines 153--153
+\OT1/cmr/bx/n/7 Ex-em-pli-fi-ca-
+
+Package natbib Warning: Citation `joshi-etal-2023-persona' on page 12 undefined
+ on input line 153.
+
+
+Package natbib Warning: Citation `gururangan-etal-2020-dont' on page 12 undefin
+ed on input line 153.
+
+
+Package natbib Warning: Citation `yang-etal-2023-large' on page 12 undefined on
+ input line 153.
+
+
+Package natbib Warning: Citation `niu-bansal-2018-polite' on page 12 undefined
+on input line 158.
+
+
+Package natbib Warning: Citation `sudhakar-etal-2019-transforming' on page 12 u
+ndefined on input line 158.
+
+
+Package natbib Warning: Citation `niu-bansal-2018-polite' on page 12 undefined
+on input line 158.
+
+
+Package natbib Warning: Citation `zhong-etal-2021-stylized' on page 12 undefine
+d on input line 158.
+
+
+Package natbib Warning: Citation `zhong-etal-2021-stylized' on page 12 undefine
+d on input line 158.
+
+
+Package natbib Warning: Citation `li-etal-2016-persona' on page 12 undefined on
+ input line 160.
+
+
+Package natbib Warning: Citation `roller-etal-2021-recipes' on page 12 undefine
+d on input line 160.
+
+
+Overfull \hbox (3.01967pt too wide) in paragraph at lines 160--161
+\OT1/cmr/m/n/10 train-ing on di-a-logues where an agent con-sis-tently speaks w
+ith a given per-sona (or on mono-logues/writ-
+[12]
+
+Package natbib Warning: Citation `shuster2022blenderbot3deployedconversational'
+ on page 13 undefined on input line 164.
+
+
+Package natbib Warning: Citation `xu-etal-2022-beyond' on page 13 undefined on
+input line 164.
+
+
+Package natbib Warning: Citation `shuster2022blenderbot3deployedconversational'
+ on page 13 undefined on input line 164.
+
+
+Package natbib Warning: Citation `shuster2022blenderbot3deployedconversational'
+ on page 13 undefined on input line 164.
+
+
+Package natbib Warning: Citation `xu-etal-2022-beyond' on page 13 undefined on
+input line 164.
+
+
+Package natbib Warning: Citation `kimara-etal-2025-personaAI' on page 13 undefi
+ned on input line 166.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 169--169
+[]|[]\OT1/cmr/bx/n/7 Log-i-cal Con-
+
+Package natbib Warning: Citation `welleck-etal-2019-dialogueNLI' on page 13 und
+efined on input line 169.
+
+
+Package natbib Warning: Citation `li-etal-2020-dont' on page 13 undefined on in
+put line 169.
+
+
+Package natbib Warning: Citation `kim-etal-2020-will' on page 13 undefined on i
+nput line 169.
+
+
+Package natbib Warning: Citation `kim-etal-2020-will' on page 13 undefined on i
+nput line 169.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 171--171
+[]|[]\OT1/cmr/bx/n/7 Lin-guis-tic
+
+Underfull \hbox (badness 10000) in paragraph at lines 171--171
+\OT1/cmr/bx/n/7 Style Match-
+
+Package natbib Warning: Citation `jiang-etal-2023-personallm' on page 13 undefi
+ned on input line 171.
+
+
+Package natbib Warning: Citation `jiang-etal-2023-personallm' on page 13 undefi
+ned on input line 171.
+
+
+Package natbib Warning: Citation `jiang-etal-2023-personallm' on page 13 undefi
+ned on input line 171.
+
+[13]
+
+Package natbib Warning: Citation `shu-etal-2024-personality-tests' on page 14 u
+ndefined on input line 174.
+
+
+Package natbib Warning: Citation `shu-etal-2024-personality-tests' on page 14 u
+ndefined on input line 174.
+
+
+Package natbib Warning: Citation `jiang-etal-2023-personallm' on page 14 undefi
+ned on input line 174.
+
+
+Package natbib Warning: Citation `liu-etal-2024-personagym' on page 14 undefine
+d on input line 174.
+
+
+Package natbib Warning: Citation `liu-etal-2024-evaluating-large' on page 14 un
+defined on input line 178.
+
+
+Package natbib Warning: Citation `gupta-etal-2024-bias' on page 14 undefined on
+ input line 182.
+
+
+Package natbib Warning: Citation `smith-etal-2020-mitigating' on page 14 undefi
+ned on input line 182.
+
+[14]
+
+Package natbib Warning: Citation `Argyle2023' on page 15 undefined on input lin
+e 195.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 195--195
+[]|[]\OT1/cmr/bx/n/7 Al-go-rith-mic
+
+Package natbib Warning: Citation `Aher2023' on page 15 undefined on input line
+200.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 200--200
+[]|[]\OT1/cmr/bx/n/7 Hyper-
+[15]
+
+Package natbib Warning: Citation `Park2023' on page 16 undefined on input line
+203.
+
+[16]
+
+Package natbib Warning: Citation `Haider2025' on page 17 undefined on input lin
+e 208.
+
+
+Package natbib Warning: Citation `Oncu2025' on page 17 undefined on input line
+210.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 210--210
+[]|[]\OT1/cmr/bx/n/7 stan-dard-ized
+[17]) (./ch-mibot.tex [18]
+Chapter 3.
+
+Package natbib Warning: Citation `Babb2017' on page 19 undefined on input line
+4.
+
+
+Package natbib Warning: Citation `West2006' on page 19 undefined on input line
+4.
+
+
+Package natbib Warning: Citation `info:doi/10.2196/49132' on page 19 undefined
+on input line 6.
+
+
+Package natbib Warning: Citation `mahmood-etal-2025-fully' on page 19 undefined
+ on input line 6.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 16--16
+[]|[]\OT1/cmr/bx/n/7 Clinician-
+
+Package natbib Warning: Citation `openai2024gpt4ocard' on page 19 undefined on
+input line 16.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 21--21
+[]|[]\OT1/cmr/bx/n/7 Single-Prompt
+[19]
+Underfull \hbox (badness 3343) in paragraph at lines 28--28
+[]|[]\OT1/cmr/bx/n/7 Hu-man Role-
+
+Underfull \hbox (badness 10000) in paragraph at lines 36--36
+[]|[]\OT1/cmr/bx/n/7 Length
+
+Underfull \hbox (badness 10000) in paragraph at lines 38--38
+[]|[]\OT1/cmr/bx/n/7 Ac-ces-si-ble
+
+Underfull \hbox (badness 10000) in paragraph at lines 40--40
+[]|[]\OT1/cmr/bx/n/7 No As-sump-
+[20] (./tab/initial-final-prompts.tex
+(/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd)) [21]
+
+pdfTeX warning: pdflatex (file ./fig/sysdiag.pdf): PDF inclusion: found PDF ver
+sion <1.7>, but at most version <1.5> allowed
+
+Package natbib Warning: Citation `mahmood-etal-2025-fully' on page 22 undefined
+ on input line 62.
+
+
+Package natbib Warning: Citation `mahmood-etal-2025-fully' on page 22 undefined
+ on input line 62.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 68--68
+[]|[]\OT1/cmr/bx/n/7 Ob-server
+[22 <./fig/sysdiag.pdf>] (./sec/mibot-deployment.tex
+Underfull \hbox (badness 10000) in paragraph at lines 8--8
+[]|[]\OT1/cmr/bx/n/7 Con-tainer-iza-
+
+Package natbib Warning: Citation `pi_sanic' on page 23 undefined on input line
+10.
+
+
+
+pdfTeX warning: pdflatex (file ./fig/microservice.drawio.pdf): PDF inclusion: f
+ound PDF version <1.7>, but at most version <1.5> allowed
+
+Overfull \hbox (5.24063pt too wide) in paragraph at lines 19--20
+[]\OT1/cmr/m/n/10 Each |[][] at-tached to the \OT1/cmtt/m/n/10 Conversation \OT
+1/cmr/m/n/10 in-her-its from a base class defin-ing an asyn-chronous \OT1/cmtt/
+m/n/10 observe()
+
+
+pdfTeX warning: pdflatex (file ./fig/container.drawio.pdf): PDF inclusion: foun
+d PDF version <1.7>, but at most version <1.5> allowed
+
+Package natbib Warning: Citation `sloane2025containerization' on page 23 undefi
+ned on input line 32.
+
+[23]
+
+Package natbib Warning: Citation `aws-ecs-getting-started' on page 24 undefined
+ on input line 39.
+
+
+
+pdfTeX warning: pdflatex (file ./fig/deployment.drawio.pdf): PDF inclusion: fou
+nd PDF version <1.7>, but at most version <1.5> allowed
+
+Overfull \hbox (18.70323pt too wide) in paragraph at lines 49--50
+[] []\OT1/cmr/bx/n/10 1. ECS Clus-ter:[] \OT1/cmr/m/n/10 To de-ploy MI-Bot to E
+CS, we first pro-vi-sioned an |[][]\OT1/cmr/bx/n/10 ECS clus-ter \OT1/cmr/m/n/1
+0 (\OT1/cmtt/m/n/10 mibot-v6-cluster\OT1/cmr/m/n/10 ).
+[24 <./fig/microservice.drawio.pdf>] [25 <./fig/container.drawio.pdf> <./fig/de
+ployment.drawio.pdf>]
+
+Package natbib Warning: Citation `aws_alb' on page 26 undefined on input line 5
+9.
+
+
+Package natbib Warning: Citation `shopify_domain_seo' on page 26 undefined on i
+nput line 59.
+
+) (./sec/feasibility.tex
+Underfull \hbox (badness 10000) in paragraph at lines 3--3
+[]|[]\OT1/cmr/bx/n/7 Fea-si-bil-ity
+[26]
+Underfull \hbox (badness 10000) in paragraph at lines 6--6
+[]|[]\OT1/cmr/bx/n/7 ethics ap-
+
+Package natbib Warning: Citation `brown2023motivational' on page 27 undefined o
+n input line 10.
+
+
+Package natbib Warning: Citation `info:doi/10.2196/20251' on page 27 undefined
+on input line 10.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 14--14
+[]|[]\OT1/cmr/bx/n/7 In-Study
+[27] [28]
+
+pdfTeX warning: pdflatex (file ./fig/feasibility_study_flow.pdf): PDF inclusion
+: found PDF version <1.7>, but at most version <1.5> allowed
+
+Underfull \hbox (badness 10000) in paragraph at lines 105--105
+[]|[]\OT1/cmr/bx/n/7 study pro-ce-
+
+Package natbib Warning: Citation `heatherton1989measuring' on page 29 undefined
+ on input line 112.
+
+[29 <./fig/feasibility_study_flow.pdf>]
+
+Package natbib Warning: Citation `rollnick1992development' on page 30 undefined
+ on input line 138.
+
+
+Package natbib Warning: Citation `Gwaltney2009-wj' on page 30 undefined on inpu
+t line 145.
+
+
+Package natbib Warning: Citation `Abar2013' on page 30 undefined on input line
+145.
+
+
+Package natbib Warning: Citation `mercer2004consultation' on page 30 undefined
+on input line 149.
+
+
+Package natbib Warning: Citation `bikker2015measuring' on page 30 undefined on
+input line 149.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 152--152
+[]|[]\OT1/cmr/bx/n/7 qual-i-ta-tive
+
+Package natbib Warning: Citation `Houck2010' on page 30 undefined on input line
+ 165.
+
+
+Package natbib Warning: Citation `ali2025automated' on page 30 undefined on inp
+ut line 165.
+
+
+Package natbib Warning: Citation `mahmood-etal-2025-fully' on page 30 undefined
+ on input line 165.
+
+
+Package natbib Warning: Citation `mahmood-etal-2025-fully' on page 30 undefined
+ on input line 165.
+
+[30])) (./ch-mibot-eval.tex [31]
+Chapter 4.
+
+Underfull \hbox (badness 10000) in paragraph at lines 4--4
+[]|[]\OT1/cmr/bx/n/7 Fea-si-bil-ity
+
+LaTeX Warning: Reference `sec:conversation-dynamics' on page 32 undefined on in
+put line 8.
+
+
+LaTeX Warning: Reference `sec:synthesis' on page 32 undefined on input line 8.
+
+
+Underfull \hbox (badness 1314) in paragraph at lines 15--15
+[]|[]\OT1/cmr/bx/n/7 Pri-mary Out-
+
+Package natbib Warning: Citation `Gwaltney2009-wj' on page 32 undefined on inpu
+t line 15.
+
+
+Package natbib Warning: Citation `Abar2013' on page 32 undefined on input line
+15.
+
+[32]
+Underfull \hbox (badness 2158) in paragraph at lines 49--49
+[]|[]\OT1/cmr/bx/n/7 Re-gres-sion to
+[33 <./fig/2024-11-14-MIV6.3A-2024-11-22-MIV6.3A_ruler_deltas_delta_with_week_l
+ater_keep_high_conf_False_change.png>] [34]
+
+Package natbib Warning: Citation `10.1093/fampra/cmh621' on page 35 undefined o
+n input line 154.
+
+
+Package natbib Warning: Citation `Bikker2015' on page 35 undefined on input lin
+e 154.
+
+
+Package natbib Warning: Citation `Bikker2015' on page 35 undefined on input lin
+e 169.
+
+
+Package natbib Warning: Citation `Bikker2015' on page 35 undefined on input lin
+e 169.
+
+[35]
+Underfull \hbox (badness 10000) in paragraph at lines 187--187
+[]\OT1/cmr/m/n/7 being in-ter-ested in
+
+Underfull \hbox (badness 10000) in paragraph at lines 188--188
+[]\OT1/cmr/m/n/7 fully un-der-stand-ing
+
+LaTeX Warning: Float too large for page by 68.98543pt on input line 254.
+
+[36]
+
+Package natbib Warning: Citation `sabour-etal-2024-emobench' on page 37 undefin
+ed on input line 288.
+
+
+Package natbib Warning: Citation `Yang2024' on page 37 undefined on input line
+288.
+
+
+Package natbib Warning: Citation `brown2023mi' on page 37 undefined on input li
+ne 301.
+
+[37] [38 <./fig/MIV5.2_ruler_deltas_delta_with_week_later_keep_high_conf_False_
+change.png> <./fig/MIV5.2_care_scores_histogram.png> <./fig/2024-11-14-MIV6.3A-
+2024-11-22-MIV6.3A_care_scores_histogram.png>]
+
+Package natbib Warning: Citation `brown2023mi' on page 39 undefined on input li
+ne 381.
+
+
+LaTeX Warning: Reference `sec:feasability' on page 39 undefined on input line 3
+86.
+
+
+Package natbib Warning: Citation `mahmood-etal-2025-fully' on page 39 undefined
+ on input line 386.
+
+
+Package natbib Warning: Citation `ali2025automated' on page 39 undefined on inp
+ut line 386.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 391--391
+[]|[]\OT1/cmr/bx/n/7 per-cent-age
+
+Underfull \hbox (badness 10000) in paragraph at lines 391--391
+\OT1/cmr/bx/n/7 MI-consistent
+
+Underfull \hbox (badness 10000) in paragraph at lines 391--391
+\OT1/cmr/bx/n/7 re-sponses
+[39 <./fig/combined_care_scores_with_improvement.png>]
+
+Package natbib Warning: Citation `moyers2016miti' on page 40 undefined on input
+ line 393.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 395--395
+[]|[]\OT1/cmr/bx/n/7 per-cent-age
+
+Underfull \hbox (badness 10000) in paragraph at lines 395--395
+\OT1/cmr/bx/n/7 change talk
+
+Package natbib Warning: Citation `apodaca2009' on page 40 undefined on input li
+ne 395.
+
+
+Package natbib Warning: Citation `perez-rosas-etal-2019-makes' on page 40 undef
+ined on input line 400.
+
+
+Package natbib Warning: Citation `moyers2016miti' on page 40 undefined on input
+ line 404.
+
+[40]
+
+Package natbib Warning: Citation `Bandura1986' on page 41 undefined on input li
+ne 538.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 542--542
+[]|[]\OT1/cmr/bx/n/7 harm re-
+
+Underfull \hbox (badness 10000) in paragraph at lines 542--542
+\OT1/cmr/bx/n/7 duc-tion
+
+Package natbib Warning: Citation `Abrams2018' on page 41 undefined on input lin
+e 552.
+
+[41 <./fig/mic.png> <./fig/rq.png> <./fig/ct.png>] [42] [43]
+Underfull \hbox (badness 7468) in paragraph at lines 680--680
+[]|[]\OT1/cmr/bx/n/7 user seg-men-
+
+Underfull \hbox (badness 10000) in paragraph at lines 708--708
+[]|[]\OT1/cmr/bx/n/7 mul-ti-vari-ate
+
+Underfull \hbox (badness 10000) in paragraph at lines 708--708
+\OT1/cmr/bx/n/7 re-gres-sion
+[44]
+
+Package natbib Warning: Citation `Whittaker2016' on page 45 undefined on input
+line 725.
+
+
+Package natbib Warning: Citation `Moyers2016' on page 45 undefined on input lin
+e 726.
+
+
+Package natbib Warning: Citation `Perski2017' on page 45 undefined on input lin
+e 727.
+
+
+Package natbib Warning: Citation `Stead2013' on page 45 undefined on input line
+ 728.
+
+[45]) (./ch-synthetic-smoker-2.tex [46]
+Chapter 5.
+
+Package natbib Warning: Citation `Cronbach1955' on page 47 undefined on input l
+ine 18.
+
+[47]
+Overfull \hbox (8.08995pt too wide) in paragraph at lines 31--32
+[]\OT1/cmr/bx/n/10 Psychological: \OT1/cmr/m/n/10 re-sis-tance to change, mo-ti
+-va-tion lev-els (e.g., op-er-a-tional-ized by pre-conversation
+[48]
+
+Package natbib Warning: Citation `loevinger1957objective' on page 49 undefined
+on input line 60.
+
+
+Package natbib Warning: Citation `borsboom2004concept' on page 49 undefined on
+input line 60.
+
+[49]
+
+Package natbib Warning: Citation `liu2024evaluating' on page 50 undefined on in
+put line 109.
+
+[50] [51]
+
+Package natbib Warning: Citation `perez2019what' on page 52 undefined on input
+line 159.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[52]
+
+Package natbib Warning: Citation `mahmood-etal-2025-fully' on page 53 undefined
+ on input line 250.
+
+[53]
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[54]
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[55]
+
+Package natbib Warning: Citation `cheng2023gpatients' on page 56 undefined on i
+nput line 377.
+
+
+Package natbib Warning: Citation `liu2024evaluating' on page 56 undefined on in
+put line 385.
+
+
+Overfull \hbox (17.79634pt too wide) in paragraph at lines 389--390
+\OT1/cmr/m/n/10 While lin-guis-tic fi-delity (%CT) was high, the fi-delity of s
+elf-reported in-ter-nal state changes ($^^A$Confidence)
+[56]) (./ch-synthetic-smoker-eval.tex [57]
+Chapter 6.
+
+Overfull \hbox (1.04752pt too wide) in paragraph at lines 6--7
+\OT1/cmr/m/n/10 first stage fo-cuses on val-i-dat-ing the ini-tial at-tempts to
+ con-trol spe-cific be-havioural at-tributes|namely
+[58] [59] [60] [61] [62]
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[63]
+Overfull \hbox (78.91121pt too wide) in paragraph at lines 298--306
+ [][]
+[64] [65]
+Chapter 7.
+[66] [67] [68] [69] [70]
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[71]
+Overfull \hbox (78.91121pt too wide) in paragraph at lines 617--625
+ [][]
+[72]) (./ch-conclusion.tex [73] [74]
+Chapter 8.
+[75]) (./ap-code.tex [76]
+Appendix A.
+) [77] (./main.ind [78]) [79] (./main.bbl [80]
+
+Package natbib Warning: Citation `firstnationshealth2023' on page 81 undefined
+on input line 175.
+
+
+Package natbib Warning: Citation `crosato2011rural' on page 81 undefined on inp
+ut line 213.
+
+[81] [82]
+
+Package natbib Warning: Citation `llewellyn2017economic' on page 83 undefined o
+n input line 433.
+
+[83]
+
+Package natbib Warning: Citation `turner2018poverty' on page 84 undefined on in
+put line 574.
+
+[84] [85] [86] [87])
+
+Package natbib Warning: There were undefined citations.
+
+[88] (./main.aux (./tab/initial-final-prompts.aux)
+
+Package natbib Warning: Citation(s) may have changed.
+(natbib)                Rerun to get citations correct.
+
+)
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: There were multiply-defined labels.
+
+
+Package rerunfilecheck Warning: File `main.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+ )
+(see the transcript file for additional information) </home/jules/.texlive2023/
+texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1000.600pk> </home/jules/.texlive2023
+/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1200.600pk></usr/share/texlive/texmf
+-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/
+fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/
+type1/public/amsfonts/cm/cmbx7.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
+ublic/amsfonts/cm/cmbx8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/a
+msfonts/cm/cmbx9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
+/cm/cmcsc10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
+mex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.
+pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></u
+sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/shar
+e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texli
+ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/share/texlive/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/
+fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/t
+ype1/public/amsfonts/cm/cmr5.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
+lic/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsf
+onts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/
+cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb
+></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr
+/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/share/
+texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texlive
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-
+dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fo
+nts/type1/public/amsfonts/cm/cmsy9.pfb></usr/share/texlive/texmf-dist/fonts/typ
+e1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
+lic/amsfonts/cm/cmti7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ams
+fonts/cm/cmti9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/c
+m/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt
+8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10
+.pfb>
+Output written on main.pdf (102 pages, 6445169 bytes).
+Transcript written on main.log.
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex)
+ restricted \write18 enabled.
+entering extended mode
+(./main.tex
+LaTeX2e <2023-11-01> patch level 1
+L3 programming layer <2024-01-22>
+(./ut-thesis.cls
+Document Class: ut-thesis 2024/07/26 v3.1.8 University of Toronto thesis class
+(/usr/share/texlive/texmf-dist/tex/latex/base/book.cls
+Document Class: book 2023/05/17 v1.4n Standard LaTeX document class
+(/usr/share/texlive/texmf-dist/tex/latex/base/bk10.clo))
+(/usr/share/texlive/texmf-dist/tex/latex/textcase/textcase.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/geometry/geometry.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/iftex/ifvtex.sty
+(/usr/share/texlive/texmf-dist/tex/generic/iftex/iftex.sty)))
+(/usr/share/texlive/texmf-dist/tex/latex/setspace/setspace.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/color.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/color.cfg)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-def/pdftex.def)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/mathcolor.ltx))
+(/usr/share/texlive/texmf-dist/tex/latex/xcolor/xcolor.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/color.cfg)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/mathcolor.ltx))
+(/usr/share/texlive/texmf-dist/tex/latex/float/float.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
+For additional information on amsmath, use the `?' option.
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amssymb.sty
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amsfonts.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/multirow/multirow.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/graphics.cfg)))
+(/usr/share/texlive/texmf-dist/tex/latex/caption/subcaption.sty
+(/usr/share/texlive/texmf-dist/tex/latex/caption/caption.sty
+(/usr/share/texlive/texmf-dist/tex/latex/caption/caption3.sty)))
+(/usr/share/texlive/texmf-dist/tex/latex/booktabs/booktabs.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/threeparttable/threeparttable.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/pdflscape/pdflscape.sty
+(/usr/share/texlive/texmf-dist/tex/latex/pdflscape/pdflscape-nometadata.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/lscape.sty)))
+(/usr/share/texlive/texmf-dist/tex/latex/lipsum/lipsum.sty
+(/usr/share/texlive/texmf-dist/tex/latex/l3packages/l3keys2e/l3keys2e.sty
+(/usr/share/texlive/texmf-dist/tex/latex/l3kernel/expl3.sty
+(/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def)))
+(/usr/share/texlive/texmf-dist/tex/latex/lipsum/lipsum.ltd.tex))
+(/usr/share/texlive/texmf-dist/tex/latex/tools/array.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/ragged2e/ragged2e.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/titlesec/titlesec.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/tcolorbox/tcolorbox.sty
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfutil-latex.def)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfrcs.code.tex
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/pgf.revision.tex)))
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/basiclayer/pgfcore.sty
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/systemlayer/pgfsys.sty
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsys.code.tex
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfkeyslibraryfiltered
+.code.tex)) (/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgf.cfg)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-pdftex.def
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-common-pdf.de
+f)))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftpath.code.
+tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.code.
+tex))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcore.code.tex
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.code.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.basic.code
+.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.trigonomet
+ric.code.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.random.cod
+e.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.comparison
+.code.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.base.code.
+tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.round.code
+.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.misc.code.
+tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.integerari
+thmetics.code.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathcalc.code.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfint.code.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.code.te
+x)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathconstruct.
+code.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathusage.code
+.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorescopes.code.te
+x)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphicstate.c
+ode.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransformation
+s.code.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorequick.code.tex
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreobjects.code.t
+ex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathprocessing
+.code.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorearrows.code.te
+x)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreshade.code.tex
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreimage.code.tex
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreexternal.code.
+tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorelayers.code.te
+x)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransparency.c
+ode.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepatterns.code.
+tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorerdf.code.tex))
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmoduleshapes.code.tex
+) (/usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmoduleplot.code.tex
+)
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-0-65
+.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-1-18
+.sty)) (/usr/share/texlive/texmf-dist/tex/latex/tools/verbatim.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/environ/environ.sty
+(/usr/share/texlive/texmf-dist/tex/latex/trimspaces/trimspaces.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/etoolbox/etoolbox.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/tcolorbox/tcbraster.code.tex
+Library (tcolorbox): 'tcbraster.code.tex' version '6.2.0'
+) (/usr/share/texlive/texmf-dist/tex/latex/tcolorbox/tcbskins.code.tex
+Library (tcolorbox): 'tcbskins.code.tex' version '6.2.0'
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/utilities/pgffor.sty
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/utilities/pgfkeys.sty
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex))
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/math/pgfmath.sty
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgffor.code.tex))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/tikz.code.tex
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/pgflibraryplothandlers
+.code.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmodulematrix.code.tex
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibrarytopaths.code.tex)))
+(/usr/share/texlive/texmf-dist/tex/latex/tikzfill/tikzfill.image.sty
+(/usr/share/texlive/texmf-dist/tex/latex/tikzfill/tikzfill-common.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/tikzfill/tikzlibraryfill.image.code.te
+x)) (/usr/share/texlive/texmf-dist/tex/latex/tcolorbox/tcbskinsjigsaw.code.tex
+Library (tcolorbox): 'tcbskinsjigsaw.code.tex' version '6.2.0'
+)) (/usr/share/texlive/texmf-dist/tex/latex/tcolorbox/tcbbreakable.code.tex
+Library (tcolorbox): 'tcbbreakable.code.tex' version '6.2.0'
+(/usr/share/texlive/texmf-dist/tex/latex/pdfcol/pdfcol.sty
+(/usr/share/texlive/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/infwarerr/infwarerr.sty)))
+(/usr/share/texlive/texmf-dist/tex/latex/tcolorbox/tcbhooks.code.tex
+Library (tcolorbox): 'tcbhooks.code.tex' version '6.2.0'
+) (/usr/share/texlive/texmf-dist/tex/latex/tcolorbox/tcbtheorems.code.tex
+Library (tcolorbox): 'tcbtheorems.code.tex' version '6.2.0'
+) (/usr/share/texlive/texmf-dist/tex/latex/tcolorbox/tcbfitting.code.tex
+Library (tcolorbox): 'tcbfitting.code.tex' version '6.2.0'
+) (/usr/share/texlive/texmf-dist/tex/latex/tcolorbox/tcblistingsutf8.code.tex
+Library (tcolorbox): 'tcblistingsutf8.code.tex' version '6.2.0'
+(/usr/share/texlive/texmf-dist/tex/latex/tcolorbox/tcblistings.code.tex
+Library (tcolorbox): 'tcblistings.code.tex' version '6.2.0'
+(/usr/share/texlive/texmf-dist/tex/latex/listings/listings.sty
+(/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/listings/listings.cfg))
+(/usr/share/texlive/texmf-dist/tex/latex/tcolorbox/tcblistingscore.code.tex
+Library (tcolorbox): 'tcblistingscore.code.tex' version '6.2.0'
+(/usr/share/texlive/texmf-dist/tex/latex/tcolorbox/tcbprocessing.code.tex
+Library (tcolorbox): 'tcbprocessing.code.tex' version '6.2.0'
+))) (/usr/share/texlive/texmf-dist/tex/latex/listingsutf8/listingsutf8.sty
+(/usr/share/texlive/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/stringenc/stringenc.sty
+(/usr/share/texlive/texmf-dist/tex/generic/pdfescape/pdfescape.sty))))
+(/usr/share/texlive/texmf-dist/tex/latex/tcolorbox/tcbexternal.code.tex
+Library (tcolorbox): 'tcbexternal.code.tex' version '6.2.0'
+) (/usr/share/texlive/texmf-dist/tex/latex/tcolorbox/tcbmagazine.code.tex
+Library (tcolorbox): 'tcbmagazine.code.tex' version '6.2.0'
+) (/usr/share/texlive/texmf-dist/tex/latex/tcolorbox/tcbvignette.code.tex
+Library (tcolorbox): 'tcbvignette.code.tex' version '6.2.0'
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibraryfadings.code.tex
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/pgflibraryfadings.code
+.tex))) (/usr/share/texlive/texmf-dist/tex/latex/tcolorbox/tcbposter.code.tex
+Library (tcolorbox): 'tcbposter.code.tex' version '6.2.0'
+)) (/usr/share/texlive/texmf-dist/tex/latex/tools/tabularx.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/enumitem/enumitem.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/l3packages/xparse/xparse.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/fancyvrb/fancyvrb.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/natbib/natbib.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/marginnote/marginnote.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref.sty
+(/usr/share/texlive/texmf-dist/tex/latex/kvsetkeys/kvsetkeys.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/hycolor/hycolor.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/auxhook/auxhook.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
+(/usr/share/texlive/texmf-dist/tex/latex/refcount/refcount.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
+(/usr/share/texlive/texmf-dist/tex/latex/kvoptions/kvoptions.sty)))
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/pd1enc.def)
+(/usr/share/texlive/texmf-dist/tex/generic/intcalc/intcalc.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/puenc.def)
+(/usr/share/texlive/texmf-dist/tex/latex/url/url.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/bitset/bitset.sty
+(/usr/share/texlive/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/base/atbegshi-ltx.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hpdftex.def
+(/usr/share/texlive/texmf-dist/tex/latex/base/atveryend-ltx.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
+(/usr/share/texlive/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty)))
+(/usr/share/texlive/texmf-dist/tex/latex/todonotes/todonotes.sty
+(/usr/share/texlive/texmf-dist/tex/latex/base/ifthen.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/xkeyval/xkeyval.sty
+(/usr/share/texlive/texmf-dist/tex/generic/xkeyval/xkeyval.tex
+(/usr/share/texlive/texmf-dist/tex/generic/xkeyval/xkvutils.tex)))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibrarypositioning.code.tex)
+(/usr/share/texlive/texmf-dist/tex/latex/tools/calc.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/imakeidx/imakeidx.sty
+(/usr/share/texlive/texmf-dist/tex/generic/iftex/ifxetex.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/iftex/ifluatex.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/tools/multicol.sty))
+Writing index file main.idx
+(/usr/share/texlive/texmf-dist/tex/latex/xpatch/xpatch.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty) (./main.aux
+(./tab/initial-final-prompts.aux)
+
+LaTeX Warning: Label `fig:verbosity_utterance_length' multiply defined.
+
+
+LaTeX Warning: Label `fig:verbosity_num_turns' multiply defined.
+
+
+LaTeX Warning: Label `tab:resistance_change_sustain' multiply defined.
+
+
+LaTeX Warning: Label `tab:resistance_readiness_rulers' multiply defined.
+
+
+LaTeX Warning: Label `tab:autoplay_results' multiply defined.
+
+
+LaTeX Warning: Label `tab:incremental_installation' multiply defined.
+
+
+LaTeX Warning: Label `tab:cf_human_correlation' multiply defined.
+
+
+LaTeX Warning: Label `tab:cf_installation_individual' multiply defined.
+
+
+LaTeX Warning: Label `tab:cf_installation_population' multiply defined.
+
+
+LaTeX Warning: Label `fig:cf_distribution' multiply defined.
+
+
+LaTeX Warning: Label `tab:good_vs_bad_mi' multiply defined.
+
+)
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+(/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+(/usr/share/texlive/texmf-dist/tex/latex/grfext/grfext.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg))
+(./main.out) (./main.out) [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
+]
+Underfull \hbox (badness 10000) in paragraph at lines 137--137
+|\OT1/cmr/bx/n/14.4 Abstract|
+(./abstract.tex) [2] [3]
+Underfull \hbox (badness 10000) in paragraph at lines 146--146
+[]\OT1/cmr/bx/n/14.4 Acknowledgements|
+(./acknowledgements.tex) [4] (./main.toc
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd)
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd) [5] [6] [7] [8])
+[9] (./main.lot [10] [11]) [12] (./main.lof [13]
+Overfull \hbox (2.57071pt too wide) in paragraph at lines 22--22
+ \OT1/cmr/m/n/10 pelg^^?angers (D2). (Source: Ef-fect of Good vs. Poor-Quality
+Ther-apy on Dop-pelg^^?angers'
+
+Overfull \hbox (2.57071pt too wide) in paragraph at lines 26--26
+ \OT1/cmr/m/n/10 pelg^^?angers (D2). (Source: Ef-fect of Good vs. Poor-Quality
+Ther-apy on Dop-pelg^^?angers'
+) [14] (./ch-intro.tex
+Chapter 1.
+
+Underfull \hbox (badness 10000) in paragraph at lines 10--10
+[]|[]\OT1/cmr/bx/n/7 Chatbot-
+
+Underfull \hbox (badness 10000) in paragraph at lines 10--10
+\OT1/cmr/bx/n/7 based Coun-
+[1]
+Underfull \hbox (badness 10000) in paragraph at lines 40--40
+[]|[]\OT1/cmr/bx/n/7 Syn-thetic
+[2] [3 <./fig/transformer_architecture.png>]) (./ch-background.tex [4]
+Chapter 2.
+
+Underfull \hbox (badness 10000) in paragraph at lines 7--7
+[]|[]\OT1/cmr/bx/n/7 Client-
+
+Underfull \hbox (badness 10000) in paragraph at lines 7--7
+[]|[]\OT1/cmr/bx/n/7 Guid-ing
+
+Overfull \hbox (1.48273pt too wide) in paragraph at lines 20--20
+[]|\OT1/cmr/bx/n/10 Counsellor|
+[5]
+Underfull \hbox (badness 10000) in paragraph at lines 35--35
+[]|[]\OT1/cmr/bx/n/7 Am-biva-lent
+
+Overfull \hbox (1.03578pt too wide) in paragraph at lines 35--36
+[]\OT1/cmr/m/n/10 MI's em-pa-thetic, autonomy-supportive at-mo-sphere is par-ti
+c-u-larly im-por-tant for |[][]\OT1/cmr/m/it/10 am-biva-lent smok-
+
+Underfull \hbox (badness 10000) in paragraph at lines 45--45
+[]|\OT1/cmr/bx/n/10 Open-ended Ques-
+
+Underfull \hbox (badness 10000) in paragraph at lines 68--68
+[]|[]\OT1/cmr/bx/n/7 Readi-ness
+[6]
+Underfull \hbox (badness 10000) in paragraph at lines 84--84
+[]|[]\OT1/cmr/bx/n/7 Foun-da-tional
+
+Underfull \hbox (badness 10000) in paragraph at lines 86--86
+[]|[]\OT1/cmr/bx/n/7 Few-Shot
+
+Underfull \hbox (badness 10000) in paragraph at lines 86--86
+[]|[]\OT1/cmr/bx/n/7 In-Context
+
+Underfull \hbox (badness 10000) in paragraph at lines 86--86
+[]|[]\OT1/cmr/bx/n/7 Expert-
+
+Underfull \hbox (badness 10000) in paragraph at lines 86--86
+\OT1/cmr/bx/n/7 Informed
+[7]
+Underfull \hbox (badness 10000) in paragraph at lines 89--89
+[]|[]\OT1/cmr/bx/n/7 Pol-icy Mod-
+
+Underfull \hbox (badness 10000) in paragraph at lines 94--94
+[]|[]\OT1/cmr/bx/n/7 Multi-Head
+[8] [9] [10]
+Underfull \hbox (badness 10000) in paragraph at lines 131--131
+[]|[]\OT1/cmr/bx/n/7 Ther-a-peu-tic
+[11]
+Underfull \hbox (badness 6461) in paragraph at lines 148--148
+[]|[]\OT1/cmr/bx/n/7 Per-sona Cre-
+
+Underfull \hbox (badness 6412) in paragraph at lines 148--148
+[]|[]\OT1/cmr/bx/n/7 Per-sona Pro-
+
+Underfull \hbox (badness 1009) in paragraph at lines 151--151
+[]|[]\OT1/cmr/bx/n/7 Prompt En-gi-
+
+Underfull \hbox (badness 10000) in paragraph at lines 153--153
+[]|[]\OT1/cmr/bx/n/7 Be-havioural
+
+Underfull \hbox (badness 10000) in paragraph at lines 153--153
+\OT1/cmr/bx/n/7 Ex-em-pli-fi-ca-
+[12]
+Overfull \hbox (3.01967pt too wide) in paragraph at lines 160--161
+\OT1/cmr/m/n/10 train-ing on di-a-logues where an agent con-sis-tently speaks w
+ith a given per-sona (or on mono-logues/writ-
+
+Package natbib Warning: Citation `kimara-etal-2025-personaAI' on page 13 undefi
+ned on input line 166.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 169--169
+[]|[]\OT1/cmr/bx/n/7 Log-i-cal Con-
+[13]
+Underfull \hbox (badness 10000) in paragraph at lines 171--171
+[]|[]\OT1/cmr/bx/n/7 Lin-guis-tic
+
+Underfull \hbox (badness 10000) in paragraph at lines 171--171
+\OT1/cmr/bx/n/7 Style Match-
+[14]
+
+Package natbib Warning: Citation `gupta-etal-2024-bias' on page 15 undefined on
+ input line 182.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 195--195
+[]|[]\OT1/cmr/bx/n/7 Al-go-rith-mic
+[15]
+Underfull \hbox (badness 10000) in paragraph at lines 200--200
+[]|[]\OT1/cmr/bx/n/7 Hyper-
+[16]
+Underfull \hbox (badness 10000) in paragraph at lines 210--210
+[]|[]\OT1/cmr/bx/n/7 stan-dard-ized
+[17]) (./ch-mibot.tex [18]
+Chapter 3.
+
+Package natbib Warning: Citation `info:doi/10.2196/49132' on page 19 undefined
+on input line 6.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 16--16
+[]|[]\OT1/cmr/bx/n/7 Clinician-
+
+Underfull \hbox (badness 10000) in paragraph at lines 21--21
+[]|[]\OT1/cmr/bx/n/7 Single-Prompt
+[19]
+Underfull \hbox (badness 3343) in paragraph at lines 28--28
+[]|[]\OT1/cmr/bx/n/7 Hu-man Role-
+
+Underfull \hbox (badness 10000) in paragraph at lines 36--36
+[]|[]\OT1/cmr/bx/n/7 Length
+
+Underfull \hbox (badness 10000) in paragraph at lines 38--38
+[]|[]\OT1/cmr/bx/n/7 Ac-ces-si-ble
+
+Underfull \hbox (badness 10000) in paragraph at lines 40--40
+[]|[]\OT1/cmr/bx/n/7 No As-sump-
+[20] [21] (./tab/initial-final-prompts.tex
+(/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd)) [22]
+
+pdfTeX warning: pdflatex (file ./fig/sysdiag.pdf): PDF inclusion: found PDF ver
+sion <1.7>, but at most version <1.5> allowed
+
+Underfull \hbox (badness 10000) in paragraph at lines 68--68
+[]|[]\OT1/cmr/bx/n/7 Ob-server
+[23 <./fig/sysdiag.pdf>] (./sec/mibot-deployment.tex
+Underfull \hbox (badness 10000) in paragraph at lines 8--8
+[]|[]\OT1/cmr/bx/n/7 Con-tainer-iza-
+
+
+pdfTeX warning: pdflatex (file ./fig/microservice.drawio.pdf): PDF inclusion: f
+ound PDF version <1.7>, but at most version <1.5> allowed
+
+Overfull \hbox (5.24063pt too wide) in paragraph at lines 19--20
+[]\OT1/cmr/m/n/10 Each |[][] at-tached to the \OT1/cmtt/m/n/10 Conversation \OT
+1/cmr/m/n/10 in-her-its from a base class defin-ing an asyn-chronous \OT1/cmtt/
+m/n/10 observe()
+
+
+pdfTeX warning: pdflatex (file ./fig/container.drawio.pdf): PDF inclusion: foun
+d PDF version <1.7>, but at most version <1.5> allowed
+[24]
+
+pdfTeX warning: pdflatex (file ./fig/deployment.drawio.pdf): PDF inclusion: fou
+nd PDF version <1.7>, but at most version <1.5> allowed
+
+Overfull \hbox (18.70323pt too wide) in paragraph at lines 49--50
+[] []\OT1/cmr/bx/n/10 1. ECS Clus-ter:[] \OT1/cmr/m/n/10 To de-ploy MI-Bot to E
+CS, we first pro-vi-sioned an |[][]\OT1/cmr/bx/n/10 ECS clus-ter \OT1/cmr/m/n/1
+0 (\OT1/cmtt/m/n/10 mibot-v6-cluster\OT1/cmr/m/n/10 ).
+[25 <./fig/microservice.drawio.pdf>] [26 <./fig/container.drawio.pdf> <./fig/de
+ployment.drawio.pdf>]) (./sec/feasibility.tex
+Underfull \hbox (badness 10000) in paragraph at lines 3--3
+[]|[]\OT1/cmr/bx/n/7 Fea-si-bil-ity
+[27]
+Underfull \hbox (badness 10000) in paragraph at lines 6--6
+[]|[]\OT1/cmr/bx/n/7 ethics ap-
+
+Underfull \hbox (badness 10000) in paragraph at lines 14--14
+[]|[]\OT1/cmr/bx/n/7 In-Study
+[28] [29]
+
+pdfTeX warning: pdflatex (file ./fig/feasibility_study_flow.pdf): PDF inclusion
+: found PDF version <1.7>, but at most version <1.5> allowed
+
+Underfull \hbox (badness 10000) in paragraph at lines 105--105
+[]|[]\OT1/cmr/bx/n/7 study pro-ce-
+[30 <./fig/feasibility_study_flow.pdf>]
+
+Package natbib Warning: Citation `mercer2004consultation' on page 31 undefined
+on input line 149.
+
+
+Package natbib Warning: Citation `bikker2015measuring' on page 31 undefined on
+input line 149.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 152--152
+[]|[]\OT1/cmr/bx/n/7 qual-i-ta-tive
+[31])) (./ch-mibot-eval.tex [32]
+Chapter 4.
+
+Underfull \hbox (badness 10000) in paragraph at lines 4--4
+[]|[]\OT1/cmr/bx/n/7 Fea-si-bil-ity
+
+LaTeX Warning: Reference `sec:conversation-dynamics' on page 33 undefined on in
+put line 8.
+
+
+LaTeX Warning: Reference `sec:synthesis' on page 33 undefined on input line 8.
+
+
+Underfull \hbox (badness 1314) in paragraph at lines 15--15
+[]|[]\OT1/cmr/bx/n/7 Pri-mary Out-
+[33]
+Underfull \hbox (badness 2158) in paragraph at lines 49--49
+[]|[]\OT1/cmr/bx/n/7 Re-gres-sion to
+[34 <./fig/2024-11-14-MIV6.3A-2024-11-22-MIV6.3A_ruler_deltas_delta_with_week_l
+ater_keep_high_conf_False_change.png>] [35] [36]
+Underfull \hbox (badness 10000) in paragraph at lines 187--187
+[]\OT1/cmr/m/n/7 being in-ter-ested in
+
+Underfull \hbox (badness 10000) in paragraph at lines 188--188
+[]\OT1/cmr/m/n/7 fully un-der-stand-ing
+
+LaTeX Warning: Float too large for page by 68.98543pt on input line 254.
+
+[37] [38] [39 <./fig/MIV5.2_ruler_deltas_delta_with_week_later_keep_high_conf_F
+alse_change.png> <./fig/MIV5.2_care_scores_histogram.png> <./fig/2024-11-14-MIV
+6.3A-2024-11-22-MIV6.3A_care_scores_histogram.png>]
+
+LaTeX Warning: Reference `sec:feasability' on page 40 undefined on input line 3
+86.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 391--391
+[]|[]\OT1/cmr/bx/n/7 per-cent-age
+
+Underfull \hbox (badness 10000) in paragraph at lines 391--391
+\OT1/cmr/bx/n/7 MI-consistent
+
+Underfull \hbox (badness 10000) in paragraph at lines 391--391
+\OT1/cmr/bx/n/7 re-sponses
+[40 <./fig/combined_care_scores_with_improvement.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 395--395
+[]|[]\OT1/cmr/bx/n/7 per-cent-age
+
+Underfull \hbox (badness 10000) in paragraph at lines 395--395
+\OT1/cmr/bx/n/7 change talk
+[41]
+
+Package natbib Warning: Citation `Bandura1986' on page 42 undefined on input li
+ne 538.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 542--542
+[]|[]\OT1/cmr/bx/n/7 harm re-
+
+Underfull \hbox (badness 10000) in paragraph at lines 542--542
+\OT1/cmr/bx/n/7 duc-tion
+
+Package natbib Warning: Citation `Abrams2018' on page 42 undefined on input lin
+e 552.
+
+[42 <./fig/mic.png> <./fig/rq.png> <./fig/ct.png>] [43] [44]
+Underfull \hbox (badness 7468) in paragraph at lines 680--680
+[]|[]\OT1/cmr/bx/n/7 user seg-men-
+
+Underfull \hbox (badness 10000) in paragraph at lines 708--708
+[]|[]\OT1/cmr/bx/n/7 mul-ti-vari-ate
+
+Underfull \hbox (badness 10000) in paragraph at lines 708--708
+\OT1/cmr/bx/n/7 re-gres-sion
+[45]
+
+Package natbib Warning: Citation `Whittaker2016' on page 46 undefined on input
+line 725.
+
+
+Package natbib Warning: Citation `Perski2017' on page 46 undefined on input lin
+e 727.
+
+
+Package natbib Warning: Citation `Stead2013' on page 46 undefined on input line
+ 728.
+
+[46]) (./ch-synthetic-smoker-2.tex [47]
+Chapter 5.
+[48]
+Overfull \hbox (8.08995pt too wide) in paragraph at lines 31--32
+[]\OT1/cmr/bx/n/10 Psychological: \OT1/cmr/m/n/10 re-sis-tance to change, mo-ti
+-va-tion lev-els (e.g., op-er-a-tional-ized by pre-conversation
+[49] [50] [51]
+
+Package natbib Warning: Citation `liu2024evaluating' on page 52 undefined on in
+put line 109.
+
+[52]
+
+Package natbib Warning: Citation `perez2019what' on page 53 undefined on input
+line 159.
+
+[53] [54] [55] [56]
+
+Package natbib Warning: Citation `cheng2023gpatients' on page 57 undefined on i
+nput line 377.
+
+
+Package natbib Warning: Citation `liu2024evaluating' on page 57 undefined on in
+put line 385.
+
+
+Overfull \hbox (17.79634pt too wide) in paragraph at lines 389--390
+\OT1/cmr/m/n/10 While lin-guis-tic fi-delity (%CT) was high, the fi-delity of s
+elf-reported in-ter-nal state changes ($^^A$Confidence)
+[57]) (./ch-synthetic-smoker-eval.tex [58]
+Chapter 6.
+
+Overfull \hbox (1.04752pt too wide) in paragraph at lines 6--7
+\OT1/cmr/m/n/10 first stage fo-cuses on val-i-dat-ing the ini-tial at-tempts to
+ con-trol spe-cific be-havioural at-tributes|namely
+[59] [60] [61] [62] [63]
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[64]
+Overfull \hbox (78.91121pt too wide) in paragraph at lines 298--306
+ [][]
+[65] [66]
+Chapter 7.
+[67] [68] [69] [70] [71]
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[72]
+Overfull \hbox (78.91121pt too wide) in paragraph at lines 617--625
+ [][]
+[73]) (./ch-conclusion.tex [74] [75]
+Chapter 8.
+[76]) (./ap-code.tex [77]
+Appendix A.
+) [78] (./main.ind [79]) [80] (./main.bbl [81] [82] [83] [84] [85] [86]
+[87] [88])
+
+Package natbib Warning: There were undefined citations.
+
+[89] (./main.aux (./tab/initial-final-prompts.aux))
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: There were multiply-defined labels.
+
+ )
+(see the transcript file for additional information) </home/jules/.texlive2023/
+texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1000.600pk> </home/jules/.texlive2023
+/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1200.600pk></usr/share/texlive/texmf
+-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/
+fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/
+type1/public/amsfonts/cm/cmbx7.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
+ublic/amsfonts/cm/cmbx8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/a
+msfonts/cm/cmbx9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
+/cm/cmcsc10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
+mex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.
+pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></u
+sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/shar
+e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texli
+ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/share/texlive/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/
+fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/t
+ype1/public/amsfonts/cm/cmr5.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
+lic/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsf
+onts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/
+cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb
+></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr
+/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/share/
+texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texlive
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-
+dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fo
+nts/type1/public/amsfonts/cm/cmsy9.pfb></usr/share/texlive/texmf-dist/fonts/typ
+e1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
+lic/amsfonts/cm/cmti7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ams
+fonts/cm/cmti9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/c
+m/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt
+8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10
+.pfb>
+Output written on main.pdf (103 pages, 6462732 bytes).
+Transcript written on main.log.
+Compilation completed successfully!
+PDF generated: main.pdf
