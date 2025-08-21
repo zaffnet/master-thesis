@@ -95,6 +95,7 @@
 \ExecuteOptions{onehalfspacing,normalmargins,equalmargins,oneside}
 \ProcessOptions\relax
 \LoadClass{book}
+\RequirePackage{textcase}
 \RequirePackage{geometry} % for margins etc.
 \RequirePackage{setspace} % for line spacing
 \renewcommand*{\author}  [1]{\gdef\@author{#1}}
@@ -168,7 +169,7 @@
   {\endgroup\clearpage}
 \let\ocleardoublepage\cleardoublepage
 \def\cleardoublepage{{\newpage\pagestyle{plain}\ocleardoublepage}}
-\newcommand{\headerstyle}[1]{\footnotesize\MakeUppercase{#1}}
+\newcommand{\headerstyle}[1]{\footnotesize\MakeTextUppercase{#1}}
 \if@twoside
 \renewcommand*{\ps@headings}%
   {\let\@mkboth\markboth
