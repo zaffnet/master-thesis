@@ -37,10 +37,6 @@
 \usepackage[colorlinks=true, linkcolor=cyan, citecolor=cyan, urlcolor=cyan]{hyperref}
 \usepackage[colorinlistoftodos]{todonotes}
 
-% Index package AFTER hyperref
-\usepackage{imakeidx}
-\makeindex[columns=2, title=Index of Key Terms, intoc]
-
 \hypersetup{
   hyperindex=true
 }
@@ -105,18 +101,6 @@
 \renewcommand*{\raggedleftmarginnote}{}
 \reversemarginpar
 
-\NewDocumentCommand{\margindex}{O{} m o}{%
-  % #1 (O) = optional parent category for hierarchical indexing
-  % #2 (m) = term for the index
-  % #3 (o) = optional term for margin display
-  \marginnote{\scriptsize \textcolor{cyan}{\textbf{\IfNoValueTF{#3}{#2}{#3}}}}%
-  \IfNoValueTF{#1}{%
-    \index{#2|hyperpage}%
-  }{%
-    \index{#1!#2|hyperpage}%
-  }%
-}
-
 % Spacing and formatting
 \setlength{\parskip}{1em} 
 \titlespacing*{\section}{0pt}{*0}{0pt}
@@ -164,7 +148,6 @@
   \appendix
     \input{ap-code}
     \clearpage
-    \printindex
   \backmatter
     \cleardoublepage
     \phantomsection
