@@ -91,12 +91,12 @@ We began with a minimal prompt instructing an LLM (initially GPT-4 Turbo) to ado
 
 \subsubsection{Methodology}
 The initial prompt was generic, providing minimal backstory or specific behavioural constraints.
-\begin{Verbatim}[fontsize=\small]
+\begin{verbatim}[fontsize=\small]
 You are a human smoker engaged in a private thirty-minute session
 with a counsellor. This is your first time talking to a therapist
 about your smoking habits... Respond to the counsellor's inquiries
 as accurately as possible...
-\end{Verbatim}
+\end{verbatim}
 
 We generated a small number (N=5) of conversations between this baseline synthetic smoker and an early version of the MIBot counsellor. The validation method at this stage was qualitative human inspection by the research team, including expert MI clinicians.
 
@@ -215,7 +215,7 @@ To validate doppelgängers effectively, a robust, objective metric grounded in c
 If CF is a valid proxy for a client's internal state, it should correlate with established metrics of readiness in human participants.
 
 \subsubsection{Methodology and Results}
-We analyzed the data from the MIBot v6.3A study (N=106 participants)~\citep{mahmood2025fully}. The analysis confirmed strong, statistically significant correlations between CF and all readiness rulers (Table~\ref{tab:ct-correlation}). For example, the correlation with Post-conversation confidence was 0.41 ($p < 0.0001$). This established CF as a crucial, language-based metric for validation.
+We analyzed the data from the MIBot v6.3A study (N=106 participants)~\citep{mahmood-etal-2025-fully}. The analysis confirmed strong, statistically significant correlations between CF and all readiness rulers (Table~\ref{tab:ct-correlation}). For example, the correlation with Post-conversation confidence was 0.41 ($p < 0.0001$). This established CF as a crucial, language-based metric for validation.
 
 % Data from "Finding Smoker Attributes that Correlate with Change Talk" Slide 5
 \begin{table}[h!]
@@ -226,7 +226,7 @@ We analyzed the data from the MIBot v6.3A study (N=106 participants)~\citep{mahm
 \toprule
 \textbf{Attribute} & \textbf{Correlation with CF} \\ \midrule
 Post-conversation Importance & 0.49 (****) \\
-Post-conversation Readiness & 0.48 (****)
+Post-conversation Readiness & 0.48 (****) \\
 Pre-conversation Importance & 0.47 (****) \\
 Post-conversation Confidence & 0.41 (****) \\
 Change in Confidence (Post - Pre) & 0.24 (**) \\
@@ -251,11 +251,11 @@ The process involves:
 
 We created doppelgängers for the participants (N=105) from the MIBot v6.3A study, using GPT-4 Omni. We moved from generalized backstories to direct installation of specific attributes.
 
-\begin{Verbatim}[fontsize=\small]
+\begin{verbatim}[fontsize=\small]
 ... About you: You are a 48-year-old male. You typically smoke 20
 cigarettes per day... Before speaking to the counsellor,
 you have rated your motivation... Importance: 7, Confidence: 6, Readiness: 8.
-\end{Verbatim}
+\end{verbatim}
 
 Initial attempts using only these attributes yielded insufficient correlation in CF. To improve linguistic fidelity, we augmented the prompt with a brief, qualitative description summarizing the human's original C:S ratio (effectively adding CF to the installed attributes $A_S$).
 
