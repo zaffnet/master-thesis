@@ -176,6 +176,7 @@ While MIBot's mean score approaches that of human providers, the percentage of M
 \begin{table}[htbp]
 \centering
 \footnotesize  % Even smaller than \small
+\begin{adjustbox}{scale=0.9, center}
 \begin{threeparttable}
 \setlength{\tabcolsep}{3pt}  % Reduce column spacing (default is 6pt)
 \renewcommand{\arraystretch}{0.9}  % Reduce row height
@@ -249,6 +250,7 @@ $\geq$3 (n=18) & 4.4 (1.0) & 4.7 (0.8) & 4.3 (1.0) & 4.2 (1.1) & 4.2 (0.9) & 4.4
 \item Mean(SD). $^\dagger$Higher mean(sig). \textsuperscript{a}Mann-Whitney; \textsuperscript{b}Kruskal-Wallis. ***p<.001, **p<.01, *p<.05
 \end{tablenotes}
 \end{threeparttable}
+\end{adjustbox} % END of the wrapper
 \caption[CARE Scores by Demographics and Behaviour]{CARE (Consultation and Relational Empathy) scale scores, broken down by various demographic and behavioural characteristics of the participants. The table shows the mean and standard deviation of scores for each of the 10 CARE items, as well as the total CARE score.}
 \label{tab:care_comprehensive}
 \end{table}
@@ -383,7 +385,7 @@ The fully generative MIBot v6.3A chatbot scores higher on CARE, the measure of p
 \section{AutoMISC Analysis}
 \label{sec:mi-adherence}
 
-To evaluate the chatbot's adherence to MI principles, we analyzed counsellor and client utterances from the feasibility study transcripts (Section~\ref{sec:feasability}) using AutoMISC, an automated annotation system originally described in \citet{mahmood-etal-2025-fully}\footnote{A comprehensive description of the AutoMISC system by \citet{ali2025automated} is forthcoming}.
+To evaluate the chatbot's adherence to MI principles, we analyzed counsellor and client utterances from the feasibility study transcripts (Section~\ref{sec:feasibility}) using AutoMISC, an automated annotation system originally described in \citet{mahmood-etal-2025-fully}\footnote{A comprehensive description of the AutoMISC system by \citet{ali2025automated} is forthcoming}.
 The system assigns behavioural codes to each utterance: counsellor utterances are classified as MI-Consistent (MICO), MI-Inconsistent (MIIN), Reflection (R), Question (Q), or Other (O), while client utterances are categorized as change talk (C), sustain talk (S), or neutral (N). Following annotation of all utterances, we computed per-transcript summary metrics to quantify MI adherence. These comprise:
 
 \begin{itemize}
@@ -551,6 +553,7 @@ These incremental changes, while not constituting complete cessation, represent 
 \label{sec:conversation-analysis}
 
 \subsection{Quantitative Dynamics}
+\label{sec:conversation-dynamics}
 
 Conversations ranged from 36 to 163 utterances (median 78, mean 80.7, SD 29.4), with counsellor utterances comprising 55\% of the total. The median conversation lasted approximately 19 minutes based on participant self-report. Table~\ref{table:conversation_metrics} summarizes key quantitative metrics.
 
@@ -690,16 +693,17 @@ Cross-tabulation revealed four user segments:
     Dissatisfied & No \& No & 3\% \\
     \bottomrule
   \end{tabular}
-  \caption[User Experience Segments]{Segmentation of users based on their reported enjoyment and perceived helpfulness of the MIBot conversation. The table shows the percentage of participants in each of the four segments: Enthusiasts, Entertained Sceptics, Reluctant Beneficiaries, and Dissatisfied.}
+  \caption[User Experience Segments]{Segmentation of users based on their reported enjoyment and perceived helpfulness of the MIBot conversation. The table shows the percentage of participants in each of the four segments: Enthusiasts, Entertained Skeptics, Reluctant Beneficiaries, and Dissatisfied.}
   \label{table:user_segments}
 \end{table}
 
-``Entertained Sceptics''---those who enjoyed but didn't find it helpful---often wanted more directive advice or concrete tools rather than exploratory conversation.
+``Entertained Skeptics''---those who enjoyed but didn't find it helpful---often wanted more directive advice or concrete tools rather than exploratory conversation.
 
 \section{Discussion}
 \label{sec:discussion}
 
 \subsection{Synthesis of Findings}
+\label{sec:synthesis}
 
 Multivariate regression analysis identified the strongest predictors of confidence improvement:
 
