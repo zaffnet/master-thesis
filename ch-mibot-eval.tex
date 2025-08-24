@@ -1,4 +1,4 @@
-\chapter{Evaluation of MIBot}
+\chapter{Evaluation of MIBot: Results from the Human Feasibility Study}
 \label{ch:mibot-eval}
 
 This chapter presents a comprehensive evaluation of MIBot's effectiveness through a feasibility study with 106 smokers. Building on the system design and implementation described in previous chapters, we assess MIBot's performance across four critical dimensions established in the smoking cessation and motivational interviewing literature: behavioural change readiness, perceived therapeutic empathy, adherence to MI principles, and elicitation of client change talk.
@@ -176,22 +176,22 @@ While MIBot's mean score approaches that of human providers, the percentage of M
 \begin{table}[htbp]
 \centering
 \footnotesize  % Even smaller than \small
-\begin{adjustbox}{scale=0.9, center}
+\begin{adjustbox}{scale=0.8, center}
 \begin{threeparttable}
 \setlength{\tabcolsep}{3pt}  % Reduce column spacing (default is 6pt)
 \renewcommand{\arraystretch}{0.9}  % Reduce row height
 \begin{tabular}{@{}l@{\hspace{3pt}}c|c|c|c|c|c|c|c|c|c@{\hspace{3pt}}c@{}}  % Tighter spacing
 \multicolumn{1}{l}{Characteristic} & 
-\rotatebox{60}{\scriptsize making you feel at ease}  & 
-\rotatebox{60}{\scriptsize letting you tell your story}  & 
-\rotatebox{60}{\scriptsize really listening}  &
-\rotatebox{60}{\scriptsize \parbox{2.7cm}{being interested in you as a whole person}}  & 
-\rotatebox{60}{\scriptsize \parbox{2.7cm}{fully understanding your concerns}}  & 
-\rotatebox{60}{\scriptsize showing care and compassion}  & 
-\rotatebox{60}{\scriptsize being positive}  & 
-\rotatebox{60}{\scriptsize explaining things clearly}  & 
-\rotatebox{60}{\scriptsize helping you take control}  & 
-\rotatebox{60}{\scriptsize \parbox{2.7cm}{making a plan of action with you}} & 
+\rotatebox{45}{\scriptsize making you feel at ease}  & 
+\rotatebox{45}{\scriptsize letting you tell your story}  & 
+\rotatebox{45}{\scriptsize really listening}  &
+\rotatebox{45}{\scriptsize \parbox{2.7cm}{being interested in you as a whole person}}  & 
+\rotatebox{45}{\scriptsize \parbox{2.7cm}{fully understanding your concerns}}  & 
+\rotatebox{45}{\scriptsize showing care and compassion}  & 
+\rotatebox{45}{\scriptsize being positive}  & 
+\rotatebox{45}{\scriptsize explaining things clearly}  & 
+\rotatebox{45}{\scriptsize helping you take control}  & 
+\rotatebox{45}{\scriptsize \parbox{2.7cm}{making a plan of action with you}} & 
 \scriptsize \textbf{CARE} \\
 \midrule
 \multicolumn{12}{@{}l}{\textbf{\scriptsize DEMOGRAPHIC CHARACTERISTICS}} \\
@@ -287,7 +287,7 @@ $\geq$3 (n=18) & 4.4 (1.0) & 4.7 (0.8) & 4.3 (1.0) & 4.2 (1.1) & 4.2 (0.9) & 4.4
 Table~\ref{table:care_question_means} presents the mean scores for each CARE question, revealing specific strengths and weaknesses in MIBot's empathic performance. The chatbot performed best on `being positive' (4.6, SD 0.7) and `letting you tell your ``story''' (4.5, SD 0.8), while it scored lowest on `helping you take control' (3.8, SD 1.3) and ``making a plan of action with you '' (3.6, SD 1.5).
 
 
-The poor performance on some questions may be due to the chatbot's lack of emotional intelligence \citep{sabour-etal-2024-emobench} or collaboration skills \citep{Yang2024}. Table~\ref{tab:care_comprehensive} presents CARE scale scores across demographic and behavioural characteristics. Female participants rated significantly higher than males on ``being interested in you as a whole person'' (4.2 vs 3.7, p=.026). Likewise, participants in non-full-time employment gave significantly higher scores than full-time workers on three dimensions: letting you tell your story'' (4.7 vs 4.3, p=.013), really listening'' (4.6 vs 4.2, p=.028), and ``showing care and compassion'' (4.5 vs 4.1, p=.012). 
+The poor performance on some questions may be due to the chatbot's lack of emotional intelligence \citep{sabour-etal-2024-emobench} or collaboration skills \citep{yang-etal-2024-human}. Table~\ref{tab:care_comprehensive} presents CARE scale scores across demographic and behavioural characteristics. Female participants rated significantly higher than males on ``being interested in you as a whole person'' (4.2 vs 3.7, p=.026). Likewise, participants in non-full-time employment gave significantly higher scores than full-time workers on three dimensions: letting you tell your story'' (4.7 vs 4.3, p=.013), really listening'' (4.6 vs 4.2, p=.028), and ``showing care and compassion'' (4.5 vs 4.1, p=.012). 
 %Among confidence levels, only ``making a plan of action with you'' showed significant differences (p=.032), with the highest confidence group ($>geq$ 6) scoring 4.3 compared to lower groups ranging from 3.2-4.0. 
 No significant differences were found across age, ethnicity, smoking intensity, or quit attempt categories. 
 
@@ -385,7 +385,7 @@ The fully generative MIBot v6.3A chatbot scores higher on CARE, the measure of p
 \section{AutoMISC Analysis}
 \label{sec:mi-adherence}
 
-To evaluate the chatbot's adherence to MI principles, we analyzed counsellor and client utterances from the feasibility study transcripts (Section~\ref{sec:feasibility}) using AutoMISC, an automated annotation system originally described in \citet{mahmood-etal-2025-fully}\footnote{A comprehensive description of the AutoMISC system by \citet{ali2025automated} is forthcoming}.
+To evaluate the chatbot's adherence to MI principles, we analyzed counsellor and client utterances from the feasibility study transcripts (\cref{ch:feasibility}) using AutoMISC, an automated annotation system originally described in \citet{mahmood-etal-2025-fully}\footnote{A comprehensive description of the AutoMISC system by \citet{ali2025automated} is forthcoming}.
 The system assigns behavioural codes to each utterance: counsellor utterances are classified as MI-Consistent (MICO), MI-Inconsistent (MIIN), Reflection (R), Question (Q), or Other (O), while client utterances are categorized as change talk (C), sustain talk (S), or neutral (N). Following annotation of all utterances, we computed per-transcript summary metrics to quantify MI adherence. These comprise:
 
 \begin{itemize}
@@ -423,26 +423,27 @@ We computed summary scores separately for these subsets and then compared MIBot'
 Figure~\ref{fig:misc_distributions} shows violin plots comparing the distribution of \%MIC, R:Q, and \%CT across MIBot conversations with the HLQC benchmarks. The \%MIC scores are tightly clustered near 100\%, with only a few transcripts falling below 80\%. The R:Q distribution is centred around 1.3, showing less variance than human counsellors who range from pure question-asking (R:Q near 0) to heavy reflection use (R:Q $>$ 5).
 
 \begin{figure}[ht]
-  \centering
-  \begin{subfigure}[b]{0.32\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{fig/mic.png}
-    \caption{\%MIC}
-  \end{subfigure}
-  \hfill
-  \begin{subfigure}[b]{0.32\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{fig/rq.png}
-    \caption{R:Q}
-  \end{subfigure}
-  \hfill
-  \begin{subfigure}[b]{0.32\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{fig/ct.png}
-    \caption{\%CT}
-  \end{subfigure}
-  \caption[MISC Summary Score Distributions]{Comparison of MISC summary score distributions for MIBot and the HLQC dataset (high and low quality). The figure shows violin plots for (a) Percentage MI-Consistent Responses (\%MIC), (b) Reflection to Question Ratio (R:Q), and (c) Percentage Client Change Talk (\%CT).}
-  \label{fig:misc_distributions}
+\centering
+\begin{subfigure}[b]{0.9\textwidth}
+\centering
+\includegraphics[height=0.25\textheight, keepaspectratio]{fig/mic.png}
+\caption{\%MIC}
+\end{subfigure}
+
+\begin{subfigure}[b]{0.9\textwidth}
+\centering
+\includegraphics[height=0.25\textheight, keepaspectratio]{fig/rq.png}
+\caption{R:Q}
+\end{subfigure}
+
+\begin{subfigure}[b]{0.9\textwidth}
+\centering
+\includegraphics[height=0.25\textheight, keepaspectratio]{fig/ct.png}
+\caption{\%CT}
+\end{subfigure}
+
+\caption{Comparison of MISC summary score distributions for MIBot and the HLQC dataset (high and low quality). The figure shows violin plots for (a) Percentage MI-Consistent Responses (\%MIC), (b) Reflection to Question Ratio (R:Q), and (c) Percentage Client Change Talk (\%CT).}
+\label{fig:misc_distributions}
 \end{figure}
 
 

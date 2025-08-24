@@ -1,7 +1,7 @@
 % !TeX TS-program = pdflatex
 % !BIB TS-program = bibtex
 % !TeX root = main.tex
-\documentclass[narrowmargins]{ut-thesis}
+\documentclass{ut-thesis}
 
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc} % Recommended for modern font encoding and PDF copy-paste
@@ -159,9 +159,14 @@
   \mainmatter
     \input{ch-intro}
     \input{ch-background}
+    
     \input{ch-mibot}
+    \input{ch-mibot-feasibility-study}
     \input{ch-mibot-eval}
+    
     \input{ch-synthetic-smoker}
+    \input{ch-synthetic-doppelganger}
+    
     \input{ch-conclusion}
 
   \appendix
