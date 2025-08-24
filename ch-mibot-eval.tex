@@ -771,3 +771,32 @@ Several limitations constrain the generalisability of our findings:
 This chapter presented a comprehensive evaluation of MIBot, a fully generative MI chatbot. The study demonstrated that MIBot can produce a clinically meaningful increase in smokers' confidence to quit, with high fidelity to MI principles and strong user engagement. The analysis identified key predictors of success, highlighting that the chatbot was most effective for younger, low-confidence smokers who had recently attempted to quit.
 
 While the results are promising, the study also revealed limitations in building deep therapeutic alliance and translating engagement into perceived helpfulness for all users. These findings establish a strong proof-of-concept for AI-delivered MI as a scalable public health intervention, while also underscoring the areas for future research and development, particularly in hybrid models of care that combine AI with human support.
+
+
+\section{Chatbot Contribution Attribution}
+
+The research detailed in \Cref{ch:mibot,ch:feasibility,ch:mibot-eval} is the result of a significant, long-term collaboration. The human feasibility study, in particular, was a major team undertaking and involved all co-authors of the paper by \citet{mahmood-etal-2025-fully}. To provide a clear overview of each individual's role in the work presented in this thesis, this section outlines specific attributions.
+
+\begin{itemize}
+\item \textbf{Soliman Ali:} As the second author on the work submitted by \citet{mahmood-etal-2025-fully}, Ali was instrumental in designing and implementing the modular observer agent framework that serves as the foundation for the MIBot system (see Section \ref{sec:observers}). He also contributed to the initial versions of the AutoMISC system \citep{ali2025automated}, which was developed concurrently with MIBot. AutoMISC not only helped refine MIBot through an iterative process but was also used by the author of this thesis to validate the installation of attributes in synthetic smokers (see \Cref{ch:synthetic-smoker-preliminary,ch:synthetic-doppelganger}).
+
+\item \textbf{Michelle Collins:} Collins played a key role in evolving the prompt used by MIBot and provided valuable feedback by testing various intermediate system versions during its development.
+
+\item \textbf{Sihan Chen:} Chen implemented a backend function for uploading conversation artifacts to AWS S3 and worked on the prompt for the End Classifier Observer.
+
+\item \textbf{Yi Chen (Michael) Zhao:} Zhao was responsible for developing the Off-Track observer agent, a component designed to detect when conversation topics deviate from smoking cessation.
+\end{itemize}
+
+The author of this thesis made the following contributions:
+
+\begin{itemize}
+\item Led the design and development of the fully generative MIBot v6.3A.
+
+\item Guided the iterative refinement of the system prompt in collaboration with expert MI clinicians and built early versions of synthetic smokers for system testing and validation.
+
+\item Provisioned the resources required to deploy MIBot to a cloud infrastructure, including researching the right AWS systems to use, and configuring AWS S3 for data storage.
+
+\item Conducted the human feasibility study, a process that involved securing ethics approval, recruiting participants through Prolific, and overseeing all aspects of data collection and participant compensation.
+
+\item Handled post-experiment data processing, including collection, cleaning, and a portion of the analysis presented in this chapter.
+\end{itemize}
