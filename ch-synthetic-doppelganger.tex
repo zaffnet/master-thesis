@@ -3,7 +3,7 @@
 
 As established in the previous chapter, creating personas with arbitrary backstories made it difficult to rigorously assess the \textbf{representativeness} and \textbf{fidelity} of our synthetic agents. To overcome these limitations, we developed the ``doppelgänger'' methodology---a data-driven approach designed to create synthetic twins of actual human participants, enabling a more direct and robust validation framework.
 
-This method leverages a rich dataset from a prior feasibility study on human smokers using MIBot v6.3A (see \cref{ch:feasibility}), which we will refer to by the shorthand \textbf{MIV6.3A}. The dataset contains 106 complete MIBot--human interactions, including demographic data, smoking history (e.g., Heaviness of Smoking Index---HSI), pre- and post-conversation readiness rulers (\emph{importance}, \emph{confidence}, \emph{readiness}), and full conversation transcripts. By extracting and installing attributes directly from this human data, we can create doppelgängers that mirror a real-world distribution. This chapter details the specific methods for creating and evaluating these synthetic doppelgängers.
+This method leverages a rich dataset from a previous feasibility study on human smokers using MIBot v6.3A (see \cref{ch:feasibility}), which we refer to by the shorthand \textbf{MIV6.3A}. The dataset contains 106 complete MIBot--human interactions, including demographic data, smoking history (e.g., Heaviness of Smoking Index---HSI), pre- and post-conversation readiness rulers (\emph{importance}, \emph{confidence}, \emph{readiness}), and full conversation transcripts. By extracting and installing attributes directly from this human data, we can create doppelgängers that mirror a real-world distribution. This chapter details the specific methods for creating and evaluating these synthetic doppelgängers.
 
 \section{The Doppelgänger Methodology: A Data-Driven Approach}
 \label{sec:synthetic-smoker-doppelgänger}
@@ -12,11 +12,11 @@ This method leverages a rich dataset from a prior feasibility study on human smo
 Without installing a diverse set of attributes from a target population, it became challenging to validate our development of synthetic smokers in terms of distributional representativeness and uniform fidelity. 
 Therefore, we utilized the data from the feasibility study on human smokers using MIBot v6.3A (\cref{ch:feasibility}) to extract installable attributes. This study provided a rich dataset of 106 MIBot--human interactions, including pre- and post-conversation readiness rulers (\emph{importance}, \emph{confidence}, \emph{readiness}), demographic data, smoking history (e.g., Heaviness of Smoking Index---HSI), and complete conversation transcripts. Throughout the rest of this chapter, we refer to this dataset by the shorthand \textbf{MIV6.3A}.
 
-The dataset allowed us to move away from creating synthetic smokers with an arbitrary distribution of attributes and towards a distribution drawn from MIV6.3A, where we explicitly ensured certain distributions on some attributes (e.g., we ensured the number of male and female participants was equal before applying confidence screening). Thus, the creation of doppelgängers allowed us to validate our methodology more rigorously.
+The dataset enabled a shift from creating synthetic smokers with an arbitrary attribute distribution to one drawn from MIV6.3A. We explicitly controlled for certain attributes, such as ensuring an equal number of male and female participants before applying confidence screening. Thus, the creation of doppelgängers allowed us to validate our methodology more rigorously.
 
 For the rest of our discussion, we define a doppelgänger as a synthetic smoker designed to be a ``behavioural twin'' of a specific human participant from the feasibility study, although this definition can be extended to other types of participants and studies. The goal is to create an agent that, when exposed to MI counselling, behaves similarly to its human counterpart in terms of language use, psychological profile, and changes in readiness to quit.
 
-Notice how using the doppelgänger methodology makes validating the fidelity of human smokers a simple approach. Rather than using a method $M$ to approximate installed attributes $\hat{\textbf{A}}_S$ from an observation $\gamma_S$, we can devise a robust and clinically grounded classifier ($\textbf{C}$) that operates on $\gamma$. For example, we can calculate the fraction of change talk (\%CT) from the transcripts.
+Using the doppelgänger methodology provides a straightforward approach to validating the fidelity of synthetic smokers. Rather than using a method $M$ to approximate installed attributes $\hat{\textbf{A}}_S$ from an observation $\gamma_S$, we can devise a robust and clinically grounded classifier ($\textbf{C}$) that operates on $\gamma$. For example, we can calculate the fraction of change talk (\%CT) from the transcripts.
 
 Further, we can use this classifier to find the distance $d(\textbf{C}(\gamma_H), \textbf{C}(\gamma_S))$. Since, in the case of doppelgängers, $\textbf{A}_S = \textbf{A}_H$, we can approximate the fidelity as:
 
@@ -99,7 +99,7 @@ Pre-Conversation Confidence + Transcript & 3.1 & \\
 
 
 
-While metrics like MAE provide a quantitative summary, a visual comparison of the distributions reveals some discrepancies. \cref{fig:post_conf_distributions} plots the distribution of human-reported confidence scores alongside the distribution of GPT-4o-based doppelgänger. Both distributions are similarly left-skewed, indicating that the model correctly identifies that most participants land in the higher-confidence range (6--10). However, the doppelgänger predictions were less varied than the human responses. The human data shows a broader plateau of high confidence across scores of 6, 7, and 8, whereas the doppelgängers' exhibit a pronounced peak at a score of 7. This suggests that while the model is effective at capturing the overall positive trend, it may be less sensitive to the subtle individual differences in participants' final confidence levels, tending to revert to a more common or ``average'' high-confidence outcome.
+While metrics like MAE provide a quantitative summary, a visual comparison of the distributions reveals some discrepancies. \cref{fig:post_conf_distributions} plots the distribution of human-reported confidence scores alongside the distribution of GPT-4o-based doppelgänger. Both distributions are similarly left-skewed, indicating that the model correctly identifies that most participants land in the higher-confidence range (6--10). However, the doppelgänger predictions were less varied than the human responses. The human data shows a broader plateau of high confidence across scores of 6, 7, and 8, whereas the doppelgängers exhibit a pronounced peak at a score of 7. This suggests that while the model is effective at capturing the overall positive trend, it may be less sensitive to the subtle individual differences in participants' final confidence levels, tending to revert to a more common or ``average'' high-confidence outcome.
 
 
 
@@ -137,7 +137,7 @@ Claude 3.7 Sonnet (CoT) & 1.2 & 2.7 & 0.7 & 31 \\
 \textbf{Claude 3.7 Sonnet (Thinking)} & \textbf{1.1} & \textbf{2.6} & \textbf{0.8} & \textbf{32} \\ 
 \bottomrule
 \end{tabular}
-\caption[Effect LLM type an reasoning on synthetic smokers' self-reported confidence.]{Comparison of different models and prompting techniques and their impact on the self-reporting of post-conversation confidence (N=159). Reflective techniques, especially Claude 3.7 Sonnet's ``thinking'' feature, yielded the best results across all metrics.}
+\caption[Effect of LLM type and reasoning on synthetic smokers' self-reported confidence.]{Comparison of different models and prompting techniques and their impact on the self-reporting of post-conversation confidence (N=159). Reflective techniques, especially Claude 3.7 Sonnet's ``thinking'' feature, yielded the best results across all metrics.}
 \label{tab:model_comparison}
 \end{table}
 
@@ -152,7 +152,7 @@ The baseline GPT-4o doppelgänger achieved a strong correlation of \textbf{$r=0.
 \end{figure}
 
 
-\cref{fig:post-conf-gpt4o-vs-human} visualizes the relationship between the post-conversation confidence reported by human participants and that reported by their corresponding GPT-4o-based doppelgängers. The analysis reveals a strong, statistically significant positive correlation ($R^2=0.63, p < 0.001$), indicating that the doppelgängers are generally successful in mirroring the human outcomes after processing the conversation transcript. The Mean Absolute Error (MAE) was 1.19, suggesting the doppelgänger's reported score was typically within about 1.2 points of the human's score on the 0--10 scale.
+\cref{fig:post-conf-gpt4o-vs-human} visualizes the relationship between the post-conversation confidence reported by human participants and that reported by their corresponding GPT-4o-based doppelgängers. The analysis reveals a strong, statistically significant positive correlation (Spearman's $r=0.70, p < 0.001$), indicating that the doppelgängers are generally successful in mirroring the human outcomes after processing the conversation transcript. The Mean Absolute Error (MAE) was 1.19, suggesting the doppelgänger's reported score was typically within about 1.2 points of the human's score on the 0--10 scale.
 
 However, the plot also reveals a notable trend when comparing the best-fit line (dashed red) with the ideal fit (solid black). The regression equation ($y=0.72x+1.14$) shows a slope less than 1.0 and a positive intercept. This indicates a tendency towards ``regression to the mean'' in the doppelgänger reports. Specifically, when human participants reported very low confidence (e.g., 0--3), the doppelgängers tended to report slightly higher confidence (closer to the intercept of 1.14). Conversely, when humans reported very high confidence (e.g., 8--10), the doppelgängers tended to report slightly lower confidence. This suggests that while the directional impact of the conversation is captured well, the magnitude of the impact at the extremes might be slightly attenuated in the synthetic agents.
 
@@ -181,7 +181,7 @@ It is interesting to note that the performance metrics for post-importance and p
 
 
 
-This experiment served as a confidence check on the doppelgänger's ability to infer the psychological state resulting from the conversation. The underlying model possesses the necessary reasoning capabilities to allow the doppelgänger to understand how conversational dynamics influenced the participant's motivation and confidence. This serves as a baseline to confirm the doppelgänger's internal consistency before attempting to generate the conversation itself.
+This experiment served as a check on the doppelgänger's ability to infer the psychological state resulting from the conversation. The underlying model possesses the necessary reasoning capabilities to allow the doppelgänger to understand how conversational dynamics influenced the participant's motivation and confidence. This serves as a baseline to confirm the doppelgänger's internal consistency before attempting to generate the conversation itself.
 
 
 
@@ -213,7 +213,7 @@ Post-conversation confidence & 0.41$^{****}$ \\
 Post-conversation readiness & 0.48$^{****}$ \\
 \midrule
 Change in importance (Post--Pre) & 0.12 \\
-Change in confidence (Post--Pre) & 24$^{**}$ \\
+Change in confidence (Post--Pre) & 0.24$^{**}$ \\
 Change in readiness (Post--Pre) & 0.06 \\
 \midrule
 CARE (perceived empathy) & 0.15 \\
@@ -330,13 +330,13 @@ The most significant finding emerged in experiment 6, where explicitly installin
 
 However, despite achieving a strong rank correlation, a closer look at the population-level statistics reveals a systematic bias. As shown in the histograms in \cref{fig:cf_comparison}, the distribution of \%CT for doppelgängers is shifted significantly higher than for humans (mean 0.76 vs. 0.59). The doppelgänger distribution is also more compressed and left-skewed, indicating a lower variance and a strong tendency to produce high levels of change talk, regardless of the human baseline.
 
-This discrepancy is further visualized in the scatter plot in \cref{fig:cf_human_vs_doppel}. While the points follow a positive trend that confirms the correlation, the majority lie above the identity line ($y=x$). This visually demonstrates that doppelgängers consistently over-produced change talk relative to their human counterparts. Even when a human participant had a low \%CT (e.g., below 0.4), their doppelgänger often produced a \%CT above 0.6.
+This discrepancy is further visualized in the scatter plot in \cref{fig:cf_human_vs_doppel}. While the points follow a positive trend that confirms the correlation, the majority lie above the identity line ($y=x$). This visually demonstrates that doppelgängers consistently overproduced change talk relative to their human counterparts. Even when a human participant had a low \%CT (e.g., below 0.4), their doppelgänger often produced a \%CT above 0.6.
 
 Finally, we investigated the system's uniform fidelity by stratifying the results by sex, as detailed in \cref{tab:doppelgänger-correlations}. While the mean \%CT for both human males and females was nearly identical ($\sim$59\%), the fidelity of their doppelgängers differed. The correlation for males ($r_s = 0.65$) was notably stronger than for females ($r_s = 0.52$), indicating a performance bias. This lack of uniform fidelity suggests the model may simulate one demographic group more accurately than another, an issue requiring further investigation to ensure representative synthetic populations. Other observations include:
 
 \begin{enumerate}
     \item Once an attribute (e.g., pre-conversation importance) is installed in the doppelgängers, it is accurately recalled when prompted.
-    \item Asking the doppelgängers to think before filling up the post-conversation readiness rulers reduced the gap (as measured by MAE) between their and human-reported scores.
+    \item Asking the doppelgängers to think before filling out the post-conversation readiness rulers reduced the gap (as measured by MAE) between their and human-reported scores.
 \end{enumerate}
 
 
