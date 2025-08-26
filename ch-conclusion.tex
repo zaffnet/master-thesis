@@ -1,43 +1,34 @@
 \chapter{Conclusion and Future Directions}
 \label{ch:conclusion}
 
-This thesis has explored the development and evaluation of a fully generative motivational interviewing (MI) chatbot, MIBot, designed to support smokers in moving towards the decision to quit. Furthermore, we have introduced the novel concept of LLM-based synthetic smokers as a new methodology for evaluating and refining such chatbots. Our work represents a significant step forward in the application of large language models to the critical domain of public health and smoking cessation.
+This thesis has explored the development and evaluation of a fully generative motivational interviewing chatbot, designed to support smokers in moving towards the decision to quit. Furthermore, we have investigated how to create synthetic smokers from human smokers through attribute installation and validated our approach using clinically and linguistically grounded metrics of behaviour change. The utilization of such synthetic patients to train therapists is a promising practical application of this work.
+
 
 \section{Summary of Contributions}
 
-The primary contributions of this thesis are twofold. First, we have demonstrated the feasibility of creating a generative MI chatbot that can engage in empathetic and effective conversations with smokers. The evaluation of MIBot showed promising results in its ability to conduct conversations that align with the principles of motivational interviewing, offering a potentially scalable and accessible tool for smoking cessation support.
+The primary contributions of this thesis are twofold. First, we have demonstrated the feasibility of creating a generative MI chatbot that can engage in empathetic and effective conversations with smokers. The evaluation of MIBot showed promising results regarding its ability to conduct conversations that align with the principles of motivational interviewing.
 
-Second, we have pioneered the use of LLM-based synthetic smokers. This approach addresses a long-standing challenge in chatbot research: the difficulty and expense of recruiting human participants for evaluation. By creating realistic, data-driven user personas, we can rapidly and iteratively test our chatbot, identify areas for improvement, and ensure that it is robust and effective before deploying it to real users. Our research has shown that while these synthetic users can be incredibly useful, they also come with their own set of challenges, such as the risk of generating stereotypical or overly-positive personas.
+Second, we developed a methodology to install attributes into synthetic smokers and validate their installation. If successfully validated, synthetic smokers can become valuable tools for training and testing counsellors. Although our method showed encouraging signs of behaviour installation in LLMs, it is by no means a perfect installation. Our validation criteria of fidelity, distributional representativeness, and fair installation of attributes provide a robust framework for future research to test methods of creating synthetic agents.
+
 
 \section{Future Directions}
-
 The findings of this thesis open up several exciting avenues for future research, both in the realm of mental health chatbots and in the use of synthetic user personas.
 
-\subsection{Mental Health Chatbots}
-
-The field of mental health chatbots is rapidly evolving, and there are several key areas where future work could build upon the foundations laid in this thesis:
-
 \begin{itemize}
-    \item \textbf{Hyper-personalization:} While MIBot was designed to be empathetic, future chatbots could be made even more effective by tailoring their responses to the individual user's personality, communication style, and emotional state. This could be achieved by incorporating more sophisticated user modelling techniques and leveraging real-time affective computing.
-    \item \textbf{Integration with Clinical Practice:} Future research should focus on how chatbots like MIBot can be integrated into existing clinical workflows. For example, a chatbot could be used to provide support to patients between therapy sessions, with the conversation history being made available to the human therapist (with the user's consent). This would create a blended model of care that combines the scalability of AI with the irreplaceable expertise of human professionals.
-    \item \textbf{Long-term Efficacy Studies:} While our evaluation of MIBot showed promising short-term results, more research is needed to understand the long-term efficacy of such chatbots. This would involve conducting longitudinal studies with real smokers to track their progress over time and assess the chatbot's impact on their quit journey.
+    \item While MIBot was designed to be empathetic, there exists a significant gap between MIBot and humans in terms of empathy. future chatbots could be made even more effective by tailoring their responses to the individual user's personality, communication style, and emotional state. This could be achieved by incorporating more sophisticated user modelling techniques.
+    \item Future research should focus on how chatbots like MIBot can be integrated into existing clinical workflows. For example, a chatbot could be used to provide support to patients between therapy sessions, with the conversation history being made available to the human therapist (with the user's consent). This would create a blended model of care that combines the scalability of AI with the essential expertise of human professionals.
+    \item While our evaluation of MIBot showed promising short-term results, more research is needed to understand the long-term efficacy of such chatbots. This would involve conducting longitudinal studies and randomized controlled trials with real smokers to track their progress over time and assess the chatbot's impact on their cessation journey.
 \end{itemize}
 
-\subsection{Synthetic Smokers and Instilling Attributes}
 
-The concept of synthetic smokers, or more broadly, LLM-based user personas, is still in its infancy. Future work should focus on refining this methodology and exploring new ways to instill specific attributes into these personas.
+The concept of synthetic smokers, or more broadly, LLM-based personas, is still in its infancy. We anticipate that future work will focus on refining this methodology and exploring new ways to install specific attributes into these personas.
 
 \begin{itemize}
-    \item \textbf{Reducing Bias and Stereotypes:} As our research has shown, a key challenge with AI-generated personas is the tendency to produce stereotypical or generic characters. Future work should explore techniques for generating more diverse and representative personas. This could involve using more diverse training data, or developing new algorithms that are specifically designed to avoid stereotypical outputs.
-    \item \textbf{Instilling Attributes with Steering Vectors:} A promising technique for controlling the attributes of generated personas is the use of \textbf{steering vectors}, also known as activation vectors. This method allows us to guide the LLM's output without the need for costly fine-tuning. The process involves:
-    \begin{enumerate}
-        \item \textbf{Extracting Activations:} We first extract the hidden layer activations from the LLM for contrasting prompts. For example, to instill the attribute of "readiness to quit," we could use prompts like "I am ready to quit smoking for good" and "I am not ready to quit smoking."
-        \item \textbf{Computing the Steering Vector:} The steering vector is then computed as the difference between the activations of these contrasting prompts. This vector captures the semantic representation of the desired attribute.
-        \item \textbf{Injecting the Vector:} During inference, this steering vector is added to the model's activations. By doing so, we can "steer" the model's output towards the desired attribute. For example, by adding the "readiness to quit" vector, we can generate synthetic smokers who are more or less motivated to quit, allowing us to test our chatbot's effectiveness across a wider range of user profiles.
-    \end{enumerate}
-    This technique offers a powerful and flexible way to create more nuanced and targeted synthetic users. Future research could explore the use of steering vectors to instill a wide range of attributes, such as personality traits (e.g., neuroticism, conscientiousness), emotional states (e.g., anxiety, depression), and demographic characteristics.
+    \item  We defined fairness (or uniform fidelity) as one of the key requirements of successful validation that a desired attribute has been installed (\cref{uniform-fidelity}). We also showed that even when starting with a sex-balanced dataset, the correlation of \%CT for females was lower than that for males, meaning our method was unsuccessful in uniformly installing `resistance to change'. Further investigation into the root cause of this phenomenon and its mitigation warrants attention. 
+
+    \item A promising technique for controlling the attributes of generated personas is the use of \textbf{steering vectors}. This method allows us to guide the LLM's output without the need for costly finetuning. The process involves manipulating the model's internal activations to steer behaviour. This technique offers fine-grained control over attribute installation, something not achievable by prompting alone.
 \end{itemize}
 
 \section{Concluding Remarks}
 
-The intersection of large language models and mental health holds immense promise for the future of healthcare. This thesis has demonstrated how generative AI can be leveraged to create both supportive chatbots and the synthetic users needed to evaluate them. While there are still many challenges to overcome, the work presented here provides a solid foundation for future research in this exciting and rapidly evolving field. By continuing to innovate and refine these technologies, we can move closer to a future where everyone has access to the mental health support they need.
+The intersection of large language models and mental health holds immense promise for the future of healthcare. This thesis has demonstrated how generative AI can be used to create an empathetic and safe chatbot. Concurrently, advancements in the creation of synthetic patients could help these chatbots become better mental health counsellors, reducing the reliance on prohibitively expensive datasets of human-human and chatbot-human counselling sessions for finetuning or alignment. While there are still many challenges to overcome, our mathematical exposition of validating attribute installation will serve future researchers working in this area. In the spirit of open research and working towards the goal of accessible mental health support, and hoping other researchers will follow suit, we have decided to make the dataset from our human feasibility study on MIBot public\footnote{The dataset can be found online: \href{https://github.com/cimhasgithub/MIBOT\_ACL2025}{https://github.com/cimhasgithub/MIBOT\_ACL2025}.}

@@ -137,7 +137,7 @@ Claude 3.7 Sonnet (CoT) & 1.2 & 2.7 & 0.7 & 31 \\
 \textbf{Claude 3.7 Sonnet (Thinking)} & \textbf{1.1} & \textbf{2.6} & \textbf{0.8} & \textbf{32} \\ 
 \bottomrule
 \end{tabular}
-\caption[Model and prompting technique comparison]{Comparison of different models and prompting techniques and their impact on the self-reporting of post-conversation confidence (N=159). Reflective techniques, especially Claude 3.7 Sonnet's ``thinking'' feature, yielded the best results across all metrics.}
+\caption[Effect LLM type an reasoning on synthetic smokers' self-reported confidence.]{Comparison of different models and prompting techniques and their impact on the self-reporting of post-conversation confidence (N=159). Reflective techniques, especially Claude 3.7 Sonnet's ``thinking'' feature, yielded the best results across all metrics.}
 \label{tab:model_comparison}
 \end{table}
 
@@ -189,7 +189,7 @@ This experiment served as a confidence check on the doppelgänger's ability to i
 Having gained insights into the LLM's ability to model conversations and its intuitive understanding of numerical attributes such as readiness rulers, we set out to systematically install attributes in LLM-based synthetic smokers and validate their installation. Recall from our discussion on the benefits of creating doppelgängers (\cref{sec:synthetic-smoker-doppelgänger}). They provide a way to approximate the fidelity of an installation and make the validation of synthetic agents easier. We can approximate the fidelity of synthetic smokers with the correlation between some metric on the observable outer space (e.g., transcripts) of doppelgängers and their human twins. As an example, to validate whether the behavioural attribute of resistance to change has been successfully installed, we can analyze the transcripts from both humans and their doppelgängers and calculate the correlation between the percentage of Change Talk (\%CT) exhibited by both groups. A high correlation would then suggest a successful installation of this attribute.
 
 
-\subsection{Percentage Change Talk: A Key Metric for Validating Behavioural Fidelity}
+\subsection*{Percentage Change Talk: A Key Metric for Validating Behavioural Fidelity}
 
 To validate the synthetic smokers developed using the doppelgänger method, we needed an objective metric that could measure the smokers' level of motivation from their language.
 We identified the percentage change talk metric (also referred to as change fraction or CF, calculated as CT / (CT + ST)) to fit our requirements, as it is grounded in the client's language and is strongly associated with behavioural change outcomes in MI \cite{Barnett2014,Houck2018,Moyers2009,Baer2008}.
@@ -224,13 +224,13 @@ HSI (Heaviness of Smoking Index) & -0.15 \\
 \bottomrule
 \multicolumn{2}{l}{\footnotesize{**** $p < 0.0001$, *** $p < 0.001$, ** $p < 0.01$, * $p < 0.05$}.}
 \end{tabular}
-\caption{Correlation between percentage change talk (\%CT) and human smoker attributes in the MIBot dataset (N=115).}
+\caption{Correlation between \%CT and human smoker attributes in the MIBot dataset.}
 \label{tab:ct-correlation}
 \end{table}
 
 
 
-\subsection{Process of Creating Doppelgängers}
+\subsection{Methodology}
 The doppelgänger methodology uses a dataset of installable human attributes (e.g., MIV6.3A, containing attributes of human smokers) to build and validate synthetic smokers. The process involves:
 
 \begin{enumerate}
@@ -255,7 +255,7 @@ You talk about changing your smoking behaviour 46\% of the time.
 ...
 }
 
-\subsubsection{Methodology}
+
 Before starting our series of experiments, we sorted the set of all installable attributes based on their correlation with \%CT. We hypothesized that a high correlation between an attribute and \%CT would mean that the attribute has a bigger impact on the client's behavioural language. Let us call this sorted list of attributes $\mathbf{A'}$.
 
 $$
@@ -318,12 +318,12 @@ The experiment then proceeds by incrementally adding attributes from this sorted
 \end{figure}
 
 
-\subsubsection{Evaluation}
+\subsection{Evaluation}
 For each experiment with a set of attributes, we calculated the Spearman's correlation coefficient between the \%CT of human--MIBot and doppelgänger--MIBot conversations.
 
 
 
-\subsubsection{Results}
+\subsection{Results}
 The results of the incremental attribute installation are summarized in \cref{tab:doppelgänger-correlations}. The fidelity, measured as the Spearman's rank correlation between the \%CT of humans and their doppelgängers, evolved as more attributes were added. Initially, adding attributes like pre-conversation importance and readiness led to a gradual increase in correlation. However, the process was not strictly monotonic; for instance, adding `pre-conversation confidence' in experiment 5 unexpectedly lowered the correlation from 0.40 to 0.22.
 
 The most significant finding emerged in experiment 6, where explicitly installing the human's \%CT value as a numerical instruction resulted in a strong and statistically significant correlation of $r_s = 0.57$ ($p < 0.0001$). This suggests an LLM-based doppelgänger can directly operationalize a behavioural target when provided, modulating its language to match a specified proportion of change versus sustain talk.
@@ -332,7 +332,7 @@ However, despite achieving a strong rank correlation, a closer look at the popul
 
 This discrepancy is further visualized in the scatter plot in \cref{fig:cf_human_vs_doppel}. While the points follow a positive trend that confirms the correlation, the majority lie above the identity line ($y=x$). This visually demonstrates that doppelgängers consistently over-produced change talk relative to their human counterparts. Even when a human participant had a low \%CT (e.g., below 0.4), their doppelgänger often produced a \%CT above 0.6.
 
-Finally, we investigated the system's uniform fidelity by stratifying the results by sex, as detailed in \cref{tab:doppelgänger-fidelity-sex}. While the mean \%CT for both human males and females was nearly identical ($\approx$59\%), the fidelity of their doppelgängers differed. The correlation for males ($r_s = 0.65$) was notably stronger than for females ($r_s = 0.52$), indicating a performance bias. This lack of uniform fidelity suggests the model may simulate one demographic group more accurately than another, an issue requiring further investigation to ensure representative synthetic populations. Other observations include:
+Finally, we investigated the system's uniform fidelity by stratifying the results by sex, as detailed in \cref{tab:doppelgänger-correlations}. While the mean \%CT for both human males and females was nearly identical ($\sim$59\%), the fidelity of their doppelgängers differed. The correlation for males ($r_s = 0.65$) was notably stronger than for females ($r_s = 0.52$), indicating a performance bias. This lack of uniform fidelity suggests the model may simulate one demographic group more accurately than another, an issue requiring further investigation to ensure representative synthetic populations. Other observations include:
 
 \begin{enumerate}
     \item Once an attribute (e.g., pre-conversation importance) is installed in the doppelgängers, it is accurately recalled when prompted.
@@ -371,7 +371,7 @@ Finally, we investigated the system's uniform fidelity by stratifying the result
         \item[****] $p < 0.0001$
     \end{tablenotes}
     \end{threeparttable}
-        \caption{
+        \caption[Incremental attribute installation and its effect on the fidelity of doppelgängers.]{
         Incremental attribute installation and its effect on the fidelity of doppelgängers. Fidelity is measured by the Spearman correlation of percentage change talk (\%CT) between human participants and their doppelgängers (N=20). Each row represents a model where attributes were cumulatively added to the installation prompt.
     }
     \label{tab:doppelgänger-correlations}
@@ -381,7 +381,7 @@ Finally, we investigated the system's uniform fidelity by stratifying the result
 \begin{figure}[ht!]
     \centering
     \includegraphics[width=0.7\textwidth]{fig/cf_doppelganger_human.pdf}
-    \caption{Scatter plot of change fraction for human--MIBot \textbf{(x-axis)} and doppelgänger--MIBot \textbf{(y-axis)} conversations.}
+    \caption[Scatterplot of change fraction for humans and doppelgangers]{Scatter plot of change fraction for human--MIBot \textbf{(x-axis)} and doppelgänger--MIBot \textbf{(y-axis)} conversations.}
     \label{fig:cf_human_vs_doppel}
 \end{figure}
 
@@ -399,7 +399,7 @@ Finally, we investigated the system's uniform fidelity by stratifying the result
         \includegraphics[width=\linewidth]{fig/change_frac_histogram.pdf}
         \subcaption{Change fraction for doppelgänger--MIBot conversations}
     \end{minipage}
-    \caption{Distribution of change fraction (CF) for \textbf{(a)} human--MIBot and \textbf{(b)} doppelgänger--MIBot conversations. Change fraction (CF) = \%CT$/100$. Doppelgängers tend to exhibit high CF compared to their human twins.}
+    \caption[Distribution of change fraction (CF) for humans and doppelgängers]{Distribution of change fraction (CF) for \textbf{(a)} human--MIBot and \textbf{(b)} doppelgänger--MIBot conversations. Change fraction (CF) = \%CT$/100$. Doppelgängers tend to exhibit high CF compared to their human twins.}
     \label{fig:cf_comparison}
 \end{figure}
 
@@ -421,21 +421,23 @@ Finally, we investigated the system's uniform fidelity by stratifying the result
             \item[****] \footnotesize $p < 0.0001$.
         \end{tablenotes}
     \end{threeparttable}
-            \caption{Fidelity of doppelgänger's motivational language stratified by sex. Fidelity is measured by the Spearman correlation between the percentage change talk (\%CT) of human participants and their corresponding doppelgängers.}
+            \caption[Fidelity of doppelgänger's motivational language stratified by sex.]{Fidelity of doppelgänger's motivational language stratified by sex. Fidelity is measured by the Spearman correlation between the percentage change talk (\%CT) of human participants and their corresponding doppelgängers.}
         \label{tab:doppelgänger-fidelity-sex}
 \end{table}
 
 
 
 
-\section{Evaluating the Utility of Synthetic Smokers}
+
+\section{Synthetic Smokers' Sensitivity to Counselling Quality}
+
+
 To assess the utility of synthetic smokers in testing and training applications, an experiment was conducted to determine if they are sensitive to the quality of counselling they receive.
 
-\subsection{Sensitivity to Counselling Quality}
 
 \textbf{Rationale:} This experiment was designed to test whether synthetic smokers would exhibit differential responses when interacting with high-quality MI versus low-quality, confrontational counselling.
 
-\subsubsection{Methodology}
+\subsection{Methodology}
 
 \begin{enumerate}
     \item \textbf{Sampling:} Two participant groups (N=25 each) were created based on their actual change fraction (CF) in the MIBot study: a High-CF group (top 25th percentile) and a Low-CF group (bottom 25th percentile).
@@ -450,10 +452,10 @@ To assess the utility of synthetic smokers in testing and training applications,
     \end{itemize}
 \end{enumerate}
 
-\subsubsection{Evaluation}
+\subsection{Evaluation}
 We measured the change fraction (CF), the change in confidence after a simulated week ($\Delta$Confidence), and the CARE score as reported by the doppelgängers.
 
-\subsubsection{Results}
+\subsection{Results}
 
 \begin{table}[ht!]
 \centering
@@ -465,7 +467,7 @@ We measured the change fraction (CF), the change in confidence after a simulated
 \multirow{2}{*}{Bad (Confrontational)} & High-CF Doppelgängers & 0.68 & 1.1 & 41.0 \\
 & Low-CF Doppelgängers & 0.22 & 0.5 & 23.0 \\ \bottomrule
 \end{tabular}
-\caption{Doppelgänger outcomes when interacting with good (MIBot 6.3A) vs. bad (confrontational) automated counsellors.}
+\caption[Effect of counselling quality on doppelgängers' motivational language.]{Doppelgänger outcomes when interacting with good (MIBot 6.3A) vs. bad (confrontational) automated counsellors.}
 \label{tab:good-vs-bad-counselling}
 \end{table}
 

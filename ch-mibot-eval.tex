@@ -10,7 +10,7 @@ Following these core metrics, we investigate behavioural outcomes including quit
 \section{Primary Outcome: Readiness to Quit}
 \label{sec:primary-outcome}
 
-\subsection{Overall Changes in Readiness Rulers}
+\subsection*{Overall Changes in Readiness Rulers}
 
 Table~\ref{table:mibot_ruler_summary} summarizes the mean (and standard deviation) of each readiness ruler before the conversation, immediately afterwards, and one week later.   The table includes the change between the pre-conversation metric and one week later ($\Delta$). The Wilcoxon signed-rank test was applied to assess the significance of the change. Participants' confidence increased markedly from a baseline mean of 2.8 to 4.5 one week later ($\Delta=1.66$, $p<10^{-9}$). This represents a $\sim$59\% relative improvement and constitutes our primary outcome measure, aligning with MI theory that confidence (self-efficacy) is a key predictor of behaviour change \citep{Gwaltney2009-wj,Abar2013}. Importance also increased, albeit more modestly ($\Delta=0.5$, $p<0.005$), while readiness exhibited a small, non-significant change ($\Delta=0.23$, $p=0.22$).
 
@@ -44,7 +44,7 @@ Figure~\ref{fig:confidence_change_distribution} illustrates the distribution of 
 
 
 
-\subsection{Stratified Analysis by Baseline Characteristics}
+\subsection*{Stratified Analysis by Baseline Characteristics}
 
 To understand which participants benefited most from MIBot, we stratified outcomes by baseline characteristics. Table~\ref{tab:baseline_confidence} shows that those starting with the lowest self-confidence ($n=31$, confidence $\leq 1$) experienced the largest improvement (+2.2 points), whereas participants with moderate or higher confidence gained about one and a half points. The three participants who began with very high confidence showed a decline, likely reflecting regression to the mean. Baseline confidence correlated negatively with the change (Spearman $r=-0.21$, $p<0.05$), indicating that MIBot is most beneficial for participants who are least confident in their ability to quit.
 
@@ -112,7 +112,7 @@ Confidence changes varied across different smoking characteristics and quit hist
 
 Participants with moderate nicotine dependence (HSI 2--3) showed the greatest gains (+2.0), compared to those with high dependence  (+0.8). Daily consumption showed little systematic difference across groups. Larger improvements were observed among participants reporting a conscious quit attempt in the week before the conversation ($n=34$), who showed confidence increases of +2.6, compared to +1.2 among those with no recent attempts. Among those with one or two previous attempts ($n=16$), the improvement was +3.6. These patterns could suggest that participants who were already contemplating change benefited the most.
 
-\subsection{Demographic Patterns}
+\subsection*{Demographic Patterns}
 
 \begin{table}[ht!]
   \centering
@@ -257,7 +257,7 @@ $\geq$3 (n=18) & 4.4 (1.0) & 4.7 (0.8) & 4.3 (1.0) & 4.2 (1.1) & 4.2 (0.9) & 4.4
 \end{landscape}
 
 
-\subsection{Question-by-Question Analysis of CARE Survey}
+\subsection*{Question-by-Question Analysis of CARE Survey}
 \begin{table}[ht]
   \centering
   \small
@@ -302,7 +302,7 @@ No significant differences were found across age, ethnicity, smoking intensity, 
 
 To contextualize the performance of our fully generative approach, we compare MIBot v6.3A with its predecessor, MIBot v5.2, a hybrid system that combined scripted questions with LLM-generated reflections \citep{brown2023mi}. MIBot v5.2, employed a hybrid approach using scripted open-ended questions followed by GPT-2 XL-generated MI-style reflections based on participants' responses to the questions.
 
-\subsection{Readiness Ruler Comparisons}
+\subsection*{Readiness Ruler Comparisons}
 \begin{figure}[htbp]
     \centering
     \begin{subfigure}[b]{0.48\textwidth}
@@ -344,7 +344,7 @@ with no change) and fewer experiencing decreased confidence (13\% vs.\ 17\%).
 
 For importance to quit, MIBot v5.2 achieved a significant increase of 0.7 (SD 2.0, $p<0.001$), while MIBot v6.3A showed a more modest but still significant gain of 0.5 (SD 1.7, $p<0.005$). Readiness changes were minimal and non-significant for both versions (v5.2: 0.4, SD 1.7, $p=0.01$; v6.3A: 0.3, SD 2.4, $p=0.22$).
 
-\subsection{Perceived Empathy Comparisons}
+\subsection*{Perceived Empathy Comparisons}
 
 \begin{figure}[htbp]
     \centering
@@ -378,7 +378,7 @@ To understand which aspects of empathetic interaction improved most, Figure~\ref
 
 
 
-\subsection{Implications of the Comparison}
+\subsection*{Implications of the Comparison}
 
 The fully generative MIBot v6.3A chatbot scores higher on CARE, the measure of perceived therapeutic alliance. This improvement suggests that participants experienced more authentic, personalized interactions when the entire conversation --- not just reflections --- emerged from the language model's contextual understanding. However, both the chatbots scored the same on our primary metric of effectiveness, viz. the week-later change in confidence, indicating that the core therapeutic mechanism of MI may be responsible for most of the gains in confidence. This finding aligns with prior work showing that even simple question-asking can produce substantial benefits \citep{brown2023mi}, though the enhanced empathy of full generation may improve engagement and retention in real-world deployment.
 
@@ -394,7 +394,7 @@ The system assigns behavioural codes to each utterance: counsellor utterances ar
     
     \item \textbf{Reflection-to-Question Ratio (R:Q):} The ratio of counsellor utterances labelled as reflection (R) to those labelled as question (Q). This metric assesses the balance between reflective listening and questioning. Values between 1 and 2 are considered indicative of proficiency \citep{moyers2016miti}.
 
-    \item \textbf{Percentage Change Talk (\%CT):} The proportion of client utterances expressing motivation toward behaviour change. Higher values are associated with improved behavioural outcomes \citep{apodaca2009}.
+    \item \textbf{Percentage Change Talk (\%CT):} The proportion of client utterances expressing motivation toward behaviour change. Higher values are associated with improved behavioural outcomes \citep{Apodaca2009}.
 
 \end{itemize}
 
@@ -422,27 +422,27 @@ We computed summary scores separately for these subsets and then compared MIBot'
 
 Figure~\ref{fig:misc_distributions} shows violin plots comparing the distribution of \%MIC, R:Q, and \%CT across MIBot conversations with the HLQC benchmarks. The \%MIC scores are tightly clustered near 100\%, with only a few transcripts falling below 80\%. The R:Q distribution is centred around 1.3, showing less variance than human counsellors who range from pure question-asking (R:Q near 0) to heavy reflection use (R:Q $>$ 5).
 
-\begin{figure}[ht]
+\begin{figure}[htpb]
 \centering
 \begin{subfigure}[b]{0.9\textwidth}
 \centering
-\includegraphics[height=0.25\textheight, keepaspectratio]{fig/mic.png}
+\includegraphics[height=0.25\textheight, keepaspectratio]{fig/mic_enhanced.pdf}
 \caption{\%MIC}
 \end{subfigure}
 
 \begin{subfigure}[b]{0.9\textwidth}
 \centering
-\includegraphics[height=0.25\textheight, keepaspectratio]{fig/rq.png}
+\includegraphics[height=0.25\textheight, keepaspectratio]{fig/rq_enhanced.pdf}
 \caption{R:Q}
 \end{subfigure}
 
 \begin{subfigure}[b]{0.9\textwidth}
 \centering
-\includegraphics[height=0.25\textheight, keepaspectratio]{fig/ct.png}
+\includegraphics[height=0.25\textheight, keepaspectratio]{fig/cs_enhanced.pdf}
 \caption{\%CT}
 \end{subfigure}
 
-\caption{Comparison of MISC summary score distributions for MIBot and the HLQC dataset (high and low quality). The figure shows violin plots for (a) Percentage MI-Consistent Responses (\%MIC), (b) Reflection to Question Ratio (R:Q), and (c) Percentage Client Change Talk (\%CT).}
+\caption[Comparison of MISC summary score distributions for MIBot and the HLQC dataset.]{Comparison of MISC summary score distributions for MIBot and the HLQC dataset (high and low quality). The figure shows violin plots for (a) Percentage MI-Consistent Responses (\%MIC), (b) Reflection to Question Ratio (R:Q), and (c) Percentage Client Change Talk (\%CT). Taken from \citet{ali2025thesis}}.
 \label{fig:misc_distributions}
 \end{figure}
 
@@ -512,7 +512,7 @@ Figure~\ref{fig:misc_distributions}(c) illustrates the distribution of \%CT acro
 
 \label{sec:behavioural-outcomes}
 
-\subsection{Quit Attempts at One Week}
+\subsection*{Quit Attempts at One Week}
 
 \begin{table}[ht]
   \centering
@@ -536,7 +536,7 @@ Figure~\ref{fig:misc_distributions}(c) illustrates the distribution of \%CT acro
 
 Participants who made quit attempts post-conversation showed larger confidence gains (mean +2.43) compared to those who did not attempt (+1.35, $p<0.05$). This bidirectional relationship---where confidence predicts attempts and attempts reinforce confidence---aligns with social cognitive theory \citep{Bandura1986}.
 
-\subsection{Self-Reported Behavioural Changes}
+\subsection*{Self-Reported Behavioural Changes}
 
 Beyond formal quit attempts, participants reported various harm reduction behaviours. Analysis of open-ended responses revealed five main categories of behavioural change:
 
@@ -553,7 +553,7 @@ These incremental changes, while not constituting complete cessation, represent 
 \section{Conversation Analysis}
 \label{sec:conversation-analysis}
 
-\subsection{Quantitative Dynamics}
+\subsection*{Quantitative Dynamics}
 \label{sec:conversation-dynamics}
 
 Conversations ranged from 36 to 163 utterances (median 78, mean 80.7, SD 29.4), with counsellor utterances comprising 55\% of the total. The median conversation lasted approximately 19 minutes based on participant self-report. Table~\ref{table:conversation_metrics} summarizes key quantitative metrics.
@@ -575,17 +575,17 @@ Conversations ranged from 36 to 163 utterances (median 78, mean 80.7, SD 29.4), 
     Session duration (minutes) & 19 (9) & 8--45 \\
     \bottomrule
   \end{tabular}
-  \caption[Quantitative Conversation Metrics]{Quantitative metrics of the conversation dynamics between participants and MIBot. The table includes statistics on the total number of utterances, counsellor and client utterances, words per utterance, and session duration.}
+  \caption[Conversation Dynamics between Participants and MIBot: Quantitative Metrics]{Quantitative metrics of the conversation dynamics between participants and MIBot. The table includes statistics on the total number of utterances, counsellor and client utterances, words per utterance, and session duration.}
   \label{table:conversation_metrics}
 \end{table}
 
 Longer conversations correlated with better outcomes ($r=0.20$ for confidence change), but the relationship was non-linear. Conversations under 50 utterances rarely produced substantial gains, while those exceeding 120 utterances showed diminishing returns, suggesting an optimal engagement window of 60--100 exchanges.
 
-\subsection{Qualitative Thematic Analysis}
+\subsection*{Qualitative Thematic Analysis}
 
 To understand the qualitative aspects of the conversations, a thematic analysis was performed on the full corpus of transcripts. The analysis was conducted by two researchers who independently reviewed the transcripts to identify recurring patterns and themes. They then met to compare their findings, discuss discrepancies, and collaboratively develop a final set of themes that characterized successful therapeutic engagement. This process revealed four recurring patterns:
 
-\subsubsection{Stress and Coping Narratives}
+\subsubsection*{Stress and Coping Narratives}
 
 The most common theme (78\% of conversations) involved smoking as emotional regulation. Participants frequently described smoking as their primary stress management tool:
 
@@ -595,7 +595,7 @@ The most common theme (78\% of conversations) involved smoking as emotional regu
 
 In these situations, the chatbot's responses often involved reflective listening to validate users' feelings before exploring alternatives, a pattern consistent with the double-sided reflection technique in MI.
 
-\subsubsection{Social and Ritualistic Aspects}
+\subsubsection*{Social and Ritualistic Aspects}
 
 Many participants (62\%) described smoking as deeply embedded in social routines and relationships:
 
@@ -605,7 +605,7 @@ Many participants (62\%) described smoking as deeply embedded in social routines
 
 The chatbot attempted to acknowledge these social dimensions in its responses and, in some cases, guided the conversation toward how participants might maintain relationships without cigarettes.
 
-\subsubsection{Ambivalence Themes}
+\subsubsection*{Ambivalence Themes}
 
 Classic motivational ambivalence appeared in 89\% of conversations, with participants simultaneously expressing desire to quit and attachment to smoking:
 
@@ -615,10 +615,10 @@ Classic motivational ambivalence appeared in 89\% of conversations, with partici
 
 The chatbot's responses frequently normalized ambivalence instead of trying to resolve it, an approach that aligns with MI best practices and was observed in conversations with positive outcomes.
 
-\subsection{Illustrative Case Studies}
+\subsection*{Illustrative Case Studies}
 \label{sec:case-studies}
 
-\subsubsection{Success Stories}
+\subsubsection*{Success Stories}
 
 The most dramatic success involved a 34-year-old participant who entered with confidence of 1/10 but importance of 9/10---a classic ``willing but unable'' profile. Through 142 utterances, the conversation systematically addressed self-efficacy barriers:
 
@@ -653,7 +653,7 @@ In rare cases, MIBot misread the participant's needs, such as pushing for behavi
 \section{User Experience and Feedback}
 \label{sec:feedback}
 
-\subsection{Post-Conversation Feedback}
+\subsection*{Post-Conversation Feedback}
 
 Three open-ended questions captured immediate post-conversation reactions. Thematic analysis revealed distinct patterns in positive and negative responses.
 
@@ -673,7 +673,7 @@ Three open-ended questions captured immediate post-conversation reactions. Thema
 \item Insufficient challenge: ``Too accepting, didn't push me enough''
 \end{itemize}
 
-\subsection{User Segmentation}
+\subsection*{User Segmentation}
 
 Based on feedback analysis, we derived two binary metrics: ``LikedBot'' (92\% positive) and ``FoundBotHelpful'' (66\% positive). The discrepancy suggests that while MIBot creates an engaging experience, translating engagement into perceived therapeutic value remains challenging.
 
@@ -694,17 +694,17 @@ Cross-tabulation revealed four user segments:
     Dissatisfied & No \& No & 3\% \\
     \bottomrule
   \end{tabular}
-  \caption[User Experience Segments]{Segmentation of users based on their reported enjoyment and perceived helpfulness of the MIBot conversation. The table shows the percentage of participants in each of the four segments: Enthusiasts, Entertained Skeptics, Reluctant Beneficiaries, and Dissatisfied.}
+  \caption[Segmentation of MIBot Participants based on their Experiences]{Segmentation of users based on their reported enjoyment and perceived helpfulness of the MIBot conversation. The table shows the percentage of participants in each of the four segments: Enthusiasts, Entertained Skeptics, Reluctant Beneficiaries, and Dissatisfied.}
   \label{table:user_segments}
 \end{table}
 
 ``Entertained Skeptics''---those who enjoyed but didn't find it helpful---often wanted more directive advice or concrete tools rather than exploratory conversation.
 
-\section{Discussion}
-\label{sec:discussion}
 
-\subsection{Synthesis of Findings}
+\section{Discussion}
 \label{sec:synthesis}
+
+
 
 Multivariate regression analysis identified the strongest predictors of confidence improvement:
 
@@ -718,7 +718,7 @@ Multivariate regression analysis identified the strongest predictors of confiden
 
 Together, these factors explained 34\% of variance in confidence change ($R^2=0.34$, $F(5,100)=10.32$, $p<0.001$), suggesting that ideal candidates are younger smokers with low confidence who have recently attempted to quit and are willing to engage in extended conversation.
 
-\subsection{Comparison With Literature Benchmarks}
+\subsection*{Comparison With Literature Benchmarks}
 
 MIBot's performance compares favourably with established interventions:
 
@@ -731,13 +731,13 @@ MIBot's performance compares favourably with established interventions:
 
 However, MIBot falls short of intensive human counselling in perceived helpfulness (66\% vs 80--90\%) and perfect CARE scores (11\% vs 48\%), indicating room for improvement in therapeutic alliance building.
 
-\subsection{Clinical Implications}
+\subsection*{Clinical Implications}
 
 The findings from this study have several potential clinical implications. The strong technical performance of MIBot, combined with meaningful behavioural outcomes, suggests that generative AI can be a valuable tool in public health interventions for smoking cessation. The high MI fidelity and user engagement rates indicate that such a system could be deployed as a scalable, low-cost, first-line intervention to reach a large number of smokers who may not have access to traditional counselling.
 
 However, the variability in individual responses and the identified limitations in building deep therapeutic alliance suggest that MIBot is likely best positioned as an adjunct to human services rather than a complete replacement. It could serve as a tool to support human counsellors, handle initial screenings, or provide support between sessions. Future work should explore these hybrid models of care.
 
-\subsection{Limitations}
+\subsection*{Limitations}
 
 Several limitations constrain the generalisability of our findings:
 
@@ -773,12 +773,12 @@ This chapter presented a comprehensive evaluation of MIBot, a fully generative M
 While the results are promising, the study also revealed limitations in building deep therapeutic alliance and translating engagement into perceived helpfulness for all users. These findings establish a strong proof-of-concept for AI-delivered MI as a scalable public health intervention, while also underscoring the areas for future research and development, particularly in hybrid models of care that combine AI with human support.
 
 
-\section{Chatbot Contribution Attribution}
+\section*{Chatbot Contribution Attribution}
 
 The research detailed in \Cref{ch:mibot,ch:feasibility,ch:mibot-eval} is the result of a significant, long-term collaboration. The human feasibility study, in particular, was a major team undertaking and involved all co-authors of the paper by \citet{mahmood-etal-2025-fully}. To provide a clear overview of each individual's role in the work presented in this thesis, this section outlines specific attributions.
 
 \begin{itemize}
-\item \textbf{Soliman Ali:} As the second author on the work submitted by \citet{mahmood-etal-2025-fully}, Ali was instrumental in designing and implementing the modular observer agent framework that serves as the foundation for the MIBot system (see Section \ref{sec:observers}). He also contributed to the initial versions of the AutoMISC system \citep{ali2025automated}, which was developed concurrently with MIBot. AutoMISC not only helped refine MIBot through an iterative process but was also used by the author of this thesis to validate the installation of attributes in synthetic smokers (see \Cref{ch:synthetic-smoker-preliminary,ch:synthetic-doppelganger}).
+\item \textbf{Soliman Ali:} As the second author on the work submitted by \citet{mahmood-etal-2025-fully}, Ali was instrumental in designing and implementing the modular observer agent framework that serves as the foundation for the MIBot system (see Section \ref{sec:observers}). He also contributed to the initial versions of the AutoMISC system \citep{ali2025thesis,ali2025automated}, which was developed concurrently with MIBot. AutoMISC not only helped refine MIBot through an iterative process but was also used by the author of this thesis to validate the installation of attributes in synthetic smokers (see \Cref{ch:synthetic-smoker-preliminary,ch:synthetic-doppelganger}).
 
 \item \textbf{Michelle Collins:} Collins played a key role in evolving the prompt used by MIBot and provided valuable feedback by testing various intermediate system versions during its development.
 

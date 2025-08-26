@@ -60,7 +60,6 @@ $$M: \Gamma \rightarrow \mathcal{A}, \quad \text{where} \quad \hat{\textbf{A}} =
 For example, $M$ could be a set of classifiers and analytical tools that read a transcript and analyse post-conversation changes in behaviour to estimate the speaker's resistance, motivation, smoking history, etc., and produce $\hat{\textbf{A}}$. It is worth mentioning that the measurement function $M$ is an imperfect proxy, as inferring latent constructs from observable behaviour is a persistent challenge in psychometric theory \cite{loevinger1957objective, borsboom2004concept}.
 
 \subsection{Defining Fidelity}
-
 Fidelity measures how accurately the observable outputs of a synthetic smoker reflect its assigned attributes. High fidelity is achieved when the attributes measured from the output, $\hat{\textbf{A}}_S = M(\gamma_S)$, are close to the input attributes, $\textbf{A}_S$. We quantify this correspondence using a distance metric, $d(\textbf{A}_S, \hat{\textbf{A}}_S)$, in the attribute space.
 
 Given the stochastic nature of the generative system, a single instance is insufficient for evaluation. We therefore define the fidelity for a profile $\textbf{A}_S$ as the \emph{expected distance} between the input and measured attributes over the distribution of all possible outputs.
@@ -88,6 +87,7 @@ In practice, this is calculated by comparing the empirical distribution of a sam
 
 
 \subsubsection{Uniform Fidelity}
+\label{uniform-fidelity}
 
 The second requirement, \textbf{uniform fidelity} ($\mathcal{R}_{unif}$), stipulates that the simulation quality should be consistent across all types of smoker profiles. The fidelity score, $\mathcal{F}(\textbf{A})$, should not be systematically better for some profiles than for others. We can measure this by calculating the \textit{variance of the fidelity score} across the distribution of real-world smokers, $P_H(\textbf{A})$:
 $$\mathcal{R}_{unif} = \text{Var}_{\textbf{A} \sim P_H(\textbf{A})}[\mathcal{F}(\textbf{A})] = \mathbb{E}_{\textbf{A} \sim P_H(\textbf{A})} [(\mathcal{F}(\textbf{A}) - \bar{\mathcal{F}})^2]$$
@@ -149,7 +149,7 @@ The prompt modifications significantly reduced the verbosity of the synthetic sm
 \begin{figure}[htpb]
     \centering
     \includegraphics[width=0.9\textwidth]{fig/utterance_length_violin_plot.pdf}
-    \caption[Comparison of volley length distributions for default and fixed-verbosity synthetic smokers.]{Comparison of utterance length distributions for default and fixed-verbosity synthetic smokers. The fixed-verbosity prompt successfully reduced the synthetic smoker's utterance length to better align with humans (\texttt{high-quality-human-MI}). }
+    \caption[Distribution of volley length for default and fixed-verbosity synthetic smokers.]{Comparison of utterance length distributions for default and fixed-verbosity synthetic smokers. The fixed-verbosity prompt successfully reduced the synthetic smoker's utterance length to better align with humans (\texttt{high-quality-human-MI}). }
     \label{fig:verbosity-comparison}
 \end{figure}
 
@@ -167,7 +167,7 @@ High-Quality Human Counselling             &                  147.0 &           
 Low-Quality Human Counselling            &                  118.2 &               158.0 \\
 \bottomrule
 \end{tabular}
-\caption{Mean and standard deviation of utterance length by category.}
+\caption{Statistics on Volley Length for Low- and High-Verbosity Synthetic Smokers}
 \label{tab:utterance_stats}
 \end{table}
 
@@ -217,7 +217,7 @@ Using modified prompts and GPT-4 Turbo (temperature=1.0), we generated conversat
 High Resistance & 31 & 44 & 25 \\
 Low Resistance & 61 & 9 & 30 \\ \bottomrule
 \end{tabular}
-\caption{Proportion of Change Talk, Sustain Talk, and Neutral Talk for High and Low Resistance synthetic smokers.}
+\caption{\% Change, sustain, and neutral talk for high- and low-resistance synthetic smokers.}
 \label{tab:resistance-ct-st}
 \end{table}
 
@@ -242,7 +242,7 @@ Low Resistance & 61 & 9 & 30 \\ \bottomrule
     & Readiness  & 0.6 (0.5) & 2.6 (0.5) & 3.4 (1.1) & 2.8 (1.1) \\
     \bottomrule
   \end{tabular*}}
-  \caption{Longitudinal changes in self-reported scores (0--10 scale) for importance, confidence, and readiness, stratified by client (synthetic smoker) resistance level. Values were assessed at baseline (pre-conversation), immediately post-conversation, and at 1-week follow-up. Change scores represent the difference between baseline and 1-week follow-up. SD = standard deviation.}
+  \caption[Readiness rulers reported by high- and low-resistance synthetic smokers]{Longitudinal changes in self-reported scores (0--10 scale) for importance, confidence, and readiness, stratified by client (synthetic smoker) resistance level. Values were assessed at baseline (pre-conversation), immediately post-conversation, and at 1-week follow-up. Change scores represent the difference between baseline and 1-week follow-up. SD = standard deviation.}
   \label{tab:resistance-readiness-rulers}
 \end{table}
 

@@ -7,7 +7,7 @@ The protocol was approved by the University of Toronto Research Ethics Board (Pr
 
 \section{Participant Recruitment}
 \label{sec:recruitment}
-Participants were recruited via Prolific,\footnote{\url{https://www.prolific.com}} an online behavioural research platform with pre-screened participant pools and built-in demographic filters. Prolific was chosen for its ability to target recruitment to specific smoking status, demographic characteristics, and quality-control thresholds, and for its established use in prior MI chatbot studies~\citep{brown2023motivational,info:doi/10.2196/20251}. Participants received \pounds5.50 for the main session and \pounds1.00 for the follow-up survey, exceeding Prolific's recommended hourly rates.
+Participants were recruited via Prolific,\footnote{\url{https://www.prolific.com}} an online behavioural research platform with pre-screened participant pools and built-in demographic filters. Prolific was chosen for its ability to target recruitment to specific smoking status, demographic characteristics, and quality-control thresholds, and for its established use in prior MI chatbot studies~\citep{brown2023mi,info:doi/10.2196/20251}. Participants received \pounds5.50 for the main session and \pounds1.00 for the follow-up survey, exceeding Prolific's recommended hourly rates.
 
 
 \section{Initial Screening Criteria}
@@ -26,7 +26,6 @@ Participants who met all criteria and provided informed consent proceeded to the
 
 \begin{table}[htbp]
 \centering
-\caption[Baseline Characteristics of Enrolled Participants]{Baseline characteristics of the 106 enrolled participants in the feasibility study. The table includes demographic information such as sex, age, ethnicity, student and employment status, and country of residence and birth.}
 \begin{tabular}{l l}
 \hline
 \textbf{Characteristic} & \textbf{n (\%)} \\
@@ -87,6 +86,7 @@ Country of birth & \\
 \quad Other & 9 (8.5) \\
 \hline
 \end{tabular}
+\caption[Baseline Characteristics of Enrolled Participants]{Baseline characteristics of the 106 enrolled participants in the feasibility study. The table includes demographic information such as sex, age, ethnicity, student and employment status, and country of residence and birth.}
 \label{tab:participant-characteristics}
 \end{table}
 
@@ -155,6 +155,6 @@ One week later, apart from self-reporting their readiness rulers, participants a
 
 \section{Automated Conversation Analysis}
 \label{subsec:automisc}
-In addition to participant-reported outcomes, conversations were analyzed for MI adherence and elicitation of motivational language using AutoMISC, an automated implementation of the Motivational Interviewing Skill Code v2.5~\citep{Houck2010}. The AutoMISC system was primarily developed by Soliman, as described in his thesis [CITE\_THESIS], with further validation in~\cite{ali2025automated}. For this project, we used the existing AutoMISC system and contributed to the work described in~\cite{mahmood-etal-2025-fully}. The analysis pipeline first segments each conversational volley into individual utterances. Then, it classifies counsellor utterances as MI-Consistent, MI-Inconsistent, Reflection, Question, or Other. Similarly, it classifies each client utterance as exhibiting Change Talk, Sustain Talk, or Neutral. Finally, it computes the following: \%~MI-Consistent Responses (\%MIC), Reflection-to-Question Ratio (R:Q), \%~Client Change Talk (\%CT). AutoMISC was validated against human coders, including two expert MI clinicians \cite{mahmood-etal-2025-fully}.
+In addition to participant-reported outcomes, conversations were analyzed for MI adherence and elicitation of motivational language using AutoMISC, an automated implementation of the Motivational Interviewing Skill Code v2.5~\citep{Houck2010}. The AutoMISC system was primarily developed by \citet{ali2025thesis}, as described in his thesis, with further validation in~\cite{ali2025automated}. For this project, we used the existing AutoMISC system and contributed to the work described in~\cite{mahmood-etal-2025-fully}. The analysis pipeline first segments each conversational volley into individual utterances. Then, it classifies counsellor utterances as MI-Consistent, MI-Inconsistent, Reflection, Question, or Other. Similarly, it classifies each client utterance as exhibiting Change Talk, Sustain Talk, or Neutral. Finally, it computes the following: \%~MI-Consistent Responses (\%MIC), Reflection-to-Question Ratio (R:Q), \%~Client Change Talk (\%CT). AutoMISC was validated against human coders, including two expert MI clinicians \cite{mahmood-etal-2025-fully}.
 
 Readiness rulers (especially the week-later change in \emph{confidence}), CARE, and AutoMISC summary metrics together provide a comprehensive view of the MIBot intervention, assessing its effectiveness, perceived empathy, safety, and adherence to MI principles. In the next chapter, we report the results of our human feasibility study on these metrics.
