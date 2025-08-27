@@ -53,6 +53,10 @@ The \emph{observable output space}, $\Gamma$, contains all possible outputs from
 
 Human behaviour is not deterministic; a human $H$ with a given attribute vector $\textbf{A}_H$ will not produce the exact same output in every session. Instead, their behaviour is better modelled as a sample from a conditional probability distribution, $P_H(\gamma | \textbf{A}_H)$. Consequently, a synthetic smoker system, $S$, should not be a deterministic function but a model that approximates this human distribution, $P_S(\gamma | \textbf{A}_S)$. The goal is to ensure that $P_S(\gamma | \textbf{A}) \approx P_H(\gamma | \textbf{A})$.
 
+\[ \textcolor{red}{\textbf{A}_S} = \textcolor{red}{\textbf{A}_H} \; \; \longrightarrow \;  \; P_S(\textcolor{violet}{\gamma} | \textcolor{red}{\textbf{A}_S}) \approx P_H(\textcolor{violet}{\gamma} | \textcolor{red}{\textbf{A}_H}) \]
+
+
+
 To assess whether the system has achieved this goal, we must formalize the process of validation. For this, we define a \emph{measurement function}, $M$, that takes an output $\gamma$ and returns an estimated attribute vector $\hat{\textbf{A}}$.
 
 \[M: \Gamma \rightarrow \mathcal{A}, \quad \text{where} \quad \hat{\textbf{A}} = M(\gamma)\]
