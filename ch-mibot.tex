@@ -5,7 +5,7 @@ The recent advances in Large Language Models (LLMs) present an opportunity to au
 
 This chapter details the design and deployment of MIBot, an LLM-based MI chatbot created for this purpose. The work builds on a predecessor system, MIBot v5.2 \citep{brown2023mi}, which, being partially scripted, had limitations in conversational naturalness. The development and evaluation of the current MIBot system are described in detail by \citet{mahmood-etal-2025-fully}. This chapter complements that work by focusing on the technologies, design considerations, and implementation choices underlying the chatbot's deployment for a human feasibility study.
 
-The chapter is structured as follows. Section~\ref{sec:iterative-development} outlines the clinician-informed, iterative process used to develop the chatbot's core prompt. Section~\ref{sec:observers} details the system architecture, including the observer agents designed to ensure safety and conversational coherence. Finally, Section~\ref{sec:deployment} describes the deployment of MIBot to a secured cloud infrastructure for a human feasibility study, including its technical implementation and the containerization of the MIBot service.
+The chapter is structured as follows. \Cref{sec:iterative-development} outlines the clinician-informed, iterative process used to develop the chatbot's core prompt. \Cref{sec:observers} details the system architecture, including the observer agents designed to ensure safety and conversational coherence. Finally, \Cref{sec:deployment} describes the deployment of MIBot to a secured cloud infrastructure for a human feasibility study, including its technical implementation and the containerization of the MIBot service.
 
 
 
@@ -24,7 +24,7 @@ The initial architectural decision for MIBot was to use a single, comprehensive 
 The MIBot prompt was refined through structured feedback from both engineers and experienced MI clinicians who regularly met biweekly over the course of development. The process began with a minimal prompt that instructed the model to act as an MI counsellor. This baseline was tested through simulated counselling sessions with two types of test clients:
 
 \begin{enumerate}
-    \item \textbf{Virtual smoker clients}, which were separate GPT-4o instances given detailed backstories and instructed to role-play smokers with varying attitudes toward quitting. Chapter~\ref{ch:synthetic-smoker-preliminary} describes in detail the creation of these basic LLM-based virtual smokers and subsequent research to enhance their capabilities.
+    \item \textbf{Virtual smoker clients}, which were separate GPT-4o instances given detailed backstories and instructed to role-play smokers with varying attitudes toward quitting. \Cref{ch:synthetic-smoker-preliminary} describes in detail the creation of these basic LLM-based virtual smokers and subsequent research to enhance their capabilities.
     \item \textbf{Human role-playing as smokers}---members of our research team who adopted smoker personas and interacted with the chatbot to test how each version of the prompt behaved in different scenarios.
 \end{enumerate}
 
@@ -51,7 +51,7 @@ This process led to several key prompt revisions:
 This iterative process continued until virtual and role-played conversations consistently met MI quality expectations as determined by an informal consensus of the team.
 
 
-Tables~\ref{tab:initial-system-prompt} and \ref{tab:final-system-prompt} showcase how the prompt evolved from a simple instruction about the LLM's role to a comprehensive guideline addressing issues identified in the chatbot's performance.
+\Cref{tab:initial-system-prompt,tab:final-system-prompt} showcase how the prompt evolved from a simple instruction about the LLM's role to a comprehensive guideline addressing issues identified in the chatbot's performance.
 
 \include{tab/initial-final-prompts}
 
@@ -80,7 +80,7 @@ The \textit{End Classifier} monitors both parties' dialogue to determine if the 
 \textbf{Design Rationale:} All observers were implemented as separate, stateless LLM calls, each with prompts tailored to their decision criteria. This modular approach allowed independent refinement of their sensitivity–specificity balance without impacting the primary counsellor prompt. The Moderator favoured recall over precision to err on the side of client safety, whereas the Off-Track Classifier did the opposite, favouring conversational autonomy. The End Classifier's logic explicitly distinguished between topic changes and true conversation endings, reducing false terminations.
 
 
-The prompted GPT-4o, together with observers, constitute the complete MIBot system, as illustrated in Figure~\ref{fig:sysdiag}.
+The prompted GPT-4o, together with observers, constitute the complete MIBot system, as illustrated in \Cref{fig:sysdiag}.
 
 
 \section{MIBot System Design}
@@ -99,7 +99,7 @@ The core of MIBot is a lightweight Python web application built with the \texttt
   \caption[MIBot Sanic Application Overview]{An overview of the Sanic web application that encapsulates the MIBot code. The application exposes REST APIs for external interactions, such as handling chat messages and providing conversation transcripts.}
   \label{fig:microservice}
 \end{figure}
-An overview of the application's architecture is presented in Figure~\ref{fig:microservice}. When a user sends a request to the \texttt{/chat} endpoint containing their message and \texttt{client\_id}, the web server updates the state of the conversation and requests the next turn from it. The \texttt{Conversation} object relays this to the \texttt{Counsellor}, which in turn sends a request to the OpenAI API with the accumulated conversation history and the current client message, and receives a response containing the generated counsellor turn.
+An overview of the application's architecture is presented in \Cref{fig:microservice}. When a user sends a request to the \texttt{/chat} endpoint containing their message and \texttt{client\_id}, the web server updates the state of the conversation and requests the next turn from it. The \texttt{Conversation} object relays this to the \texttt{Counsellor}, which in turn sends a request to the OpenAI API with the accumulated conversation history and the current client message, and receives a response containing the generated counsellor turn.
 
 Each \texttt{Observer} attached to the \texttt{Conversation} inherits from a base class defining an asynchronous \texttt{observe()} method. As noted earlier, the \texttt{Moderator} observer screens counsellor utterances for safety and appropriateness; the \texttt{Off-Track Classifier} observer assesses whether the client is steering the conversation away from smoking cessation; and the \texttt{End Classifier} determines when a session should conclude. These observers are implemented as separate GPT-4o API calls with their own prompts. After each turn, the \texttt{Conversation} object iterates over all \texttt{Observer} objects, collects their observations, and makes real-time decisions (e.g., whether to end the conversation) before updating its state. If the generated output from the \texttt{Counsellor} is deemed suitable for the client, it is sent to the client along with relevant metadata.
 
@@ -114,7 +114,7 @@ A single \texttt{Sanic} app can handle multiple clients at once by creating repl
   \label{fig:containerization}
 \end{figure}
 
-For reproducibility and ease of deployment, the microservice is packaged in a Docker container. Containerization provides several advantages for the development, testing, and deployment of MIBot, including environment consistency, portability, isolation, scalability, faster deployment and rollbacks, simplified CI/CD integration, and reproducibility, as discussed in detail by Sloane~\citep{sloane2025containerization}.
+For reproducibility and ease of deployment, the microservice is packaged in a Docker container. Containerization provides several advantages for the development, testing, and deployment of MIBot, including environment consistency, portability, isolation, scalability, faster deployment and rollbacks, simplified CI/CD integration, and reproducibility, as discussed in detail by Sloane~\citep{sloane2025containerization}. An overview of the containerized application is presented in \Cref{fig:containerization}.
 
 The MIBot container image is defined by a \texttt{Dockerfile} specifying the base Python runtime, required dependencies, the source code, and main entry point (\emph{viz.} \texttt{app.py}). This image is stored in Amazon Elastic Container Registry (ECR). The container registry stores all the images built by the CI/CD pipeline, but only the image with the \texttt{production} tag is used for deployment.
 
@@ -124,6 +124,7 @@ The MIBot container image is defined by a \texttt{Dockerfile} specifying the bas
 MIBot is deployed as a service on Amazon \textbf{Elastic Container Service (ECS)}. ECS is a fully managed service provided by Amazon Web Services (AWS) that ``simplifies the deployment, management, and scaling of applications using containers'' \citep{aws-ecs-getting-started}. We now discuss each component of ECS.
 
 \subsection{Components of ECS}
+An overview of the deployment architecture is presented in \Cref{fig:ecs-components}.
 \begin{figure}[ht]
   \centering
   \includegraphics[width=0.99\linewidth]{fig/deployment.drawio.pdf} 

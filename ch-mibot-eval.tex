@@ -3,16 +3,16 @@
 
 This chapter presents a comprehensive evaluation of MIBot's effectiveness through a feasibility study with 106 smokers. Building on the system design and implementation described in previous chapters, we assess MIBot's performance across four critical dimensions established in the smoking cessation and motivational interviewing literature: behavioural change readiness, perceived therapeutic empathy, adherence to MI principles, and elicitation of client change talk.
 
-The chapter is organized to progress from primary outcomes through measurements of therapeutic process, and finally, to behavioural changes and user experiences. First, we report the primary outcome of changes in readiness to quit smoking (Section~\ref{sec:primary-outcome}). We then analyse how the chatbot performed on perceived empathy, measured through the CARE scale and compare it to human healthcare professionals (Section~\ref{sec:perceived-empathy}). Next, we examine MIBot's adherence to MI principles through AutoMISC analysis, and examine if MIBot could maintain fidelity to therapeutic standards while successfully eliciting change talk from clients (Section~\ref{sec:mi-adherence}).
+The chapter is organized to progress from primary outcomes through measurements of therapeutic process, and finally, to behavioural changes and user experiences. First, we report the primary outcome of changes in readiness to quit smoking (\Cref{sec:primary-outcome}). We then analyse how the chatbot performed on perceived empathy, measured through the CARE scale and compare it to human healthcare professionals (\Cref{sec:perceived-empathy}). Next, we examine MIBot's adherence to MI principles through AutoMISC analysis, and examine if MIBot could maintain fidelity to therapeutic standards while successfully eliciting change talk from clients (\Cref{sec:mi-adherence}).
 
-Following these core metrics, we investigate behavioural outcomes including quit attempts and self-reported changes (Section~\ref{sec:behavioural-outcomes}), explore conversation dynamics both quantitatively and qualitatively (Section~\ref{sec:conversation-dynamics}), and examine illustrative case studies and sample outliers (Section~\ref{sec:case-studies}). Finally, we analyse participant feedback (Section~\ref{sec:feedback}) and discuss broader implications of our findings (Section~\ref{sec:synthesis}).
+Following these core metrics, we investigate behavioural outcomes including quit attempts and self-reported changes (\Cref{sec:behavioural-outcomes}), explore conversation dynamics both quantitatively and qualitatively (\Cref{sec:conversation-dynamics}), and examine illustrative case studies and sample outliers (\Cref{sec:case-studies}). Finally, we analyse participant feedback (\Cref{sec:feedback}) and discuss broader implications of our findings (\Cref{sec:synthesis}).
 
 \section{Primary Outcome: Readiness to Quit}
 \label{sec:primary-outcome}
 
 \subsection*{Overall Changes in Readiness Rulers}
 
-Table~\ref{table:mibot_ruler_summary} summarizes the mean (and standard deviation) of each readiness ruler before the conversation, immediately afterwards, and one week later. The table includes the change between the pre-conversation metric and one week later ($\Delta$). The Wilcoxon signed-rank test was applied to assess the significance of the change. Participants' confidence increased markedly from a baseline mean of 2.8 to 4.5 one week later ($\Delta=1.66$, $p<10^{-9}$). This represents a $\sim$59\% relative improvement and constitutes our primary outcome measure, aligning with MI theory that confidence (self-efficacy) is a key predictor of behaviour change \citep{Gwaltney2009-wj,Abar2013}. Importance also increased, albeit more modestly ($\Delta=0.5$, $p<0.005$), while readiness exhibited a small, non-significant change ($\Delta=0.23$, $p=0.22$).
+\Cref{table:mibot_ruler_summary} summarizes the mean (and standard deviation) of each readiness ruler before the conversation, immediately afterwards, and one week later. The table includes the change between the pre-conversation metric and one week later ($\Delta$). The Wilcoxon signed-rank test was applied to assess the significance of the change. Participants' confidence increased markedly from a baseline mean of 2.8 to 4.5 one week later ($\Delta=1.66$, $p<10^{-9}$). This represents a $\sim$59\% relative improvement and constitutes our primary outcome measure, aligning with MI theory that confidence (self-efficacy) is a key predictor of behaviour change \citep{Gwaltney2009-wj,Abar2013}. Importance also increased, albeit more modestly ($\Delta=0.5$, $p<0.005$), while readiness exhibited a small, non-significant change ($\Delta=0.23$, $p=0.22$).
 
 \begin{table}[ht!]
   \centering
@@ -33,7 +33,7 @@ Table~\ref{table:mibot_ruler_summary} summarizes the mean (and standard deviatio
   \label{table:mibot_ruler_summary}
 \end{table}
 
-Figure~\ref{fig:confidence_change_distribution} illustrates the distribution of one-week changes in confidence. Of the 106 participants, 64 (60.4\%) showed improvement, 21 (19.8\%) remained unchanged, and 21 (19.8\%) experienced a decrease. The median change was +1.0 point, with the interquartile range spanning 0 to +3 points. Notably, 15 participants (14.2\%) achieved gains of 5 or more points, representing substantial movement toward quitting confidence.
+\Cref{fig:confidence_change_distribution} illustrates the distribution of one-week changes in confidence. Of the 106 participants, 64 (60.4\%) showed improvement, 21 (19.8\%) remained unchanged, and 21 (19.8\%) experienced a decrease. The median change was +1.0 point, with the interquartile range spanning 0 to +3 points. Notably, 15 participants (14.2\%) achieved gains of 5 or more points, representing substantial movement toward quitting confidence.
 
 \begin{figure}[ht]
   \centering
@@ -46,7 +46,7 @@ Figure~\ref{fig:confidence_change_distribution} illustrates the distribution of 
 
 \subsection*{Stratified Analysis by Baseline Characteristics}
 
-To understand which participants benefited most from MIBot, we stratified outcomes by baseline characteristics. Table~\ref{tab:baseline_confidence} shows that those starting with the lowest self-confidence ($n=31$, confidence $\leq 1$) experienced the largest improvement (+2.2 points), whereas participants with moderate or higher confidence gained about one and a half points. The three participants who began with very high confidence showed a decline, likely reflecting regression to the mean. Baseline confidence correlated negatively with the change (Spearman $r=-0.21$, $p<0.05$), indicating that MIBot is most beneficial for participants who are least confident in their ability to quit.
+To understand which participants benefited most from MIBot, we stratified outcomes by baseline characteristics. \Cref{tab:baseline_confidence} shows that those starting with the lowest self-confidence ($n=31$, confidence $\leq 1$) experienced the largest improvement (+2.2 points), whereas participants with moderate or higher confidence gained about one and a half points. The three participants who began with very high confidence showed a decline, likely reflecting regression to the mean. Baseline confidence correlated negatively with the change (Spearman $r=-0.21$, $p<0.05$), indicating that MIBot is most beneficial for participants who are least confident in their ability to quit.
 
 \begin{table}[ht!]
   \centering
@@ -71,7 +71,7 @@ To understand which participants benefited most from MIBot, we stratified outcom
 
 
 
-Confidence changes varied across different smoking characteristics and quit history profiles. Participants were grouped by HSI (low 0--1, moderate 2--3, high 4--5, very high $\geq$6), daily cigarette consumption ($<$5, 5--9, 10--19, $\geq$20), whether they had made a quit attempt in the week before the study, and the number of prior attempts (0, 1--2, $\geq$3). The mean change in confidence for each subgroup is summarized in Table~\ref{tab:hsi_prequit}.
+Confidence changes varied across different smoking characteristics and quit history profiles. Participants were grouped by HSI (low 0--1, moderate 2--3, high 4--5, very high $\geq$6), daily cigarette consumption ($<$5, 5--9, 10--19, $\geq$20), whether they had made a quit attempt in the week before the study, and the number of prior attempts (0, 1--2, $\geq$3). The mean change in confidence for each subgroup is summarized in \Cref{tab:hsi_prequit}.
 
 \begin{table}[ht!]
   \centering
@@ -145,13 +145,13 @@ Participants with moderate nicotine dependence (HSI 2--3) showed the greatest ga
   \label{table:demographics_wise_conf}
 \end{table}
 
-Demographic stratification reveals several patterns that warrant careful interpretation. Younger participants ($<30$ years) had higher baseline confidence (3.7, SD 2.1) than older groups (2.5, SD 1.8) and showed numerically larger improvements (mean +1.9, SD 3.1) compared to older participants (mean +1.6, SD 2.1). While baseline confidence differed by sex (2.5 for females vs 3.2 for males), week-later changes were identical (1.7). Participants identifying as non-white ethnicities had higher baseline confidence than white participants (3.3 vs 2.7) and showed larger gains (2.5 vs 1.4). These exploratory findings must be interpreted cautiously, as the study was not powered for subgroup analyses and baseline demographic differences were not statistically controlled.
+Demographic stratification reveals several patterns that warrant careful interpretation. Younger participants ($<30$ years) had higher baseline confidence (3.7, SD 2.1) than older groups (2.5, SD 1.8) and showed numerically larger improvements (mean +1.9, SD 3.1) compared to older participants (mean +1.6, SD 2.1). While baseline confidence differed by sex (2.5 for females vs 3.2 for males), week-later changes were identical (1.7). Participants identifying as non-white ethnicities had higher baseline confidence than white participants (3.3 vs 2.7) and showed larger gains (2.5 vs 1.4). These exploratory findings must be interpreted cautiously, as the study was not powered for subgroup analyses and baseline demographic differences were not statistically controlled. See \Cref{table:demographics_wise_conf} for a summary of confidence changes by demographic characteristics.
 
 
 \section{Perceived Empathy: CARE Scale Assessment}
 \label{sec:perceived-empathy}
 
-The Consultation and Relational Empathy (CARE) scale \citep{10.1093/fampra/cmh621} measures patients' perceptions of their healthcare provider's empathy through 10 questions rated from 1 (poor) to 5 (excellent). MIBot achieved a mean total score of 42 out of 50. To contextualize this performance, Table~\ref{table:care_comparison} compares MIBot's scores with human healthcare professionals from \citet{Bikker2015}.
+The Consultation and Relational Empathy (CARE) scale \citep{10.1093/fampra/cmh621} measures patients' perceptions of their healthcare provider's empathy through 10 questions rated from 1 (poor) to 5 (excellent). MIBot achieved a mean total score of 42 out of 50. To contextualize this performance, \Cref{table:care_comparison} compares MIBot's scores with human healthcare professionals from \citet{Bikker2015}.
 
 \begin{table}[ht]
   \centering
@@ -284,10 +284,10 @@ $\geq$3 (n=18) & 4.4 (1.0) & 4.7 (0.8) & 4.3 (1.0) & 4.2 (1.1) & 4.2 (0.9) & 4.4
   \caption[Mean CARE Scores per Question]{Mean scores for each of the 10 questions on the CARE (Consultation and Relational Empathy) scale, rated on a 1-5 scale. The table is sorted from the highest-scoring to the lowest-scoring question.}
   \label{table:care_question_means}
 \end{table}
-Table~\ref{table:care_question_means} presents the mean scores for each CARE question, revealing specific strengths and weaknesses in MIBot's empathic performance. The chatbot performed best on `being positive' (4.6, SD 0.7) and `letting you tell your ``story''' (4.5, SD 0.8), while it scored lowest on `helping you take control' (3.8, SD 1.3) and `making a plan of action with you' (3.6, SD 1.5).
+\Cref{table:care_question_means} presents the mean scores for each CARE question, revealing specific strengths and weaknesses in MIBot's empathic performance. The chatbot performed best on `being positive' (4.6, SD 0.7) and `letting you tell your ``story''' (4.5, SD 0.8), while it scored lowest on `helping you take control' (3.8, SD 1.3) and `making a plan of action with you' (3.6, SD 1.5).
 
 
-The poor performance on some questions may be due to the chatbot's lack of emotional intelligence \citep{sabour-etal-2024-emobench} or collaboration skills \citep{yang-etal-2024-human}. Table~\ref{tab:care_comprehensive} presents CARE scale scores across demographic and behavioural characteristics. Female participants rated MIBot significantly higher than males on ``being interested in you as a whole person'' (4.2 vs 3.7, p=.026). Likewise, participants in non-full-time employment gave significantly higher scores than full-time workers on three dimensions: `letting you tell your story' (4.7 vs 4.3, p=.013), `really listening' (4.6 vs 4.2, p=.028), and `showing care and compassion' (4.5 vs 4.1, p=.012). No significant differences were found across age, ethnicity, smoking intensity, or quit attempt categories.
+The poor performance on some questions may be due to the chatbot's lack of emotional intelligence \citep{sabour-etal-2024-emobench} or collaboration skills \citep{yang-etal-2024-human}. \Cref{tab:care_comprehensive} presents CARE scale scores across demographic and behavioural characteristics. Female participants rated MIBot significantly higher than males on ``being interested in you as a whole person'' (4.2 vs 3.7, p=.026). Likewise, participants in non-full-time employment gave significantly higher scores than full-time workers on three dimensions: `letting you tell your story' (4.7 vs 4.3, p=.013), `really listening' (4.6 vs 4.2, p=.028), and `showing care and compassion' (4.5 vs 4.1, p=.012). No significant differences were found across age, ethnicity, smoking intensity, or quit attempt categories.
 
 
 
@@ -335,7 +335,7 @@ MIBot v5.2 achieved a mean confidence increase of 1.3 (SD 2.3, $p<0.001$)
 from baseline to one week later among 100 participants, and 
 MIBot v6.3A achieved an increase of 1.7 (SD 2.4, $p<0.001$) among 106 participants.  
 This difference was not statistically significant ($t(203.60) = 0.98$, 
-$p = 0.165$, one-tailed, Cohen's $d = 0.14$). As shown in Figure~\ref{fig:confidence_distributions}, 
+$p = 0.165$, one-tailed, Cohen's $d = 0.14$). As shown in \Cref{fig:confidence_distributions},
 the distribution of confidence changes reveals interesting patterns: MIBot v6.3A 
 resulted in more participants maintaining their baseline confidence (28\% vs.\ 23\% 
 with no change) and fewer experiencing decreased confidence (13\% vs.\ 17\%).
@@ -370,9 +370,9 @@ For importance to quit, MIBot v5.2 achieved a significant increase of 0.7 (SD 2.
     \label{fig:care_questions}
 \end{figure}
 
- MIBot v5.2 achieved a mean CARE score of 36 (SD = 9.1), with only 3\% of participants awarding a perfect score, while MIBot v6.3A achieved a mean score of 42 (SD = 7.5), with 11\% receiving perfect scores. This difference was statistically significant ($t(191.67) = 4.96$, $p < .001$, Cohen's $d = 0.70$), representing a medium-to-large effect size, and suggests that the fully generative responses of v6.3A significantly improved perceived empathy. Figure~\ref{fig:care_distributions} illustrates the distributional shift between versions. The hybrid v5.2 shows a relatively normal distribution centred in the mid-30s, with considerable spread across all score ranges, whereas v6.3A demonstrates a clear rightward skew, with 40\% of participants rating the chatbot in the highest range (46--50).
+ MIBot v5.2 achieved a mean CARE score of 36 (SD = 9.1), with only 3\% of participants awarding a perfect score, while MIBot v6.3A achieved a mean score of 42 (SD = 7.5), with 11\% receiving perfect scores. This difference was statistically significant ($t(191.67) = 4.96$, $p < .001$, Cohen's $d = 0.70$), representing a medium-to-large effect size, and suggests that the fully generative responses of v6.3A significantly improved perceived empathy. \Cref{fig:care_distributions} illustrates the distributional shift between versions. The hybrid v5.2 shows a relatively normal distribution centred in the mid-30s, with considerable spread across all score ranges, whereas v6.3A demonstrates a clear rightward skew, with 40\% of participants rating the chatbot in the highest range (46--50).
 
-To understand which aspects of empathetic interaction improved most, Figure~\ref{fig:care_questions} presents the mean scores across all ten CARE dimensions. The fully generative approach exhibits improvements across every dimension, with particularly notable gains in emotional and communicative aspects. The largest relative improvement was observed in ``showing care and compassion'' (+32\%), reflecting the chatbot's enhanced ability to maintain an encouraging tone. Interestingly, the dimension of ``making a plan of action with you'' remained the weakest aspect for both versions (2.73 for v5.2, 3.59 for v6.3A), despite showing considerable relative improvement (+32\%). It is worth noting that MIBot v6.3 was prompted with detailed guidelines on how to make a plan of action with the client. Despite this, planning seems to be one of its weak areas.
+To understand which aspects of empathetic interaction improved most, \Cref{fig:care_questions} presents the mean scores across all ten CARE dimensions. The fully generative approach exhibits improvements across every dimension, with particularly notable gains in emotional and communicative aspects. The largest relative improvement was observed in ``showing care and compassion'' (+32\%), reflecting the chatbot's enhanced ability to maintain an encouraging tone. Interestingly, the dimension of ``making a plan of action with you'' remained the weakest aspect for both versions (2.73 for v5.2, 3.59 for v6.3A), despite showing considerable relative improvement (+32\%). It is worth noting that MIBot v6.3 was prompted with detailed guidelines on how to make a plan of action with the client. Despite this, planning seems to be one of its weak areas.
 
 
 
@@ -418,7 +418,7 @@ We computed summary scores separately for these subsets and then compared MIBot'
   \label{table:automisc_summary}
 \end{table}
 
-Figure~\ref{fig:misc_distributions} shows violin plots comparing the distribution of \%MIC, R:Q, and \%CT across MIBot conversations with the HLQC benchmarks. The \%MIC scores are tightly clustered near 100\%, with only a few transcripts falling below 80\%. The R:Q distribution is centred around 1.3, showing less variance than human counsellors who range from pure question-asking (R:Q near 0) to heavy reflection use (R:Q $>$ 5).
+\Cref{fig:misc_distributions} shows violin plots comparing the distribution of \%MIC, R:Q, and \%CT across MIBot conversations with the HLQC benchmarks. The \%MIC scores are tightly clustered near 100\%, with only a few transcripts falling below 80\%. The R:Q distribution is centred around 1.3, showing less variance than human counsellors who range from pure question-asking (R:Q near 0) to heavy reflection use (R:Q $>$ 5).
 
 \begin{figure}[htpb]
 \centering
@@ -466,7 +466,7 @@ Figure~\ref{fig:misc_distributions} shows violin plots comparing the distributio
 \end{table}
 
 
-Figure~\ref{fig:misc_distributions}(c) illustrates the distribution of \%CT across conversations. Most sessions by MIBot had a \%CT of $>$ 60\%, and the distribution closely matches that of the \textbf{HLQC\_HI} dataset. Overall, the mean \%CT was 59\% for MIBot, compared to 53\% for the \textbf{HLQC\_HI} dataset.
+\Cref{fig:misc_distributions}(c) illustrates the distribution of \%CT across conversations. Most sessions by MIBot had a \%CT of $>$ 60\%, and the distribution closely matches that of the \textbf{HLQC\_HI} dataset. Overall, the mean \%CT was 59\% for MIBot, compared to 53\% for the \textbf{HLQC\_HI} dataset.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -554,7 +554,7 @@ These incremental changes, while not constituting complete cessation, represent 
 \subsection*{Quantitative Dynamics}
 \label{sec:conversation-dynamics}
 
-Conversations ranged from 36 to 163 utterances (median 78; mean 80.7, SD 29.4), with counsellor utterances comprising 55\% of the total. The median conversation lasted approximately 19 minutes based on participant self-report. Table~\ref{table:conversation_metrics} summarizes key quantitative metrics.
+Conversations ranged from 36 to 163 utterances (median 78; mean 80.7, SD 29.4), with counsellor utterances comprising 55\% of the total. The median conversation lasted approximately 19 minutes based on participant self-report. \Cref{table:conversation_metrics} summarizes key quantitative metrics.
 
 \begin{table}[ht]
   \centering
@@ -675,7 +675,7 @@ Three open-ended questions captured immediate post-conversation reactions. Thema
 
 Based on feedback analysis, we derived two binary metrics: ``LikedBot'' (92\% positive) and ``FoundBotHelpful'' (66\% positive). The discrepancy suggests that while MIBot creates an engaging experience, translating engagement into perceived therapeutic value remains challenging.
 
-Cross-tabulation revealed four user segments:
+Cross-tabulation revealed four user segments, as shown in \Cref{table:user_segments}.
 
 \begin{table}[ht]
   \centering
@@ -776,7 +776,7 @@ While the results are promising, the study also revealed limitations in building
 The research detailed in \Cref{ch:mibot,ch:feasibility,ch:mibot-eval} is the result of a significant, long-term collaboration. The human feasibility study, in particular, was a major team undertaking and involved all co-authors of the paper by \citet{mahmood-etal-2025-fully}. To provide a clear overview of each individual's role in the work presented in this thesis, this section outlines specific attributions.
 
 \begin{itemize}
-\item \textbf{Soliman Ali:} As the second author on the work submitted by \citet{mahmood-etal-2025-fully}, Ali was instrumental in designing and implementing the modular observer agent framework that serves as the foundation for the MIBot system (see Section \ref{sec:observers}). He also contributed to the initial versions of the AutoMISC system \citep{ali2025thesis,ali2025automated}, which was developed concurrently with MIBot. AutoMISC not only helped refine MIBot through an iterative process but was also used by the author of this thesis to validate the installation of attributes in synthetic smokers (see \Cref{ch:synthetic-smoker-preliminary,ch:synthetic-doppelganger}).
+\item \textbf{Soliman Ali:} As the second author on the work submitted by \citet{mahmood-etal-2025-fully}, Ali was instrumental in designing and implementing the modular observer agent framework that serves as the foundation for the MIBot system (see \Cref{sec:observers}). He also contributed to the initial versions of the AutoMISC system \citep{ali2025thesis,ali2025automated}, which was developed concurrently with MIBot. AutoMISC not only helped refine MIBot through an iterative process but was also used by the author of this thesis to validate the installation of attributes in synthetic smokers (see \Cref{ch:synthetic-smoker-preliminary,ch:synthetic-doppelganger}).
 
 \item \textbf{Michelle Collins:} Collins played a key role in evolving the prompt used by MIBot and provided valuable feedback by testing various intermediate system versions during its development.
 
