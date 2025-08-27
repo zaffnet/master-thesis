@@ -14,7 +14,7 @@ jobs:
         run: |
           docker run --rm -v "$(pwd)":/workspace -w /workspace texlive/texlive:TL2024-historic bash -c "
               pdflatex main.tex
-              bibtex main
+              biber main
               pdflatex main.tex
               makeindex main
               pdflatex main.tex
