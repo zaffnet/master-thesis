@@ -2,115 +2,55 @@
 % !BIB TS-program = biber
 % !TeX root = main.tex
 \documentclass{ut-thesis}
-
 \usepackage[utf8]{inputenc}
-\usepackage[T1]{fontenc} % Recommended for modern font encoding and PDF copy-paste
-
-% --- MATH & FONTS ---
+\usepackage[T1]{fontenc}
 \usepackage{amsmath}
 \usepackage{amssymb}
-\usepackage{xparse} % For creating new commands
-
-% --- GRAPHICS & COLOR ---
-% Load color early to prevent conflicts
+\usepackage{xparse}
 \usepackage{graphicx}
 \usepackage{xcolor}
-\usepackage{adjustbox} % Depends on graphicx
-
-% --- PAGE LAYOUT & SPACING ---
-\usepackage{pdflscape} % For landscape pages
+\usepackage{adjustbox}
+\usepackage{pdflscape}
 \usepackage{setspace}
 \usepackage{ragged2e}
-\usepackage{titlesec} % For customizing section headings
-
-% --- TABLES ---
-% Group all table-related packages together
+\usepackage{titlesec}
 \usepackage{array}
 \usepackage{booktabs}
 \usepackage{tabularx}
 \usepackage{multirow}
 \usepackage{makecell}
 \usepackage[para,online,flushleft]{threeparttable}
-
-% --- FLOATS, CAPTIONS, & LISTS ---
 \usepackage{float}
 \usepackage{caption}
-\usepackage{subcaption} % Must be loaded AFTER caption
+\usepackage{subcaption}
 \usepackage{enumitem}
 \usepackage{algorithm}
 \usepackage{algpseudocode}
-
-% --- CODE LISTINGS & BOXES ---
 \usepackage{fancyvrb}
 \usepackage{listings}
 \usepackage[most]{tcolorbox}
-\tcbuselibrary{listings} % Must be loaded AFTER tcolorbox and listings
-
-% --- UTILITIES ---
-\usepackage{scrextend} % For extra text formatting tools
+\tcbuselibrary{listings}
+\usepackage{scrextend}
 \usepackage{textcase}
-\usepackage{siunitx} % For typesetting units
-\usepackage{lipsum} % For dummy text (can go anywhere)
-
-% \usepackage{hyef}
-% \usepackage{xcolor}
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
-
+\usepackage{siunitx}
+\usepackage{lipsum}
+\usepackage[english]{babel}
+\usepackage{csquotes}
 \usepackage[backend=biber,
-            style=authoryear,
+            style=apa,
             sorting=nyt,
             maxbibnames=99,
             maxcitenames=2,
             mincitenames=1,
-            giveninits=false,  % Show full first names
+            giveninits=false,
             uniquelist=false,
             uniquename=false,
-            defernumbers=true]{biblatex}  % Add defernumbers for proper numbering
-
-
+            defernumbers=true]{biblatex}
 \usepackage[colorlinks=true, linkcolor=cyan, citecolor=cyan, urlcolor=cyan]{hyperref}
-\usepackage{cleveref} % Must be loaded AFTER hyperref
+\usepackage{cleveref}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% --- BIBLIOGRAPHY PACKAGE ---
-% --- Configure author name order for bibliography ---
-\DeclareNameAlias{sortname}{given-family}
-\DeclareNameAlias{default}{given-family}
-
-% --- Track and format author names with selective bolding ---
-\newcounter{mybibauthors}
-
-% Custom name format for bibliography with selective bolding
-\DeclareNameFormat{given-family}{%
-  % Store the total author count when we start processing names
-  \ifnumequal{\value{listcount}}{1}
-    {\setcounter{mybibauthors}{\value{liststop}}}
-    {}%
-  % Now apply formatting based on total authors
-  \ifnumgreater{\value{mybibauthors}}{2}
-    {% More than 2 authors: bold ONLY first author's last name
-     \ifnumequal{\value{listcount}}{1}
-       {\namepartgiven\space\textbf{\namepartfamily}}% Bold first author only
-       {\namepartgiven\space\namepartfamily}%         % No bold for others
-    }
-    {% 2 or fewer authors: bold ALL last names
-     \namepartgiven\space\textbf{\namepartfamily}%
-    }%
-  \ifthenelse{\value{listcount}<\value{liststop}}
-    {\addcomma\space}
-    {}%
-}
-
-
-
-% Add this after loading biblatex
-\DeclareFieldFormat{labelnumberwidth}{#1}  % No brackets here
+\DeclareFieldFormat{labelnumberwidth}{#1}
 \setlength{\labelnumberwidth}{3em}
-
-% Bibliography environment with working numbers
 \defbibenvironment{bibliography}
   {\list
      {\printfield[labelnumberwidth]{labelnumber}}
@@ -120,208 +60,32 @@
       \addtolength{\leftmargin}{\labelsep}%
       \setlength{\itemsep}{1.5em}%
       \setlength{\parsep}{0pt}%
-      \renewcommand*{\makelabel}[1]{\hss[##1]}}%  % Brackets added here only
-  }
+      \renewcommand*{\makelabel}[1]{\hss[##1]}}}
   {\endlist}
   {\item}
 
-% --- Configure field formats ---
-\DeclareFieldFormat[article]{title}{#1}  % Remove quotes from titles
-\DeclareFieldFormat[unpublished]{title}{#1} 
-\DeclareFieldFormat[mastersthesis]{title}{#1} 
-\DeclareFieldFormat[phdthesis]{title}{#1} 
-\DeclareFieldFormat[thesis]{title}{#1} 
-\DeclareFieldFormat[article]{journaltitle}{\mkbibemph{#1}}  % Italicize journal names
-%\DeclareFieldFormat[article]{volume}{\textbf{#1}}  % Bold volume numbers
-\DeclareFieldFormat{year}{\textbf{#1}}  % Bold volume numbers
-\DeclareFieldFormat[article]{pages}{#1}  % Plain page numbers
-\DeclareFieldFormat{url}{\url{#1}}  % Format URLs
-\DeclareFieldFormat{doi}{\url{https://doi.org/#1}}  % Format DOIs
-% --- Define a macro for hyperlinking titles ---
-% --- Define field formats for hyperlinked titles ---
-% General format for all entry types
+\DeclareFieldFormat[article]{title}{#1}
+\DeclareFieldFormat[article,book,booklet,conference,inbook,incollection,inproceedings,manual,mastersthesis,misc,phdthesis,proceedings,techreport,unpublished]{title}{#1}
+\DeclareFieldFormat[article]{pages}{#1}
+\DeclareFieldFormat{url}{\url{#1}}
+\DeclareFieldFormat{doi}{\url{https://doi.org/#1}}
 \DeclareFieldFormat{title}{%
   \iffieldundef{doi}
     {\iffieldundef{url}
-      {#1}% Neither DOI nor URL: just print the title
+      {#1}% 
       {\href{\thefield{url}}{#1}}}% Only URL exists
-    {\href{https://doi.org/\thefield{doi}}{#1}}% DOI exists (prioritized)
-}
+    {\href{https://doi.org/\thefield{doi}}{#1}}}
 
-% Special format for articles (no quotes, but still hyperlinked)
-% Define field formats for hyperlinked titles with punctuation included
-\DeclareFieldFormat[article]{title}{%
+\DeclareFieldFormat[article,book,booklet,conference,inbook,incollection,inproceedings,manual,mastersthesis,misc,phdthesis,proceedings,techreport,unpublished]{title}{%
   \iffieldundef{doi}
     {\iffieldundef{url}
       {#1}%
       {\href{\thefield{url}}{#1\addperiod}}}%
     {\href{https://doi.org/\thefield{doi}}{#1\addperiod}}%
 }
+\DeclareFieldFormat{url}{} 
+\DeclareFieldFormat{doi}{} 
 
-% Special format for inproceedings
-\DeclareFieldFormat[inproceedings]{title}{%
-  \iffieldundef{doi}
-    {\iffieldundef{url}
-      {#1}%
-      {\href{\thefield{url}}{#1}}}%
-    {\href{https://doi.org/\thefield{doi}}{#1}}%
-}
-
-% Special format for books (often italic)
-\DeclareFieldFormat[book]{title}{%
-  \iffieldundef{doi}
-    {\iffieldundef{url}
-      {\mkbibemph{#1}}% Neither: italic title
-      {\href{\thefield{url}}{\mkbibemph{#1}}}}% URL only
-    {\href{https://doi.org/\thefield{doi}}{\mkbibemph{#1}}}% DOI
-}
-
-\DeclareBibliographyDriver{article}{%
-  \printnames{author}%
-  \setunit{\addperiod\space}%
-  \printfield{year}%
-  \setunit{\addperiod\space}%
-  \printfield{title}% Period now included in the hyperlink
-  \setunit{\space}%  % Just space, no period
-  \printfield{journaltitle}%
-  \setunit{\addcomma\space}%
-  \printfield{volume}%
-  \iffieldundef{number}
-    {}
-    {\printtext{(}\printfield{number}\printtext{)}}%
-  \setunit{\addcolon}%
-  \printfield{pages}%
-  \finentry%
-}
-
-% --- Book driver with hyperlinked title ---
-\DeclareBibliographyDriver{book}{%
-  \printnames{author}%
-  \ifnameundef{author}
-    {\printnames{editor}\setunit{\addspace\printtext{(Ed.)}}}
-    {}%
-  \setunit{\addperiod\space}%
-  \printfield{year}%
-  \setunit{\addperiod\space}%
-  \printfield{title}% Will be hyperlinked if URL exists
-  \setunit{\addperiod\space}%
-  \printfield{edition}%
-  \setunit{\addperiod\space}%
-  \printlist{publisher}%
-  \setunit{\addcomma\space}%
-  \printlist{location}%
-  \finentry%
-}
-
-% --- Inproceedings driver with hyperlinked title ---
-\DeclareBibliographyDriver{inproceedings}{%
-  \printnames{author}%
-  \setunit{\addperiod\space}%
-  \printfield{year}%
-  \setunit{\addperiod\space}%
-  \printfield{title}% Will be hyperlinked if URL exists
-  \setunit{\addperiod\space In\addcolon\space}%
-  \printfield{booktitle}%
-  \setunit{\addcomma\space}%
-  \printfield{pages}%
-  \finentry%
-}
-
-% --- Thesis driver with hyperlinked title ---
-\DeclareBibliographyDriver{thesis}{%
-  \printnames{author}%
-  \setunit{\addperiod\space}%
-  \printfield{year}%
-  \setunit{\addperiod\space}%
-  \printfield{title}% Will be hyperlinked if URL exists
-  \setunit{\addperiod\space}%
-  \printfield{type}%
-  \setunit{\addperiod\space}%
-  \printlist{institution}%
-  \finentry%
-}
-
-
-\DeclareBibliographyDriver{mastersthesis}{%
-  \printnames{author}%
-  \setunit{\addperiod\space}%
-  \printfield{year}%
-  \setunit{\addperiod\space}%
-  \printfield{title}% Will be hyperlinked if URL exists
-  \setunit{\addperiod\space}%
-  \printfield{type}%
-  \setunit{\addperiod\space}%
-  \printlist{institution}%
-  \finentry%
-}
-
-% --- Misc driver with hyperlinked title ---
-\DeclareBibliographyDriver{misc}{%
-  \printnames{author}%
-  \setunit{\addperiod\space}%
-  \printfield{year}%
-  \setunit{\addperiod\space}%
-  \printfield{title}% Will be hyperlinked if URL exists
-  \setunit{\addperiod\space}%
-  \printfield{note}%
-  \finentry%
-}
-
-% --- Manual driver with hyperlinked title ---
-\DeclareBibliographyDriver{manual}{%
-  \printnames{author}%
-  \setunit{\addperiod\space}%
-  \printfield{year}%
-  \setunit{\addperiod\space}%
-  \printfield{title}% Will be hyperlinked if URL exists
-  \setunit{\addperiod\space}%
-  \printlist{organization}%
-  \setunit{\addperiod\space}%
-  \printfield{note}%
-  \finentry%
-}
-
-% --- Technical Report driver with hyperlinked title ---
-\DeclareBibliographyDriver{techreport}{%
-  \printnames{author}%
-  \setunit{\addperiod\space}%
-  \printfield{year}%
-  \setunit{\addperiod\space}%
-  \printfield{title}% Will be hyperlinked if URL exists
-  \setunit{\addperiod\space}%
-  \printfield{type}%
-  \iffieldundef{number}
-    {}
-    {\setunit{\space}%
-     \printfield{number}}%
-  \setunit{\addperiod\space}%
-  \printlist{institution}%
-  \setunit{\addcomma\space}%
-  \printlist{location}%
-  \finentry%
-}
-
-% --- Unpublished driver with hyperlinked title ---
-\DeclareBibliographyDriver{unpublished}{%
-  \printnames{author}%
-  \setunit{\addperiod\space}%
-  \printfield{year}%
-  \setunit{\addperiod\space}%
-  \printfield{title}% Will be hyperlinked if URL exists
-  \setunit{\addperiod\space}%
-  \printfield{note}%
-  \finentry%
-}
-
-% --- Citation formatting ---
-\renewbibmacro*{cite}{%
-  \iffieldundef{shorthand}
-    {\printnames{labelname}%
-     \setunit{\addcomma\space}%
-     \usebibmacro{cite:labeldate+extradate}}
-    {\usebibmacro{cite:shorthand}}}
-
-% Parenthetical citations
 \DeclareCiteCommand{\parencite}[\mkbibparens]
   {\usebibmacro{prenote}}
   {\usebibmacro{citeindex}%
@@ -329,72 +93,29 @@
   {\multicitedelim}
   {\usebibmacro{postnote}}
 
-% Textual citations  
-\renewbibmacro*{textcite}{%
-  \printnames{labelname}%
-  \setunit{\space}%
-  \printtext[bibhyperref]{%
-    \mkbibparens{%
-      \usebibmacro{cite:labeldate+extradate}%
-    }%
-  }%
-}
 
-% Configure "et al." format
-\DefineBibliographyStrings{english}{
-  andothers = {et al\adddot},
-}
-%^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\DeclareCiteCommand{\textcite}
+  {\usebibmacro{prenote}}
+  {%
+   \printtext{\bibhyperref{%
+        \citeauthor{\thefield{entrykey}}\space%
+        \mkbibparens{\citeyear{\thefield{entrykey}}}%
+    }}}
+  {\multicitedelim}
+  {\usebibmacro{postnote}}
 
 
-
-% \renewcommand\cite{\parencite}
 \newcommand\citep{\parencite}
 \renewcommand\cite{\parencite}
 \newcommand\citet{\textcite}
-
 \setlength\bibitemsep{1em}
-
 \addbibresource{main.bib}
 
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Greavyard 
-
-% % --- BIBLIOGRAPHY ---
-% \usepackage{natbib}
-
-% % --- HYPER-REFERENCING PACKAGES (LOAD LAST) ---
-
-
-% % --- Bibliography Style ---
-% \usepackage[backend=biber,
-%             style=authoryear,
-%             sorting=nyt,
-%             maxbibnames=99,
-%             maxcitenames=2,
-%             mincitenames=1,
-%             giveninits=true,
-%             uniquelist=false,
-%             uniquename=false]{biblatex}
-% --- Custom Citation Commands ---
-% \renewcommand\cite{\citep}
-% \newcommand\shortcite{\citeyearpar}
-% \newcommand\newcite{\citet}
-% \newcommand{\citeposs}[1]{\citeauthor{#1}'s (\citeyear{#1})}
-% \newcommand\percent{\%}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-
-% --- Cleveref Formatting ---
 \crefformat{section}{Section~#2#1#3}
 \crefformat{figure}{Figure~#2#1#3}
 \crefformat{table}{Table~#2#1#3}
 \crefformat{equation}{(#2#1#3)}
 
-% --- Code Listing Style for Prompts ---
 \lstdefinestyle{promptstyle}{
   language={},
   basicstyle=\ttfamily\small,
@@ -405,7 +126,6 @@
   keepspaces=true,
 }
 
-% --- Custom TColorBox for System Prompts ---
 \NewDocumentCommand{\includesystemprompt}{ O{} m m }{%
   \begin{tcolorbox}[
     listing only,
@@ -424,16 +144,13 @@
   \end{tcolorbox}
 }
 
-% --- Layout and Formatting Adjustments ---
 \setlength{\parskip}{0.75em}
 \titlespacing*{\section}{0pt}{16pt}{0pt}
 \titlespacing*{\subsection}{0pt}{8pt}{0pt}
 \titlespacing*{\subsubsection}{0pt}{4pt}{0pt}
 \setstretch{0.99}
 \captionsetup{font=small, labelfont=bf}
-\newcolumntype{Y}{>{\raggedright\arraybackslash}X} % Custom table column type
-
-% --- Redefine \subsubsection to Color Specific Titles ---
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
 \let\oldsubsubsection\subsubsection
 \renewcommand{\subsubsection}[1]{%
   \ifboolexpr{
@@ -442,58 +159,51 @@
     test {\ifstrequal{#1}{Results}} or
     test {\ifstrequal{#1}{Observations}}
   }
-  {\oldsubsubsection{\textcolor{red}{#1}}}% If true, set color to red
-  {\oldsubsubsection{#1}}% If false, use the default
+  {\oldsubsubsection{\textcolor{red}{#1}}}
+  {\oldsubsubsection{#1}}
 }
 
-% --- Thesis Information ---
+
 \author{Zafarullah Mahmood}
 \title{A Fully Generative Motivational Interviewing Chatbot for Moving Smokers Towards the Decision to Quit and LLM-Based Synthetic Smokers}
 \degree{Master of Applied Science}
 \department[]{Edward S. Rogers Sr. Department of Electrical \& Computer Engineering}
 \gradyear{2025}
 
-% --- Document Body ---
+
 \begin{document}
 
-  \frontmatter
-    \maketitle
-    \begin{abstract}
-      \input{abstract}
-    \end{abstract}
-    \begin{dedication}
-      \begin{flushright}
-        \textit{To the children who aged too soon,\\
-        and the futures that never were.}
-      \end{flushright}
-    \end{dedication}
-    \begin{acknowledgements}
-      \input{acknowledgements}
-    \end{acknowledgements}
-    \tableofcontents
-    \listoftables
-    \listoffigures
-
-  \mainmatter
-    \input{ch-intro}
-    \input{ch-background}
+    \frontmatter
+        \maketitle
+        \begin{abstract}
+            \input{abstract}
+        \end{abstract}
+        \begin{dedication}
+            \begin{flushright}
+                \textit{To the children who aged too soon,\\
+                and the futures that never were.}
+            \end{flushright}
+        \end{dedication}
+        \begin{acknowledgements}
+            \input{acknowledgements}
+        \end{acknowledgements}
+        \tableofcontents
+        \listoftables
+        \listoffigures
     
-    \input{ch-mibot}
-    \input{ch-mibot-feasibility-study}
-    \input{ch-mibot-eval}
+    \mainmatter
+        \input{ch-intro}
+        \input{ch-background}
     
-    \input{ch-synthetic-smoker}
-    \input{ch-synthetic-doppelganger}
+        \input{ch-mibot}
+        \input{ch-mibot-feasibility-study}
+        \input{ch-mibot-eval}
     
-    \input{ch-conclusion}
-
-  % \appendix
-  %   \input{ap-code}
-  %   \clearpage
-
-  \backmatter
-    \cleardoublepage
-    \phantomsection
+        \input{ch-synthetic-smoker}
+        \input{ch-synthetic-doppelganger}
+    
+        \input{ch-conclusion}
+    
     \addcontentsline{toc}{chapter}{Bibliography}
     \printbibliography
 
