@@ -1,7 +1,7 @@
 \chapter{Development of Synthetic Smokers: Preliminary Experiments}
 \label{ch:synthetic-smoker-preliminary}
 
-The iterative development of MIBot (as described in \Cref{ch:mibot}) required that we extensively test it after every change in its prompt. To automate the testing of some aspects of the chatbot's behaviour, we started the development of ``synthetic smokers''\footnote{It is worth mentioning that we also utilized human role-playing as smokers during our testing of MIBot.}. A synthetic smoker, in the context of this research, is a prompted instance of an LLM tasked to simulate the behaviour, language, and psychological responses of a human smoker engaged in a counselling session.
+The iterative development of MIBot, as described in \Cref{ch:mibot}, required that we extensively test it after every change in its prompt. To automate the testing of some aspects of the chatbot's behaviour, we started the development of ``synthetic smokers''\footnote{It is worth mentioning that we also utilized human role-playing as smokers during our testing of MIBot.}. A synthetic smoker, in the context of this research, is a prompted instance of an LLM tasked to simulate the behaviour, language, and psychological responses of a human smoker engaged in a counselling session.
 
 This chapter details the initial conceptualization and preliminary experiments in the development of these synthetic agents. We begin by defining the theoretical framework for creating realistic agents, followed by our early experiments to control behavioural attributes like verbosity and resistance to quitting. These initial steps highlight the core challenges of attribute installation and validation. In the subsequent chapter, we use a more advanced, data-driven methodology for attribute installation and validation.
 
@@ -87,7 +87,7 @@ The KL divergence is a measure of the distortion between the intended input attr
 \[= \sum_{\textbf{A} \in \mathcal{A}} P_H(\textbf{A}) \log\frac{P_H(\textbf{A})}{P_S(M(\gamma_S)=\textbf{A})}\]
 Here, $P_S(M(\gamma_S)=\textbf{A})$ is the probability that the measured attributes from a synthetic agent's output $\gamma_S$ will equal the vector $\textbf{A}$, when the agent's input profile was drawn from the true human distribution $P_H(\textbf{A})$.
 
-In practice, this is calculated by comparing the empirical distribution of a sample of human attribute vectors $\{\textbf{A}_i\}$ against the distribution of their corresponding measured outputs $\{\hat{\textbf{A}}_i = M(\gamma_i)\}$. This calculation assumes that $M$ faithfully extracts the attributes from $\gamma$, which is not guaranteed. Therefore, a high KL divergence introduces an ambiguity: it may be due to the system's inadequacy in installing $\textbf{A}$, or it could be due to $M$ failing to recover $\textbf{A}$ from $\gamma$.
+In practice, this is calculated by comparing the empirical distribution of a sample of human attribute vectors $\{\textbf{A}_i\}$ against the distribution of their corresponding measured outputs $\{\hat{\textbf{A}}_i = M(\gamma_i)\}$. This calculation assumes that $M$ faithfully extracts the attributes from $\gamma$, of which there is no guarantee.
 
 
 \subsubsection{Uniform Fidelity}
@@ -144,7 +144,7 @@ We modified the prompt to encourage a more natural, concise conversational style
 \end{itemize}
 
 \subsubsection{Validation}
-To validate the effectiveness of these changes, we generated a new set of conversations ($n=5$) using the modified prompt (``Fixed Verbosity'') and with GPT-4 Turbo (temperature $=1.0$) and compared them against the baseline prompt (``Default Verbosity''). We also compared these results against human-human MI conversations from the High-Quality and Low-Quality Counselling (HLQC) datasets~\citep{perez-rosas-etal-2019-makes}.
+To validate the effectiveness of these changes, we generated a new set of conversations ($n=5$) using the modified prompt (``Fixed Verbosity'') and with GPT-4 Turbo (temperature $=1.0$) and compared them against the baseline prompt (``Default Verbosity''). We also compared these results against human-human MI conversations from the HLQC datasets~\citep{perez-rosas-etal-2019-makes}.
 
 \subsubsection{Results}
 The prompt modifications significantly reduced the verbosity of the synthetic smoker. \Cref{fig:verbosity-comparison} illustrates the distribution of volley lengths (in terms of number of words).
@@ -153,7 +153,7 @@ The prompt modifications significantly reduced the verbosity of the synthetic sm
 \begin{figure}[htpb]
     \centering
     \includegraphics[width=0.9\textwidth]{fig/utterance_length_violin_plot.pdf}
-    \caption[Distribution of volley length for default and fixed-verbosity synthetic smokers]{Comparison of utterance length distributions for default and fixed-verbosity synthetic smokers. The fixed-verbosity prompt successfully reduced the synthetic smoker's utterance length to better align with humans (\texttt{high-quality-human-MI}).}
+    \caption[Distribution of volley length for default and fixed-verbosity synthetic smokers]{Comparison of utterance length distributions for default and fixed-verbosity synthetic smokers. The fixed-verbosity prompt successfully reduced the synthetic smoker's utterance length to better align with humans (\texttt{high-quality-human-MI})}
     \label{fig:verbosity-comparison}
 \end{figure}
 
@@ -246,7 +246,7 @@ Low Resistance & 61 & 9 & 30 \\ \bottomrule
     & Readiness  & 0.6 (0.5) & 2.6 (0.5) & 3.4 (1.1) & 2.8 (1.1) \\
     \bottomrule
   \end{tabular*}}
-  \caption[Readiness rulers reported by high- and low-resistance synthetic smokers]{Longitudinal changes in self-reported scores (0--10 scale) for importance, confidence, and readiness, stratified by client (synthetic smoker) resistance level. Values were assessed at baseline (pre-conversation), immediately post-conversation, and at 1-week follow-up. Change scores represent the difference between baseline and 1-week follow-up. SD = standard deviation.}
+  \caption[Readiness rulers reported by high- and low-resistance synthetic smokers]{Longitudinal changes in self-reported scores (0--10 scale) for importance, confidence, and readiness, stratified by client (synthetic smoker) resistance level. Values were assessed at baseline (pre-conversation), immediately post-conversation, and at 1-week follow-up. Change scores represent the difference between baseline and 1-week follow-up. SD = standard deviation}
   \label{tab:resistance-readiness-rulers}
 \end{table}
 

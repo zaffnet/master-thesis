@@ -1,7 +1,7 @@
 \chapter{Advanced Methods for Attribute Installation in Synthetic Smokers}
-\label{ch:synthetic-doppelganger}
+\label{ch:synthetic-doppelgänger}
 
-As established in the previous chapter, creating personas with arbitrary backstories made it difficult to rigorously assess the \textbf{representativeness} and \textbf{fidelity} of our synthetic agents. To overcome these limitations, we developed the ``doppelgänger'' methodology---a data-driven approach designed to create synthetic twins of actual human participants, enabling a more direct and robust validation framework.
+As established in the previous chapter, creating personas with arbitrary backstories made it difficult to rigorously assess the \textbf{representativeness} and \textbf{fidelity} of our synthetic agents. To overcome these limitations, we developed the ``doppelgänger'' methodology—a data-driven approach designed to create synthetic twins of actual human participants, enabling a more direct and robust validation framework.
 
 This method leverages a rich dataset from a previous feasibility study on human smokers using MIBot v6.3A (see \Cref{ch:feasibility}), which we refer to by the shorthand \textbf{MIV6.3A}. The dataset contains 106 complete MIBot--human interactions, including demographic data, smoking history (e.g., Heaviness of Smoking Index---HSI), pre- and post-conversation readiness rulers (\emph{importance}, \emph{confidence}, \emph{readiness}), and full conversation transcripts. By extracting and installing attributes directly from this human data, we can create doppelgängers that mirror a real-world distribution. This chapter details the specific methods for creating and evaluating these synthetic doppelgängers.
 
@@ -381,7 +381,7 @@ Finally, we investigated the system's uniform fidelity by stratifying the result
 \begin{figure}[ht!]
     \centering
     \includegraphics[width=0.7\textwidth]{fig/cf_doppelganger_human.pdf}
-    \caption[Scatterplot of change fraction for humans and doppelgangers]{Scatter plot of change fraction for human--MIBot \textbf{(x-axis)} and doppelgänger--MIBot \textbf{(y-axis)} conversations.}
+    \caption[Scatterplot of change fraction for humans and doppelgängers]{Scatter plot of change fraction for human--MIBot \textbf{(x-axis)} and doppelgänger--MIBot \textbf{(y-axis)} conversations.}
     \label{fig:cf_human_vs_doppel}
 \end{figure}
 
@@ -471,13 +471,13 @@ We measured the change fraction (CF), the change in confidence after a simulated
 \label{tab:good-vs-bad-counselling}
 \end{table}
 
-The results, shown in \Cref{tab:good-vs-bad-counselling}, indicate that the synthetic smokers were sensitive to counselling quality. When interacting with the bad counsellor, outcomes were significantly worse across all metrics. The change fraction (CF) dropped markedly, particularly for the Low-CF group (from 0.48 to 0.22), suggesting increased resistance. The change in confidence was lower, and the CARE scores showed a pronounced difference (e.g., 23.0 vs. 47.8 for the Low-CF group).
+The results, as detailed in Table 7.6, indicate that the synthetic smokers were sensitive to counselling quality. When interacting with the bad counsellor, outcomes were significantly worse across all metrics. The change fraction (CF) dropped markedly, particularly for the Low-CF group (from 0.48 to 0.22), suggesting increased resistance. The change in confidence was lower, and the CARE scores showed a pronounced difference (e.g., 23.0 vs. 47.8 for the Low-CF group).
 
 These findings suggest that synthetic doppelgängers react in a predictable manner, responding negatively to poor-quality counselling. This sensitivity highlights their potential utility as evaluation and training tools.
 
 \section{Conclusion}
 
-This chapter detailed an advanced, data-driven approach to the development and validation of synthetic smokers, centred on the ``doppelgänger'' methodology. The experiments showed that installing pre-conversation readiness rulers was a key factor in aligning the doppelgänger's self-reported outcomes with those of their human counterparts. The conversational impact modelling and incremental attribute installation experiments resulted in high correlations between synthetic and human data. Notably, the explicit installation of a participant's change fraction value led to the doppelgänger's conversational output correlating strongly with the human data (Spearman's $r_s = 0.57$).
+This chapter detailed an advanced, data-driven approach to the development and validation of synthetic smokers, centred on the ``doppelgänger'' methodology. The experiments showed that installing pre-conversation readiness rulers was a key factor in aligning the doppelgänger's self-reported outcomes with those of their human counterparts. The conversational impact modelling and incremental attribute installation experiments resulted in high correlations between synthetic and human data. Notably, the explicit installation of a participant's change fraction value led to the doppelgänger's conversational output correlating strongly with the human data (Spearman's $r_{s}=0.57$).
 
 However, the process also revealed several challenges. For example, the correlation of CARE scores was negligible, and a population-level bias was observed, with doppelgängers generally exhibiting higher average change talk than humans.
 
