@@ -55,7 +55,7 @@ if [ "$USE_DOCKER" = true ]; then
     echo "Running LaTeX compilation with Docker ${TEXLIVE_VERSION}..."
     docker run --rm -v "$(pwd)":/workspace -w /workspace $TEXLIVE_VERSION bash -c "
         pdflatex ${MAIN_TEX_FILE}.tex
-        bibtex ${MAIN_TEX_FILE}
+        biber ${MAIN_TEX_FILE}
         pdflatex ${MAIN_TEX_FILE}.tex
         makeindex ${MAIN_TEX_FILE}
         pdflatex ${MAIN_TEX_FILE}.tex
@@ -63,7 +63,7 @@ if [ "$USE_DOCKER" = true ]; then
 else
     echo "Running LaTeX compilation locally..."
     pdflatex ${MAIN_TEX_FILE}.tex
-    bibtex ${MAIN_TEX_FILE}
+    biber ${MAIN_TEX_FILE}
     pdflatex ${MAIN_TEX_FILE}.tex
     makeindex ${MAIN_TEX_FILE}
     pdflatex ${MAIN_TEX_FILE}.tex
