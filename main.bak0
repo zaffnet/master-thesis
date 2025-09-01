@@ -72,7 +72,7 @@
 \DeclareFieldFormat{title}{%
   \iffieldundef{doi}
     {\iffieldundef{url}
-      {#1}% 
+      {#1}%
       {\href{\thefield{url}}{#1}}}% Only URL exists
     {\href{https://doi.org/\thefield{doi}}{#1}}}
 
@@ -83,8 +83,8 @@
       {\href{\thefield{url}}{#1\addperiod}}}%
     {\href{https://doi.org/\thefield{doi}}{#1\addperiod}}%
 }
-\DeclareFieldFormat{url}{} 
-\DeclareFieldFormat{doi}{} 
+\DeclareFieldFormat{url}{}
+\DeclareFieldFormat{doi}{}
 
 \DeclareCiteCommand{\parencite}[\mkbibparens]
   {\usebibmacro{prenote}}
@@ -173,38 +173,38 @@
 
 \begin{document}
 
-\frontmatter
-\maketitle
-\begin{abstract}
-	\input{abstract}
-\end{abstract}
-\begin{dedication}
-	\begin{flushright}
-		\textit{To the children who aged too soon,\\
-			and the futures that never were.}
-	\end{flushright}
-\end{dedication}
-\begin{acknowledgements}
-	\input{acknowledgements}
-\end{acknowledgements}
-\tableofcontents
-\listoftables
-\listoffigures
+    \frontmatter
+        \maketitle
+        \begin{abstract}
+            \input{abstract}
+        \end{abstract}
+        \begin{dedication}
+            \begin{flushright}
+                \textit{To the children who aged too soon,\\
+                and the futures that never were.}
+            \end{flushright}
+        \end{dedication}
+        \begin{acknowledgements}
+            \input{acknowledgements}
+        \end{acknowledgements}
+        \tableofcontents
+        \listoftables
+        \listoffigures
 
-\mainmatter
-\input{ch-intro}
-\input{ch-background}
+    \mainmatter
+        \input{ch-intro}
+        \input{ch-background}
 
-\input{ch-mibot}
-\input{ch-mibot-feasibility-study}
-\input{ch-mibot-eval}
+        \input{ch-mibot}
+        \input{ch-mibot-feasibility-study}
+        \input{ch-mibot-eval}
 
-\input{ch-synthetic-smoker}
-\input{ch-synthetic-doppelganger}
+        \input{ch-synthetic-smoker}
+        \input{ch-synthetic-doppelganger}
 
-\input{ch-conclusion}
+        \input{ch-conclusion}
 
-\addcontentsline{toc}{chapter}{Bibliography}
-\printbibliography
+    \addcontentsline{toc}{chapter}{Bibliography}
+    \printbibliography
 
 \end{document}
