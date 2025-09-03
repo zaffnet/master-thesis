@@ -37,7 +37,8 @@
 \usepackage[english]{babel}
 \usepackage{csquotes}
 \usepackage[backend=biber,
-            style=apa,
+            style=authoryear,
+            dashed=false,
             sorting=nyt,
             maxbibnames=99,
             maxcitenames=2,
@@ -48,6 +49,37 @@
             defernumbers=true]{biblatex}
 \usepackage[colorlinks=true, linkcolor=cyan, citecolor=cyan, urlcolor=cyan]{hyperref}
 \usepackage{cleveref}
+
+
+\DeclareNameAlias{sortname}{given-family}
+\DeclareNameAlias{default}{given-family}
+
+% --- Track and format author names with selective bolding ---
+\newcounter{mybibauthors}
+
+% Custom name format for bibliography with selective bolding
+\DeclareNameFormat{given-family}{%
+  % Store the total author count when we start processing names
+  \ifnumequal{\value{listcount}}{1}
+    {\setcounter{mybibauthors}{\value{liststop}}}
+    {}%
+  % Now apply formatting based on total authors
+  \ifnumgreater{\value{mybibauthors}}{2}
+    {% More than 2 authors: bold ONLY first author's last name
+     \ifnumequal{\value{listcount}}{1}
+       {\namepartgiven\space\textbf{\namepartfamily}}% Bold first author only
+       {\namepartgiven\space\namepartfamily}%         % No bold for others
+    }
+    {% 2 or fewer authors: bold ALL last names
+     \namepartgiven\space\textbf{\namepartfamily}%
+    }%
+  \ifthenelse{\value{listcount}<\value{liststop}}
+    {\addcomma\space}
+    {}%
+}
+\DeclareFieldFormat[article]{journaltitle}{\mkbibemph{#1}}
+\DeclareFieldFormat{year}{\textbf{#1}}
+\DeclareFieldFormat[article]{pages}{#1} 
 
 \DeclareFieldFormat{labelnumberwidth}{#1}
 \setlength{\labelnumberwidth}{3em}
@@ -65,6 +97,9 @@
   {\item}
 
 \DeclareFieldFormat[article]{title}{#1}
+\DeclareFieldFormat[mastersthesis]{title}{#1}
+\DeclareFieldFormat[phdthesis]{title}{#1}
+\DeclareFieldFormat[thesis]{title}{#1}
 \DeclareFieldFormat[article,book,booklet,conference,inbook,incollection,inproceedings,manual,mastersthesis,misc,phdthesis,proceedings,techreport,unpublished]{title}{#1}
 \DeclareFieldFormat[article]{pages}{#1}
 \DeclareFieldFormat{url}{\url{#1}}
@@ -109,6 +144,8 @@
 \renewcommand\cite{\parencite}
 \newcommand\citet{\textcite}
 \setlength\bibitemsep{1em}
+
+
 \addbibresource{main.bib}
 
 \crefformat{section}{Section~#2#1#3}
