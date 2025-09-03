@@ -12,7 +12,7 @@ Following these core metrics, we investigate behavioural outcomes including quit
 
 \subsection*{Overall Changes in Readiness Rulers}
 
-\Cref{table:mibot_ruler_summary} summarizes the mean (and standard deviation) of each readiness ruler before the conversation, immediately afterwards, and one week later. The table includes the change between the pre-conversation metric and one week later ($\Delta$). The Wilcoxon signed-rank test was applied to assess the significance of the change. Participants' confidence increased markedly from a baseline mean of 2.8 to 4.5 one week later ($\Delta=1.66$, $p<10^{-9}$). This represents a $\sim$59\% relative improvement and constitutes our primary outcome measure, aligning with MI theory that confidence (self-efficacy) is a key predictor of behaviour change \citep{Gwaltney2009-wj,Abar2013}. Importance also increased, albeit more modestly ($\Delta=0.5$, $p<0.005$), while readiness exhibited a small, non-significant change ($\Delta=0.23$, $p=0.22$).
+\Cref{table:mibot_ruler_summary} summarizes the mean (and standard deviation) of each readiness ruler before the conversation, immediately afterwards, and one week later. The table includes the change between the pre-conversation metric and one week later ($\Delta$). The Wilcoxon signed-rank test was applied to assess the significance of the change. Participants' confidence increased markedly from a baseline mean of 2.8 to 4.5 one week later ($\Delta=1.66, p<10^{-9}$). This represents a $\sim$59\% relative improvement and constitutes our primary outcome measure, aligning with MI theory that confidence (self-efficacy) is a key predictor of behaviour change \citep{Gwaltney2009-wj,Abar2013}. Importance also increased, albeit more modestly ($\Delta=0.5, p<0.005$), while readiness exhibited a small, non-significant change $(\Delta=0.23, p=0.22)$.
 
 \begin{table}[ht!]
   \centering
@@ -298,7 +298,7 @@ The poor performance on some questions may be due to the chatbot's lack of emoti
 \section{Comparing Fully Generative MIBot v6.3 With Partially Scripted MIBot v5.2}
 \label{sec:comparison-v52}
 
-To contextualize the performance of our fully generative approach, we compare MIBot v6.3A with its predecessor, MIBot v5.2, a hybrid system that combined scripted questions with LLM-generated reflections \citep{brown2023mi}. MIBot v5.2, employed a hybrid approach using scripted open-ended questions followed by GPT-2 XL-generated MI-style reflections based on participants' responses to the questions.
+To contextualize the performance of our fully generative approach, we compare MIBot v6.3A with its predecessor, MIBot v5.2, a hybrid system that combined scripted questions with LLM-generated reflections \citep{brown2023mi}. MIBot v5.2 employed a hybrid approach using scripted open-ended questions followed by GPT-2 XL-generated MI-style reflections based on participants' responses to the questions.
 
 \subsection*{Readiness Ruler Comparisons}
 \begin{figure}[htbp]
@@ -383,7 +383,7 @@ The fully generative MIBot v6.3A chatbot scored higher on CARE, the measure of p
 \section{AutoMISC Analysis}
 \label{sec:mi-adherence}
 
-To evaluate the chatbot's adherence to MI principles, we analysed counsellor and client utterances from the feasibility study transcripts (\cref{ch:feasibility}) using AutoMISC, an automated annotation system originally described in \citet{mahmood-etal-2025-fully}\footnote{A comprehensive description of the AutoMISC system by \citet{ali2025automated} is forthcoming}.
+To evaluate the chatbot's adherence to MI principles, we analysed counsellor and client utterances from the feasibility study transcripts (Chapter 4) using AutoMISC, an automated annotation system originally described in \citet{mahmood-etal-2025-fully}\footnote{A comprehensive description of the AutoMISC system by \citet{ali2025automated} is forthcoming}.
 The system assigns behavioural codes to each utterance: counsellor utterances are classified as MI-Consistent (MICO), MI-Inconsistent (MIIN), Reflection (R), Question (Q), or Other (O), while client utterances are categorized as change talk (C), sustain talk (S), or neutral (N). Following annotation of all utterances, we computed per-transcript summary metrics to quantify MI adherence. These comprise:
 
 \begin{itemize}
@@ -581,7 +581,7 @@ Longer conversations correlated with better outcomes ($r=0.20$ for confidence ch
 
 \subsection*{Qualitative Thematic Analysis}
 
-To understand the qualitative aspects of the conversations, a thematic analysis was performed on the full corpus of transcripts. The analysis was conducted by two researchers who independently reviewed the transcripts to identify recurring patterns and themes. They then met to compare their findings, discuss discrepancies, and collaboratively develop a final set of themes that characterized successful therapeutic engagement. This process revealed four recurring patterns:
+To understand the qualitative aspects of the conversations, a thematic analysis was performed on the full corpus of transcripts. The analysis was conducted by two researchers who independently reviewed the transcripts to identify recurring patterns and themes. They then met to compare their findings, discuss discrepancies, and collaboratively develop a final set of themes that characterized successful therapeutic engagement. This process revealed three recurring patterns:
 
 \subsubsection*{Stress and Coping Narratives}
 
@@ -635,17 +635,17 @@ Another notable success involved a 58-year-old with 40 years of smoking history 
 
 Not all participants benefited. Analysis of the 21 participants whose confidence decreased revealed three patterns:
 
-\paragraph{Mandated Participation}
+\paragraph{Mandated Participation:}
 Some participants appeared to engage solely for compensation, providing minimal responses and showing no genuine interest in change. These conversations averaged just 42 utterances, with client responses typically under 10 words.
 
-\paragraph{Enjoyment-Focused Smokers}
+\paragraph{Enjoyment-Focused Smokers:}
 A subset strongly identified as ``happy smokers'' who enjoyed smoking without ambivalence. MIBot's attempts to explore motivation sometimes paradoxically reinforced their commitment to smoking:
 
 \begin{quote}
 \textit{``Talking about it just reminded me how much I actually enjoy smoking. I don't want to quit, and this conversation made that clearer.''}
 \end{quote}
 
-\paragraph{Technical Therapeutic Mismatches}
+\paragraph{Technical Therapeutic Mismatches:}
 In rare cases, MIBot misread the participant's needs, such as pushing for behaviour change when emotional support was needed, or vice versa. These mismatches highlight the challenges of fully automated therapeutic engagement without human oversight.
 
 \section{User Experience and Feedback}
@@ -751,7 +751,7 @@ Several limitations constrain the generalisability of our findings:
 \begin{itemize}
 \item Prolific recruitment may select for digitally literate, research-oriented participants
 \item Exclusion of high-confidence smokers limits understanding of broader applicability
-\item Monetary compensation ($\pounds$12) may attract non-genuine participants
+\item Monetary compensation (£6.50) may attract non-genuine participants
 \item English-only implementation excludes non-English speakers
 \end{itemize}
 
@@ -776,7 +776,7 @@ While the results are promising, the study also revealed limitations in building
 The research detailed in \Cref{ch:mibot,ch:feasibility,ch:mibot-eval} is the result of a significant, long-term collaboration. The human feasibility study, in particular, was a major team undertaking and involved all co-authors of the paper by \citet{mahmood-etal-2025-fully}. To provide a clear overview of each individual's role in the work presented in this thesis, this section outlines specific attributions.
 
 \begin{itemize}
-\item \textbf{Soliman Ali:} As the second author on the work submitted by \citet{mahmood-etal-2025-fully}, Ali was instrumental in designing and implementing the modular observer agent framework that serves as the foundation for the MIBot system (see \Cref{sec:observers}). He also contributed to the initial versions of the AutoMISC system \citep{ali2025thesis,ali2025automated}, which was developed concurrently with MIBot. AutoMISC not only helped refine MIBot through an iterative process but was also used by the author of this thesis to validate the installation of attributes in synthetic smokers (see \Cref{ch:synthetic-smoker-preliminary,ch:synthetic-doppelganger}).
+\item \textbf{Soliman Ali:} As the second author on the work submitted by \citet{mahmood-etal-2025-fully}, Ali was instrumental in designing and implementing the modular observer agent framework that serves as the foundation for the MIBot system (see \Cref{sec:observers}). He also contributed to the initial versions of the AutoMISC system \citep{ali2025thesis,ali2025automated}, which was developed concurrently with MIBot. AutoMISC not only helped refine MIBot through an iterative process but was also used by the author of this thesis to validate the installation of attributes in synthetic smokers (see \Cref{ch:synthetic-smoker-preliminary,ch:synthetic-doppelgänger}).
 
 \item \textbf{Michelle Collins:} Collins played a key role in evolving the prompt used by MIBot and provided valuable feedback by testing various intermediate system versions during its development.
 
