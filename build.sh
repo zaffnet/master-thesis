@@ -40,6 +40,9 @@ if [ "$CLEAN" = true ]; then
           *.bbl \
           *.bcf \
           *.blg \
+          *.idx \
+          *.ilg \
+          *.ind \
           *.lof \
           *.log \
           *.lot \
@@ -53,20 +56,20 @@ fi
 # Build the project
 if [ "$USE_DOCKER" = true ]; then
     echo "Running LaTeX compilation with Docker ${TEXLIVE_VERSION}..."
-    docker run --rm -v "$(pwd)":/workspace -w /workspace $TEXLIVE_VERSION bash -c "
-        pdflatex ${MAIN_TEX_FILE}.tex
-        biber ${MAIN_TEX_FILE}
-        pdflatex ${MAIN_TEX_FILE}.tex
-        makeindex ${MAIN_TEX_FILE}
-        pdflatex ${MAIN_TEX_FILE}.tex
+    docker run --rm -v "$(pwd)":/workspace -w /workspace ${TEXLIVE_VERSION} bash -c "
+        pdflatex main.tex
+        biber main
+        pdflatex main.tex
+        makeindex main
+        pdflatex main.tex
     "
 else
     echo "Running LaTeX compilation locally..."
-    pdflatex ${MAIN_TEX_FILE}.tex
-    biber ${MAIN_TEX_FILE}
-    pdflatex ${MAIN_TEX_FILE}.tex
-    makeindex ${MAIN_TEX_FILE}
-    pdflatex ${MAIN_TEX_FILE}.tex
+        pdflatex main.tex
+        biber main
+        pdflatex main.tex
+        makeindex main
+        pdflatex main.tex
 fi
 
 if [ $? -eq 0 ]; then
