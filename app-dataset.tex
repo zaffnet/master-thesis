@@ -1,0 +1,131 @@
+\chapter{Overview of the Dataset}
+\label{appendix:dataset_overview}
+
+
+We are releasing the complete data from our feasibility study. Our dataset consists of a CSV file (\texttt{data.csv}), where each row corresponds to a unique participant. A total of 106 participants took part in the study. We also provide conversation transcripts between MIBot and participants in another CSV file (\texttt{conversations.csv}). All data provided by participants has been de-identified using the \texttt{spaCy}\footnote{\url{https://spacy.io/universe/project/scrubadub_spacy}} (version 3.8.4)
+and \texttt{scrubadub}\footnote{\url{https://github.com/LeapBeyond/scrubadub}} (version 2.0.0) Python libraries. Further, the participants self-reported all the columns in the dataset (except for AutoMISC annotations). This dataset is licensed under CC BY-SA 4.0\footnote{To view a copy of this license, visit \url{https://creativecommons.org/licenses/by-sa/4.0/}}.
+
+% \vspace{2em}
+% {\small
+\begin{longtable}{l p{10cm}}
+\caption{Description of the Columns in \texttt{data.csv}}\\
+
+\toprule
+\textbf{Column Name} & \textbf{Description}\\
+\midrule
+\endfirsthead
+
+\toprule
+\textbf{Column Name (contd.)} & \textbf{Description (contd.)}\\
+\midrule
+\endhead
+
+
+\endfoot
+
+\bottomrule
+\endlastfoot
+
+\multicolumn{2}{l}{\textbf{Basic}} \\
+\texttt{ParticipantId} & Unique Participant ids assigned in study.\\
+\midrule
+
+
+\multicolumn{2}{l}{\textbf{Pre-conversation Survey on Heaviness of Smoking}} \\
+\texttt{DailyNum} & How many cigarettes do you typically smoke per day?\\ 
+\texttt{FirstCig} & How soon after you wake up do you smoke your first cigarette?\\
+\texttt{HeavinessOfSmokingIndex} & Heaviness of Smoking Index \citep{heatherton1989measuring}\\
+\midrule
+
+\multicolumn{2}{l}{\textbf{Pre-conversation Survey on Quit Attempts a Week Prior}} \\
+\texttt{PreConvoQuitAttempt} & Have you made any quit attempts (meaning consciously not smoking for a specific period of time greater than 24 hours) during the previous week?\\
+\texttt{PreConvoNumQuitAttempts} & How many attempts to quit did you make?\\
+\midrule
+
+
+\multicolumn{2}{l}{\textbf{Pre-conversation Readiness Rulers}} \\
+\texttt{PreRulerImportance} & On a scale from 0 to 10, how important is it to you right now to stop smoking?\\
+\texttt{PreRulerConfidence} & On a scale from 0 to 10, how confident are you that you would succeed at stopping smoking if you start now?\\
+\texttt{PreRulerReadiness} & On a scale from 0 to 10, how ready are you to start making a change at stopping smoking right now?\\
+\midrule
+
+\multicolumn{2}{l}{\textbf{Post-conversation Readiness Rulers}} \\
+\texttt{PostRulerImportance} & On a scale from 0 to 10, how important is it to you right now to stop smoking?\\
+\texttt{PostRulerConfidence} & On a scale from 0 to 10, how confident are you that you would succeed at stopping smoking if you start now?\\
+\texttt{PostRulerReadiness} & On a scale from 0 to 10, how ready are you to start making a change at stopping smoking right now?\\
+\midrule
+
+\multicolumn{2}{l}{\textbf{Post-conversation Feedback}} \\
+\texttt{FeedbackQ1} & What are three words that you would use to describe the chatbot?\\
+\texttt{FeedbackQ2} & What would you change about the conversation?\\
+\texttt{FeedbackQ3} & Did the conversation help you realize anything about your smoking behavior? Why or why not?\\
+\texttt{LikedBot} & Whether the participant liked \sysname{}, based on responses to \texttt{Feedback\-Q1-3}.\\
+\texttt{FoundBotHelpful} & Whether the participant found \sysname{} helpful, based on responses to \texttt{Feedback\-Q1-3}.\\
+\midrule
+
+\multicolumn{2}{l}{\textbf{CARE Survey}} \\
+\texttt{CAREQ1} & \multirow{3}{*}{See Section~\ref{appendix:care_questionnaire} for CARE questions.}\\
+... & \\
+\texttt{CAREQ10} & \\
+\midrule
+
+
+
+\multicolumn{2}{l}{\textbf{Week Later Readiness Rulers}} \\
+\texttt{WeekLaterRulerImportance} & On a scale from 0 to 10, how important is it to you right now to stop smoking?\\
+\texttt{WeekLaterRulerConfidence} & On a scale from 0 to 10, how confident are you that you would succeed at stopping smoking if you start now?\\
+\texttt{WeekLaterRulerReadiness} & On a scale from 0 to 10, how ready are you to start making a change at stopping smoking right now?\\
+\midrule
+
+\multicolumn{2}{l}{\textbf{Week Later Quit Attempts}} \\
+\texttt{WeekLaterQuitAttempt} & Have you made any quit attempts (meaning consciously not smoking for a specific period of time greater than 24 hours) during the previous week?\\
+\texttt{WeekLaterNumQuitAttempts} & How many attempts to quit did you make?\\
+\midrule
+
+\multicolumn{2}{l}{\textbf{AutoMISC Labels}} \\
+\texttt{AutoMISC\_MICO} & \multirow{11}{*}{See Section~\ref{sec:automisc} for AutoMISC labels.}\\
+\texttt{AutoMISC\_MIIN} &\\
+\texttt{AutoMISC\_R} &\\
+\texttt{AutoMISC\_Q} &\\
+\texttt{AutoMISC\_Other} &\\
+\texttt{AutoMISC\_C} &\\
+\texttt{AutoMISC\_S} &\\
+\texttt{AutoMISC\_N} &\\
+\texttt{AutoMISC\_\%MIC} &\\
+\texttt{AutoMISC\_R:Q} &\\
+\texttt{AutoMISC\_C:S} &\\
+
+
+
+
+% \caption{(Continued)}
+
+\label{tab:datadesc}
+\end{longtable}
+
+
+
+\vspace{1em}
+
+
+\begin{table}[ht]
+    \centering
+    % \small
+    \renewcommand{\arraystretch}{1.2}
+    \begin{tabular}{l p{10cm}}
+        \toprule
+        \textbf{Column Name} & \textbf{Description} \\
+        \midrule
+        \texttt{ParticipantID} & Unique Participant ids we assign. \\
+        \texttt{Speaker} & Indicates whether the speaker is the \texttt{counsellor} (i.e., \sysname) or the \texttt{client}. \\
+        \texttt{Volley\#} & Serial number of the volley in the transcript. ``A volley is an uninterrupted utterance or sequence of utterances by one party, before another party speaks.'' \citep{MISC} \\
+        \texttt{Utterance\#} & Serial number of the utterance in the transcript. \\
+        \texttt{CumulativeVolley} & Represents the volley up to utterance \# \texttt{Utterance\#}. The \texttt{CumulativeVolley} corresponding to the last utterance of the volley is the complete volley, which can be used to generate the transcript. \\
+        \texttt{Utterance} & ``An utterance is a complete thought, or a thought unit.'' \citep{MISC} \\
+        \texttt{AutoMISCLabel} & Utterance label according to AutoMISC. It can be one of the following: \texttt{R}, \texttt{Q}, \texttt{Other}, \texttt{C}, \texttt{N}, ... (See Section~\ref{sec:automisc}.) \\
+        \texttt{AutoMISCExplanation} & Explanation provided by the AutoMISC LLM as part of its chain-of-thought. \\
+        \bottomrule
+    \end{tabular}
+    \caption{Description of the Columns in \texttt{conversations.csv}}
+    \label{tab:conversations_description}
+\end{table}
