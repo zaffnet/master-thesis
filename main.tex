@@ -2,6 +2,11 @@
 % !BIB TS-program = biber
 % !TeX root = main.tex
 \documentclass{ut-thesis}
+\usepackage{alphalph}
+\usepackage{etoolbox}
+\appto\appendix{%
+  \renewcommand\thechapter{\AlphAlph{\value{chapter}}}%
+}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{amsmath}
@@ -261,6 +266,36 @@
     \input{app-dataset}
     \backmatter
     
+    \appendix
+    \input{app-mibot-prompts}
+    \input{app-observer-prompts}
+    \input{app-deployment-artifacts}
+    \input{app-virtual-smoker-transcript}
+    \input{app-architecture-diagrams}
+    \input{app-care-survey}
+    \input{app-participant-feedback}
+    \input{app-automisc-manual}
+    \input{app-statistical-outputs}
+    \input{app-case-study-transcripts}
+    \input{app-recruitment-materials}
+    \input{app-consent-form}
+    \input{app-survey-instruments}
+    \input{app-ethics-approval}
+    \input{app-verbosity-prompts}
+    \input{app-resistance-personas}
+    \input{app-baseline-smoker-transcript}
+    \input{app-cot-examples}
+    \input{app-doppelganger-prompts}
+    \input{app-doppelganger-transcript}
+    \input{app-incremental-installation-data}
+    \input{app-sorted-attributes-list}
+    \input{app-glossary}
+    \input{app-research-questions}
+    \input{app-lit-summary}
+    \input{app-mi-timeline}
+    \input{app-future-work}
+    \input{app-publications}
+
     \addcontentsline{toc}{chapter}{Bibliography}
     \printbibliography
 

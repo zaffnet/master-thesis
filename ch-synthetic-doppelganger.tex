@@ -45,7 +45,7 @@ If an LLM-based synthetic smoker (a doppelgänger) is given the pre-conversation
 
 In other words, the doppelgänger was provided with the participant's actual pre-conversation readiness rulers (importance, confidence, and readiness) and the full transcript of their conversation with MIBot. After processing this information, the doppelgänger was asked to report its post-conversation readiness rulers.
 
-The doppelgänger was given the following system prompt:
+The doppelgänger was given the system prompt detailed in Appendix~\ref{app:doppelganger-prompts}. An excerpt is shown below:
 
 \includesystemprompt{Conversational Impact Modelling Prompt}{
 You are a participant in a study who is trying to quit smoking.\\
@@ -256,7 +256,7 @@ You talk about changing your smoking behaviour 46\% of the time.
 }
 
 
-Before starting our series of experiments, we sorted the set of all installable attributes based on their correlation with \%CT. We hypothesized that a high correlation between an attribute and \%CT would mean that the attribute has a bigger impact on the client's behavioural language. Let us call this sorted list of attributes $\mathbf{A'}$.
+Before starting our series of experiments, we sorted the set of all installable attributes based on their correlation with \%CT. We hypothesized that a high correlation between an attribute and \%CT would mean that the attribute has a bigger impact on the client's behavioural language. Let us call this sorted list of attributes $\mathbf{A'}$ (see Appendix~\ref{app:sorted-attributes-list} for the full list).
 
 $$
 \begin{aligned}
@@ -324,13 +324,13 @@ For each experiment with a set of attributes, we calculated the Spearman's corre
 
 
 \subsection{Results}
-The results of the incremental attribute installation are summarized in \Cref{tab:doppelgänger-correlations}. The fidelity, measured as the Spearman's rank correlation between the \%CT of humans and their doppelgängers, evolved as more attributes were added. Initially, adding attributes like pre-conversation importance and readiness led to a gradual increase in correlation. However, the process was not strictly monotonic; for instance, adding `pre-conversation confidence' in experiment 5 unexpectedly lowered the correlation from 0.40 to 0.22.
+The results of the incremental attribute installation are summarized in \Cref{tab:doppelgänger-correlations} (see Appendix~\ref{app:incremental-installation-data} for the full data). The fidelity, measured as the Spearman's rank correlation between the \%CT of humans and their doppelgängers, evolved as more attributes were added. Initially, adding attributes like pre-conversation importance and readiness led to a gradual increase in correlation. However, the process was not strictly monotonic; for instance, adding `pre-conversation confidence' in experiment 5 unexpectedly lowered the correlation from 0.40 to 0.22.
 
 The most significant finding emerged in experiment 6, where explicitly installing the human's \%CT value as a numerical instruction resulted in a strong and statistically significant correlation of $r_s = 0.57$ ($p < 0.0001$). This suggests an LLM-based doppelgänger can directly operationalize a behavioural target when provided, modulating its language to match a specified proportion of change versus sustain talk.
 
 However, despite achieving a strong rank correlation, a closer look at the population-level statistics reveals a systematic bias. As shown in the histograms in \Cref{fig:cf_comparison}, the distribution of \%CT for doppelgängers is shifted significantly higher than for humans (mean 0.76 vs. 0.59). The doppelgänger distribution is also more compressed and left-skewed, indicating a lower variance and a strong tendency to produce high levels of change talk, regardless of the human baseline.
 
-This discrepancy is further visualized in the scatter plot in \Cref{fig:cf_human_vs_doppel}. While the points follow a positive trend that confirms the correlation, the majority lie above the identity line ($y=x$). This visually demonstrates that doppelgängers consistently overproduced change talk relative to their human counterparts. Even when a human participant had a low \%CT (e.g., below 0.4), their doppelgänger often produced a \%CT above 0.6.
+This discrepancy is further visualized in the scatter plot in \Cref{fig:cf_human_vs_doppel}. While the points follow a positive trend that confirms the correlation, the majority lie above the identity line ($y=x$). This visually demonstrates that doppelgängers consistently overproduced change talk relative to their human counterparts. Even when a human participant had a low \%CT (e.g., below 0.4), their doppelgänger often produced a \%CT above 0.6 (see Appendix~\ref{app:doppelganger-transcript} for an example transcript).
 
 Finally, we investigated the system's uniform fidelity by stratifying the results by sex, as detailed in \Cref{tab:doppelgänger-fidelity-sex}. While the mean \%CT for both human males and females was nearly identical ($\sim$59\%), the fidelity of their doppelgängers differed. The correlation for males ($r_s = 0.65$) was notably stronger than for females ($r_s = 0.52$), indicating a performance bias. This lack of uniform fidelity suggests the model may simulate one demographic group more accurately than another, an issue requiring further investigation to ensure representative synthetic populations. Other observations include:
 
@@ -448,7 +448,7 @@ To assess the utility of synthetic smokers in testing and training applications,
     \begin{itemize}
         \item \textbf{Good MI Counsellor (MIBot v6.3A):} A high-quality, MI-adherent chatbot.
         
-        \item \textbf{Bad (Confrontational) Counsellor:} An LLM prompted to be directive, judgmental, and confrontational (e.g., ``Giving advice without being asked,'' ``Trying to persuade them to quit...'').
+        \item \textbf{Bad (Confrontational) Counsellor:} An LLM prompted to be directive, judgmental, and confrontational (see Appendix~\ref{app:doppelganger-prompts} for the full prompt).
     \end{itemize}
 \end{enumerate}
 
