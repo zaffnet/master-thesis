@@ -19,11 +19,13 @@
 \usepackage{tabularx}
 \usepackage{multirow}
 \usepackage{makecell}
+\usepackage{longtable}
 \usepackage[para,online,flushleft]{threeparttable}
 \usepackage{float}
 \usepackage{caption}
 \usepackage{subcaption}
 \usepackage{enumitem}
+\usepackage{colortbl}
 \usepackage{algorithm}
 \usepackage{algpseudocode}
 \usepackage{fancyvrb}
@@ -33,6 +35,7 @@
 \usepackage{scrextend}
 \usepackage{textcase}
 \usepackage{siunitx}
+\usepackage[toc,page,header]{appendix}
 \usepackage{lipsum}
 \usepackage[english]{babel}
 \usepackage{csquotes}
@@ -49,6 +52,15 @@
             defernumbers=true]{biblatex}
 \usepackage[colorlinks=true, linkcolor=cyan, citecolor=cyan, urlcolor=cyan]{hyperref}
 \usepackage{cleveref}
+
+\usepackage{tgtermes}
+\usepackage{xspace}    
+
+\newcommand{\sysname}{{\textit{\textmd{\fontfamily{qtm}\selectfont MIBot}}}\xspace}
+
+\newcommand{\sysnamewithv}{{\textit{\textmd{\fontfamily{qtm}\selectfont MIBot v6.3A}}}\xspace}
+
+\newcommand{\oldsysname}{{\textit{\textmd{\fontfamily{qtm}\selectfont MIBot v5.2}}}\xspace}
 
 
 \DeclareNameAlias{sortname}{given-family}
@@ -76,6 +88,7 @@
   \ifthenelse{\value{listcount}<\value{liststop}}
     {\addcomma\space}
     {}%
+    \usebibmacro{name:andothers}%
 }
 \DeclareFieldFormat[article]{journaltitle}{\mkbibemph{#1}}
 \DeclareFieldFormat{year}{\textbf{#1}}
@@ -111,7 +124,7 @@
       {\href{\thefield{url}}{#1}}}% Only URL exists
     {\href{https://doi.org/\thefield{doi}}{#1}}}
 
-\DeclareFieldFormat[article,book,booklet,conference,inbook,incollection,inproceedings,manual,mastersthesis,misc,phdthesis,proceedings,techreport,unpublished]{title}{%
+\DeclareFieldFormat[article,book,booklet,conference,inbook,incollection,inproceedings,manual,mastersthesis,misc,phdthesis,thesis,proceedings,techreport,unpublished]{title}{%
   \iffieldundef{doi}
     {\iffieldundef{url}
       {#1}%
@@ -240,6 +253,13 @@
         \input{ch-synthetic-doppelganger}
     
         \input{ch-conclusion}
+
+    \clearpage
+    \appendix
+    \addcontentsline{toc}{chapter}{Appendix}
+    \input{app-mibot-history}
+    \input{app-dataset}
+    \backmatter
     
     \addcontentsline{toc}{chapter}{Bibliography}
     \printbibliography
