@@ -51,7 +51,7 @@ This process led to several key prompt revisions:
 This iterative process continued until virtual and role-played conversations consistently met MI quality expectations as determined by an informal consensus of the team.
 
 
-\Cref{tab:initial-system-prompt,tab:final-system-prompt} showcase how the prompt evolved from a simple instruction about the LLM's role to a comprehensive guideline addressing issues identified in the chatbot's performance.
+\Cref{tab:initial-system-prompt,tab:final-system-prompt} showcase how the prompt evolved from a simple instruction about the LLM's role to a comprehensive guideline addressing issues identified in the chatbot's performance. The full prompts are provided in Appendix~\ref{app:mibot-prompts}.
 
 
 \clearpage
@@ -148,7 +148,7 @@ This iterative process continued until virtual and role-played conversations con
 
 \section{Observers}
 \label{sec:observers}
-To enhance safety in the deployment of MIBot, the core counsellor agent was augmented with a set of \textit{observer agents}, independent instances of GPT-4o prompted to monitor specific aspects of the conversation in real time. The output of these agents is used to intervene when necessary. Each observer was specialized through prompt engineering to perform a specific task in real time.
+To enhance safety in the deployment of MIBot, the core counsellor agent was augmented with a set of \textit{observer agents}, independent instances of GPT-4o prompted to monitor specific aspects of the conversation in real time. The output of these agents is used to intervene when necessary. Each observer was specialized through prompt engineering to perform a specific task in real time (see Appendix~\ref{app:observer-prompts} for the full prompts).
 
 \subsection{Moderator}
 The \textit{Moderator} evaluates the counsellor's most recent utterance for potential harm before it is displayed to the client. While OpenAI's internal safety systems mitigate many risks, they do not address all possible counterproductive counselling behaviours, such as inadvertently reinforcing \emph{sustain talk} or suggesting self-harm. The Moderator was deliberately configured for high sensitivity, accepting a higher false positive rate to reduce the risk of harmful or counterproductive content. If a counsellor's utterance is flagged, it is regenerated and re-evaluated, with up to five regeneration attempts permitted. In all study conversations, an acceptable utterance was produced within four attempts, and no session failed to pass moderation.
@@ -199,7 +199,7 @@ A single \texttt{Sanic} app can handle multiple clients at once by creating repl
 
 For reproducibility and ease of deployment, the microservice is packaged in a Docker container. Containerization provides several advantages for the development, testing, and deployment of MIBot, including environment consistency, portability, isolation, scalability, faster deployment and rollbacks, simplified CI/CD integration, and reproducibility, as discussed in detail by Sloane~\citep{sloane2025containerization}. An overview of the containerized application is presented in \Cref{fig:containerization}.
 
-The MIBot container image is defined by a \texttt{Dockerfile} specifying the base Python runtime, required dependencies, the source code, and main entry point (\emph{viz.} \texttt{app.py}). This image is stored in Amazon Elastic Container Registry (ECR). The container registry stores all the images built by the CI/CD pipeline, but only the image with the \texttt{production} tag is used for deployment.
+The MIBot container image is defined by a \texttt{Dockerfile} (see Appendix~\ref{app:deployment-artifacts}) specifying the base Python runtime, required dependencies, the source code, and main entry point (\emph{viz.} \texttt{app.py}). This image is stored in Amazon Elastic Container Registry (ECR). The container registry stores all the images built by the CI/CD pipeline, but only the image with the \texttt{production} tag is used for deployment.
 
 \section{Deploying MIBot to AWS}
 \label{sec:mibot-deployment}

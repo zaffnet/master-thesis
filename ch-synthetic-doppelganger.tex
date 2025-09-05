@@ -45,7 +45,7 @@ If an LLM-based synthetic smoker (a doppelgänger) is given the pre-conversation
 
 In other words, the doppelgänger was provided with the participant's actual pre-conversation readiness rulers (importance, confidence, and readiness) and the full transcript of their conversation with MIBot. After processing this information, the doppelgänger was asked to report its post-conversation readiness rulers.
 
-The doppelgänger was given the following system prompt:
+The doppelgänger was given the system prompt detailed in Appendix~\ref{app:doppelganger-prompts}. An excerpt is shown below:
 
 \includesystemprompt{Conversational Impact Modelling Prompt}{
 You are a participant in a study who is trying to quit smoking.\\
@@ -330,7 +330,7 @@ The most significant finding emerged in experiment 6, where explicitly installin
 
 However, despite achieving a strong rank correlation, a closer look at the population-level statistics reveals a systematic bias. As shown in the histograms in \Cref{fig:cf_comparison}, the distribution of \%CT for doppelgängers is shifted significantly higher than for humans (mean 0.76 vs. 0.59). The doppelgänger distribution is also more compressed and left-skewed, indicating a lower variance and a strong tendency to produce high levels of change talk, regardless of the human baseline.
 
-This discrepancy is further visualized in the scatter plot in \Cref{fig:cf_human_vs_doppel}. While the points follow a positive trend that confirms the correlation, the majority lie above the identity line ($y=x$). This visually demonstrates that doppelgängers consistently overproduced change talk relative to their human counterparts. Even when a human participant had a low \%CT (e.g., below 0.4), their doppelgänger often produced a \%CT above 0.6.
+This discrepancy is further visualized in the scatter plot in \Cref{fig:cf_human_vs_doppel}. While the points follow a positive trend that confirms the correlation, the majority lie above the identity line ($y=x$). This visually demonstrates that doppelgängers consistently overproduced change talk relative to their human counterparts. Even when a human participant had a low \%CT (e.g., below 0.4), their doppelgänger often produced a \%CT above 0.6 (see Appendix~\ref{app:doppelganger-transcript} for an example transcript).
 
 Finally, we investigated the system's uniform fidelity by stratifying the results by sex, as detailed in \Cref{tab:doppelgänger-fidelity-sex}. While the mean \%CT for both human males and females was nearly identical ($\sim$59\%), the fidelity of their doppelgängers differed. The correlation for males ($r_s = 0.65$) was notably stronger than for females ($r_s = 0.52$), indicating a performance bias. This lack of uniform fidelity suggests the model may simulate one demographic group more accurately than another, an issue requiring further investigation to ensure representative synthetic populations. Other observations include:
 
@@ -448,7 +448,7 @@ To assess the utility of synthetic smokers in testing and training applications,
     \begin{itemize}
         \item \textbf{Good MI Counsellor (MIBot v6.3A):} A high-quality, MI-adherent chatbot.
         
-        \item \textbf{Bad (Confrontational) Counsellor:} An LLM prompted to be directive, judgmental, and confrontational (e.g., ``Giving advice without being asked,'' ``Trying to persuade them to quit...'').
+        \item \textbf{Bad (Confrontational) Counsellor:} An LLM prompted to be directive, judgmental, and confrontational (see Appendix~\ref{app:doppelganger-prompts} for the full prompt).
     \end{itemize}
 \end{enumerate}
 

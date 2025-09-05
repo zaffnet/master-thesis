@@ -135,7 +135,7 @@ These observations highlighted the necessity of explicitly controlling these att
 To address the issue of excessive verbosity, we undertook a prompt engineering effort to constrain the synthetic smoker's utterance length and style.
 
 \subsubsection{Methodology}
-We modified the prompt to encourage a more natural, concise conversational style. Key additions to the prompt included:
+We modified the prompt to encourage a more natural, concise conversational style (see Appendix~\ref{app:verbosity-prompts} for the full prompts). Key additions to the prompt included:
 
 \begin{itemize}
     \item Stylistic Guidance: Instructions such as ``Imagine you're texting a friend. Keep it casual...'' and encouraging the use of emojis.
@@ -185,7 +185,7 @@ Interestingly, we observed that the counsellor bot reciprocated the client's ver
 Addressing the baseline smoker's high agreeableness was crucial, as addressing resistance to change is a crucial MI skill.
 
 \subsubsection{Methodology}
-We hypothesized that resistance could be installed by providing the LLM with detailed backstories emphasizing different motivations and experiences. We created two distinct personas:
+We hypothesized that resistance could be installed by providing the LLM with detailed backstories emphasizing different motivations and experiences (the full backstories are provided in Appendix~\ref{app:resistance-personas}). We created two distinct personas:
 
 \begin{itemize}
     \item High Resistance Persona: The backstory emphasized severe life stressors, repeated failed quit attempts, skepticism towards therapy, and a strong belief that it was not the right time to quit.
