@@ -120,7 +120,7 @@ We began with a minimal prompt instructing an LLM (initially GPT-4 Turbo) to ado
 Since we did not install any attributes to this baseline, we were mainly looking for how it conversed with MIBot and whether it had some default attributes. We generated a small number ($N=5$) of conversations between this baseline synthetic smoker and an early version of the MIBot counsellor. The validation method at this stage was qualitative human inspection by the research team, including expert MI clinicians.
 
 \subsubsection{Observations}
-The transcript of the conversation between MIBot and the baseline synthetic smoker revealed two significant issues that made the synthetic smoker sound ``unnatural'' or atypical of a human smoker:
+The transcript of the conversation between MIBot and the baseline synthetic smoker revealed two significant issues that made the synthetic smoker sound ``unnatural'' or atypical of a human smoker (see Appendix~\ref{app:baseline-smoker-transcript} for an example transcript):
 
 \begin{enumerate}
     \item Excessive Verbosity: The synthetic smoker tended to produce long, elaborate responses. This felt unnatural and resembled written prose more than spontaneous dialogue.
@@ -192,7 +192,7 @@ We hypothesized that resistance could be installed by providing the LLM with det
     \item Low Resistance Persona: The backstory described recent health concerns prompting contemplation, and an open, albeit skeptical, attitude towards change.
 \end{itemize}
 
-Using modified prompts and GPT-4 Turbo (temperature=1.0), we generated conversations (N=10 per persona) between synthetic smokers and MIBot. We employed two distinct methods to validate the installation. We also prompted these synthetic smokers to fill the readiness rulers before, after, and a week after the conversation. We did so by prompting the synthetic smoker with the exact questions from the readiness rulers survey. Before reporting the numbers, we asked them to think and provide reasons for the numerical rating they chose before outputting the rating---a technique known as chain-of-thought prompting.
+Using modified prompts and GPT-4 Turbo (temperature=1.0), we generated conversations (N=10 per persona) between synthetic smokers and MIBot. We employed two distinct methods to validate the installation. We also prompted these synthetic smokers to fill the readiness rulers before, after, and a week after the conversation. We did so by prompting the synthetic smoker with the exact questions from the readiness rulers survey. Before reporting the numbers, we asked them to think and provide reasons for the numerical rating they chose before outputting the rating---a technique known as chain-of-thought prompting (see Appendix~\ref{app:cot-examples} for examples).
 
 \subsubsection{Validation}
 
