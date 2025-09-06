@@ -1,42 +1,43 @@
 \chapter{History of the MIBot Project}
+
 \label{app:mibot_version_list}
 
+\noindent The MIBot project represents a multi-year effort by our interdisciplinary team to develop a chatbot that delivers MI–style counselling for smoking cessation. The project began with simple scripted systems determined by natural language classifiers and evolved through partially generative responses into the present fully generative GPT-4o-based chatbot --- \sysnamewithv. From its inception, some of the project's core values have been close collaboration with clinician-scientists trained in MI, empirical evaluation (often with real human smokers), measurement of impact using validated clinical instruments (readiness rulers, CARE) and adoption of advancements in natural language processing (NLP). Each major version of MIBot reflects a step in this journey and has led to improvements in MIBot's conversational design, its MI skills (particularly, \textit{reflections}), and overall adherence to MI principles. Earlier iterations were primarily classifier-based and scripted. The more recent systems have employed transformer-based neural networks and LLMs to generate reflections. Most recently, our focus has been towards providing fully generative MI counselling using modern LLMs. 
 
-\noindent The MIBot project represents a multi-year effort by our interdisciplinary team to develop a chatbot that delivers MI–style counselling for smoking cessation. The project began with simple scripted systems determined by natural language classifiers and evolved through partially generative responses into the present fully generative GPT-4o-based chatbot --- \sysnamewithv. From its inception, some of the project's core values have been close collaboration with clinician-scientists trained in MI, empirical evaluation (often with real human smokers), measurement of impact using validated clinical instruments (readiness rulers, CARE) and adoption of advancements in natural language processing (NLP).
-
-\noindent Each major version of MIBot reflects a step in this journey and has led to improvements in MIBot's conversational design, its MI skills (particularly, \textit{reflections}), and overall adherence to MI principles. Earlier iterations were primarily classifier-based and scripted. The more recent systems have employed transformer-based neural networks and LLMs to generate reflections. Most recently, our focus has been towards providing fully generative MI counselling using modern LLMs. 
-
-The table below outlines the documented milestones of MIBot's iterative evolution.
+% The table below outlines the documented milestones of MIBot's iterative evolution.
 
 
 \begin{table}[!h]
 \small
 \centering
 \begin{tabular}{
-@{}p{0.10\textwidth}
-  p{0.45\textwidth}
-  p{0.20\textwidth}
-  p{0.15\textwidth}@{}}
+@{}m{0.13\textwidth}
+  m{0.45\textwidth}
+  m{0.20\textwidth}
+  m{0.12\textwidth}@{}}
 \toprule
 \textbf{Version} & \textbf{Distinguishing Features} & \textbf{Period of Experiment} & \textbf{Publication}\\
 \midrule
-\arrayrulecolor{gray!50} \\
-\textbf{Smokefreed} & Fully scripted MI dialogue. Used hand-crafted open ques\-tions and reflective responses. Responses were selected using NLP classifiers from fixed scripts. & 2018 to 2020 & \citet{almusharraf2018motivating,info:doi/10.2196/20251} \\
-\hline \\
-\textbf{MIBot v4.7} & Baseline version with no reflections. Delivered five scripted questions followed by simple acknowledgments (`Thank you''). Used to assess the added value of reflective content in MIBot. & July 26–Aug 2, 2022 & \citet{info:doi/10.2196/49132} \\
-\hline \\
-\textbf{MIBot v5.0} & First version with transformer-based reflection generation. Combined scripted, open-ended questions with model-generated MI reflections tailored to clients' responses. & Aug 12–19, 2022 & \citet{info:doi/10.2196/49132} \\
-\hline \\
-\textbf{MIBot v5.1} & Improved on v5.0 with a higher-quality reflection generation model. Same conversation structure, but responses were more accurate and MI-consistent. & Aug 16–23, 2022 & \citet{info:doi/10.2196/49132} \\
-\hline \\
-\textbf{MIBot v5.2} & Introduced adaptive follow-up prompts and branching logic. Expanded conversational flow based on clients' responses to open-ended questions. Most sophisticated hybrid scripted-generative version. & Nov 22–29, 2022 & \citet{info:doi/10.2196/49132} \\
-\hline \\
-\textbf{GPT-4 BLCR} & Prototype reflection generator only version using GPT-4 to generate Backward-Looking Complex Reflections (BLCRs). These links new clients' utterances to their prior statements. Tested offline for coherence and fidelity. & Oct 2023 & \citet{info:doi/10.2196/53778} \\
-\hline \\
-\textbf{MIBot v6.3A (fully generative)} &  
-Fully generative MI chatbot using a GPT-4o prompt and guided by observer agents (Section~\ref{sec:design}).
-& Nov 14-28, 2024 & Present work \\
-\hline \\
+\arrayrulecolor{gray!50}
+\textbf{Smokefreed} & Fully scripted MI dialogue. Used hand-crafted open ques\-tions and reflective responses. Responses were selected using NLP classifiers from fixed scripts. & 2018 to 2020 & \citet{Almusharraf_2019}\\
+\hline
+\textbf{MIBot v4.7} & Baseline version with no reflections. Delivered five scripted questions followed by simple acknowledgments (``Thank you''). Used to assess the added value of reflective content in MIBot. & July 26–Aug 2, 2022 & \citet{brown2023mi} \\
+\hline
+\textbf{MIBot v5.0} & First version with transformer-based reflection generation. Combined scripted, open-ended questions with model-generated MI reflections to clients' responses. & Aug 12–19, 2022 & \citet{brown2023mi} \\
+\hline
+\textbf{MIBot v5.1} & Improved on v5.0 with a higher-quality reflection generation model. Same conversation structure, but responses were more accurate and MI-consistent. & Aug 16–23, 2022 & \citet{brown2023mi} \\
+\hline
+\textbf{MIBot v5.2} & Introduced adaptive follow-up prompts and branching logic. Expanded conversational flow based on clients' responses to open-ended questions. Most sophisticated hybrid scripted-generative version. & Nov 22–29, 2022 & \citet{brown2023mi} \\
+\hline
+\textbf{GPT-4 BLCR} & Prototype reflection generator only version using GPT-4 to generate Backward-Looking Complex Reflections (BLCRs). %These links new clients' utterances to their prior statements.
+%Tested offline for coherence and fidelity.
+& Oct 2023
+& \citet{brown2023mi} \\
+\hline
+\textbf{MIBot v6.3A} &
+Fully generative MI chatbot using a GPT-4o prompt and guided by observer agents (\cref{ch:mibot}).
+& Nov 14-28, 2024 & \citet{mahmood-etal-2025-fully} \\
+\hline
 \textbf{MIBot v6.3B} & Added chain-of-thought mechanisms to first reason about which MI behavioural code the counsellor should exhibit before generating a response. & Nov 29-Dec 7, 2024 & Ongoing \\
 \arrayrulecolor{black}
 \bottomrule

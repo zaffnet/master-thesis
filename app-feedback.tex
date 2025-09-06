@@ -1,0 +1,89 @@
+\chapter{\sysname Feedback from Study Participants}
+\label{app-feedback}
+
+As part of the post-conversation survey described in \cref{ch:mibot-eval}, participants responded to the following three feedback questions:
+
+\begin{tcolorbox}[breakable,
+                  % width=\textwidth, % Full page width
+                  colback=magenta!5!blue!10,        % Subtle pink/purple background
+  colframe=magenta!60!blue!40,      % Darker purple/pink frame
+                  fonttitle=\bfseries, % Bold title font
+                  fontupper=\small,
+                  %title=Prompt for Virtual Smoker Client, % Box title
+                  title=\section{Feedback Survey Questions}]
+
+\begin{enumerate}
+    \item What are three words that you would use to describe the chatbot?
+    \item What would you change about the conversation?
+    \item Did the conversation help you realize anything about your smoking behaviour? Why or why not?
+\end{enumerate}
+
+\end{tcolorbox}
+
+
+
+Participant feedback on \sysname was generally positive. We processed the feedback by dividing the words participants used to describe the chatbot into broad \textit{positive} and \textit{negative} categories. \Cref{word_cloud} represents the WordCloud \citep{oesper2011wordcloud} of such words. The top 10 most frequently mentioned positive and negative words are shown in \cref{tab:top10pos} and \cref{tab:top10neg}.
+
+
+\renewcommand{\thetable}{J.\arabic{table}}
+\setcounter{table}{0}
+
+\begin{table}[!htpb]
+\centering
+    \begin{tabular}{lr}
+        \toprule
+        \textbf{Word} & \textbf{Frequency} \\
+        \toprule
+        \texttt{understanding} & 24 \\
+        \texttt{helpful} & 22 \\
+        \texttt{friendly} & 19 \\
+        \texttt{supportive} & 12 \\
+        \texttt{caring} & 9 \\
+        \texttt{knowledgeable} & 8 \\
+        \texttt{intelligent} & 8 \\
+        \texttt{thoughtful} & 7 \\
+        \texttt{interesting} & 7 \\
+        \texttt{informative} & 7 \\
+        \midrule
+        \bottomrule
+        
+    \end{tabular}
+    \captionof{table}{Top 10 most frequently mentioned positive words in participant feedback.}
+    \label{tab:top10pos}
+    
+\end{table}
+
+\vspace{1em}
+
+\begin{table}[!htpb]
+\centering
+    \begin{tabular}{lr}
+        \toprule
+        \textbf{Word} & \textbf{Frequency} \\
+        \toprule
+        \texttt{repetitive} & 6 \\
+        \texttt{boring} & 3 \\
+        \texttt{unresponsive} & 1 \\
+        \texttt{disappointing} & 1 \\
+        \texttt{annoying} & 1 \\
+        \texttt{dull} & 1 \\
+        \texttt{pointless} & 1 \\
+        \texttt{useless} & 1 \\
+        \texttt{uncreative} & 1 \\
+        \texttt{overbearing} & 1 \\
+        \midrule
+        \bottomrule
+    \end{tabular}
+    \captionof{table}{Top 10 most frequently mentioned negative words in participant feedback.}
+    \label{tab:top10neg}
+    
+\end{table}
+
+
+
+\begin{figure*}[!htbp]
+\centering
+  \includegraphics[width=0.9\textwidth]{fig/wordcloud.png}
+  \caption{Word cloud representation of participant feedback.}
+  \label{word_cloud}
+\end{figure*}

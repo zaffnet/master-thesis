@@ -256,7 +256,7 @@ You talk about changing your smoking behaviour 46\% of the time.
 }
 
 
-Before starting our series of experiments, we sorted the set of all installable attributes based on their correlation with \%CT. We hypothesized that a high correlation between an attribute and \%CT would mean that the attribute has a bigger impact on the client's behavioural language. Let us call this sorted list of attributes $\mathbf{A'}$ (see Appendix~\ref{app:sorted-attributes-list} for the full list).
+Before starting our series of experiments, we sorted the set of all installable attributes based on their correlation with \%CT. We hypothesized that a high correlation between an attribute and \%CT would mean that the attribute has a bigger impact on the client's behavioural language. Let us call this sorted list of attributes $\mathbf{A'}$.
 
 $$
 \begin{aligned}
@@ -324,7 +324,7 @@ For each experiment with a set of attributes, we calculated the Spearman's corre
 
 
 \subsection{Results}
-The results of the incremental attribute installation are summarized in \Cref{tab:doppelgänger-correlations} (see Appendix~\ref{app:incremental-installation-data} for the full data). The fidelity, measured as the Spearman's rank correlation between the \%CT of humans and their doppelgängers, evolved as more attributes were added. Initially, adding attributes like pre-conversation importance and readiness led to a gradual increase in correlation. However, the process was not strictly monotonic; for instance, adding `pre-conversation confidence' in experiment 5 unexpectedly lowered the correlation from 0.40 to 0.22.
+The results of the incremental attribute installation are summarized in \Cref{tab:doppelgänger-correlations}. The fidelity, measured as the Spearman's rank correlation between the \%CT of humans and their doppelgängers, evolved as more attributes were added. Initially, adding attributes like pre-conversation importance and readiness led to a gradual increase in correlation. However, the process was not strictly monotonic; for instance, adding `pre-conversation confidence' in experiment 5 unexpectedly lowered the correlation from 0.40 to 0.22.
 
 The most significant finding emerged in experiment 6, where explicitly installing the human's \%CT value as a numerical instruction resulted in a strong and statistically significant correlation of $r_s = 0.57$ ($p < 0.0001$). This suggests an LLM-based doppelgänger can directly operationalize a behavioural target when provided, modulating its language to match a specified proportion of change versus sustain talk.
 

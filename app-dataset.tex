@@ -1,7 +1,6 @@
 \chapter{Overview of the Dataset}
 \label{appendix:dataset_overview}
 
-
 We are releasing the complete data from our feasibility study. Our dataset consists of a CSV file (\texttt{data.csv}), where each row corresponds to a unique participant. A total of 106 participants took part in the study. We also provide conversation transcripts between MIBot and participants in another CSV file (\texttt{conversations.csv}). All data provided by participants has been de-identified using the \texttt{spaCy}\footnote{\url{https://spacy.io/universe/project/scrubadub_spacy}} (version 3.8.4)
 and \texttt{scrubadub}\footnote{\url{https://github.com/LeapBeyond/scrubadub}} (version 2.0.0) Python libraries. Further, the participants self-reported all the columns in the dataset (except for AutoMISC annotations). This dataset is licensed under CC BY-SA 4.0\footnote{To view a copy of this license, visit \url{https://creativecommons.org/licenses/by-sa/4.0/}}.
 
@@ -64,7 +63,7 @@ and \texttt{scrubadub}\footnote{\url{https://github.com/LeapBeyond/scrubadub}} (
 \midrule
 
 \multicolumn{2}{l}{\textbf{CARE Survey}} \\
-\texttt{CAREQ1} & \multirow{3}{*}{See Section~\ref{appendix:care_questionnaire} for CARE questions.}\\
+\texttt{CAREQ1} & \multirow{3}{*}{See \cref{app:care-survey} for CARE questions.}\\
 ... & \\
 \texttt{CAREQ10} & \\
 \midrule
@@ -83,7 +82,7 @@ and \texttt{scrubadub}\footnote{\url{https://github.com/LeapBeyond/scrubadub}} (
 \midrule
 
 \multicolumn{2}{l}{\textbf{AutoMISC Labels}} \\
-\texttt{AutoMISC\_MICO} & \multirow{11}{*}{See Section~\ref{sec:automisc} for AutoMISC labels.}\\
+\texttt{AutoMISC\_MICO} & \multirow{11}{*}{See \cref{subsec:automisc} for AutoMISC labels.}\\
 \texttt{AutoMISC\_MIIN} &\\
 \texttt{AutoMISC\_R} &\\
 \texttt{AutoMISC\_Q} &\\
@@ -122,7 +121,7 @@ and \texttt{scrubadub}\footnote{\url{https://github.com/LeapBeyond/scrubadub}} (
         \texttt{Utterance\#} & Serial number of the utterance in the transcript. \\
         \texttt{CumulativeVolley} & Represents the volley up to utterance \# \texttt{Utterance\#}. The \texttt{CumulativeVolley} corresponding to the last utterance of the volley is the complete volley, which can be used to generate the transcript. \\
         \texttt{Utterance} & ``An utterance is a complete thought, or a thought unit.'' \citep{MISC} \\
-        \texttt{AutoMISCLabel} & Utterance label according to AutoMISC. It can be one of the following: \texttt{R}, \texttt{Q}, \texttt{Other}, \texttt{C}, \texttt{N}, ... (See Section~\ref{sec:automisc}.) \\
+        \texttt{AutoMISCLabel} & Utterance label according to AutoMISC. It can be one of the following: \texttt{R}, \texttt{Q}, \texttt{Other}, \texttt{C}, \texttt{N}, ... (See \cref{subsec:automisc}.) \\
         \texttt{AutoMISCExplanation} & Explanation provided by the AutoMISC LLM as part of its chain-of-thought. \\
         \bottomrule
     \end{tabular}

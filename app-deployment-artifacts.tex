@@ -1,4 +1,138 @@
 \chapter{Deployment Artifacts}
 \label{app:deployment-artifacts}
 
-% This appendix contains deployment artifacts, such as the Dockerfile and ECS Task Definition.
+\begin{lstlisting}[language=bash, caption={Dockerfile}, label={lst:dockerfile}]
+FROM python:3.11-slim
+
+# Update, install curl for health checks, and clean up
+RUN apt-get update && apt-get install -y curl && rm -rf /var/lib/apt/lists/*
+
+WORKDIR /app
+
+# Copy and install dependencies
+COPY requirements.txt requirements.txt
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Copy application code
+COPY app.py app.py
+COPY src src
+
+# Expose the port the app runs on
+EXPOSE 80
+
+# Define the command to run the application
+CMD ["python", "-m", "app"]
+
+# Define the health check
+HEALTHCHECK --interval=30s --timeout=5s --start-period=10s --retries=3 \
+    CMD curl -f http://localhost/health || exit 1
+\end{lstlisting}
+
+
+\lstset{style=jsonstyle}
+
+
+\begin{lstlisting}[language=json, caption={ECS Task Definition}, label={lst:json}]
+{
+    "compatibilities": [
+        "EC2",
+        "FARGATE"
+    ],
+    "containerDefinitions": [
+        {
+            "command": [
+                "-m",
+                "app"
+            ],
+            "cpu": 0,
+            "entryPoint": [
+                "python"
+            ],
+            "environment": [
+                {
+                    "name": "...",
+                    "value": "..."
+                },
+                {
+                    "name": "...",
+                    "value": ..."
+                }
+            ],
+            "essential": true,
+            "healthCheck": {
+                "command": [
+                    "CMD-SHELL",
+                    "curl -f http://localhost/health || exit 1"
+                ],
+                "interval": 300,
+                "retries": 4,
+                "startPeriod": 20,
+                "timeout": 60
+            },
+            "image": "...amazonaws.com/mibotv6:production",
+            "logConfiguration": {
+                "logDriver": "awslogs",
+                "options": {
+                    "awslogs-group": "/ecs/mibot-v6-task",
+                    "awslogs-create-group": "true",
+                    "awslogs-region": "us-east-2",
+                    "awslogs-stream-prefix": "ecs"
+                }
+            },
+            "name": "mibot-v6-container",
+            "portMappings": [
+                {
+                    "appProtocol": "http",
+                    "containerPort": 80,
+                    "hostPort": 80,
+                    "protocol": "tcp"
+                }
+            ]
+        }
+    ],
+    "cpu": "1024",
+    "family": "mibot-v6-task",
+    "memory": "4096",
+    "networkMode": "awsvpc",
+    "revision": 87,
+    "status": "ACTIVE"
+}
+\end{lstlisting}
+
+
+
+\begin{table}[h!]
+\centering
+
+
+\begin{tabular}{ll}
+\toprule
+\textbf{Resource Path} & \textbf{Allowed HTTP Method} \\
+\midrule
+
+% Use \multirow for cells that span multiple rows.
+% The first argument is the number of rows to span.
+\multirow{2}{*}{/chat} & POST \\
+                       & OPTIONS \\ 
+\cmidrule(l){2-2} % Adds a small line to separate groups
+
+\multirow{2}{*}{/get\_transcript} & POST \\
+                                & OPTIONS \\
+\cmidrule(l){2-2}
+
+\multirow{2}{*}{/health} & GET \\
+                         & OPTIONS \\
+\cmidrule(l){2-2}
+
+\multirow{2}{*}{/info} & GET \\
+                       & OPTIONS \\
+\cmidrule(l){2-2}
+
+\multirow{2}{*}{/s3\_upload} & POST \\
+                           & OPTIONS \\
+
+\bottomrule
+\end{tabular}
+\caption{API Gateway Resource and Method Configuration}
+\label{tab:api_gateway}
+\end{table}

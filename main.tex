@@ -2,18 +2,13 @@
 % !BIB TS-program = biber
 % !TeX root = main.tex
 \documentclass{ut-thesis}
-\usepackage{alphalph}
-\usepackage{etoolbox}
-\appto\appendix{%
-  \renewcommand\thechapter{\AlphAlph{\value{chapter}}}%
-}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
+\usepackage{lmodern} 
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{xparse}
 \usepackage{graphicx}
-\usepackage{xcolor}
 \usepackage{adjustbox}
 \usepackage{pdflscape}
 \usepackage{setspace}
@@ -35,12 +30,12 @@
 \usepackage{algpseudocode}
 \usepackage{fancyvrb}
 \usepackage{listings}
+\usepackage[svgnames]{xcolor}
 \usepackage[most]{tcolorbox}
 \tcbuselibrary{listings}
 \usepackage{scrextend}
 \usepackage{textcase}
 \usepackage{siunitx}
-\usepackage[toc,page,header]{appendix}
 \usepackage{lipsum}
 \usepackage[english]{babel}
 \usepackage{csquotes}
@@ -57,9 +52,10 @@
             defernumbers=true]{biblatex}
 \usepackage[colorlinks=true, linkcolor=cyan, citecolor=cyan, urlcolor=cyan]{hyperref}
 \usepackage{cleveref}
-
 \usepackage{tgtermes}
-\usepackage{xspace}    
+\usepackage{xspace}  
+\usepackage{titlesec}
+\usepackage{parskip} % For space between paragraphs instead of indentation
 
 \newcommand{\sysname}{{\textit{\textmd{\fontfamily{qtm}\selectfont MIBot}}}\xspace}
 
@@ -68,8 +64,196 @@
 \newcommand{\oldsysname}{{\textit{\textmd{\fontfamily{qtm}\selectfont MIBot v5.2}}}\xspace}
 
 
+
+\tcbuselibrary{skins}
+
+\newtcolorbox{systembox}{
+    enhanced,
+    colback=red!15,
+    colframe=red!50!black,
+    boxrule=0.5pt,
+    fonttitle=\bfseries,
+    coltitle=White,
+    sharp corners,
+    title=System,
+    attach boxed title to top right={yshift=-2.5mm, xshift=-3mm},
+    boxed title style={
+        sharp corners,
+        size=small,
+        colback=red!50!black,
+        colframe=red!50!black,
+    },
+    pad at break=2mm,
+    width=0.8\linewidth,
+    before={\par\raggedleft},
+    after={\par}
+}
+
+\newtcolorbox{researcherbox}{
+    enhanced,
+    colback=AliceBlue,
+    colframe=SteelBlue,
+    boxrule=0.5pt,
+    fonttitle=\bfseries,
+    coltitle=White,
+    sharp corners,
+    title=Researcher,
+    attach boxed title to top left={yshift=-2.5mm, xshift=3mm},
+    boxed title style={
+        sharp corners,
+        size=small,
+        colback=SteelBlue,
+        colframe=SteelBlue
+    },
+    pad at break=2mm,
+    width=0.8\linewidth,
+}
+
+\newtcolorbox{clientbox}{
+    enhanced,
+    colback=Honeydew,
+    colframe=SeaGreen,
+    boxrule=0.5pt,
+    fonttitle=\bfseries,
+    coltitle=White,
+    sharp corners,
+    title=Client,
+    attach boxed title to top right={yshift=-2.5mm, xshift=-3mm},
+    boxed title style={
+        sharp corners,
+        size=small,
+        colback=SeaGreen,
+        colframe=SeaGreen
+    },
+    pad at break=2mm,
+    width=0.8\linewidth,
+    before={\par\raggedleft},
+    after={\par},
+}
+
+\newtcolorbox{counsellorbox}{
+    enhanced,
+    colback=LightCyan,
+    colframe=Teal,
+    boxrule=0.5pt,
+    fonttitle=\bfseries,
+    coltitle=White,
+    sharp corners,
+    title=Counsellor,
+    attach boxed title to top left={yshift=-2.5mm, xshift=3mm},
+    boxed title style={
+        sharp corners,
+        size=small,
+        colback=Teal,
+        colframe=Teal
+    },
+    pad at break=2mm,
+    width=0.8\linewidth,
+}
+
+
+
 \DeclareNameAlias{sortname}{given-family}
 \DeclareNameAlias{default}{given-family}
+
+\newcommand{\setupnormalchapters}{%
+  \titleformat{\chapter}[display]
+    {\normalfont\huge\bfseries}{\chaptertitlename\ \thechapter}{20pt}{\Huge}
+}
+\newcommand{\setupappendixchapters}{%
+  \titleformat{\chapter}[hang]
+    {\normalfont\huge\bfseries}
+    {\thechapter.}
+    {1em}
+    {\large}
+  \titlespacing*{\chapter}{0pt}{0ex plus 1ex minus .2ex}{-0.5ex plus .2ex}
+}
+
+
+\definecolor{codegray}{rgb}{0.95,0.95,0.95}
+\definecolor{commentgreen}{rgb}{0.2,0.6,0.2}
+\definecolor{keywordblue}{rgb}{0.13,0.13,1}
+\definecolor{stringpurple}{rgb}{0.5,0,0.5}
+\definecolor{commentgray}{RGB}{128,128,128}
+
+% Define the listings style
+\lstdefinestyle{dockerstyle}{
+    backgroundcolor=\color{codegray},
+    commentstyle=\color{commentgreen},
+    keywordstyle=\color{keywordblue}\bfseries,
+    stringstyle=\color{stringpurple},
+    basicstyle=\footnotesize\ttfamily,
+    breakatwhitespace=false,
+    breaklines=true,
+    captionpos=b,
+    keepspaces=true,
+    numbers=left,
+    numbersep=10pt,
+    numberstyle=\tiny\color{gray},
+    showspaces=false,
+    showstringspaces=false,
+    showtabs=false,
+    tabsize=2,
+    frame=single,
+    rulecolor=\color{black!30},
+    frameround=tttt
+}
+
+% Set the defined style
+\lstset{style=dockerstyle}
+
+
+% 1. Define custom colors
+\definecolor{codegray}{rgb}{0.95,0.95,0.95}
+\definecolor{stringgreen}{rgb}{0.05,0.5,0.05}
+\definecolor{keywordblue}{rgb}{0.13,0.13,1}
+\definecolor{numberpurple}{rgb}{0.5,0,0.35}
+
+
+\lstdefinelanguage{JSON}{
+    keywords={true, false, null},
+    keywordstyle=\color{keywordblue},
+    stringstyle=\color{stringgreen},
+    commentstyle=\color{commentgray},
+    morestring=[s]{"}{"},
+    morecomment=[l]{//},
+    morecomment=[s]{/*}{*/},
+    literate=
+        *{0}{{{\color{black}0}}}1
+         {1}{{{\color{black}1}}}1
+         {2}{{{\color{black}2}}}1
+         {3}{{{\color{black}3}}}1
+         {4}{{{\color{black}4}}}1
+         {5}{{{\color{black}5}}}1
+         {6}{{{\color{black}6}}}1
+         {7}{{{\color{black}7}}}1
+         {8}{{{\color{black}8}}}1
+         {9}{{{\color{black}9}}}1
+}
+
+% 2. Define the listings style for JSON
+\lstdefinestyle{jsonstyle}{
+    language=JSON, % Use the newly defined language
+    backgroundcolor=\color{codegray},
+    stringstyle=\color{stringgreen},      % Style for strings (keys and values)
+    keywordstyle=\color{keywordblue},     % Style for true, false, null
+    numberstyle=\tiny\color{numberpurple},% Style for numbers
+    basicstyle=\footnotesize\ttfamily,
+    breakatwhitespace=false,
+    breaklines=true,
+    captionpos=b,
+    keepspaces=true,
+    numbers=left,
+    numbersep=10pt,
+    numberstyle=\tiny\color{gray},
+    showspaces=false,
+    showstringspaces=false,
+    showtabs=false,
+    tabsize=2,
+    frame=single,
+    rulecolor=\color{black!30},
+    frameround=tttt
+}
 
 % --- Track and format author names with selective bolding ---
 \newcounter{mybibauthors}
@@ -259,44 +443,28 @@
     
         \input{ch-conclusion}
 
+
+\backmatter
+    \addcontentsline{toc}{chapter}{Bibliography}
+    \printbibliography
     \clearpage
-    \appendix
-    \addcontentsline{toc}{chapter}{Appendix}
-    \input{app-mibot-history}
-    \input{app-dataset}
-    \backmatter
-    
+
     \appendix
     \input{app-mibot-prompts}
     \input{app-observer-prompts}
-    \input{app-deployment-artifacts}
-    \input{app-virtual-smoker-transcript}
-    \input{app-architecture-diagrams}
+    \input{app-virtual-smoker-prompt}
+    \input{app-mibot-history}
+    \input{app-example-conversation}
+    \input{app-readiness-rulers}
     \input{app-care-survey}
-    \input{app-participant-feedback}
-    \input{app-automisc-manual}
-    \input{app-statistical-outputs}
-    \input{app-case-study-transcripts}
-    \input{app-recruitment-materials}
-    \input{app-consent-form}
-    \input{app-survey-instruments}
-    \input{app-ethics-approval}
-    \input{app-verbosity-prompts}
-    \input{app-resistance-personas}
-    \input{app-baseline-smoker-transcript}
-    \input{app-cot-examples}
+    \input{app-feedback}
+    \input{app-automisc}
+    \input{app-deployment-artifacts}
+    \input{app-architecture-diagrams}
+    \input{app-dataset}
+    \input{app-consent}
     \input{app-doppelganger-prompts}
     \input{app-doppelganger-transcript}
-    \input{app-incremental-installation-data}
-    \input{app-sorted-attributes-list}
-    \input{app-glossary}
-    \input{app-research-questions}
-    \input{app-lit-summary}
-    \input{app-mi-timeline}
-    \input{app-future-work}
-    \input{app-publications}
-
-    \addcontentsline{toc}{chapter}{Bibliography}
-    \printbibliography
+    
 
 \end{document}
