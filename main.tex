@@ -4,7 +4,7 @@
 \documentclass{ut-thesis}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
-\usepackage{lmodern} 
+\usepackage{lmodern}
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{xparse}
@@ -57,13 +57,9 @@
 \usepackage{titlesec}
 \usepackage{parskip} % For space between paragraphs instead of indentation
 
-\newcommand{\sysname}{{\textit{\textmd{\fontfamily{qtm}\selectfont MIBot}}}\xspace}
-
-\newcommand{\sysnamewithv}{{\textit{\textmd{\fontfamily{qtm}\selectfont MIBot v6.3A}}}\xspace}
-
-\newcommand{\oldsysname}{{\textit{\textmd{\fontfamily{qtm}\selectfont MIBot v5.2}}}\xspace}
-
-
+\newcommand{\sysname}{\textit{MIBot}\xspace}
+\newcommand{\sysnamewithv}{\textit{MIBot v6.3A}\xspace}
+\newcommand{\oldsysname}{\textit{MIBot v5.2}\xspace}
 
 \tcbuselibrary{skins}
 
@@ -165,7 +161,7 @@
     {\normalfont\huge\bfseries}
     {\thechapter.}
     {1em}
-    {\large}
+    {\huge}
   \titlespacing*{\chapter}{0pt}{0ex plus 1ex minus .2ex}{-0.5ex plus .2ex}
 }
 
@@ -175,6 +171,10 @@
 \definecolor{keywordblue}{rgb}{0.13,0.13,1}
 \definecolor{stringpurple}{rgb}{0.5,0,0.5}
 \definecolor{commentgray}{RGB}{128,128,128}
+\definecolor{codegray}{rgb}{0.95,0.95,0.95}
+\definecolor{stringgreen}{rgb}{0.05,0.5,0.05}
+\definecolor{keywordblue}{rgb}{0.13,0.13,1}
+\definecolor{numberpurple}{rgb}{0.5,0,0.35}
 
 % Define the listings style
 \lstdefinestyle{dockerstyle}{
@@ -203,11 +203,8 @@
 \lstset{style=dockerstyle}
 
 
-% 1. Define custom colors
-\definecolor{codegray}{rgb}{0.95,0.95,0.95}
-\definecolor{stringgreen}{rgb}{0.05,0.5,0.05}
-\definecolor{keywordblue}{rgb}{0.13,0.13,1}
-\definecolor{numberpurple}{rgb}{0.5,0,0.35}
+
+
 
 
 \lstdefinelanguage{JSON}{
@@ -231,13 +228,11 @@
          {9}{{{\color{black}9}}}1
 }
 
-% 2. Define the listings style for JSON
 \lstdefinestyle{jsonstyle}{
-    language=JSON, % Use the newly defined language
+    language=JSON,
     backgroundcolor=\color{codegray},
-    stringstyle=\color{stringgreen},      % Style for strings (keys and values)
-    keywordstyle=\color{keywordblue},     % Style for true, false, null
-    numberstyle=\tiny\color{numberpurple},% Style for numbers
+    stringstyle=\color{stringgreen},  
+    keywordstyle=\color{keywordblue}, numberstyle=\tiny\color{numberpurple},
     basicstyle=\footnotesize\ttfamily,
     breakatwhitespace=false,
     breaklines=true,
@@ -255,23 +250,19 @@
     frameround=tttt
 }
 
-% --- Track and format author names with selective bolding ---
-\newcounter{mybibauthors}
 
-% Custom name format for bibliography with selective bolding
+\newcounter{mybibauthors}
 \DeclareNameFormat{given-family}{%
-  % Store the total author count when we start processing names
   \ifnumequal{\value{listcount}}{1}
     {\setcounter{mybibauthors}{\value{liststop}}}
     {}%
-  % Now apply formatting based on total authors
   \ifnumgreater{\value{mybibauthors}}{2}
-    {% More than 2 authors: bold ONLY first author's last name
+    {%
      \ifnumequal{\value{listcount}}{1}
-       {\namepartgiven\space\textbf{\namepartfamily}}% Bold first author only
-       {\namepartgiven\space\namepartfamily}%         % No bold for others
+       {\namepartgiven\space\textbf{\namepartfamily}}%
+    {\namepartgiven\space\namepartfamily}%
     }
-    {% 2 or fewer authors: bold ALL last names
+    {%
      \namepartgiven\space\textbf{\namepartfamily}%
     }%
   \ifthenelse{\value{listcount}<\value{liststop}}
@@ -383,11 +374,11 @@
   \end{tcolorbox}
 }
 
-\setlength{\parskip}{0.75em}
-\titlespacing*{\section}{0pt}{16pt}{0pt}
-\titlespacing*{\subsection}{0pt}{8pt}{0pt}
-\titlespacing*{\subsubsection}{0pt}{4pt}{0pt}
-\setstretch{0.99}
+% \setlength{\parskip}{0.75em}
+% \titlespacing*{\section}{0pt}{16pt}{0pt}
+% \titlespacing*{\subsection}{0pt}{8pt}{0pt}
+% \titlespacing*{\subsubsection}{0pt}{4pt}{0pt}
+% \setstretch{0.999}
 \captionsetup{font=small, labelfont=bf}
 \newcolumntype{Y}{>{\raggedright\arraybackslash}X}
 \let\oldsubsubsection\subsubsection
@@ -443,12 +434,7 @@
     
         \input{ch-conclusion}
 
-
-\backmatter
-    \addcontentsline{toc}{chapter}{Bibliography}
-    \printbibliography
-    \clearpage
-
+    \setupappendixchapters
     \appendix
     \input{app-mibot-prompts}
     \input{app-observer-prompts}
@@ -465,6 +451,11 @@
     \input{app-consent}
     \input{app-doppelganger-prompts}
     \input{app-doppelganger-transcript}
-    
+
+    \setupnormalchapters
+    \backmatter
+    \addcontentsline{toc}{chapter}{Bibliography}
+    \printbibliography
+    \clearpage
 
 \end{document}

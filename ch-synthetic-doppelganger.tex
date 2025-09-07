@@ -263,6 +263,16 @@ $$
 
 The experiment then proceeds by incrementally adding attributes from this sorted list and, at each step, measuring the fidelity of the resulting doppelgängers. Fidelity is operationalized as the correlation between the percentage change talk (\%CT) of the human participants and their corresponding doppelgängers. The process is detailed in \Cref{alg:incremental_installation}.
 
+
+The overall workflow for creating and validating doppelgängers using this comparative method is illustrated in \Cref{fig:doppelgänger-study}.
+
+\begin{figure}[htpb]
+    \centering
+    \includegraphics[width=0.98\textwidth]{fig/doppelganger-study.png}
+    \caption{The doppelgänger creation and validation process. For each of the 106 human participants ($H_i$), a synthetic twin ($S_i$) is created by installing their attributes. Both agents' conversations with MIBot are analyzed to extract a behavioural metric (\%CT), and the correlation between the two sets of metrics is used to assess fidelity.}
+    \label{fig:doppelgänger-study}
+\end{figure}
+
 { 
 \setstretch{1.25}
 \begin{algorithm}[htpb]
@@ -308,7 +318,6 @@ The experiment then proceeds by incrementally adding attributes from this sorted
     \caption{The doppelgänger creation and validation process. For each human participant ($H_i$), a synthetic twin ($S_i$) is created by installing their attributes ($A_{H_i}$). Both agents' conversations are analyzed to extract a behavioural metric (\%CT), and the correlation between the two sets of metrics is used to assess fidelity.}
     \label{fig:doppelgänger-creation-process}
 \end{figure}
-
 
 \subsection{Evaluation}
 For each experiment with a set of attributes, we calculated the Spearman's correlation coefficient between the \%CT of human--MIBot and doppelgänger--MIBot conversations.
