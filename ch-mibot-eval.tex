@@ -12,7 +12,7 @@ Following these core metrics, we investigate behavioural outcomes including quit
 
 \subsection*{Overall Changes in Readiness Rulers}
 
-\Cref{table:mibot_ruler_summary} summarizes the mean (and standard deviation) of each readiness ruler before the conversation, immediately afterwards, and one week later. The table includes the change between the pre-conversation metric and one week later ($\Delta$). The Wilcoxon signed-rank test was applied to assess the significance of the change. Participants' confidence increased markedly from a baseline mean of 2.8 to 4.5 one week later ($\Delta=1.66, p<10^{-9}$). This represents a $\sim$59\% relative improvement and constitutes our primary outcome measure, aligning with MI theory that confidence (self-efficacy) is a key predictor of behaviour change \citep{Gwaltney2009-wj,Abar2013}. Importance also increased, albeit more modestly ($\Delta=0.5, p<0.005$), while readiness exhibited a small, non-significant change $(\Delta=0.23, p=0.22)$.
+\Cref{table:mibot_ruler_summary} summarizes the mean (and standard deviation) of each readiness ruler before the conversation, immediately afterwards, and one week later. The table includes the change between the pre-conversation metric and one week later ($\Delta$). The Wilcoxon signed-rank test was applied to assess the significance of the change. Participants' confidence increased markedly from a baseline mean of 2.8 to 4.5 one week later ($\Delta=1.66, p<10^{-9}$). This represents an approximately 59\% relative improvement and constitutes our primary outcome measure, aligning with MI theory that confidence (self-efficacy) is a key predictor of behaviour change \citep{Gwaltney2009-wj,Abar2013}. Importance also increased, albeit more modestly ($\Delta=0.5, p<0.005$), while readiness exhibited a small, non-significant change $(\Delta=0.23, p=0.22)$.
 
 \begin{table}[ht!]
   \centering
@@ -151,7 +151,7 @@ Demographic stratification reveals several patterns that warrant careful interpr
 \section{Perceived Empathy: CARE Scale Assessment}
 \label{sec:perceived-empathy}
 
-The Consultation and Relational Empathy (CARE) scale \citep{10.1093/fampra/cmh621} measures patients' perceptions of their healthcare provider's empathy through 10 questions rated from 1 (poor) to 5 (excellent) (see Appendix~\ref{app:care-survey} for the full instrument). MIBot achieved a mean total score of 42 out of 50. To contextualize this performance, \Cref{table:care_comparison} compares MIBot's scores with human healthcare professionals from \citet{Bikker2015}.
+The Consultation and Relational Empathy (CARE) scale \citep{10.1093/fampra/cmh621} measures patients' perceptions of their healthcare provider's empathy through 10 questions rated from 1 (poor) to 5 (excellent) (see \Cref{app:care-survey} for the full instrument). MIBot achieved a mean total score of 42 out of 50. To contextualize this performance, \Cref{table:care_comparison} compares MIBot's scores with human healthcare professionals from \citet{Bikker2015}.
 
 \begin{table}[ht]
   \centering
@@ -397,7 +397,7 @@ The system assigns behavioural codes to each utterance: counsellor utterances ar
 \end{itemize}
 
 \subsection{Contextualizing AutoMISC Metrics With the HLQC Dataset}
-To provide a point of comparison for the MISC summary metrics, we also ran AutoMISC on the HighLowQualityCounselling (HLQC) dataset  \cite{perez-rosas-etal-2019-makes}, a publicly available\footnote{ \url{https://lit.eecs.umich.edu/downloads.html}} corpus of transcribed MI counselling demonstrations. The HLQC dataset comprises 155 high-quality (HLQC\_\textbf{HI}) and 104 low-quality (HLQC\_\textbf{LO}) transcripts sourced from public websites.
+To provide a point of comparison for the MISC summary metrics, we also ran AutoMISC on the HighLowQualityCounselling (HLQC) dataset  \cite{perez-rosas-etal-2019-makes}, a publicly available\footnote{\url{https://lit.eecs.umich.edu/downloads.html}} corpus of transcribed MI counselling demonstrations. The HLQC dataset comprises 155 high-quality (HLQC\_\textbf{HI}) and 104 low-quality (HLQC\_\textbf{LO}) transcripts sourced from public websites.
 We computed summary scores separately for these subsets and then compared MIBot's summary metrics against those of both HLQC\_HI and HLQC\_LO.
 
 \subsection{Counsellor Behaviour Metrics}
@@ -467,43 +467,6 @@ We computed summary scores separately for these subsets and then compared MIBot'
 
 
 \Cref{fig:misc_distributions}(c) illustrates the distribution of \%CT across conversations. Most sessions by MIBot had a \%CT of $>$ 60\%, and the distribution closely matches that of the \textbf{HLQC\_HI} dataset. Overall, the mean \%CT was 59\% for MIBot, compared to 53\% for the \textbf{HLQC\_HI} dataset.
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-% WIP Below
-
-% Please edit it later!
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 \section{Behavioural Outcomes}
 
@@ -618,10 +581,10 @@ The chatbot's responses frequently normalized ambivalence instead of trying to r
 The most dramatic success involved a 34-year-old participant who entered with confidence of 1/10 but importance of 9/10---a classic ``willing but unable'' profile. Through 142 utterances, the conversation systematically addressed self-efficacy barriers:
 
 \begin{enumerate}
-\item Explored past quit attempts to identify what worked
-\item Reframed ``failures'' as learning experiences
-\item Developed a detailed, personalized quit plan
-\item Identified specific coping strategies for anticipated triggers
+\item Explored past quit attempts to identify what worked.
+\item Reframed ``failures'' as learning experiences.
+\item Developed a detailed, personalized quit plan.
+\item Identified specific coping strategies for anticipated triggers.
 \end{enumerate}
 
 This participant's confidence increased to 10/10 at one week, and they reported complete cessation for five days at follow-up.
@@ -632,17 +595,17 @@ Another notable success involved a 58-year-old with 40 years of smoking history 
 
 Not all participants benefited. Analysis of the 21 participants whose confidence decreased revealed three patterns:
 
-\paragraph{Mandated Participation:}
+\paragraph{Mandated Participation}
 Some participants appeared to engage solely for compensation, providing minimal responses and showing no genuine interest in change. These conversations averaged just 42 utterances, with client responses typically under 10 words.
 
-\paragraph{Enjoyment-Focused Smokers:}
+\paragraph{Enjoyment-Focused Smokers}
 A subset strongly identified as ``happy smokers'' who enjoyed smoking without ambivalence. MIBot's attempts to explore motivation sometimes paradoxically reinforced their commitment to smoking:
 
 \begin{quote}
 \textit{``Talking about it just reminded me how much I actually enjoy smoking. I don't want to quit, and this conversation made that clearer.''}
 \end{quote}
 
-\paragraph{Technical Therapeutic Mismatches:}
+\paragraph{Technical Therapeutic Mismatches}
 In rare cases, MIBot misread the participant's needs, such as pushing for behaviour change when emotional support was needed, or vice versa. These mismatches highlight the challenges of fully automated therapeutic engagement without human oversight.
 
 \section{User Experience and Feedback}
@@ -650,7 +613,7 @@ In rare cases, MIBot misread the participant's needs, such as pushing for behavi
 
 \subsection*{Post-Conversation Feedback}
 
-Three open-ended questions captured immediate post-conversation reactions. Thematic analysis revealed distinct patterns in positive and negative responses (see Appendix~\ref{app-feedback} for a selection of verbatim responses).
+Three open-ended questions captured immediate post-conversation reactions. Thematic analysis revealed distinct patterns in positive and negative responses (see \Cref{app-feedback} for a selection of verbatim responses).
 
 \textbf{Positive Themes (92\% enjoyed the experience):}
 \begin{itemize}
@@ -704,11 +667,11 @@ Cross-tabulation revealed four user segments, as shown in \Cref{table:user_segme
 Multivariate regression analysis identified the strongest predictors of confidence improvement:
 
 \begin{enumerate}
-\item \textbf{Low baseline confidence} ($\beta=-0.31$, $p<0.001$): greatest gains for those starting lowest
-\item \textbf{Recent quit attempt} ($\beta=0.28$, $p<0.01$): prior action amplifies intervention effects
-\item \textbf{Conversation length} ($\beta=0.21$, $p<0.05$): deeper engagement yields better outcomes
-\item \textbf{Change talk ratio} ($\beta=0.18$, $p<0.05$): client language predicts behaviour change
-\item \textbf{Age <40} ($\beta=0.15$, $p<0.05$): younger participants more responsive
+\item \textbf{Low baseline confidence} ($\beta=-0.31$, $p<0.001$): greatest gains for those starting lowest.
+\item \textbf{Recent quit attempt} ($\beta=0.28$, $p<0.01$): prior action amplifies intervention effects.
+\item \textbf{Conversation length} ($\beta=0.21$, $p<0.05$): deeper engagement yields better outcomes.
+\item \textbf{Change talk ratio} ($\beta=0.18$, $p<0.05$): client language predicts behaviour change.
+\item \textbf{Age <40} ($\beta=0.15$, $p<0.05$): younger participants more responsive.
 \end{enumerate}
 
 Together, these factors explained 34\% of the variance in confidence change ($R^2=0.34$, $F(5,100)=10.32$, $p<0.001$), suggesting that ideal candidates are younger smokers with low confidence who have recently attempted to quit and are willing to engage in extended conversation.
@@ -738,26 +701,26 @@ Several limitations constrain the generalisability of our findings:
 
 \textbf{Methodological Limitations:}
 \begin{itemize}
-\item Short follow-up period (one week) precludes assessment of sustained behaviour change
-\item Self-reported outcomes without biochemical verification may overestimate quit attempts
-\item Lack of control group prevents causal attribution
-\item Single-session design doesn't capture potential for repeated engagement
+\item Short follow-up period (one week) precludes assessment of sustained behaviour change.
+\item Self-reported outcomes without biochemical verification may overestimate quit attempts.
+\item Lack of control group prevents causal attribution.
+\item Single-session design doesn't capture potential for repeated engagement.
 \end{itemize}
 
 \textbf{Sample Limitations:}
 \begin{itemize}
-\item Prolific recruitment may select for digitally literate, research-oriented participants
-\item Exclusion of high-confidence smokers limits understanding of broader applicability
-\item Monetary compensation (£6.50) may attract non-genuine participants
-\item English-only implementation excludes non-English speakers
+\item Prolific recruitment may select for digitally literate, research-oriented participants.
+\item Exclusion of high-confidence smokers limits understanding of broader applicability.
+\item Monetary compensation (£6.50) may attract non-genuine participants.
+\item English-only implementation excludes non-English speakers.
 \end{itemize}
 
 \textbf{Technical Limitations:}
 \begin{itemize}
-\item Text-only interface eliminates non-verbal communication channels
-\item Lack of memory between sessions prevents relationship building
-\item No integration with clinical services or prescription capabilities
-\item Limited ability to handle crisis situations or complex comorbidities
+\item Text-only interface eliminates non-verbal communication channels.
+\item Lack of memory between sessions prevents relationship building.
+\item No integration with clinical services or prescription capabilities.
+\item Limited ability to handle crisis situations or complex comorbidities.
 \end{itemize}
 
 \section{Conclusion}
@@ -773,7 +736,7 @@ While the results are promising, the study also revealed limitations in building
 The research detailed in \Cref{ch:mibot,ch:feasibility,ch:mibot-eval} is the result of a significant, long-term collaboration. The human feasibility study, in particular, was a major team undertaking and involved all co-authors of the paper by \citet{mahmood-etal-2025-fully}. To provide a clear overview of each individual's role in the work presented in this thesis, this section outlines specific attributions.
 
 \begin{itemize}
-\item \textbf{Soliman Ali:} As the second author on the work submitted by \citet{mahmood-etal-2025-fully}, Ali was instrumental in designing and implementing the modular observer agent framework that serves as the foundation for the MIBot system (see \Cref{sec:observers}). He also contributed to the initial versions of the AutoMISC system \citep{ali2025thesis,ali2025automated}, which was developed concurrently with MIBot. AutoMISC not only helped refine MIBot through an iterative process but was also used by the author of this thesis to validate the installation of attributes in synthetic smokers (see \Cref{ch:synthetic-smoker-preliminary,ch:synthetic-doppelgänger}).
+\item \textbf{Soliman Ali:} As the second author on the work submitted by \citet{mahmood-etal-2025-fully}, Ali was instrumental in designing and implementing the modular observer agent framework that serves as the foundation for the MIBot system (see \Cref{sec:observers}). He also contributed to the initial versions of the AutoMISC system \citep{ali2025thesis,ali2025automated}, which was developed concurrently with MIBot. AutoMISC not only helped refine MIBot through an iterative process but was also used by the author of this thesis to validate the installation of attributes in synthetic smokers (see \Cref{ch:synthetic-smoker,ch:synthetic-doppelganger}).
 
 \item \textbf{Michelle Collins:} Collins played a key role in evolving the prompt used by MIBot and provided valuable feedback by testing various intermediate system versions during its development.
 

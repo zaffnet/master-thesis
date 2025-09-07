@@ -1,10 +1,9 @@
 \chapter{Evaluation of MIBot: Design of the Human Feasibility Study}
-\label{ch:feasibility}
 \label{ch:mibot-feasibility-study}
 The deployed MIBot system was used in a feasibility study with human smokers. The goal of this study was to determine the impact of a single-session interaction with MIBot and assess its safety for delivery to ambivalent smokers in a real-world setting.
 
 \section{Ethics Approval and Consent}
-The protocol was approved by the University of Toronto Research Ethics Board (Protocol Number 49997; approved August 3, 2024) \citep{rose2025ethics} and adhered to all institutional guidelines. Before participating in the study, prospective participants reviewed an online consent form that outlined study aims, procedures, compensation, potential risks, and data handling practices (excerpts from the consent form are available in Appendix~\ref{app-consent}). Participation required explicit electronic consent. Risks were described as minimal but included the possibility that discussing smoking could cause stress or temporarily increase cravings. No personally identifying information was collected, and all data were de-identified prior to release.
+The protocol was approved by the University of Toronto Research Ethics Board (Protocol Number 49997; approved August 3, 2024) \citep{rose2025ethics} and adhered to all institutional guidelines. Before participating in the study, prospective participants reviewed an online consent form that outlined study aims, procedures, compensation, potential risks, and data handling practices (excerpts from the consent form are available in \Cref{app-consent}). Participation required explicit electronic consent. Risks were described as minimal but included the possibility that discussing smoking could cause stress or temporarily increase cravings. No personally identifying information was collected, and all data were de-identified prior to release.
 
 \section{Participant Recruitment}
 \label{sec:recruitment}
@@ -24,7 +23,7 @@ Participants who met all criteria and provided informed consent proceeded to the
 
 \section{Participant Characteristics}
 \label{subsec:participant-characteristics}
-\noindent Baseline demographics of enrolled participants are summarized in \Cref{tab:participant-characteristics}. All were English-speaking adults who self-identified as current daily smokers and passed prescreening and in-study eligibility checks on Prolific. The sample was approximately sex-balanced with broad age coverage. Residence was primarily the United Kingdom and United States, with additional participants from Canada and South Africa. Unless otherwise specified, values are presented as counts (n) and percentages (\%). Age is reported as median, mean (SD), and range.
+\noindent Baseline demographics of enrolled participants are summarized in \Cref{tab:participant-characteristics}. All were English-speaking adults who self-identified as current daily smokers and passed prescreening and in-study eligibility checks on Prolific. The sample was approximately balanced by sex and covered a broad range of ages. Unless otherwise specified, values are presented as counts ($n$) and percentages (\%). Age is reported as median, mean (SD), and range.
 
 \begin{table}[htbp]
 \centering
@@ -152,11 +151,11 @@ Three open-ended questions solicited subjective impressions:
 \end{enumerate}
 These responses can inform future prompt refinements and provide contextual data for interpreting quantitative outcomes.
 
-\subsubsection{Follow-Up Quit Attempt Survey}
+\subsection{Follow-Up Quit Attempt Survey}
 One week later, apart from self-reporting their readiness rulers, participants also reported whether they had made any quit attempts in the preceding seven days, the number of attempts, and whether any changes in smoking habits had occurred. This included partial changes, such as a reduction in cigarettes per day.
 
 \section{Automated Conversation Analysis}
 \label{subsec:automisc}
-In addition to participant-reported outcomes, conversations were analyzed for MI adherence and elicitation of motivational language using AutoMISC, an automated implementation of the Motivational Interviewing Skill Code v2.5~\citep{Houck2010}. The AutoMISC system was primarily developed by \citet{ali2025thesis}, as described in his thesis, with further validation in~\citep{ali2025automated}. For this project, we used the existing AutoMISC system and contributed to the work described in~\citep{mahmood-etal-2025-fully}. The analysis pipeline first segments each conversational volley into individual utterances. Then, it classifies counsellor utterances as MI-Consistent, MI-Inconsistent, Reflection, Question, or Other. Similarly, it classifies each client utterance as exhibiting Change Talk, Sustain Talk, or Neutral. Finally, it computes the following: \%~MI-Consistent Responses (\%MIC), Reflection-to-Question Ratio (R:Q), \%~Client Change Talk (\%CT). AutoMISC was validated against human coders, including two expert MI clinicians \citep{mahmood-etal-2025-fully}.
+In addition to participant-reported outcomes, conversations were analyzed for MI adherence and elicitation of motivational language using AutoMISC, an automated implementation of the Motivational Interviewing Skill Code v2.5~\citep{Houck2010}. The AutoMISC system, primarily developed by \citet{ali2025thesis} and described in that thesis, was further validated in~\citep{ali2025automated}. For this project, we used the existing AutoMISC system and contributed to the work described in~\citep{mahmood-etal-2025-fully}. The analysis pipeline first segments each conversational volley into individual utterances. Then, it classifies counsellor utterances as MI-Consistent, MI-Inconsistent, Reflection, Question, or Other. Similarly, it classifies each client utterance as exhibiting Change Talk, Sustain Talk, or Neutral. Finally, it computes the following: \%~MI-Consistent Responses (\%MIC), Reflection-to-Question Ratio (R:Q), \%~Client Change Talk (\%CT). AutoMISC was validated against human coders, including two expert MI clinicians \citep{mahmood-etal-2025-fully}.
 
 Readiness rulers (especially the week-later change in \emph{confidence}), CARE, and AutoMISC summary metrics together provide a comprehensive view of the MIBot intervention, assessing its effectiveness, perceived empathy, safety, and adherence to MI principles. In the next chapter, we report the results of our human feasibility study on these metrics.

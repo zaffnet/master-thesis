@@ -1,7 +1,7 @@
 \chapter{Development of Synthetic Smokers: Preliminary Experiments}
 \label{ch:synthetic-smoker-preliminary}
 
-The iterative development of MIBot, as described in \Cref{ch:mibot}, required that we extensively test it after every change in its prompt. To automate the testing of some aspects of the chatbot's behaviour, we started the development of ``synthetic smokers''\footnote{It is worth mentioning that we also utilized human role-playing as smokers during our testing of MIBot.}. A synthetic smoker, in the context of this research, is a prompted instance of an LLM tasked to simulate the behaviour, language, and psychological responses of a human smoker engaged in a counselling session.
+The iterative development of MIBot, as described in \Cref{ch:mibot}, required that we extensively test it after every change in its prompt. To automate the testing of some aspects of the chatbot's behaviour, we started the development of ``synthetic smokers''\footnote{It is worth mentioning that we also utilized human role-playing as smokers during our testing of MIBot.}. A synthetic smoker, in the context of this research, is a prompted instance of an LLM tasked with simulating the behaviour, language, and psychological responses of a human smoker engaged in a counselling session.
 
 This chapter details the initial conceptualization and preliminary experiments in the development of these synthetic agents. We begin by defining the theoretical framework for creating realistic agents, followed by our early experiments to control behavioural attributes like verbosity and resistance to quitting. These initial steps highlight the core challenges of attribute installation and validation. In the subsequent chapter, we use a more advanced, data-driven methodology for attribute installation and validation.
 
@@ -70,7 +70,7 @@ Given the stochastic nature of the generative system, a single instance is insuf
 \[\mathcal{F}(\textbf{A}_S) = \mathbb{E}_{\gamma_S \sim P_S(\gamma | \textbf{A}_S)}[d(\textbf{A}_S, M(\gamma_S))]\]
 A lower value of $\mathcal{F}(\textbf{A}_S)$ indicates higher fidelity. The objective of the system, then, is to minimize this value across all possible profiles.
 
-In practice, one may not need $M$ to calculate the fidelity, nor is it necessary to recover the full attribute vector $\textbf{A}$. Instead, a more pragmatic approach is to validate individual attributes by demonstrating a strong correlation between their installed values and corresponding, measurable features in the output $\gamma$. For example, to validate the ``resistance to change'' attribute, one can measure a proxy like the percentage Change Talk (\%CT) in the transcript. Evidence of fidelity would be a strong, negative correlation between the installed resistance level and the observed Change Talk across a cohort of synthetic agents. This correlation-based method is more feasible than developing a comprehensive measurement function $M$.
+In practice, $M$ may not be needed to calculate fidelity. Instead, a more pragmatic approach is to validate individual attributes by demonstrating a strong correlation between their installed values and corresponding, measurable features in the output $\gamma$. For example, to validate the ``resistance to change'' attribute, one can measure a proxy like the percentage Change Talk (\%CT) in the transcript. Evidence of fidelity would be a strong, negative correlation between the installed resistance level and the observed Change Talk across a cohort of synthetic agents. This correlation-based method is more feasible than developing a comprehensive measurement function $M$.
 
 \subsection{Defining Representativeness}
 
@@ -162,8 +162,8 @@ The prompt modifications significantly reduced the verbosity of the synthetic sm
 
 \begin{tabular}{lrr}
 \toprule
-{} &  \textbf{Mean} &  \textbf{Standard} \\
-\textbf{Category}                   &                        &           {Deviation}          \\
+{} &  \textbf{Mean} &  \textbf{Standard Deviation} \\
+\textbf{Category}                   &                        &           {}          \\
 \midrule
 Default Verbosity (GPT-4 Turbo) &                  618.9 &               296.3 \\
 Fixed Verbosity (GPT-4 Turbo)   &                  337.8 &               157.9 \\
@@ -175,7 +175,7 @@ Low-Quality Human Counselling            &                  118.2 &             
 \label{tab:utterance_stats}
 \end{table}
 
-The default verbosity condition showed a wide distribution with a high median utterance length. The fixed-verbosity synthetic smokers successfully matched the distribution with humans from the HQLC dataset. \Cref{tab:utterance_stats} provides detailed statistics on the volley lengths.
+The default verbosity condition showed a wide distribution with a high median utterance length. The fixed-verbosity synthetic smokers successfully matched the utterance length distribution of humans from the HLQC dataset. \Cref{tab:utterance_stats} provides detailed statistics on the volley lengths.
 
 Interestingly, we observed that the counsellor bot reciprocated the client's verbosity. When the synthetic smoker spoke less, the counsellor bot also reduced its utterance length. We also verified that these prompt modifications were robust and transferable across different LLMs (GPT-4 Turbo and GPT-4 Omni).
 
@@ -192,7 +192,7 @@ We hypothesized that resistance could be installed by providing the LLM with det
     \item Low Resistance Persona: The backstory described recent health concerns prompting contemplation, and an open, albeit skeptical, attitude towards change.
 \end{itemize}
 
-Using modified prompts and GPT-4 Turbo (temperature=1.0), we generated conversations (N=10 per persona) between synthetic smokers and MIBot. We employed two distinct methods to validate the installation. We also prompted these synthetic smokers to fill the readiness rulers before, after, and a week after the conversation. We did so by prompting the synthetic smoker with the exact questions from the readiness rulers survey. Before reporting the numbers, we asked them to think and provide reasons for the numerical rating they chose before outputting the rating---a technique known as chain-of-thought prompting.
+Using modified prompts and GPT-4 Turbo (temperature=1.0), we generated conversations (N=10 per persona) between synthetic smokers and MIBot. We employed two distinct methods to validate the installation. We also prompted these synthetic smokers to fill out the readiness rulers before, after, and a week after the conversation. We did so by prompting the synthetic smoker with the exact questions from the readiness rulers survey. Before reporting the numbers, we asked them to think and provide reasons for the numerical rating they chose before outputting the rating---a technique known as chain-of-thought prompting.
 
 \subsubsection{Validation}
 

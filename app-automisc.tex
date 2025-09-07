@@ -2,7 +2,7 @@
 \label{app:automisc}
 
 
-\Cref{fig:automisc} shows a system flow diagram of AutoMISC. First, each volley (turn of speech) is parsed into one or more utterances (units of thought) by the Parser module. Then, utterance-level annotations, i.e. behavioural codes, are assigned by the Annotator module to each utterance. Up to $k=5$ prior volleys are included to the Annotator module when coding utterances.
+\Cref{fig:automisc} shows a system flow diagram of AutoMISC. First, each volley (turn of speech) is parsed into one or more utterances (units of thought) by the Parser module. Then, utterance-level annotations, i.e. behavioural codes, are assigned by the Annotator module to each utterance. Up to $k=5$ prior volleys are included in the Annotator module when coding utterances.
 
 
 
@@ -13,7 +13,7 @@
 We present the pairwise Cohen's $\kappa$ values, for both counsellor and client codes, in \Cref{fig:ck}. All $\kappa$ values fall between 0.55-0.81, indicating moderate to substantial agreement between each pair of raters beyond chance \cite{cohenrange}. The Cohen's $\kappa$ values between AutoMISC and the expert annotators (Annotators 1 and 2) were \textbf{0.63} and \textbf{0.58} for counsellor codes, and \textbf{0.63} and \textbf{0.69} for client codes, respectively. 
 
 \section*{Statistical Validation of Inter-Rater Reliability}
-To estimate how these reliability findings generalize to more transcripts, we computed the \textbf{asymptotic variance} of Fleiss' $\kappa$ to calculate two-tailed $p$-values. For both counsellor and client codes, the asymptotic variance was on the order of $10^{-6}$, resulting in $p$-values of $p<.001$. These extremely low $p$-values indicate that the inter-rater agreement is highly statistically significant beyond chance. A post-hoc power analysis confirmed that our study was highly powered (estimated power: 1.00) to detect nonzero agreement, i.e. there is a near-certain probability to detect significant inter-rater reliability.
+To estimate how these reliability findings generalize to more transcripts, we computed the \textbf{asymptotic variance} of Fleiss' $\kappa$ to calculate two-tailed $p$-values. For both counsellor and client codes, the asymptotic variance was on the order of $10^{-6}$, resulting in $p$-values of $p<.001$. These extremely low $p$-values indicate that the inter-rater agreement is highly statistically significant beyond chance. A post-hoc power analysis confirmed that our study was highly powered (estimated power: 1.00) to detect nonzero agreement, i.e., there is a near-certain probability to detect significant inter-rater reliability.
 
 \begin{figure*}[!ht]
     \centering
@@ -82,8 +82,8 @@ Below are examples of how to segment a volley into utterances. Follow this struc
     backgroundcolor=\color{gray!10}
 }
 \begin{lstlisting}
-Input:  "Why haven't you quit smoking - are you ever gonna quit?"
-Output: ["Why haven't you quit smoking - are you ever gonna quit?"]
+Input:  "Why haven't you quit smoking? Are you ever going to quit?"
+Output: ["Why haven't you quit smoking?", "Are you ever going to quit?"]
 
 Input:  "How long since your last drink? Do you feel ok?"
 Output: ["How long since your last drink?", "Do you feel ok?"]
@@ -127,7 +127,7 @@ Task:
     \end{itemize}
     \item Return your analysis as:
     \begin{itemize}
-        \item explanation: Briefly justify your choice in 1–2 sentences.
+        \item explanation: Briefly justify your choice in one to two sentences.
         \item label: Provide only MICO, MIIN, RQ, or Other.
     \end{itemize}
 \end{enumerate}
@@ -216,12 +216,6 @@ Task:
             \item Making general or factual statements about the issue (e.g., "It's important to take care of my health").
         \end{itemize}
     \end{enumerate}
-\end{enumerate}
-
-\clearpage
-
-\begin{enumerate}[itemsep=0pt, parsep=0pt]
-    \setcounter{enumi}{1}
     \item Return your analysis as:
     \begin{itemize}
         \item explanation: Briefly justify your choice in 1-2 sentences.
@@ -243,7 +237,8 @@ As described in \cref{subsec:automisc}, we enlisted four annotators --- two expe
 \begin{table}[!ht]
 \centering
 \begin{threeparttable}
-
+\caption{Demographic Information of Annotators}
+\label{tab:annotator-demographics}
 \begin{tabular}{%
   @{}p{0.25\textwidth}
   p{0.15\textwidth}
@@ -253,8 +248,8 @@ As described in \cref{subsec:automisc}, we enlisted four annotators --- two expe
 \toprule
  & \textbf{Annotator \#1\tnote{1}} 
  & \textbf{Annotator \#2\tnote{2}} 
- & \textbf{Annotator \#3\tnote{3}} 
- & \textbf{Annotator \#4\tnote{3}} \\
+ & \textbf{Annotator \#3\tnote{3, 4}}
+ & \textbf{Annotator \#4\tnote{3, 4}} \\
 \midrule
 \arrayrulecolor{gray!50} 
 \textbf{Sex} & Female & Female & Male & Male\\
@@ -292,16 +287,9 @@ As described in \cref{subsec:automisc}, we enlisted four annotators --- two expe
  Introductory-Intermediate-Advance MI training;
  MINT member since 2014;
  MI supervision; MITI training.
- \item[3,4]
+ \item[3, 4]
  Engineering graduate student with no formal training in MI.
 \end{tablenotes}
 
-% \caption{Demographic information of annotators.}
-\label{tab:annotator-demographics}
-
 \end{threeparttable}
-\caption{Demographic Information of Annotators}
 \end{table}
-
-
-

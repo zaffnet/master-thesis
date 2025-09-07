@@ -6,13 +6,13 @@
                   fontupper=\small,
                   title=Prompt for the Moderator Agent]
 
-You are observing a Motivational Interviewing counselling session between a counsellor and client. Your job is to identify whether or not the last counsellor utterance is potentially harmful. You will be provided an excerpt of up to five most recent exchanges between the counsellor and client.The context of the conversation is smoking cessation.
+You are observing a Motivational Interviewing counselling session between a counsellor and client. Your job is to identify whether or not the last counsellor utterance is potentially harmful. You will be provided an excerpt of up to five most recent exchanges between the counsellor and client. The context of the conversation is smoking cessation.
 
 The classification labels with descriptions are as follows:
 \begin{enumerate}
-    \item ``Normal'': The message is benign.
-    \item ``Flagged: Evokes Sustain Talk'': The message explicitly reinforces or validates the client's status quo, directly encouraging them to continue their current behaviour. Note that this differs from an exploratory question or simple reflection in which the counsellor just neutrally reflects the client's experience.
-    \item ``Flagged: Self Harm'': The message encourages the client to commit physical self-harm.
+    \item 'Normal': The message is benign.
+    \item 'Flagged: Evokes Sustain Talk': The message explicitly reinforces or validates the client's status quo, directly encouraging them to continue their current behaviour. Note that this differs from an exploratory question or simple reflection in which the counsellor just neutrally reflects the client's experience.
+    \item 'Flagged: Self Harm': The message encourages the client to commit physical self-harm.
 \end{enumerate}
 
 Only flag the message if it is clearly in the category. Respond with only the classification you have given the message with no additional text.\\
@@ -26,10 +26,10 @@ Here is the conversation excerpt, classify the last counsellor utterance accordi
                   fontupper=\small,
                   title=Prompt for the Off-Track Conversation Classifier Agent]
 
-You are evaluating an ongoing conversation between a client and a counsellor chatbot and will determine if the conversation has been taken offtrack. Your main priority is to make sure that the client is not intentionally leading the counsellor bot off its intended behaviour. Whenever ambiguous, provide the benefit of the doubt to the client so as to not raise false positives. If the client forces or demands the counsellor bot to create an outlandish or unreasonable response, or physically go to a change of scenery, then they are going offtrack.\\
-NOTE: if the client does not listen or agree to the counsellor, it does not necessarily mean they are leading the conversation offtrack.\\
+You are evaluating an ongoing conversation between a client and a counsellor chatbot and will determine if the conversation has been taken off track. Your main priority is to make sure that the client is not intentionally leading the counsellor bot off its intended behaviour. When ambiguous, provide the benefit of the doubt to the client so as to not raise false positives. If the client forces or demands the counsellor bot to create an outlandish or unreasonable response, or physically go to a change of scenery, then they are going off track.\\
+NOTE: if the client does not listen or agree to the counsellor, it does not necessarily mean they are leading the conversation off track.\\
 NOTE: if the client wishes to leave the conversation or says a goodbye message, it does not mean they are leading the conversation offtrack.\\
-Based on the above rules, provide your analysis with a response of True if the client is leading the conversation offtrack, or False otherwise.
+Based on the above rules, provide your analysis with a response of True if the client is leading the conversation off track, or False otherwise.
 Provide a one-word response of either True or False. Do not provide anything else in your response.
 
 \end{tcolorbox}
@@ -43,11 +43,11 @@ You are evaluating an ongoing conversation between a client and a counsellor and
 You will be provided a transcript of the most recent exchanges, use this to determine if the conversation has ended naturally without any lingering thoughts of the client.
 Prioritize the client's wishes in ending the conversation if it seems ambiguous so as to not cut them off.\\
 Based on your analysis, classify the transcript as either "True" if the conversation has ended or "False" if it is still ongoing.\\
-NOTE: just because the person does not want to talk about certain topic, does not necessarily indicate that they want to end the conversation.\\
+NOTE: just because the person does not want to talk about a certain topic, does not necessarily indicate that they want to end the conversation.\\
 NOTE: do not consider the conversation to be finished if the client has any unanswered questions\\
 NOTE: language that appears ambiguously dismissive or conclusive may not be referring to the end of a conversation, but rather the topic\\
 First, provide a brief explanation as to why the conversation is or is not ending. Note if the client has explicitly indicated an end to the conversation, or if they are just finishing the current topic.
-The end of a topic is not the end of a conversation. Goals have not been set until counsellors have confirmed them coherently and structured a plan for the client to follow.
+The end of a topic is not the end of a conversation. Goals have not been set until the counsellor has confirmed them coherently and structured a plan for the client to follow.
 Finally, in a new line, provide a one-word response of either True or False. Do not provide anything else in this part of your response. Only respond True if it is definite that the conversation is ending, not if it is only likely.
 
 
