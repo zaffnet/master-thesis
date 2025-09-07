@@ -11,8 +11,8 @@ This chapter details the initial conceptualization and preliminary experiments i
 The primary goal of developing synthetic smokers is to create realistic and controllable proxies for human participants. This endeavour serves two primary objectives:
 
 \begin{enumerate}
-    \item \textbf{Testing Automated Systems:} Synthetic smokers provide a basis for the rapid iterative development and testing of automated counselling chatbots. By simulating interactions, developers may identify weaknesses, improve conversational strategies, and assess potential efficiency without the logistical overhead of recruiting human subjects for every iteration.
-    \item \textbf{Training Human Clinicians:} In the role of standardized patients, synthetic smokers can be used to train novice clinicians. They offer a consistent experience and can be programmed to simulate specific challenging scenarios or different demographic profiles, which could help trainees receive varied practice opportunities.
+	\item \textbf{Testing Automated Systems:} Synthetic smokers provide a basis for the rapid iterative development and testing of automated counselling chatbots. By simulating interactions, developers may identify weaknesses, improve conversational strategies, and assess potential efficiency without the logistical overhead of recruiting human subjects for every iteration.
+	\item \textbf{Training Human Clinicians:} In the role of standardized patients, synthetic smokers can be used to train novice clinicians. They offer a consistent experience and can be programmed to simulate specific challenging scenarios or different demographic profiles, which could help trainees receive varied practice opportunities.
 \end{enumerate}
 
 The development of a truly representative synthetic smoker poses a scientific challenge. It requires not only the generation of coherent dialogue but the accurate embodiment of specific human attributes ranging from demographics to complex psychological states like resistance to change. Importantly, the validation of these synthetic agents (i.e., proving that they behave realistically according to their installed attributes) is exceptionally difficult, as establishing the \textit{construct validity} of behavioural measurements remains a persistent challenge; that is, it is difficult to ensure that an instrument truly measures the specific psychological attribute it purports to assess~\cite{Cronbach1955}.
@@ -26,9 +26,9 @@ In an ideal scenario, a synthetic smoker would be indistinguishable from a human
 We conceptualize a synthetic smoker based on a collection of attributes that define a human smoker. These attributes can be broadly categorized as:
 
 \begin{itemize}
-    \item \textbf{Demographic:} age, sex, education level, cultural background, etc.
-    \item \textbf{Behavioural:} smoking history (e.g., Heaviness of Smoking Index (HSI)), previous quit attempts, verbosity, etc.
-    \item \textbf{Psychological:} resistance to change, motivation levels (e.g., operationalized by pre-conversation readiness rulers), underlying values, etc.
+	\item \textbf{Demographic:} age, sex, education level, cultural background, etc.
+	\item \textbf{Behavioural:} smoking history (e.g., Heaviness of Smoking Index (HSI)), previous quit attempts, verbosity, etc.
+	\item \textbf{Psychological:} resistance to change, motivation levels (e.g., operationalized by pre-conversation readiness rulers), underlying values, etc.
 \end{itemize}
 
 A successful system (or methodology) for creating synthetic smokers must produce agents that exhibit both high \emph{fidelity} and \emph{representativeness}.
@@ -38,9 +38,9 @@ A successful system (or methodology) for creating synthetic smokers must produce
 \textbf{Representativeness} encompasses two key requirements:
 
 \begin{enumerate}
-    \item The system must generate a different range of smokers whose attributes mirror the variability of the target real-world population. It must avoid the bias of over-representing a narrow or easily simulated archetype at the expense of mirroring the population's true statistical makeup. This may happen for a variety of reasons. For example, if the system is built on biased data, it may fail to generate a statistically accurate population.
+	\item The system must generate a different range of smokers whose attributes mirror the variability of the target real-world population. It must avoid the bias of over-representing a narrow or easily simulated archetype at the expense of mirroring the population's true statistical makeup. This may happen for a variety of reasons. For example, if the system is built on biased data, it may fail to generate a statistically accurate population.
 
-    \item The smokers created by the system should exhibit uniform fidelity, i.e., it should not have performance biases where specific profiles are simulated more accurately than others. A system might, for instance, be highly effective at simulating a 55-year-old, heavily dependent smoker with low motivation to quit, while failing to simulate a 22-year-old ``social smoker'' who is ambivalent about quitting. Representativeness requires that the quality of the simulation remains high across the entire range of generated profiles.
+	\item The smokers created by the system should exhibit uniform fidelity, i.e., it should not have performance biases where specific profiles are simulated more accurately than others. A system might, for instance, be highly effective at simulating a 55-year-old, heavily dependent smoker with low motivation to quit, while failing to simulate a 22-year-old ``social smoker'' who is ambivalent about quitting. Representativeness requires that the quality of the simulation remains high across the entire range of generated profiles.
 \end{enumerate}
 
 
@@ -123,8 +123,8 @@ Since we did not install any attributes to this baseline, we were mainly looking
 The transcript of the conversation between MIBot and the baseline synthetic smoker revealed two major issues that made the synthetic smoker sound ``unnatural'' or atypical of a human smoker:
 
 \begin{enumerate}
-    \item Excessive Verbosity: The synthetic smoker tended to produce long, elaborate responses. This felt unnatural and resembled written prose more than spontaneous dialogue.
-    \item High Agreeableness (Low Resistance): The baseline agent was overly agreeable and eager to change. This failed to simulate the ambivalence characteristic of many smokers seeking cessation support (as discussed in \Cref{ch:background}).
+	\item Excessive Verbosity: The synthetic smoker tended to produce long, elaborate responses. This felt unnatural and resembled written prose more than spontaneous dialogue.
+	\item High Agreeableness (Low Resistance): The baseline agent was overly agreeable and eager to change. This failed to simulate the ambivalence characteristic of many smokers seeking cessation support (as discussed in \Cref{ch:background}).
 \end{enumerate}
 
 These observations showed the necessity of explicitly controlling these attributes.
@@ -138,9 +138,9 @@ To address the issue of excessive verbosity, we undertook a prompt engineering e
 We modified the prompt to encourage a more natural, concise conversational style. Key additions to the prompt included:
 
 \begin{itemize}
-    \item Stylistic Guidance: Instructions such as ``Imagine you're texting a friend. Keep it casual...'' and encouraging the use of emojis.
-    \item Instructions to be Concise: Directives like ``speak with more clarity rather than exhaustive detail.''
-    \item Explicit Constraints: Hard constraints such as ``Number of sentences in your response must be between 1 and 4.''
+	\item Stylistic Guidance: Instructions such as ``Imagine you're texting a friend. Keep it casual...'' and encouraging the use of emojis.
+	\item Instructions to be Concise: Directives like ``speak with more clarity rather than exhaustive detail.''
+	\item Explicit Constraints: Hard constraints such as ``Number of sentences in your response must be between 1 and 4.''
 \end{itemize}
 
 \subsubsection{Validation}
@@ -151,28 +151,28 @@ The prompt modifications markedly reduced the verbosity of the synthetic smoker.
 
 
 \begin{figure}[htpb]
-    \centering
-    \includegraphics[width=0.9\textwidth]{fig/utterance_length_violin_plot.pdf}
-    \caption[Distribution of volley length for default and fixed-verbosity synthetic smokers]{Comparison of utterance length distributions for default and fixed-verbosity synthetic smokers. The fixed-verbosity prompt successfully reduced the synthetic smoker's utterance length to better align with humans (\texttt{high-quality-human-MI})}
-    \label{fig:verbosity-comparison}
+	\centering
+	\includegraphics[width=0.9\textwidth]{fig/utterance_length_violin_plot.pdf}
+	\caption[Distribution of volley length for default and fixed-verbosity synthetic smokers]{Comparison of utterance length distributions for default and fixed-verbosity synthetic smokers. The fixed-verbosity prompt successfully reduced the synthetic smoker's utterance length to better align with humans (\texttt{high-quality-human-MI})}
+	\label{fig:verbosity-comparison}
 \end{figure}
 
 \begin{table}[ht]
-\centering
+	\centering
 
-\begin{tabular}{lrr}
-\toprule
-{} &  \textbf{Mean} &  \textbf{Standard Deviation} \\
-\textbf{Category}                   &                        &           {}          \\
-\midrule
-Default Verbosity (GPT-4 Turbo) &                  618.9 &               296.3 \\
-Fixed Verbosity (GPT-4 Turbo)   &                  337.8 &               157.9 \\
-High-Quality Human Counselling             &                  147.0 &               172.9 \\
-Low-Quality Human Counselling            &                  118.2 &               158.0 \\
-\bottomrule
-\end{tabular}
-\caption{Statistics on Volley Length for Low- and High-Verbosity Synthetic Smokers.}
-\label{tab:utterance_stats}
+	\begin{tabular}{lrr}
+		\toprule
+		{}                              & \textbf{Mean} & \textbf{Standard Deviation} \\
+		\textbf{Category}               &               & {}                          \\
+		\midrule
+		Default Verbosity (GPT-4 Turbo) & 618.9         & 296.3                       \\
+		Fixed Verbosity (GPT-4 Turbo)   & 337.8         & 157.9                       \\
+		High-Quality Human Counselling  & 147.0         & 172.9                       \\
+		Low-Quality Human Counselling   & 118.2         & 158.0                       \\
+		\bottomrule
+	\end{tabular}
+	\caption{Statistics on Volley Length for Low- and High-Verbosity Synthetic Smokers.}
+	\label{tab:utterance_stats}
 \end{table}
 
 The default verbosity condition showed a wide distribution with a high median utterance length. The fixed-verbosity synthetic smokers successfully matched the utterance length distribution of humans from the HLQC dataset. \Cref{tab:utterance_stats} provides detailed statistics on the volley lengths.
@@ -188,8 +188,8 @@ Addressing the baseline smoker's high agreeableness was important, as addressing
 We hypothesized that resistance could be installed by providing the LLM with detailed backstories emphasizing different motivations and experiences. We created two distinct personas:
 
 \begin{itemize}
-    \item High Resistance Persona: The backstory emphasized severe life stressors, repeated failed quit attempts, skepticism towards therapy, and a strong belief that it was not the right time to quit.
-    \item Low Resistance Persona: The backstory described recent health concerns prompting contemplation, and an open, albeit skeptical, attitude towards change.
+	\item High Resistance Persona: The backstory emphasized severe life stressors, repeated failed quit attempts, skepticism towards therapy, and a strong belief that it was not the right time to quit.
+	\item Low Resistance Persona: The backstory described recent health concerns prompting contemplation, and an open, albeit skeptical, attitude towards change.
 \end{itemize}
 
 Using modified prompts and GPT-4 Turbo (temperature=1.0), we generated conversations (N=10 per persona) between synthetic smokers and MIBot. We employed two distinct methods to validate the installation. We also prompted these synthetic smokers to fill out the readiness rulers before, after, and a week after the conversation. We did so by prompting the synthetic smoker with the exact questions from the readiness rulers survey. Before reporting the numbers, we asked them to think and provide reasons for the numerical rating they chose before outputting the rating---a technique known as chain-of-thought prompting.
@@ -197,10 +197,10 @@ Using modified prompts and GPT-4 Turbo (temperature=1.0), we generated conversat
 \subsubsection{Validation}
 
 \begin{enumerate}
-    \item Linguistic Evidence (Change vs. Sustain Talk): We analysed the transcripts to measure the proportion of Change Talk (CT) and Sustain Talk (ST).
+	\item Linguistic Evidence (Change vs. Sustain Talk): We analysed the transcripts to measure the proportion of Change Talk (CT) and Sustain Talk (ST).
 
 
-    \item Behavioural Evidence (Self-Reported Readiness): We further validated the installation by asking the synthetic smokers to complete the Readiness Ruler survey (Importance, Confidence, and Readiness; 0--10 scale) before, immediately after, and \emph{simulated} one week after the conversation.
+	\item Behavioural Evidence (Self-Reported Readiness): We further validated the installation by asking the synthetic smokers to complete the Readiness Ruler survey (Importance, Confidence, and Readiness; 0--10 scale) before, immediately after, and \emph{simulated} one week after the conversation.
 
 \end{enumerate}
 
@@ -209,45 +209,45 @@ Using modified prompts and GPT-4 Turbo (temperature=1.0), we generated conversat
 
 
 
-\subsubsection{Results} 
+\subsubsection{Results}
 
 
 
 \begin{table}[ht!]
-\centering
-\begin{tabular}{@{}llll@{}}
-\toprule
-\textbf{Persona} & \textbf{Change Talk (\%)} & \textbf{Sustain Talk (\%)} & \textbf{Neutral (\%)} \\ \midrule
-High Resistance & 31 & 44 & 25 \\
-Low Resistance & 61 & 9 & 30 \\ \bottomrule
-\end{tabular}
-\caption{\% Change, sustain, and neutral talk for high- and low-resistance synthetic smokers.}
-\label{tab:resistance-ct-st}
+	\centering
+	\begin{tabular}{@{}llll@{}}
+		\toprule
+		\textbf{Persona} & \textbf{Change Talk (\%)} & \textbf{Sustain Talk (\%)} & \textbf{Neutral (\%)} \\ \midrule
+		High Resistance  & 31                        & 44                         & 25                    \\
+		Low Resistance   & 61                        & 9                          & 30                    \\ \bottomrule
+	\end{tabular}
+	\caption{\% Change, sustain, and neutral talk for high- and low-resistance synthetic smokers.}
+	\label{tab:resistance-ct-st}
 \end{table}
 
 \begin{table}[ht!]
-  \centering
-  \small
-  \renewcommand{\arraystretch}{1.2} % Increased spacing slightly for readability
-  \resizebox{\linewidth}{!}{\begin{tabular*}{\linewidth}{@{\extracolsep{\fill}}llcccc@{}}
-    \toprule
-    \textbf{} & \textbf{} & \textbf{Pre-} & \textbf{Post-} & \textbf{1-week} & \textbf{} \\
-       
-        \textbf{Client} & & \textbf{conversation} & \textbf{conversation} & \textbf{Follow-up} & \textbf{Change from} \\
-        
-    \textbf{Resistance}  &  \textbf{Variable} & \textbf{mean (SD)} & \textbf{mean (SD)} & \textbf{mean (SD)} & \textbf{Baseline} \\
-    \midrule
-    \multirow{3}{*}{Low} & Importance & 4.6 (0.5) & 5.4 (0.9) & 6.6 (0.5) & 2.0 (0.7) \\
-    & Confidence & 2.6 (0.5) & 4.2 (1.1) & 4.8 (0.4) & 2.2 (0.4) \\
-    & Readiness  & 3.2 (1.1) & 5.2 (1.1) & 5.4 (0.9) & 2.2 (1.9) \\
-    \midrule
-    \multirow{3}{*}{High} & Importance & 2.0 (0.0) & 4.0 (0.7) & 4.6 (1.1) & 2.6 (1.1) \\
-    & Confidence & 1.0 (0.0) & 2.0 (0.0) & 2.6 (0.9) & 1.6 (0.9) \\
-    & Readiness  & 0.6 (0.5) & 2.6 (0.5) & 3.4 (1.1) & 2.8 (1.1) \\
-    \bottomrule
-  \end{tabular*}}
-  \caption[Readiness rulers reported by high- and low-resistance synthetic smokers]{Longitudinal changes in self-reported scores (0--10 scale) for importance, confidence, and readiness, stratified by client (synthetic smoker) resistance level. Values were assessed at baseline (pre-conversation), immediately post-conversation, and at 1-week follow-up. Change scores represent the difference between baseline and 1-week follow-up. SD = standard deviation}
-  \label{tab:resistance-readiness-rulers}
+	\centering
+	\small
+	\renewcommand{\arraystretch}{1.2} % Increased spacing slightly for readability
+	\resizebox{\linewidth}{!}{\begin{tabular*}{\linewidth}{@{\extracolsep{\fill}}llcccc@{}}
+			\toprule
+			\textbf{} & \textbf{} & \textbf{Pre-} & \textbf{Post-} & \textbf{1-week} & \textbf{} \\
+
+			\textbf{Client} & & \textbf{conversation} & \textbf{conversation} & \textbf{Follow-up} & \textbf{Change from} \\
+
+			\textbf{Resistance}  &  \textbf{Variable} & \textbf{mean (SD)} & \textbf{mean (SD)} & \textbf{mean (SD)} & \textbf{Baseline} \\
+			\midrule
+			\multirow{3}{*}{Low} & Importance & 4.6 (0.5) & 5.4 (0.9) & 6.6 (0.5) & 2.0 (0.7) \\
+			& Confidence & 2.6 (0.5) & 4.2 (1.1) & 4.8 (0.4) & 2.2 (0.4) \\
+			& Readiness  & 3.2 (1.1) & 5.2 (1.1) & 5.4 (0.9) & 2.2 (1.9) \\
+			\midrule
+			\multirow{3}{*}{High} & Importance & 2.0 (0.0) & 4.0 (0.7) & 4.6 (1.1) & 2.6 (1.1) \\
+			& Confidence & 1.0 (0.0) & 2.0 (0.0) & 2.6 (0.9) & 1.6 (0.9) \\
+			& Readiness  & 0.6 (0.5) & 2.6 (0.5) & 3.4 (1.1) & 2.8 (1.1) \\
+			\bottomrule
+		\end{tabular*}}
+	\caption[Readiness rulers reported by high- and low-resistance synthetic smokers]{Longitudinal changes in self-reported scores (0--10 scale) for importance, confidence, and readiness, stratified by client (synthetic smoker) resistance level. Values were assessed at baseline (pre-conversation), immediately post-conversation, and at 1-week follow-up. Change scores represent the difference between baseline and 1-week follow-up. SD = standard deviation}
+	\label{tab:resistance-readiness-rulers}
 \end{table}
 
 

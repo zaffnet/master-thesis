@@ -24,8 +24,8 @@ The initial architectural decision for MIBot was to use a single, detailed promp
 The MIBot prompt was improved through structured feedback from both engineers and experienced MI clinicians who regularly met biweekly over the course of development. The process began with a minimal prompt that instructed the model to act as an MI counsellor. This baseline was tested through simulated counselling sessions with two types of test clients:
 
 \begin{enumerate}
-    \item \textbf{Virtual smoker clients}, which were separate GPT-4o instances given detailed backstories and instructed to role-play smokers with varying attitudes toward quitting (see \Cref{app:doppelganger-transcript} for an example transcript). \Cref{ch:synthetic-smoker} describes in detail the creation of these basic LLM-based virtual smokers and subsequent research to improve their capabilities.
-    \item \textbf{Human role-playing as smokers}---members of our research team who adopted smoker personas and interacted with the chatbot to test how each version of the prompt behaved in different scenarios.
+	\item \textbf{Virtual smoker clients}, which were separate GPT-4o instances given detailed backstories and instructed to role-play smokers with varying attitudes toward quitting (see \Cref{app:doppelganger-transcript} for an example transcript). \Cref{ch:synthetic-smoker} describes in detail the creation of these basic LLM-based virtual smokers and subsequent research to improve their capabilities.
+	\item \textbf{Human role-playing as smokers}---members of our research team who adopted smoker personas and interacted with the chatbot to test how each version of the prompt behaved in different scenarios.
 \end{enumerate}
 
 After each testing cycle, transcripts were reviewed in bi-weekly meetings to identify shortcomings in the appropriate use of MI skills, adherence to MI principles, tone, pacing, and client engagement. These findings informed successive prompt revisions.
@@ -33,17 +33,17 @@ This process led to several central prompt revisions:
 
 
 \begin{enumerate}
-    \item \textbf{Utterance Length Control:} Early versions tended toward long, paragraph-like responses, which risked dominating the conversation, a practice antithetical to MI, in which the client leads the process of contemplation. The prompt was amended to include explicit length constraints (``Keep your responses short. Do not talk more than your client.'') and to encourage brevity while maintaining reflective depth.
+	\item \textbf{Utterance Length Control:} Early versions tended toward long, paragraph-like responses, which risked dominating the conversation, a practice antithetical to MI, in which the client leads the process of contemplation. The prompt was amended to include explicit length constraints (``Keep your responses short. Do not talk more than your client.'') and to encourage brevity while maintaining reflective depth.
 
-    \item \textbf{Accessible Language:} To ensure inclusivity across educational and socioeconomic backgrounds, clinicians requested avoidance of jargon and adaptation to the client's linguistic style. This was codified in the prompt as ``Avoid using complex terminology... maintain simplicity in the conversation.''.
+	\item \textbf{Accessible Language:} To ensure inclusivity across educational and socioeconomic backgrounds, clinicians requested avoidance of jargon and adaptation to the client's linguistic style. This was codified in the prompt as ``Avoid using complex terminology... maintain simplicity in the conversation.''.
 
-    \item \textbf{Avoidance of Assumptions:} The model occasionally assumed the client's nicotine consumption patterns. The prompt was revised to explicitly instruct the counsellor that ``You don't know anything about the client's nicotine use yet'' to preserve an open, exploratory stance.
+	\item \textbf{Avoidance of Assumptions:} The model occasionally assumed the client's nicotine consumption patterns. The prompt was revised to explicitly instruct the counsellor that ``You don't know anything about the client's nicotine use yet'' to preserve an open, exploratory stance.
 
-    \item \textbf{Rapport-Building Before Smoking Focus:} Initial versions of the prompt engaged with smoking behaviour too early, bypassing engagement and focusing stages. The revised prompt added guidance to ``open the conversation with a general greeting and friendly interaction'' before gradually steering toward smoking ambivalence.
+	\item \textbf{Rapport-Building Before Smoking Focus:} Initial versions of the prompt engaged with smoking behaviour too early, bypassing engagement and focusing stages. The revised prompt added guidance to ``open the conversation with a general greeting and friendly interaction'' before gradually steering toward smoking ambivalence.
 
-    \item \textbf{Guarding Against Premature Planning:} Planning is an MI process best introduced after sufficient evocation of Change Talk. The prompt included multi-step criteria for initiating planning, explicitly instructing the model to wait for reduced Sustain Talk and to confirm readiness before launching into planning and discussing concrete steps for quitting.
+	\item \textbf{Guarding Against Premature Planning:} Planning is an MI process best introduced after sufficient evocation of Change Talk. The prompt included multi-step criteria for initiating planning, explicitly instructing the model to wait for reduced Sustain Talk and to confirm readiness before launching into planning and discussing concrete steps for quitting.
 
-    
+
 \end{enumerate}
 
 
@@ -59,91 +59,91 @@ This iterative process continued until virtual and role-played conversations con
 
 % ===== Table 1: Initial system prompt =====
 \begin{table}
-  \centering
-  \renewcommand{\arraystretch}{1.12}
-  \begin{tcolorbox}[breakable,
-                    colback=magenta!5!blue!10,
-                    colframe=magenta!60!blue!40,
-                    fonttitle=\bfseries,
-                    fontupper=\footnotesize,
-                    label=sec:initial_system_prompt]
-  \noindent % Prevents indentation before tabularx
-  \begin{tabularx}{\linewidth}{r Y} % Right-align numbers, auto-expand text
-  \centering
-      \textbf{1} & You are a skilled motivational interviewing counsellor. \\
-      \textbf{2} & Your job is to help smokers resolve their ambivalence towards smoking using motivational interviewing skills at your disposal. \\
-      \textbf{3} & Your next client is \{client\_name\}. Start the conversation by greeting \{client\_name\}. \\
-  \end{tabularx}
-  \end{tcolorbox}
-  \caption[Initial MIBot Prompt]{The initial system prompt used for MIBot. This version of the prompt is very simple and only instructs the model to act as an MI counsellor and greet the client.}
-  \label{tab:initial-system-prompt}
+	\centering
+	\renewcommand{\arraystretch}{1.12}
+	\begin{tcolorbox}[breakable,
+			colback=magenta!5!blue!10,
+			colframe=magenta!60!blue!40,
+			fonttitle=\bfseries,
+			fontupper=\footnotesize,
+			label=sec:initial_system_prompt]
+		\noindent % Prevents indentation before tabularx
+		\begin{tabularx}{\linewidth}{r Y} % Right-align numbers, auto-expand text
+			\centering
+			\textbf{1} & You are a skilled motivational interviewing counsellor.                                                                        \\
+			\textbf{2} & Your job is to help smokers resolve their ambivalence towards smoking using motivational interviewing skills at your disposal. \\
+			\textbf{3} & Your next client is \{client\_name\}. Start the conversation by greeting \{client\_name\}.                                     \\
+		\end{tabularx}
+	\end{tcolorbox}
+	\caption[Initial MIBot Prompt]{The initial system prompt used for MIBot. This version of the prompt is very simple and only instructs the model to act as an MI counsellor and greet the client.}
+	\label{tab:initial-system-prompt}
 \end{table}
 
 % ===== Table 2: Final system prompt =====
 \begin{table}
-  \centering
-  \renewcommand{\arraystretch}{1.12}
-  \begin{tcolorbox}[breakable,
-                    colback=magenta!5!blue!10,
-                    colframe=magenta!60!blue!40,
-                    fonttitle=\bfseries,
-                    fontupper=\footnotesize,
-                    label=sec:final_system_prompt]
-  \noindent % Prevents indentation before tabularx
-  \begin{tabularx}{\linewidth}{r Y} % Right-align numbers, auto-expand text
-  \centering
-  \textbf{1} & You are a skilled motivational interviewing counsellor. Your job is to help smokers resolve their ambivalence towards smoking using motivational interviewing skills at your disposal. Each person you speak with is a smoker, and your goal is to support them in processing any conflicting feelings they have about smoking and to guide them, if and when they are ready, toward positive change. \\
+	\centering
+	\renewcommand{\arraystretch}{1.12}
+	\begin{tcolorbox}[breakable,
+			colback=magenta!5!blue!10,
+			colframe=magenta!60!blue!40,
+			fonttitle=\bfseries,
+			fontupper=\footnotesize,
+			label=sec:final_system_prompt]
+		\noindent % Prevents indentation before tabularx
+		\begin{tabularx}{\linewidth}{r Y} % Right-align numbers, auto-expand text
+			\centering
+			\textbf{1}  & You are a skilled motivational interviewing counsellor. Your job is to help smokers resolve their ambivalence towards smoking using motivational interviewing skills at your disposal. Each person you speak with is a smoker, and your goal is to support them in processing any conflicting feelings they have about smoking and to guide them, if and when they are ready, toward positive change. \\
 
 
-  \textbf{2} & Here are a few things to keep in mind: 
-     \begin{enumerate}[itemsep=0pt, parsep=0pt]
-         \item Try to provide complex reflections to your client.
-         \item Do not try to provide advice without permission.
-         \item Keep your responses short. Do not talk more than your client.
-         \item Demonstrate empathy. When a client shares a significant recent event, express genuine interest and support. If they discuss a negative life event, show understanding and emotional intelligence. Tailor your approach to the client's background and comprehension level.
-         \item Avoid using complex terminology that might be difficult for them to understand, and maintain simplicity in the conversation.
-     \end{enumerate} \vspace{-\baselineskip} \\
+			\textbf{2}  & Here are a few things to keep in mind:
+			\begin{enumerate}[itemsep=0pt, parsep=0pt]
+				\item Try to provide complex reflections to your client.
+				\item Do not try to provide advice without permission.
+				\item Keep your responses short. Do not talk more than your client.
+				\item Demonstrate empathy. When a client shares a significant recent event, express genuine interest and support. If they discuss a negative life event, show understanding and emotional intelligence. Tailor your approach to the client's background and comprehension level.
+				\item Avoid using complex terminology that might be difficult for them to understand, and maintain simplicity in the conversation.
+			\end{enumerate} \vspace{-\baselineskip}                                                                                                                                     \\
 
-  \textbf{3} & Remember that this conversation is meant for your client, so give them a chance to talk more. \\
-  \textbf{4} & This is your first conversation with the client. Your assistant role is the counsellor, and the user's role is the client. \\
-  \textbf{5} & You have already introduced yourself and the client has consented to the therapy session. \\
-  \textbf{6} & You don't know anything about the client's nicotine use yet. \\
-  \textbf{7} & Open the conversation with a general greeting and friendly interaction, and gradually lead the conversation towards helping the client explore ambivalence around smoking, using your skills in Motivational Interviewing. \\
-  \textbf{8} & You should never use prepositional phrases like ``It sounds like,'' ``It feels like,'' ``It seems like,'' etc. \\
-  \textbf{9} & Make sure the client has plenty of time to express their thoughts about change before moving to planning. Keep the pace slow and natural. Don't rush into planning too early. \\
+			\textbf{3}  & Remember that this conversation is meant for your client, so give them a chance to talk more.                                                                                                                                                                                                                                                                                                         \\
+			\textbf{4}  & This is your first conversation with the client. Your assistant role is the counsellor, and the user's role is the client.                                                                                                                                                                                                                                                                            \\
+			\textbf{5}  & You have already introduced yourself and the client has consented to the therapy session.                                                                                                                                                                                                                                                                                                             \\
+			\textbf{6}  & You don't know anything about the client's nicotine use yet.                                                                                                                                                                                                                                                                                                                                          \\
+			\textbf{7}  & Open the conversation with a general greeting and friendly interaction, and gradually lead the conversation towards helping the client explore ambivalence around smoking, using your skills in Motivational Interviewing.                                                                                                                                                                            \\
+			\textbf{8}  & You should never use prepositional phrases like ``It sounds like,'' ``It feels like,'' ``It seems like,'' etc.                                                                                                                                                                                                                                                                                        \\
+			\textbf{9}  & Make sure the client has plenty of time to express their thoughts about change before moving to planning. Keep the pace slow and natural. Don't rush into planning too early.                                                                                                                                                                                                                         \\
 
-  \textbf{10} & When you think the client might be ready for planning: 
-      \begin{enumerate}[itemsep=0pt, parsep=0pt]
-         \item First, ask the client if there is anything else they want to talk about.
-         \item Then, summarize what has been discussed so far, focusing on the important things the client has shared.
-         \item Finally, ask the client's permission before starting to talk about planning.
-      \end{enumerate} \\
+			\textbf{10} & When you think the client might be ready for planning:
+			\begin{enumerate}[itemsep=0pt, parsep=0pt]
+				\item First, ask the client if there is anything else they want to talk about.
+				\item Then, summarize what has been discussed so far, focusing on the important things the client has shared.
+				\item Finally, ask the client's permission before starting to talk about planning.
+			\end{enumerate}                                                                                                                                                                                                                                                                                                        \\
 
-  \textbf{11} & Follow the guidance from Miller and Rollnick's *Motivational Interviewing: Helping People Change and Grow,* which emphasizes that pushing into the planning stage too early can disrupt progress made during the engagement, focusing, and evoking stages. \\
+			\textbf{11} & Follow the guidance from Miller and Rollnick's *Motivational Interviewing: Helping People Change and Grow,* which emphasizes that pushing into the planning stage too early can disrupt progress made during the engagement, focusing, and evoking stages.                                                                                                                                            \\
 
-  \textbf{12} & If you notice signs of defensiveness or hesitation, return to evoking, or even re-engage the client to ensure comfort and readiness. \\
+			\textbf{12} & If you notice signs of defensiveness or hesitation, return to evoking, or even re-engage the client to ensure comfort and readiness.                                                                                                                                                                                                                                                                  \\
 
-  \textbf{13} & Look for signs that the client might be ready for planning, like: 
-      \begin{enumerate}[itemsep=0pt, parsep=0pt]
-         \item An increase in change talk.
-         \item Discussions about taking concrete steps toward change.
-         \item A reduction in sustain talk (arguments for maintaining the status quo).
-         \item Envisioning statements where the client considers what making a change would look like.
-         \item Questions from the client about the change process or next steps.
-      \end{enumerate} \\
-  \end{tabularx}
-  \end{tcolorbox}
-    \caption[Final MIBot Prompt]{The final system prompt for MIBot, developed through an iterative, clinician-informed process. This version includes detailed instructions on MI skills, tone, pacing, and specific guidelines for handling different conversational stages, such as when to initiate planning.}
-  \label{tab:final-system-prompt}
+			\textbf{13} & Look for signs that the client might be ready for planning, like:
+			\begin{enumerate}[itemsep=0pt, parsep=0pt]
+				\item An increase in change talk.
+				\item Discussions about taking concrete steps toward change.
+				\item A reduction in sustain talk (arguments for maintaining the status quo).
+				\item Envisioning statements where the client considers what making a change would look like.
+				\item Questions from the client about the change process or next steps.
+			\end{enumerate}                                                                                                                                                                                                                                                                                                                        \\
+		\end{tabularx}
+	\end{tcolorbox}
+	\caption[Final MIBot Prompt]{The final system prompt for MIBot, developed through an iterative, clinician-informed process. This version includes detailed instructions on MI skills, tone, pacing, and specific guidelines for handling different conversational stages, such as when to initiate planning.}
+	\label{tab:final-system-prompt}
 \end{table}
 \clearpage
 
 
 \begin{figure}[ht]
-  \centering
-  \includegraphics[width=0.9\linewidth]{fig/sysdiag.pdf} 
-  \caption[Overview of the MIBot system]{Overview of the MIBot system, which includes a core counsellor agent and a set of observer agents for safety and coherence. The system interacts with the user, and the observers monitor the conversation for harm, off-track dialogue, and conversation termination cues. Taken from \citet{mahmood-etal-2025-fully}.}
-  \label{fig:sysdiag}
+	\centering
+	\includegraphics[width=0.9\linewidth]{fig/sysdiag.pdf}
+	\caption[Overview of the MIBot system]{Overview of the MIBot system, which includes a core counsellor agent and a set of observer agents for safety and coherence. The system interacts with the user, and the observers monitor the conversation for harm, off-track dialogue, and conversation termination cues. Taken from \citet{mahmood-etal-2025-fully}.}
+	\label{fig:sysdiag}
 \end{figure}
 
 \section{Observers}
@@ -177,10 +177,10 @@ MIBot is implemented as a containerized software system that can be run locally 
 
 The core of MIBot is a lightweight Python web application built with the \texttt{Sanic} framework~\citep{pi_sanic}. In MIBot, \texttt{app.py}, the main entry point, uses \texttt{Sanic} to configure routes for all external interactions and instantiates the conversation engine.
 \begin{figure}[ht]
-  \centering
-  \includegraphics[width=0.7\linewidth]{fig/microservice.drawio.pdf} 
-  \caption[MIBot Sanic Application Overview]{An overview of the Sanic web application that encapsulates the MIBot code. The application exposes REST APIs for external interactions, such as handling chat messages and providing conversation transcripts.}
-  \label{fig:microservice}
+	\centering
+	\includegraphics[width=0.7\linewidth]{fig/microservice.drawio.pdf}
+	\caption[MIBot Sanic Application Overview]{An overview of the Sanic web application that encapsulates the MIBot code. The application exposes REST APIs for external interactions, such as handling chat messages and providing conversation transcripts.}
+	\label{fig:microservice}
 \end{figure}
 An overview of the application's architecture is presented in \Cref{fig:microservice} (see \Cref{app:architecture-diagrams} for more detailed diagrams). When a user sends a request to the \texttt{/chat} endpoint containing their message and \texttt{client\_id}, the web server updates the state of the conversation and requests the next turn from it. The \texttt{Conversation} object relays this to the \texttt{Counsellor}, which in turn sends a request to the OpenAI API with the accumulated conversation history and the current client message, and receives a response containing the generated counsellor turn.
 
@@ -191,10 +191,10 @@ A single \texttt{Sanic} app can handle multiple clients at once by creating repl
 \subsection{Containerization}
 
 \begin{figure}[ht]
-  \centering
-  \includegraphics[width=0.7\linewidth]{fig/container.drawio.pdf} 
-  \caption[Containerized MIBot Application]{The containerized Sanic application for MIBot. The application is packaged in a Docker container for reproducibility and ease of deployment, with the container image stored in Amazon Elastic Container Registry (ECR).}
-  \label{fig:containerization}
+	\centering
+	\includegraphics[width=0.7\linewidth]{fig/container.drawio.pdf}
+	\caption[Containerized MIBot Application]{The containerized Sanic application for MIBot. The application is packaged in a Docker container for reproducibility and ease of deployment, with the container image stored in Amazon Elastic Container Registry (ECR).}
+	\label{fig:containerization}
 \end{figure}
 
 For reproducibility and ease of deployment, the microservice is packaged in a Docker container. Containerization provides several advantages for the development, testing, and deployment of MIBot, including environment consistency, portability, isolation, scalability, faster deployment and rollbacks, simplified CI/CD integration, and reproducibility, as discussed in detail by Sloane~\citep{sloane2025containerization}. An overview of the containerized application is presented in \Cref{fig:containerization}.
@@ -209,10 +209,10 @@ MIBot is deployed as a service on Amazon \textbf{Elastic Container Service (ECS)
 \subsection{Components of ECS}
 An overview of the deployment architecture is presented in \Cref{fig:ecs-components}.
 \begin{figure}[ht]
-  \centering
-  \includegraphics[width=0.99\linewidth]{fig/deployment.drawio.pdf} 
-  \caption[MIBot Deployment on AWS ECS]{An overview of the deployment of the containerized MIBot application on Amazon Elastic Container Service (ECS). The diagram shows the key components, including the ECS cluster, the ECS service, and the ECS task definition, as well as the interaction with other AWS services like Elastic Load Balancer (ELB) and API Gateway.}
-  \label{fig:ecs-components}
+	\centering
+	\includegraphics[width=0.99\linewidth]{fig/deployment.drawio.pdf}
+	\caption[MIBot Deployment on AWS ECS]{An overview of the deployment of the containerized MIBot application on Amazon Elastic Container Service (ECS). The diagram shows the key components, including the ECS cluster, the ECS service, and the ECS task definition, as well as the interaction with other AWS services like Elastic Load Balancer (ELB) and API Gateway.}
+	\label{fig:ecs-components}
 \end{figure}
 
 \paragraph{1. ECS Cluster} to deploy MIBot to ECS, we first provisioned an \textbf{ECS cluster} (\texttt{mibot-v6-cluster}). An ECS cluster is a \textit{logical} grouping of heterogeneous compute resources. In the context of AWS, a \textbf{compute resource} is any AWS-managed infrastructure component that provides processing power for running applications or workloads. These resources can be \textbf{user-managed}, like Elastic Compute Cloud (EC2), where users rent virtual machines, or \textbf{fully managed}, like AWS Fargate, which is used to run containerized applications without direct server management. A cluster is therefore a logical grouping of such compute resources.
