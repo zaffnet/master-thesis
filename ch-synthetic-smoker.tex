@@ -15,7 +15,7 @@ The primary goal of developing synthetic smokers is to create realistic and cont
     \item \textbf{Training Human Clinicians:} In the role of standardized patients, synthetic smokers can be used to train novice clinicians. They offer a consistent experience and can be programmed to simulate specific challenging scenarios or different demographic profiles, which could help trainees receive varied practice opportunities.
 \end{enumerate}
 
-The development of a truly representative synthetic smoker poses a scientific challenge. It requires not only the generation of coherent dialogue but the accurate embodiment of specific human attributes ranging from demographics to complex psychological states like resistance to change. Importantly, the validation of these synthetic agents (i.e., proving that they behave realistically according to their installed attributes) is exceptionally difficult, as establishing the \textit{construct validity} of behavioural measurements remains a persistent challenge; that is, it is difficult to ensure that an instrument truly measures the specific psychological attribute it purports to assess \cite{Cronbach1955}.
+The development of a truly representative synthetic smoker poses a scientific challenge. It requires not only the generation of coherent dialogue but the accurate embodiment of specific human attributes ranging from demographics to complex psychological states like resistance to change. Importantly, the validation of these synthetic agents (i.e., proving that they behave realistically according to their installed attributes) is exceptionally difficult, as establishing the \textit{construct validity} of behavioural measurements remains a persistent challenge; that is, it is difficult to ensure that an instrument truly measures the specific psychological attribute it purports to assess~\cite{Cronbach1955}.
 
 
 \section{Goals for a Synthetic Smoker}
@@ -61,7 +61,7 @@ To assess whether the system has achieved this goal, we must formalize the proce
 
 \[M: \Gamma \rightarrow \mathcal{A}, \quad \text{where} \quad \hat{\textbf{A}} = M(\gamma)\]
 
-For example, $M$ could be a set of classifiers and analytical tools that read a transcript and analyse post-conversation changes in behaviour to estimate the speaker's resistance, motivation, smoking history, etc., and produce $\hat{\textbf{A}}$. The measurement function $M$ is an imperfect proxy, as inferring latent constructs from observable behaviour is a persistent challenge in psychometric theory \cite{loevinger1957objective, borsboom2004concept}.
+For example, $M$ could be a set of classifiers and analytical tools that read a transcript and analyse post-conversation changes in behaviour to estimate the speaker's resistance, motivation, smoking history, etc., and produce $\hat{\textbf{A}}$. The measurement function $M$ is an imperfect proxy, as inferring latent constructs from observable behaviour is a persistent challenge in psychometric theory~\cite{loevinger1957objective, borsboom2004concept}.
 
 \subsection{Defining Fidelity}
 Fidelity measures how accurately the observable outputs of a synthetic smoker reflect its assigned attributes. High fidelity is achieved when the attributes measured from the output, $\hat{\textbf{A}}_S = M(\gamma_S)$, are close to the input attributes, $\textbf{A}_S$. We quantify this correspondence using a distance metric, $d(\textbf{A}_S, \hat{\textbf{A}}_S)$, in the attribute space.
@@ -182,7 +182,7 @@ Interestingly, we observed that the counsellor bot reciprocated the client's ver
 \subsection{Installing Resistance}
 \label{sec:synthetic-smoker-resistance}
 
-Addressing the baseline smoker's high agreeableness was important, as addressing resistance to change is a important MI skill.
+Addressing the baseline smoker's high agreeableness was important, as addressing resistance to change is an important MI skill.
 
 \subsubsection{Methodology}
 We hypothesized that resistance could be installed by providing the LLM with detailed backstories emphasizing different motivations and experiences. We created two distinct personas:

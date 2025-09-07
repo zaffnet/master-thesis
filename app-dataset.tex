@@ -33,7 +33,7 @@ and \texttt{scrubadub}\footnote{\url{https://github.com/LeapBeyond/scrubadub}} (
 \multicolumn{2}{l}{\textbf{Pre-conversation Survey on Heaviness of Smoking}} \\
 \texttt{DailyNum} & How many cigarettes do you typically smoke per day?\\ 
 \texttt{FirstCig} & How soon after you wake up do you smoke your first cigarette?\\
-\texttt{HeavinessOfSmokingIndex} & Heaviness of Smoking Index \citep{heatherton1989measuring}\\
+\texttt{HeavinessOfSmokingIndex} & Heaviness of Smoking Index~\citep{heatherton1989measuring}\\
 \midrule
 
 \multicolumn{2}{l}{\textbf{Pre-conversation Survey on Quit Attempts a Week Prior}} \\
@@ -57,7 +57,7 @@ and \texttt{scrubadub}\footnote{\url{https://github.com/LeapBeyond/scrubadub}} (
 \multicolumn{2}{l}{\textbf{Post-conversation Feedback}} \\
 \texttt{FeedbackQ1} & What are three words that you would use to describe the chatbot?\\
 \texttt{FeedbackQ2} & What would you change about the conversation?\\
-\texttt{FeedbackQ3} & Did the conversation help you realize anything about your smoking behavior? Why or why not?\\
+\texttt{FeedbackQ3} & Did the conversation help you realize anything about your smoking behaviour? Why or why not?\\
 \texttt{LikedBot} & Whether the participant liked \sysname, based on responses to \texttt{Feedback\-Q1-3}.\\
 \texttt{FoundBotHelpful} & Whether the participant found \sysname helpful, based on responses to \texttt{Feedback\-Q1-3}.\\
 \midrule
@@ -117,10 +117,10 @@ and \texttt{scrubadub}\footnote{\url{https://github.com/LeapBeyond/scrubadub}} (
         \midrule
         \texttt{ParticipantID} & Unique participant ID. \\
         \texttt{Speaker} & Indicates whether the speaker is the \texttt{counsellor} (i.e., \sysname) or the \texttt{client}. \\
-        \texttt{Volley\#} & Serial number of the volley in the transcript. ``A volley is an uninterrupted utterance or sequence of utterances by one party, before another party speaks.'' \citep{MISC} \\
+        \texttt{Volley\#} & Serial number of the volley in the transcript. ``A volley is an uninterrupted utterance or sequence of utterances by one party, before another party speaks.''~\citep{MISC} \\
         \texttt{Utterance\#} & Serial number of the utterance in the transcript. \\
         \texttt{CumulativeVolley} & Represents the volley up to utterance \# \texttt{Utterance\#}. The \texttt{CumulativeVolley} corresponding to the last utterance of the volley is the complete volley, which can be used to generate the transcript. \\
-        \texttt{Utterance} & ``An utterance is a complete thought, or a thought unit.'' \citep{MISC} \\
+        \texttt{Utterance} & ``An utterance is a complete thought, or a thought unit.''~\citep{MISC} \\
         \texttt{AutoMISCLabel} & Utterance label according to AutoMISC. It can be one of the following: \texttt{R}, \texttt{Q}, \texttt{Other}, \texttt{C}, \texttt{N}, ... (See \cref{subsec:automisc}.) \\
         \texttt{AutoMISCExplanation} & Explanation provided by the AutoMISC LLM as part of its chain-of-thought. \\
         \bottomrule

@@ -1,9 +1,9 @@
 \chapter{Development and Deployment of MIBot}
 \label{ch:mibot}
 
-The recent advances in Large Language Models (LLMs) present an opportunity to automate various forms of mental health talk therapy, including Motivational Interviewing (MI) for smoking cessation. This is an important area of need, as over half of all smokers are in an ambivalent state, where they are aware of the harms of smoking but have not yet committed to quitting \citep{Babb2017}. Guiding these individuals towards a decision to quit is a central precursor for any successful quit attempt \citep{West2006}.
+The recent advances in Large Language Models (LLMs) present an opportunity to automate various forms of mental health talk therapy, including Motivational Interviewing (MI) for smoking cessation. This is an important area of need, as over half of all smokers are in an ambivalent state, where they are aware of the harms of smoking but have not yet committed to quitting~\citep{Babb2017}. Guiding these individuals towards a decision to quit is a central precursor for any successful quit attempt~\citep{West2006}.
 
-This chapter details the design and deployment of MIBot, an LLM-based MI chatbot created for this purpose. The work builds on a predecessor system, MIBot v5.2 \citep{brown2023mi}, which, being partially scripted, had limitations in conversational naturalness. The development and evaluation of the current MIBot system are described in detail by \citet{mahmood-etal-2025-fully}. This chapter complements that work by focusing on the technologies, design considerations, and implementation choices underlying the chatbot's deployment for a human feasibility study.
+This chapter details the design and deployment of MIBot, an LLM-based MI chatbot created for this purpose. The work builds on a predecessor system, MIBot v5.2~\citep{brown2023mi}, which, being partially scripted, had limitations in conversational naturalness. The development and evaluation of the current MIBot system are described in detail by \citet{mahmood-etal-2025-fully}. This chapter complements that work by focusing on the technologies, design considerations, and implementation choices underlying the chatbot's deployment for a human feasibility study.
 
 The chapter is structured as follows. \Cref{sec:iterative-development} outlines the clinician-informed, iterative process used to develop the chatbot's core prompt. \Cref{sec:observers} details the system architecture, including the observer agents designed to ensure safety and conversational coherence. Finally, \Cref{sec:deployment} describes the deployment of MIBot to a secured cloud infrastructure for a human feasibility study, including its technical implementation and the containerization of the MIBot service.
 
@@ -28,14 +28,14 @@ The MIBot prompt was improved through structured feedback from both engineers an
     \item \textbf{Human role-playing as smokers}---members of our research team who adopted smoker personas and interacted with the chatbot to test how each version of the prompt behaved in different scenarios.
 \end{enumerate}
 
-After each testing cycle, transcripts were reviewed in bi-weekly meetings to identify shortcomings in the appropriate use of MI skills, adherence to MI principles, tone, pacing, and client engagement, among other aspects. These findings informed successive prompt revisions. 
+After each testing cycle, transcripts were reviewed in bi-weekly meetings to identify shortcomings in the appropriate use of MI skills, adherence to MI principles, tone, pacing, and client engagement. These findings informed successive prompt revisions.
 This process led to several central prompt revisions:
 
 
 \begin{enumerate}
     \item \textbf{Utterance Length Control:} Early versions tended toward long, paragraph-like responses, which risked dominating the conversation, a practice antithetical to MI, in which the client leads the process of contemplation. The prompt was amended to include explicit length constraints (``Keep your responses short. Do not talk more than your client.'') and to encourage brevity while maintaining reflective depth.
 
-    \item \textbf{Accessible Language:} To ensure inclusivity across educational and socioeconomic backgrounds, clinicians requested avoidance of jargon and adaptation to the client's linguistic style. This was codified in the prompt as ``Avoid using complex terminology … maintain simplicity in the conversation.''.
+    \item \textbf{Accessible Language:} To ensure inclusivity across educational and socioeconomic backgrounds, clinicians requested avoidance of jargon and adaptation to the client's linguistic style. This was codified in the prompt as ``Avoid using complex terminology... maintain simplicity in the conversation.''.
 
     \item \textbf{Avoidance of Assumptions:} The model occasionally assumed the client's nicotine consumption patterns. The prompt was revised to explicitly instruct the counsellor that ``You don't know anything about the client's nicotine use yet'' to preserve an open, exploratory stance.
 
@@ -175,7 +175,7 @@ The prompted GPT-4o, together with observers, constitute the complete MIBot syst
 
 MIBot is implemented as a containerized software system that can be run locally for development and deployed to cloud-based systems. In this section, we discuss the implementation details of MIBot, from the structure of the Python microservice and its integration with the OpenAI API to the containerization and the deployment of the service on Amazon Web Services.
 
-The core of MIBot is a lightweight Python web application built with the \texttt{Sanic} framework \citep{pi_sanic}. In MIBot, \texttt{app.py}, the main entry point, uses \texttt{Sanic} to configure routes for all external interactions and instantiates the conversation engine.
+The core of MIBot is a lightweight Python web application built with the \texttt{Sanic} framework~\citep{pi_sanic}. In MIBot, \texttt{app.py}, the main entry point, uses \texttt{Sanic} to configure routes for all external interactions and instantiates the conversation engine.
 \begin{figure}[ht]
   \centering
   \includegraphics[width=0.7\linewidth]{fig/microservice.drawio.pdf} 
@@ -204,7 +204,7 @@ The MIBot container image is defined by a \texttt{Dockerfile} (see \Cref{app:dep
 \section{Deploying MIBot to AWS}
 \label{sec:mibot-deployment}
 
-MIBot is deployed as a service on Amazon \textbf{Elastic Container Service (ECS)}. ECS is a fully managed service provided by Amazon Web Services (AWS) that ``makes easier the deployment, management, and scaling of applications using containers'' \citep{aws-ecs-getting-started}. We now discuss each component of ECS.
+MIBot is deployed as a service on Amazon \textbf{Elastic Container Service (ECS)}. ECS is a fully managed service provided by Amazon Web Services (AWS) that ``makes easier the deployment, management, and scaling of applications using containers''~\citep{aws-ecs-getting-started}. We now discuss each component of ECS.
 
 \subsection{Components of ECS}
 An overview of the deployment architecture is presented in \Cref{fig:ecs-components}.

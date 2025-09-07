@@ -3,7 +3,7 @@
 The deployed MIBot system was used in a feasibility study with human smokers. The goal of this study was to determine the effect of a single-session interaction with MIBot and assess its safety for delivery to ambivalent smokers in a real-world setting.
 
 \section{Ethics Approval and Consent}
-The protocol was approved by the University of Toronto Research Ethics Board (Protocol Number 49997; approved August 3, 2024) \citep{rose2025ethics} and adhered to all institutional guidelines. Before participating in the study, prospective participants reviewed an online consent form that outlined study aims, procedures, compensation, potential risks, and data handling practices (excerpts from the consent form are available in \Cref{app-consent}). Participation required explicit electronic consent. Risks were described as minimal but included the possibility that discussing smoking could cause stress or temporarily increase cravings. No personally identifying information was collected, and all data were de-identified prior to release.
+The protocol was approved by the University of Toronto Research Ethics Board (Protocol Number 49997; approved August 3, 2024)~\citep{rose2025ethics} and adhered to all institutional guidelines. Before participating in the study, prospective participants reviewed an online consent form that outlined study aims, procedures, compensation, potential risks, and data handling practices (excerpts from the consent form are available in \Cref{app-consent}). Participation required explicit electronic consent. Risks were described as minimal but included the possibility that discussing smoking could cause stress or temporarily increase cravings. No personally identifying information was collected, and all data were de-identified prior to release.
 
 \section{Participant Recruitment}
 \label{sec:recruitment}
@@ -11,13 +11,13 @@ Participants were recruited via Prolific,\footnote{\url{https://www.prolific.com
 
 
 \section{Initial Screening Criteria}
-Eligibility screening was implemented at two levels: (1) Prolific prescreen filters, applied before invitation to the study; and (2) an in-study screening step prior to chatbot interaction. The first set of filters required that all invitees be 18 years or older, be fluent in English, have an approval rate of at least 90\% on prior Prolific studies, and self-identify as a \emph{current smoker} of at least five cigarettes per day, with a history of smoking at this rate for one year or more.
+Eligibility screening was implemented at two levels: (1) Prolific prescreen filters, applied before invitation to the study; and (2) an in-study screening step prior to chatbot interaction. The first set of filters required that all invitees be 18 years or older, be fluent in English, have an approval rate of at least 90\% on prior Prolific studies, and self-identify as a \emph{current smoker} of at least five cigarettes per day, with a history of smoking at this rate for at least one year.
 
 In addition, recruitment was set up to aim for a nearly equal sex balance. Although the final sample reflected slight deviations due to subsequent exclusion filtering, this pre-allocation ensured coverage across male and female participants.
 
 \section{In-Study Screening}
-Upon accessing the study website, participants completed a smoking status confirmation question identical to Prolific's prescreening question. From an initial pool of 159 participants, we screened for ambivalence using the Readiness Ruler, as described in \cref{subsec:readiness-ruler}. To ensure participants were in a state where MI could be beneficial, we included those with a pre-conversation \emph{confidence-to-quit} score of 5 or less on a 10-point scale. We also included \emph{discordant}
-participants, who, despite having high confidence (a score greater than 5), rated the importance of quitting at least five points lower than their confidence. This screening process resulted in a final sample of 106 participants.
+Upon accessing the study website, participants completed a smoking status confirmation question identical to Prolific's prescreening question. From an initial pool of 159 participants, we screened for ambivalence using the Readiness Ruler, as described in \cref{subsec:readiness-ruler}. To ensure participants were in a state where MI could be beneficial, we included those with a pre-conversation \emph{confidence-to-quit} score of 5 or lower on a 10-point scale. We also included \emph{discordant}
+participants: those who, despite having high confidence (a score greater than 5), rated the importance of quitting at least five points lower than their confidence. This screening process resulted in a final sample of 106 participants.
 
 Participants who met all criteria and provided informed consent proceeded to the survey phase. Those who did not meet the eligibility criteria were redirected to the Prolific platform without completing the study.
 
@@ -109,7 +109,7 @@ Before interaction with MIBot, participants completed:
             \item number of cigarettes smoked per day (scored 0--3), and
             \item time to first cigarette after waking (scored 0--3).
         \end{enumerate}
-    The HSI score is the sum of these two items, and ranges from 0 to 6, with higher scores indicating greater nicotine dependence.
+    The HSI score is the sum of these two items, ranging from 0 to 6, with higher scores indicating greater nicotine dependence.
     \item \textbf{Quit Attempts in the Past Week}: the number of conscious attempts to abstain from smoking for at least 24 hours during the preceding seven days.
     \item \textbf{Readiness Ruler}: three questions measuring self-reported ratings of importance, confidence, and readiness to quit on 0--10 scales (\cref{subsec:readiness-ruler}).
 \end{enumerate}
@@ -156,6 +156,6 @@ One week later, apart from self-reporting their readiness rulers, participants a
 
 \section{Automated Conversation Analysis}
 \label{subsec:automisc}
-In addition to participant-reported outcomes, conversations were analyzed for MI adherence and elicitation of motivational language using AutoMISC, an automated implementation of the Motivational Interviewing Skill Code v2.5~\citep{Houck2010}. The AutoMISC system, primarily developed by \citet{ali2025thesis} and described in that thesis, was further validated in~\citep{ali2025automated}. For this project, we used the existing AutoMISC system and contributed to the work described in~\citep{mahmood-etal-2025-fully}. The analysis pipeline first segments each conversational volley into individual utterances. Then, it classifies counsellor utterances as MI-Consistent, MI-Inconsistent, Reflection, Question, or Other. Similarly, it classifies each client utterance as exhibiting Change Talk, Sustain Talk, or Neutral. Finally, it computes the following: \%~MI-Consistent Responses (\%MIC), Reflection-to-Question Ratio (R:Q), \%~Client Change Talk (\%CT). AutoMISC was validated against human coders, including two expert MI clinicians \citep{mahmood-etal-2025-fully}.
+In addition to participant-reported outcomes, conversations were analyzed for MI adherence and elicitation of motivational language using AutoMISC, an automated implementation of the Motivational Interviewing Skill Code v2.5~\citep{Houck2010}. The AutoMISC system, primarily developed by \citet{ali2025thesis} and described in that thesis, was further validated in~\citep{ali2025automated}. For this project, we used the existing AutoMISC system and contributed to the work described in~\citep{mahmood-etal-2025-fully}. The analysis pipeline first segments each conversational volley into individual utterances. Then, it classifies counsellor utterances as MI-Consistent, MI-Inconsistent, Reflection, Question, or Other. Similarly, it classifies each client utterance as exhibiting Change Talk, Sustain Talk, or Neutral. Finally, it computes the following: \%MI-Consistent Responses (\%MIC), Reflection-to-Question Ratio (R:Q), \%Client Change Talk (\%CT). AutoMISC was validated against human coders, including two expert MI clinicians~\citep{mahmood-etal-2025-fully}.
 
 Readiness rulers (especially the week-later change in \emph{confidence}), CARE, and AutoMISC summary metrics together provide an overall understanding of the MIBot intervention, assessing its effectiveness, perceived empathy, safety, and adherence to MI principles. In the next chapter, we report the results of our human feasibility study on these metrics.
