@@ -271,12 +271,12 @@
     \usebibmacro{name:andothers}%
 }
 \DeclareFieldFormat[article]{journaltitle}{\mkbibemph{#1}}
-\DeclareFieldFormat[inproceedings]{year}{\textbf{#1}}
-\DeclareFieldFormat[misc]{year}{\textbf{#1}}
-\DeclareFieldFormat[thesis]{year}{\textbf{#1}}
-\DeclareFieldFormat[mastersthesis]{year}{\textbf{#1}}
-\DeclareFieldFormat[phdthesis]{year}{\textbf{#1}}
-\DeclareFieldFormat[article]{year}{\textbf{#1}}
+% \DeclareFieldFormat[inproceedings]{year}{\textbf{#1}}
+% \DeclareFieldFormat[misc]{year}{\textbf{#1}}
+% \DeclareFieldFormat[thesis]{year}{\textbf{#1}}
+% \DeclareFieldFormat[mastersthesis]{year}{\textbf{#1}}
+% \DeclareFieldFormat[phdthesis]{year}{\textbf{#1}}
+% \DeclareFieldFormat[article]{year}{\textbf{#1}}
 \DeclareFieldFormat[article]{pages}{#1} 
 
 \DeclareFieldFormat{labelnumberwidth}{#1}
@@ -319,6 +319,15 @@
 \DeclareFieldFormat{url}{} 
 \DeclareFieldFormat{doi}{} 
 
+% --- Citation formatting ---
+\renewbibmacro*{cite}{%
+  \iffieldundef{shorthand}
+    {\printnames{labelname}%
+     \setunit{\addcomma\space}%
+     \usebibmacro{cite:labeldate+extradate}}
+    {\usebibmacro{cite:shorthand}}}
+
+
 \DeclareCiteCommand{\parencite}[\mkbibparens]
   {\usebibmacro{prenote}}
   {\usebibmacro{citeindex}%
@@ -336,6 +345,12 @@
     }}}
   {\multicitedelim}
   {\usebibmacro{postnote}}
+
+
+% Configure "et al." format
+\DefineBibliographyStrings{english}{
+  andothers = {et al\adddot},
+}
 
 
 \newcommand\citep{\parencite}
