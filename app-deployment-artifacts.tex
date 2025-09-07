@@ -102,37 +102,37 @@ HEALTHCHECK --interval=30s --timeout=5s --start-period=10s --retries=3 \
 
 
 \begin{table}[ht!]
-\centering
+	\centering
 
 
-\begin{tabular}{ll}
-\toprule
-\textbf{Resource Path} & \textbf{Allowed HTTP Method} \\
-\midrule
+	\begin{tabular}{ll}
+		\toprule
+		\textbf{Resource Path}            & \textbf{Allowed HTTP Method} \\
+		\midrule
 
-% Use \multirow for cells that span multiple rows.
-% The first argument is the number of rows to span.
-\multirow{2}{*}{/chat} & POST \\
-                       & OPTIONS \\ 
-\cmidrule(l){2-2} % Adds a small line to separate groups
+		% Use \multirow for cells that span multiple rows.
+		% The first argument is the number of rows to span.
+		\multirow{2}{*}{/chat}            & POST                         \\
+		                                  & OPTIONS                      \\
+		\cmidrule(l){2-2} % Adds a small line to separate groups
 
-\multirow{2}{*}{/get\_transcript} & POST \\
-                                & OPTIONS \\
-\cmidrule(l){2-2}
+		\multirow{2}{*}{/get\_transcript} & POST                         \\
+		                                  & OPTIONS                      \\
+		\cmidrule(l){2-2}
 
-\multirow{2}{*}{/health} & GET \\
-                         & OPTIONS \\
-\cmidrule(l){2-2}
+		\multirow{2}{*}{/health}          & GET                          \\
+		                                  & OPTIONS                      \\
+		\cmidrule(l){2-2}
 
-\multirow{2}{*}{/info} & GET \\
-                       & OPTIONS \\
-\cmidrule(l){2-2}
+		\multirow{2}{*}{/info}            & GET                          \\
+		                                  & OPTIONS                      \\
+		\cmidrule(l){2-2}
 
-\multirow{2}{*}{/s3\_upload} & POST \\
-                           & OPTIONS \\
+		\multirow{2}{*}{/s3\_upload}      & POST                         \\
+		                                  & OPTIONS                      \\
 
-\bottomrule
-\end{tabular}
-\caption{API Gateway Resource and Method Configuration}
-\label{tab:api_gateway}
+		\bottomrule
+	\end{tabular}
+	\caption{API Gateway Resource and Method Configuration}
+	\label{tab:api_gateway}
 \end{table}

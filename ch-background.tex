@@ -8,22 +8,22 @@ Motivational Interviewing (MI) is a counselling technique originally developed i
 
 
 \begin{table}[ht!]
-\centering
-\begin{tabular}{@{} p{0.12\textwidth} p{0.38\textwidth} p{0.38\textwidth} @{}}
-\toprule
-\textbf{Speaker} & \textbf{Change Talk} & \textbf{Sustain Talk} \\
-\midrule
-\textbf{Client} & 
-``I know I should quit smoking because my kids hate the smell, and I don’t want them to pick up the habit.'' & 
-``I’ve tried quitting before, but I always end up lighting one when I’m stressed out. It’s just who I am.'' \\
-\addlinespace
-\textbf{Counsellor} & 
-``It sounds like you really care about setting a good example for your children.'' & 
-``So smoking feels like a part of how you manage difficult emotions.'' \\
-\bottomrule
-\end{tabular}
-\caption[Examples of change talk and sustain talk]{Examples of change talk and sustain talk in motivational interviewing, with corresponding counsellor responses. The table shows client statements expressing motivation to change (change talk) and resistance to change (sustain talk), and how a counsellor might respond to each in an MI-consistent manner.}
-\label{tab:change_sustain_talk}
+	\centering
+	\begin{tabular}{@{} p{0.12\textwidth} p{0.38\textwidth} p{0.38\textwidth} @{}}
+		\toprule
+		\textbf{Speaker}                                                                                             & \textbf{Change Talk} & \textbf{Sustain Talk} \\
+		\midrule
+		\textbf{Client}                                                                                              &
+		``I know I should quit smoking because my kids hate the smell, and I don’t want them to pick up the habit.'' &
+		``I’ve tried quitting before, but I always end up lighting one when I’m stressed out. It’s just who I am.''                                                 \\
+		\addlinespace
+		\textbf{Counsellor}                                                                                          &
+		``It sounds like you really care about setting a good example for your children.''                           &
+		``So smoking feels like a part of how you manage difficult emotions.''                                                                                      \\
+		\bottomrule
+	\end{tabular}
+	\caption[Examples of change talk and sustain talk]{Examples of change talk and sustain talk in motivational interviewing, with corresponding counsellor responses. The table shows client statements expressing motivation to change (change talk) and resistance to change (sustain talk), and how a counsellor might respond to each in an MI-consistent manner.}
+	\label{tab:change_sustain_talk}
 \end{table}
 
 
@@ -37,26 +37,26 @@ MI's empathetic, autonomy-supportive atmosphere is particularly important for \e
 
 
 \begin{table}[ht!]
-\centering
-\begin{tabular}{@{} p{0.24\textwidth} p{0.70\textwidth} @{}}
-\toprule
-\textbf{MI Skill} & \textbf{Example} \\
-\midrule
-\textbf{Open-ended Question} & 
-``What are some things you've thought about when it comes to cutting back on drinking?'' \\
-\addlinespace
-\textbf{Affirmation} & 
-``You've shown a lot of strength in coming here today and being open about what’s going on.'' \\
-\addlinespace
-\textbf{Reflective Listening} & 
-``So you're feeling stuck. You want to make a change, but you're also worried you might fail again.'' \\
-\addlinespace
-\textbf{Summary} & 
-``Let me see if I've got this right: you've been thinking more about quitting, especially since your health scare, but it's been hard to imagine your daily routine without smoking. At the same time, you’ve started walking more and cutting back already.'' \\
-\bottomrule
-\end{tabular}
-\caption[Examples of MI skills]{Examples of core skills in motivational interviewing (OARS). The table provides examples for open-ended questions, affirmations, reflective listening, and summaries.}
-\label{tab:mi_skill_examples}
+	\centering
+	\begin{tabular}{@{} p{0.24\textwidth} p{0.70\textwidth} @{}}
+		\toprule
+		\textbf{MI Skill}             & \textbf{Example}                                                                                                                                                                                                               \\
+		\midrule
+		\textbf{Open-ended Question}  &
+		``What are some things you've thought about when it comes to cutting back on drinking?''                                                                                                                                                                       \\
+		\addlinespace
+		\textbf{Affirmation}          &
+		``You've shown a lot of strength in coming here today and being open about what’s going on.''                                                                                                                                                                  \\
+		\addlinespace
+		\textbf{Reflective Listening} &
+		``So you're feeling stuck. You want to make a change, but you're also worried you might fail again.''                                                                                                                                                          \\
+		\addlinespace
+		\textbf{Summary}              &
+		``Let me see if I've got this right: you've been thinking more about quitting, especially since your health scare, but it's been hard to imagine your daily routine without smoking. At the same time, you’ve started walking more and cutting back already.'' \\
+		\bottomrule
+	\end{tabular}
+	\caption[Examples of MI skills]{Examples of core skills in motivational interviewing (OARS). The table provides examples for open-ended questions, affirmations, reflective listening, and summaries.}
+	\label{tab:mi_skill_examples}
 \end{table}
 
 
@@ -93,7 +93,7 @@ This is a promising development for therapeutic chatbots: as these models advanc
 Before the advent of LLMs, however, the development of therapeutic chatbots had a long and varied history.
 
 \subsection*{The Transformer Neural Architecture}
-\label{ssec:transformers} 
+\label{ssec:transformers}
 Transformers are the architectural backbone of virtually all modern large language models, and they play a central role in the chatbot developed in this work. The transformer architecture~\cite{vaswani2017attention} departed from previous neural network designs by using self-attention as its sole mechanism to ``compute representations of its input and output without using sequence-aligned RNNs or convolution''~\cite{vaswani2017attention}. This allowed parallel processing of each input token in the context to compute its deep context-dependent representation. In a transformer, each input token's representation can be computed by attending to every other token in the context (the complete conversation up until now), which enables the model to capture long-range relationships and context. This is implemented through multi-head self-attention layers: the model computes attention weights that represent different types of relationships (e.g., semantic similarity, positional relevance) across the sequence. By stacking multiple self-attention layers, transformers can build very deep representations of text. Crucially, they scale efficiently on parallel hardware because each layer's computations can be parallelized (unlike the sequential nature of RNNs). This scalability has allowed training of extremely large models with hundreds of billions of parameters on massive datasets.
 
 
@@ -152,7 +152,7 @@ A common approach to creating an LLM-based persona is to inject \emph{persona pr
 
 In more elaborate setups, designers provide a series of in-context demonstrations, e.g., example dialogues or question-answer pairs that exemplify the persona's behaviour (what might be called \textbf{behavioural exemplification}). By seeing a few turns of a persona in action, the LLM can learn to mimic the speaking style and attitudes illustrated by those examples~\cite{joshi-etal-2023-persona}. This few-shot prompting strategy has been used to install personas ranging from cheerful customer service agents to sarcastic comedians, with qualitative improvements in staying ``in character''~\cite{gururangan-etal-2020-dont}. Prompt-based methods have the advantage of not requiring model fine-tuning, but they rely on the model's context window and can degrade as a conversation progresses and new context pushes out the initial persona prompt.
 
-\subsection{Style Transfer and Fine-Tuned Personas} 
+\subsection{Style Transfer and Fine-Tuned Personas}
 Another line of work treats persona adoption as a controllable text style problem. Rather than (or in addition to) conditioning the model on a persona description, one can post-process or constrain generation to match a target style associated with the persona. For example, a base LLM might first generate a candidate response based on conversational context, and then a style transfer model rewrites that response in the voice of a 45-year-old male smoker from a particular background.
 
 Prior research on text style transfer provides tools for altering attributes like formality, sentiment, or dialect while preserving meaning~\cite{niu-bansal-2018-polite, sudhakar-etal-2019-transforming}. These techniques have been extended to dialogue personalization, such as \citet{niu-bansal-2018-polite}, which used a politeness classifier and style-specific language model to make a chatbot consistently polite or rude on demand. Also, \citet{zhang-etal-2018-personalizing} trained a transformer-based dialogue model with style embeddings for persona and emotion to generate stylized responses in one pass. Such style-controlled generation can intensify persona-specific linguistic quirks (choice of words, syntax, formality level) and has shown success in producing responses that human evaluators identify as having a distinct personality~\cite{zhang-etal-2018-personalizing}.
