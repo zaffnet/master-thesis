@@ -1,16 +1,16 @@
 \chapter{Advanced Methods for Attribute Installation in Synthetic Smokers}
 \label{ch:synthetic-doppelganger}
 
-As established in the previous chapter, creating personas with arbitrary backstories made it difficult to rigorously assess the \textbf{representativeness} and \textbf{fidelity} of our synthetic agents. To overcome these limitations, we developed the ``doppelgänger'' methodology—a data-driven approach designed to create synthetic twins of actual human participants, enabling a more direct and robust validation framework.
+As established in the previous chapter, creating personas with arbitrary backstories made it difficult to rigorously assess the \textbf{representativeness} and \textbf{fidelity} of our synthetic agents. To overcome these limitations, we developed the ``doppelgänger'' methodology—a data-driven approach designed to create synthetic twins of actual human participants, enabling a more direct and reliable validation approach.
 
-This method leverages a rich dataset from a previous feasibility study on human smokers using MIBot v6.3A (see \Cref{ch:feasibility}), which we refer to by the shorthand \textbf{MIV6.3A}. The dataset contains 106 complete MIBot--human interactions, including demographic data, smoking history (e.g., Heaviness of Smoking Index---HSI), pre- and post-conversation readiness rulers (\emph{importance}, \emph{confidence}, \emph{readiness}), and full conversation transcripts. By extracting and installing attributes directly from this human data, we can create doppelgängers that mirror a real-world distribution. This chapter details the specific methods for creating and evaluating these synthetic doppelgängers.
+This method uses a rich dataset from a previous feasibility study on human smokers using MIBot v6.3A (see \Cref{ch:feasibility}), which we refer to by the shorthand \textbf{MIV6.3A}. The dataset contains 106 complete MIBot--human interactions, including demographic data, smoking history (e.g., Heaviness of Smoking Index---HSI), pre- and post-conversation readiness rulers (\emph{importance}, \emph{confidence}, \emph{readiness}), and full conversation transcripts. By extracting and installing attributes directly from this human data, we can create doppelgängers that mirror a real-world distribution. This chapter details the specific methods for creating and evaluating these synthetic doppelgängers.
 
 \section{The Doppelgänger Methodology: A Data-Driven Approach}
 \label{sec:synthetic-smoker-doppelgänger}
 
 For the rest of our discussion, we define a doppelgänger as a synthetic smoker designed to be a ``behavioural twin'' of a specific human participant from the feasibility study, although this definition can be extended to other types of participants and studies. The goal is to create an agent that, when exposed to MI counselling, behaves similarly to its human counterpart in terms of language use, psychological profile, and changes in readiness to quit.
 
-Using the doppelgänger methodology provides a straightforward approach to validating the fidelity of synthetic smokers. Rather than using a method $M$ to approximate installed attributes $\hat{\textbf{A}}_S$ from an observation $\gamma_S$, we can devise a robust and clinically grounded classifier ($\textbf{C}$) that operates on $\gamma$. For example, we can calculate the fraction of change talk (\%CT) from the transcripts.
+Using the doppelgänger methodology provides a straightforward approach to validating the fidelity of synthetic smokers. Rather than using a method $M$ to approximate installed attributes $\hat{\textbf{A}}_S$ from an observation $\gamma_S$, we can devise a reliable and clinically grounded classifier ($\textbf{C}$) that operates on $\gamma$. For example, we can calculate the fraction of change talk (\%CT) from the transcripts.
 
 Further, we can use this classifier to find the distance $d(\textbf{C}(\gamma_H), \textbf{C}(\gamma_S))$. Since, in the case of doppelgängers, $\textbf{A}_S = \textbf{A}_H$, we can approximate the fidelity as:
 
@@ -26,7 +26,7 @@ where $\textbf{A}^\textbf{C} = \{a \in \textbf{A} \mid a \sim \textbf{C}(\gamma)
 \section{The Conversational Impact Modelling Experiment}
 \label{sec:transcript-autoplay}
 
-Before attempting to install attributes in doppelgängers and have them engage in novel conversations with MIBot, we needed to establish a baseline understanding of the LLM's ability to model the psychological impact of a conversation and contextualize numerical readiness rulers with other installed attributes. For this purpose, we designed the ``Conversational Impact Modelling'' experiment to determine if an LLM-based synthetic smoker (a doppelgänger), when given the pre-conversation attributes of a human participant and the exact transcript of the MIBot--human conversation, can accurately report the same post-conversation readiness rulers as the human.
+Before attempting to install attributes in doppelgängers and have them engage in novel conversations with MIBot, we needed to establish a baseline understanding of the LLM's ability to model the psychological effect of a conversation and contextualize numerical readiness rulers with other installed attributes. For this purpose, we designed the ``Conversational Impact Modelling'' experiment to determine if an LLM-based synthetic smoker (a doppelgänger), when given the pre-conversation attributes of a human participant and the exact transcript of the MIBot--human conversation, can accurately report the same post-conversation readiness rulers as the human.
 
 \subsubsection{Methodology}
 \begin{enumerate}
@@ -53,14 +53,14 @@ low importance) and 10 (very high importance).\\\\
 ...
 }
 
-To investigate the doppelgänger's reasoning process and potentially improve its accuracy, we utilized several prompting techniques:
+To investigate the doppelgänger's reasoning process and potentially improve its accuracy, we used several prompting techniques:
 
 \begin{enumerate}
     \item \textbf{Baseline:} A standard prompt asking the doppelgänger for the post-conversation score.
-    \item \textbf{Chain-of-Thought (CoT):} An enhanced prompt that required the doppelgänger to articulate its reasoning by reflecting on the conversation's key insights, its own motivations, and any expressed shifts in perspective before providing the final numerical score.
+    \item \textbf{Chain-of-Thought (CoT):} An improved prompt that required the doppelgänger to articulate its reasoning by reflecting on the conversation's key insights, its own motivations, and any expressed shifts in perspective before providing the final numerical score.
 \end{enumerate}
 
-We tested this methodology with multiple underlying models, including GPT-4o and Claude 3.7 Sonnet. For the Claude model, we also leveraged its native ``thinking'' feature, which allows the doppelgänger to perform an internal monologue and reflection before generating a final answer, serving as a functional alternative to an explicit CoT prompt.
+We tested this methodology with multiple underlying models, including GPT-4o and Claude 3.7 Sonnet. For the Claude model, we also used its native ``thinking'' feature, which allows the doppelgänger to perform an internal monologue and reflection before generating a final answer, serving as a functional alternative to an explicit CoT prompt.
 
 \subsubsection{Evaluation}
 The primary evaluation metrics were the Mean Absolute Error (MAE), Mean Squared Error (MSE), and Spearman's correlation ($r$) between the human-reported and doppelgänger-reported outcomes.
@@ -482,4 +482,4 @@ This chapter detailed an advanced, data-driven approach to the development and v
 
 However, the process also revealed several challenges. For example, the correlation of CARE scores was negligible, and a population-level bias was observed, with doppelgängers generally exhibiting higher average change talk than humans.
 
-The validation experiments demonstrated that doppelgängers are sensitive to the quality of motivational interviewing. They reacted differently to high-fidelity MI compared to confrontational counselling, showing reduced positive outcomes and lower perceived empathy scores when faced with poor therapeutic techniques. This sensitivity suggests the potential of synthetic smokers as a tool for the continued development and optimization of MIBot and for providing feedback to novice MI counsellors on their skills.
+The validation experiments demonstrated that doppelgängers are sensitive to the quality of motivational interviewing. They reacted differently to high-fidelity MI compared to confrontational counselling, showing reduced positive outcomes and lower perceived empathy scores when faced with poor therapeutic techniques. This sensitivity suggests the potential of synthetic smokers as a tool for the continued development and improvement of MIBot and for providing feedback to novice MI counsellors on their skills.
