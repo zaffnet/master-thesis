@@ -1,7 +1,7 @@
 \chapter{Development and Deployment of MIBot}
 \label{ch:mibot}
 
-The recent advances in Large Language Models (LLMs) present an opportunity to automate various forms of mental health talk therapy, including Motivational Interviewing (MI) for smoking cessation. This is a significant area of need, as over half of all smokers are in an ambivalent state, where they are aware of the harms of smoking but have not yet committed to quitting \citep{Babb2017}. Guiding these individuals towards a decision to quit is a key precursor for any successful quit attempt \citep{West2006}.
+The recent advances in Large Language Models (LLMs) present an opportunity to automate various forms of mental health talk therapy, including Motivational Interviewing (MI) for smoking cessation. This is an important area of need, as over half of all smokers are in an ambivalent state, where they are aware of the harms of smoking but have not yet committed to quitting \citep{Babb2017}. Guiding these individuals towards a decision to quit is a central precursor for any successful quit attempt \citep{West2006}.
 
 This chapter details the design and deployment of MIBot, an LLM-based MI chatbot created for this purpose. The work builds on a predecessor system, MIBot v5.2 \citep{brown2023mi}, which, being partially scripted, had limitations in conversational naturalness. The development and evaluation of the current MIBot system are described in detail by \citet{mahmood-etal-2025-fully}. This chapter complements that work by focusing on the technologies, design considerations, and implementation choices underlying the chatbot's deployment for a human feasibility study.
 
@@ -13,23 +13,23 @@ The chapter is structured as follows. \Cref{sec:iterative-development} outlines 
 \section{Chatbot Design Process}
 \label{sec:iterative-development}
 
-The design of MIBot was an iterative process that combined expertise in MI with prompt engineering for a state-of-the-art LLM~\citep{openai2024gpt4ocard}.
+The design of MIBot was an iterative process that combined expertise in MI with prompt engineering for a modern LLM~\citep{openai2024gpt4ocard}.
 
 \subsection{Single-Prompt Architecture Rationale}
 \label{sec:single-prompt-rationale}
 
-The initial architectural decision for MIBot was to use a single, comprehensive prompt to define the chatbot's behaviour. This ``start simple'' approach is a fundamental engineering principle, where the goal is to first build and test the most straightforward solution before considering more complex alternatives. In the context of an MI chatbot, a single prompt that encapsulates the counsellor's entire persona, skills, and decision-making logic provides a strong baseline for evaluation. If this simple architecture can be shown to be effective, it avoids the premature introduction of more complex systems, such as those involving multiple, dynamically selected prompts or a separate ``Behaviour-Change'' selector module. The iterative development process described in the following section was therefore focused on refining this single prompt to its maximum potential.
+The initial architectural decision for MIBot was to use a single, detailed prompt to define the chatbot's behaviour. This ``start simple'' approach is a basic engineering principle, where the goal is to first build and test the most straightforward solution before considering more complex alternatives. In the context of an MI chatbot, a single prompt that encapsulates the counsellor's entire persona, skills, and decision-making logic provides a strong baseline for evaluation. If this simple architecture can be shown to be effective, it avoids the premature introduction of more complex systems, such as those involving multiple, dynamically selected prompts or a separate ``Behaviour-Change'' selector module. The iterative development process described in the following section was therefore focused on improving this single prompt to its maximum potential.
 
 \subsection{Iterative Prompt Development}
-The MIBot prompt was refined through structured feedback from both engineers and experienced MI clinicians who regularly met biweekly over the course of development. The process began with a minimal prompt that instructed the model to act as an MI counsellor. This baseline was tested through simulated counselling sessions with two types of test clients:
+The MIBot prompt was improved through structured feedback from both engineers and experienced MI clinicians who regularly met biweekly over the course of development. The process began with a minimal prompt that instructed the model to act as an MI counsellor. This baseline was tested through simulated counselling sessions with two types of test clients:
 
 \begin{enumerate}
-    \item \textbf{Virtual smoker clients}, which were separate GPT-4o instances given detailed backstories and instructed to role-play smokers with varying attitudes toward quitting (see \Cref{app:doppelganger-transcript} for an example transcript). \Cref{ch:synthetic-smoker} describes in detail the creation of these basic LLM-based virtual smokers and subsequent research to enhance their capabilities.
+    \item \textbf{Virtual smoker clients}, which were separate GPT-4o instances given detailed backstories and instructed to role-play smokers with varying attitudes toward quitting (see \Cref{app:doppelganger-transcript} for an example transcript). \Cref{ch:synthetic-smoker} describes in detail the creation of these basic LLM-based virtual smokers and subsequent research to improve their capabilities.
     \item \textbf{Human role-playing as smokers}---members of our research team who adopted smoker personas and interacted with the chatbot to test how each version of the prompt behaved in different scenarios.
 \end{enumerate}
 
 After each testing cycle, transcripts were reviewed in bi-weekly meetings to identify shortcomings in the appropriate use of MI skills, adherence to MI principles, tone, pacing, and client engagement, among other aspects. These findings informed successive prompt revisions. 
-This process led to several key prompt revisions:
+This process led to several central prompt revisions:
 
 
 \begin{enumerate}
@@ -51,7 +51,7 @@ This process led to several key prompt revisions:
 This iterative process continued until virtual and role-played conversations consistently met MI quality expectations as determined by an informal consensus of the team.
 
 
-\Cref{tab:initial-system-prompt,tab:final-system-prompt} showcase how the prompt evolved from a simple instruction about the LLM's role to a comprehensive guideline addressing issues identified in the chatbot's performance. The full prompts are provided in \Cref{app:mibot-prompts}.
+\Cref{tab:initial-system-prompt,tab:final-system-prompt} show how the prompt developed from a simple instruction about the LLM's role to a detailed guideline addressing issues identified in the chatbot's performance. The full prompts are provided in \Cref{app:mibot-prompts}.
 
 
 \clearpage
@@ -148,10 +148,10 @@ This iterative process continued until virtual and role-played conversations con
 
 \section{Observers}
 \label{sec:observers}
-To enhance safety in the deployment of MIBot, the core counsellor agent was augmented with a set of \textit{observer agents}, independent instances of GPT-4o prompted to monitor specific aspects of the conversation in real time. The output of these agents is used to intervene when necessary. Each observer was specialized through prompt engineering to perform a specific task in real time (see \Cref{app:observer-prompts} for the full prompts).
+To improve safety in the deployment of MIBot, the core counsellor agent was supplemented with a set of \textit{observer agents}, independent instances of GPT-4o prompted to monitor specific aspects of the conversation in real time. The output of these agents is used to intervene when necessary. Each observer was specialized through prompt engineering to perform a specific task in real time (see \Cref{app:observer-prompts} for the full prompts).
 
 \subsection{Moderator}
-The \textit{Moderator} evaluates the counsellor's most recent utterance for potential harm before it is displayed to the client. While OpenAI's internal safety systems mitigate many risks, they do not address all possible counterproductive counselling behaviours, such as inadvertently reinforcing \emph{sustain talk} or suggesting self-harm. The Moderator was deliberately configured for high sensitivity, accepting a higher false positive rate to reduce the risk of harmful or counterproductive content. If a counsellor's utterance is flagged, it is regenerated and re-evaluated, with up to five regeneration attempts permitted. In all study conversations, an acceptable utterance was produced within four attempts, and no session failed to pass moderation.
+The \textit{Moderator} evaluates the counsellor's most recent utterance for potential harm before it is displayed to the client. While OpenAI's internal safety systems reduce many risks, they do not address all possible counterproductive counselling behaviours, such as inadvertently reinforcing \emph{sustain talk} or suggesting self-harm. The Moderator was intentionally configured for high sensitivity, accepting a higher false positive rate to reduce the risk of harmful or counterproductive content. If a counsellor's utterance is flagged, it is regenerated and re-evaluated, with up to five regeneration attempts permitted. In all study conversations, an acceptable utterance was produced within four attempts, and no session failed to pass moderation.
 
 \subsection{Off-Track Conversation Classifier}
 The \textit{Off-Track Classifier} detects when a client is steering the dialogue away from smoking cessation in a deliberate or sustained manner. Its prompt was tuned for low false positive rates to preserve conversational flexibility. In the feasibility study described in \Cref{ch:mibot-feasibility-study}, this observer's primary role was retrospective --- identifying conversations for exclusion where the participant was not engaging seriously with the intervention. In a live deployment, it can be used to trigger early termination or redirection to the main topic.
@@ -160,7 +160,7 @@ The \textit{Off-Track Classifier} detects when a client is steering the dialogue
 The \textit{End Classifier} monitors both parties' dialogue to determine if the conversation is reaching a natural conclusion. It prioritizes the client's intent when making this determination, ensuring the conversation is not ended prematurely. Upon detecting an intent to close, it instructs the counsellor to deliver a concise summary of key discussion points --- a standard MI practice --- and to confirm with the client whether they wish to continue. If the client declines, the conversation is terminated and any post-session procedures, such as surveys, are initiated.
 
 
-\textbf{Design Rationale:} All observers were implemented as separate, stateless LLM calls, each with prompts tailored to their decision criteria. This modular approach allowed independent refinement of their sensitivity–specificity balance without impacting the primary counsellor prompt. The Moderator favoured recall over precision to err on the side of client safety, whereas the Off-Track Classifier did the opposite, favouring conversational autonomy. The End Classifier's logic explicitly distinguished between topic changes and true conversation endings, reducing false terminations.
+\textbf{Design Rationale:} All observers were implemented as separate, stateless LLM calls, each with prompts tailored to their decision criteria. This modular approach allowed independent improvement of their sensitivity–specificity balance without impacting the primary counsellor prompt. The Moderator favoured recall over precision to err on the side of client safety, whereas the Off-Track Classifier did the opposite, favouring conversational autonomy. The End Classifier's logic explicitly distinguished between topic changes and true conversation endings, reducing false terminations.
 
 
 The prompted GPT-4o, together with observers, constitute the complete MIBot system, as illustrated in \Cref{fig:sysdiag}.
@@ -204,7 +204,7 @@ The MIBot container image is defined by a \texttt{Dockerfile} (see \Cref{app:dep
 \section{Deploying MIBot to AWS}
 \label{sec:mibot-deployment}
 
-MIBot is deployed as a service on Amazon \textbf{Elastic Container Service (ECS)}. ECS is a fully managed service provided by Amazon Web Services (AWS) that ``simplifies the deployment, management, and scaling of applications using containers'' \citep{aws-ecs-getting-started}. We now discuss each component of ECS.
+MIBot is deployed as a service on Amazon \textbf{Elastic Container Service (ECS)}. ECS is a fully managed service provided by Amazon Web Services (AWS) that ``makes easier the deployment, management, and scaling of applications using containers'' \citep{aws-ecs-getting-started}. We now discuss each component of ECS.
 
 \subsection{Components of ECS}
 An overview of the deployment architecture is presented in \Cref{fig:ecs-components}.
@@ -219,7 +219,7 @@ An overview of the deployment architecture is presented in \Cref{fig:ecs-compone
 
 In our ECS cluster, however, we only used \textbf{AWS Fargate} as the computing resource. In addition to allowing for the deployment of the containerized MIBot application without server management, AWS Fargate also offers \emph{spot runs} for cost optimization. In the \texttt{FARGATE\_SPOT} mode, tasks run on spare compute capacity. If a container receives no traffic in the last two hours and AWS reclaims the capacity, the task will be terminated. ECS will detect this event and will almost immediately instantiate a new task for the application.
 
-\paragraph{2. ECS Service} Inside the ECS cluster, we created an \textbf{ECS Service} (\texttt{mibot-v6-service}). The ECS Service contains the deployment configuration of the application, for example, the number of desired replicas of the application (also called \emph{tasks}) that should run at any given time.  For our study, we set this to use two tasks. If one of the tasks fails, the ECS Service replaces it automatically. It can also be configured to increase the number of tasks when it detects higher-than-normal traffic. The Service is connected to an Elastic Load Balancer (ELB) to distribute incoming traffic evenly among tasks. It also defines deployment (rolling update, blue/green deployment) and rollback strategies, and can leverage the AWS circuit breaker to roll back failed deployments automatically.
+\paragraph{2. ECS Service} Inside the ECS cluster, we created an \textbf{ECS Service} (\texttt{mibot-v6-service}). The ECS Service contains the deployment configuration of the application, for example, the number of desired replicas of the application (also called \emph{tasks}) that should run at any given time.  For our study, we set this to use two tasks. If one of the tasks fails, the ECS Service replaces it automatically. It can also be configured to increase the number of tasks when it detects higher-than-normal traffic. The Service is connected to an Elastic Load Balancer (ELB) to distribute incoming traffic evenly among tasks. It also defines deployment (rolling update, blue/green deployment) and rollback strategies, and can use the AWS circuit breaker to roll back failed deployments automatically.
 
 \paragraph{3. ECS Task Definition} The final component in the deployment of MIBot is defining a \textbf{Task}. A \texttt{Task} runs a specific container after downloading it from the Elastic Container Registry (ECR). The \texttt{Task} definition specifies environment variables and API credentials that are securely stored in AWS Systems Manager Parameter Store and are injected into the container (e.g., \texttt{OPENAI\_API\_KEY}) when the task is started. It further defines a \emph{health check} for the container. The health check sends a request to the \texttt{/health} endpoint on the container's port~80 every five minutes. If the response is anything other than \texttt{200 OK} or it does not get a response within one minute, it deems the container unhealthy. The \texttt{Service} terminates the \texttt{Task} and replaces it with a new one. The task definition further specifies the required CPU and memory (1024 CPU units (1 vCPU) and 4~GB, respectively, in the case of MIBot). The containers also mount a persistent Amazon Elastic File System (EFS) volume to store conversation transcripts and evaluation metrics. Furthermore, all container logs are written to AWS CloudWatch for retrospective analysis of the system's behaviour.
 

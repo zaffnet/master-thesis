@@ -1,21 +1,21 @@
 \chapter{Development of Synthetic Smokers: Preliminary Experiments}
 \label{ch:synthetic-smoker-preliminary}
 
-The iterative development of MIBot, as described in \Cref{ch:mibot}, required that we extensively test it after every change in its prompt. To automate the testing of some aspects of the chatbot's behaviour, we started the development of ``synthetic smokers''\footnote{It is worth mentioning that we also utilized human role-playing as smokers during our testing of MIBot.}. A synthetic smoker, in the context of this research, is a prompted instance of an LLM tasked with simulating the behaviour, language, and psychological responses of a human smoker engaged in a counselling session.
+The iterative development of MIBot, as described in \Cref{ch:mibot}, required that we extensively test it after every change in its prompt. To automate the testing of some aspects of the chatbot's behaviour, we started the development of ``synthetic smokers''\footnote{Notably, we also used human role-playing as smokers during our testing of MIBot.}. A synthetic smoker, in the context of this research, is a prompted instance of an LLM tasked with simulating the behaviour, language, and psychological responses of a human smoker engaged in a counselling session.
 
-This chapter details the initial conceptualization and preliminary experiments in the development of these synthetic agents. We begin by defining the theoretical framework for creating realistic agents, followed by our early experiments to control behavioural attributes like verbosity and resistance to quitting. These initial steps highlight the core challenges of attribute installation and validation. In the subsequent chapter, we use a more advanced, data-driven methodology for attribute installation and validation.
+This chapter details the initial conceptualization and preliminary experiments in the development of these synthetic agents. We begin by defining the theoretical approach for creating realistic agents, followed by our early experiments to control behavioural attributes like verbosity and resistance to quitting. These initial steps show the core challenges of attribute installation and validation. In the subsequent chapter, we use a more advanced, data-driven methodology for attribute installation and validation.
 
 \section{Objectives and Overview}
 \label{sec:synthetic-smoker-goals}
 
-The overarching goal of developing synthetic smokers is to create realistic and controllable proxies for human participants. This endeavour serves two primary objectives:
+The primary goal of developing synthetic smokers is to create realistic and controllable proxies for human participants. This endeavour serves two primary objectives:
 
 \begin{enumerate}
-    \item \textbf{Testing Automated Systems:} Synthetic smokers provide a platform for the rapid iterative development and testing of automated counselling chatbots. By simulating interactions, developers may identify weaknesses, refine conversational strategies, and assess potential efficiency without the logistical overhead of recruiting human subjects for every iteration.
-    \item \textbf{Training Human Clinicians:} In the role of standardized patients, synthetic smokers can be used to train novice clinicians. They offer a consistent experience and can be programmed to simulate specific challenging scenarios or diverse demographic profiles, which could help trainees receive varied practice opportunities.
+    \item \textbf{Testing Automated Systems:} Synthetic smokers provide a basis for the rapid iterative development and testing of automated counselling chatbots. By simulating interactions, developers may identify weaknesses, improve conversational strategies, and assess potential efficiency without the logistical overhead of recruiting human subjects for every iteration.
+    \item \textbf{Training Human Clinicians:} In the role of standardized patients, synthetic smokers can be used to train novice clinicians. They offer a consistent experience and can be programmed to simulate specific challenging scenarios or different demographic profiles, which could help trainees receive varied practice opportunities.
 \end{enumerate}
 
-The development of a truly representative synthetic smoker poses a scientific challenge. It requires not only the generation of coherent dialogue but the accurate embodiment of specific human attributes ranging from demographics to complex psychological states like resistance to change. Crucially, the validation of these synthetic agents (i.e., proving that they behave realistically according to their installed attributes) is exceptionally difficult, as establishing the \textit{construct validity} of behavioural measurements remains a persistent challenge; that is, it is difficult to ensure that an instrument truly measures the specific psychological attribute it purports to assess \cite{Cronbach1955}.
+The development of a truly representative synthetic smoker poses a scientific challenge. It requires not only the generation of coherent dialogue but the accurate embodiment of specific human attributes ranging from demographics to complex psychological states like resistance to change. Importantly, the validation of these synthetic agents (i.e., proving that they behave realistically according to their installed attributes) is exceptionally difficult, as establishing the \textit{construct validity} of behavioural measurements remains a persistent challenge; that is, it is difficult to ensure that an instrument truly measures the specific psychological attribute it purports to assess \cite{Cronbach1955}.
 
 
 \section{Goals for a Synthetic Smoker}
@@ -38,9 +38,9 @@ A successful system (or methodology) for creating synthetic smokers must produce
 \textbf{Representativeness} encompasses two key requirements:
 
 \begin{enumerate}
-    \item The system must generate a diverse range of smokers whose attributes mirror the variability of the target real-world population. It must avoid the bias of over-representing a narrow or easily simulated archetype at the expense of mirroring the population's true statistical makeup. This may happen for a variety of reasons. For example, if the system is built on biased data, it may fail to generate a statistically accurate population.
+    \item The system must generate a different range of smokers whose attributes mirror the variability of the target real-world population. It must avoid the bias of over-representing a narrow or easily simulated archetype at the expense of mirroring the population's true statistical makeup. This may happen for a variety of reasons. For example, if the system is built on biased data, it may fail to generate a statistically accurate population.
 
-    \item The smokers created by the system should exhibit uniform fidelity, i.e., it should not have performance biases where specific profiles are simulated more accurately than others. A system might, for instance, be highly effective at simulating a 55-year-old, heavily dependent smoker with low motivation to quit, while failing to simulate a 22-year-old ``social smoker'' who is ambivalent about quitting. Representativeness requires that the quality of the simulation remains high across the entire spectrum of generated profiles.
+    \item The smokers created by the system should exhibit uniform fidelity, i.e., it should not have performance biases where specific profiles are simulated more accurately than others. A system might, for instance, be highly effective at simulating a 55-year-old, heavily dependent smoker with low motivation to quit, while failing to simulate a 22-year-old ``social smoker'' who is ambivalent about quitting. Representativeness requires that the quality of the simulation remains high across the entire range of generated profiles.
 \end{enumerate}
 
 
@@ -70,7 +70,7 @@ Given the stochastic nature of the generative system, a single instance is insuf
 \[\mathcal{F}(\textbf{A}_S) = \mathbb{E}_{\gamma_S \sim P_S(\gamma | \textbf{A}_S)}[d(\textbf{A}_S, M(\gamma_S))]\]
 A lower value of $\mathcal{F}(\textbf{A}_S)$ indicates higher fidelity. The objective of the system, then, is to minimize this value across all possible profiles.
 
-In practice, $M$ may not be needed to calculate fidelity. Instead, a more pragmatic approach is to validate individual attributes by demonstrating a strong correlation between their installed values and corresponding, measurable features in the output $\gamma$. For example, to validate the ``resistance to change'' attribute, one can measure a proxy like the percentage Change Talk (\%CT) in the transcript. Evidence of fidelity would be a strong, negative correlation between the installed resistance level and the observed Change Talk across a cohort of synthetic agents. This correlation-based method is more feasible than developing a comprehensive measurement function $M$.
+In practice, $M$ may not be needed to calculate fidelity. Instead, a more practical approach is to validate individual attributes by demonstrating a strong correlation between their installed values and corresponding, measurable features in the output $\gamma$. For example, to validate the ``resistance to change'' attribute, one can measure a proxy like the percentage Change Talk (\%CT) in the transcript. Evidence of fidelity would be a strong, negative correlation between the installed resistance level and the observed Change Talk across a cohort of synthetic agents. This correlation-based method is more feasible than developing a detailed measurement function $M$.
 
 \subsection{Defining Representativeness}
 
@@ -95,11 +95,11 @@ In practice, this is calculated by comparing the empirical distribution of a sam
 
 The second requirement, \textbf{uniform fidelity} ($\mathcal{R}_{unif}$), stipulates that the simulation quality should be consistent across all types of smoker profiles. The fidelity score, $\mathcal{F}(\textbf{A})$, should not be systematically better for some profiles than for others. We can measure this by calculating the \textit{variance of the fidelity score} across the distribution of real-world smokers, $P_H(\textbf{A})$:
 \[\mathcal{R}_{unif} = \text{Var}_{\textbf{A} \sim P_H(\textbf{A})}[\mathcal{F}(\textbf{A})] = \mathbb{E}_{\textbf{A} \sim P_H(\textbf{A})} [(\mathcal{F}(\textbf{A}) - \bar{\mathcal{F}})^2]\]
-where $\bar{\mathcal{F}}$ is the mean fidelity across the population. A system that achieves high uniform fidelity will have a value of $\mathcal{R}_{unif}$ close to zero, indicating that its performance is reliable and unbiased across the full spectrum of human smokers. In practice, it is sufficient to calculate fidelity stratified by different relevant attributes (e.g., age groups, sex, ethnicity, etc.) and investigate if a certain group of synthetic agents has low fidelity.
+where $\bar{\mathcal{F}}$ is the mean fidelity across the population. A system that achieves high uniform fidelity will have a value of $\mathcal{R}_{unif}$ close to zero, indicating that its performance is reliable and unbiased across the full range of human smokers. In practice, it is sufficient to calculate fidelity stratified by different relevant attributes (e.g., age groups, sex, ethnicity, etc.) and investigate if a certain group of synthetic agents has low fidelity.
 
 
 \section{Development of Synthetic Smokers}
-We began our development of synthetic smokers by prompting an LLM and providing instructions on how to behave like a smoker in a clinical setting. As we evaluated our synthetic smokers, both our approaches to installation and validation evolved and informed each other. In the following sections, we describe our methodology for creating synthetic smokers along with their validation.
+We began our development of synthetic smokers by prompting an LLM and providing instructions on how to behave like a smoker in a clinical setting. As we evaluated our synthetic smokers, both our approaches to installation and validation changed and informed each other. In the following sections, we describe our methodology for creating synthetic smokers along with their validation.
 
 
 \subsection{The Baseline Synthetic Smoker}
@@ -120,14 +120,14 @@ We began with a minimal prompt instructing an LLM (initially GPT-4 Turbo) to ado
 Since we did not install any attributes to this baseline, we were mainly looking for how it conversed with MIBot and whether it had some default attributes. We generated a small number ($N=5$) of conversations between this baseline synthetic smoker and an early version of the MIBot counsellor. The validation method at this stage was qualitative human inspection by the research team, including expert MI clinicians.
 
 \subsubsection{Observations}
-The transcript of the conversation between MIBot and the baseline synthetic smoker revealed two significant issues that made the synthetic smoker sound ``unnatural'' or atypical of a human smoker:
+The transcript of the conversation between MIBot and the baseline synthetic smoker revealed two major issues that made the synthetic smoker sound ``unnatural'' or atypical of a human smoker:
 
 \begin{enumerate}
     \item Excessive Verbosity: The synthetic smoker tended to produce long, elaborate responses. This felt unnatural and resembled written prose more than spontaneous dialogue.
     \item High Agreeableness (Low Resistance): The baseline agent was overly agreeable and eager to change. This failed to simulate the ambivalence characteristic of many smokers seeking cessation support (as discussed in \Cref{ch:background}).
 \end{enumerate}
 
-These observations highlighted the necessity of explicitly controlling these attributes.
+These observations showed the necessity of explicitly controlling these attributes.
 
 \subsection{Controlling Verbosity}
 \label{sec:synthetic-smoker-verbosity}
@@ -147,7 +147,7 @@ We modified the prompt to encourage a more natural, concise conversational style
 To validate the effectiveness of these changes, we generated a new set of conversations ($n=5$) using the modified prompt (``Fixed Verbosity'') and with GPT-4 Turbo (temperature $=1.0$) and compared them against the baseline prompt (``Default Verbosity''). We also compared these results against human-human MI conversations from the HLQC datasets~\citep{perez-rosas-etal-2019-makes}.
 
 \subsubsection{Results}
-The prompt modifications significantly reduced the verbosity of the synthetic smoker. \Cref{fig:verbosity-comparison} illustrates the distribution of volley lengths (in terms of number of words).
+The prompt modifications markedly reduced the verbosity of the synthetic smoker. \Cref{fig:verbosity-comparison} illustrates the distribution of volley lengths (in terms of number of words).
 
 
 \begin{figure}[htpb]
@@ -177,12 +177,12 @@ Low-Quality Human Counselling            &                  118.2 &             
 
 The default verbosity condition showed a wide distribution with a high median utterance length. The fixed-verbosity synthetic smokers successfully matched the utterance length distribution of humans from the HLQC dataset. \Cref{tab:utterance_stats} provides detailed statistics on the volley lengths.
 
-Interestingly, we observed that the counsellor bot reciprocated the client's verbosity. When the synthetic smoker spoke less, the counsellor bot also reduced its utterance length. We also verified that these prompt modifications were robust and transferable across different LLMs (GPT-4 Turbo and GPT-4 Omni).
+Interestingly, we observed that the counsellor bot reciprocated the client's verbosity. When the synthetic smoker spoke less, the counsellor bot also reduced its utterance length. We also verified that these prompt modifications were reliable and transferable across different LLMs (GPT-4 Turbo and GPT-4 Omni).
 
 \subsection{Installing Resistance}
 \label{sec:synthetic-smoker-resistance}
 
-Addressing the baseline smoker's high agreeableness was crucial, as addressing resistance to change is a crucial MI skill.
+Addressing the baseline smoker's high agreeableness was important, as addressing resistance to change is a important MI skill.
 
 \subsubsection{Methodology}
 We hypothesized that resistance could be installed by providing the LLM with detailed backstories emphasizing different motivations and experiences. We created two distinct personas:
@@ -251,7 +251,7 @@ Low Resistance & 61 & 9 & 30 \\ \bottomrule
 \end{table}
 
 
-The analysis confirmed a clear distinction between the two personas (\Cref{tab:resistance-ct-st}). The High Resistance smoker used significantly more Sustain Talk (44\% vs. 9\%) and less Change Talk (31\% vs. 61\%) than the Low Resistance smoker.
+The analysis confirmed a clear distinction between the two personas (\Cref{tab:resistance-ct-st}). The High Resistance smoker used markedly more Sustain Talk (44\% vs. 9\%) and less Change Talk (31\% vs. 61\%) than the Low Resistance smoker.
 
 
 The readiness ruler scores demonstrated that the synthetic smokers provided responses consistent with their installed resistance levels (\Cref{tab:resistance-readiness-rulers}). The ``high-resistance'' synthetic smokers reported lower mean scores on all three dimensions of the readiness rulers. Interestingly, their week-later change in confidence was lower than ``low-resistance'' smokers by 0.8 points, while the change in importance and readiness was slightly higher.
@@ -266,6 +266,6 @@ This experiment also provided us with our first evidence that LLM-based syntheti
 \section{Conclusion}
 \label{sec:prelim-conclusion}
 
-The preliminary experiments detailed in this chapter successfully established a foundation for creating synthetic smokers. We demonstrated that through prompt engineering, it is possible to control basic conversational attributes such as \textbf{verbosity} and install psychological constructs like \textbf{resistance}. Through our validation methods, which included linguistic analysis (\%CT) and behavioural self-reports (readiness rulers), we confirmed that these installed attributes were reflected in the agents' outputs.
+The preliminary experiments detailed in this chapter successfully established a basis for creating synthetic smokers. We demonstrated that through prompt engineering, it is possible to control basic conversational attributes such as \textbf{verbosity} and install psychological constructs like \textbf{resistance}. Through our validation methods, which included linguistic analysis (\%CT) and behavioural self-reports (readiness rulers), we confirmed that these installed attributes were reflected in the agents' outputs.
 
-These initial studies, however, also revealed significant limitations. The personas were created with arbitrary backstories, which made it difficult to assess the \textbf{representativeness} of our synthetic population against a real-world target demographic. Validating the \textbf{fidelity} of these agents remained a challenge without a direct human counterpart for comparison. To address these issues and move towards a more rigorous validation framework, we needed a data-driven approach. The next chapter introduces the ``doppelgänger'' methodology, a technique designed to create synthetic twins of actual human participants, allowing for a direct and robust assessment of our system's fidelity and representativeness.
+These initial studies, however, also revealed major limitations. The personas were created with arbitrary backstories, which made it difficult to assess the \textbf{representativeness} of our synthetic population against a real-world target demographic. Validating the \textbf{fidelity} of these agents remained a challenge without a direct human counterpart for comparison. To address these issues and move towards a more rigorous validation approach, we needed a data-driven approach. The next chapter introduces the ``doppelgänger'' methodology, a technique designed to create synthetic twins of actual human participants, allowing for a direct and reliable assessment of our system's fidelity and representativeness.
