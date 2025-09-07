@@ -1,5 +1,5 @@
 \chapter{Advanced Methods for Attribute Installation in Synthetic Smokers}
-\label{ch:synthetic-doppelgänger}
+\label{ch:synthetic-doppelganger}
 
 As established in the previous chapter, creating personas with arbitrary backstories made it difficult to rigorously assess the \textbf{representativeness} and \textbf{fidelity} of our synthetic agents. To overcome these limitations, we developed the ``doppelgänger'' methodology—a data-driven approach designed to create synthetic twins of actual human participants, enabling a more direct and robust validation framework.
 
@@ -7,12 +7,6 @@ This method leverages a rich dataset from a previous feasibility study on human 
 
 \section{The Doppelgänger Methodology: A Data-Driven Approach}
 \label{sec:synthetic-smoker-doppelgänger}
-
-
-Without installing a diverse set of attributes from a target population, it became challenging to validate our development of synthetic smokers in terms of distributional representativeness and uniform fidelity. 
-Therefore, we utilized the data from the feasibility study on human smokers using MIBot v6.3A (\Cref{ch:feasibility}) to extract installable attributes. This study provided a rich dataset of 106 MIBot--human interactions, including pre- and post-conversation readiness rulers (\emph{importance}, \emph{confidence}, \emph{readiness}), demographic data, smoking history (e.g., Heaviness of Smoking Index---HSI), and complete conversation transcripts. Throughout the rest of this chapter, we refer to this dataset by the shorthand \textbf{MIV6.3A}.
-
-The dataset enabled a shift from creating synthetic smokers with an arbitrary attribute distribution to one drawn from MIV6.3A. We explicitly controlled for certain attributes, such as ensuring an equal number of male and female participants before applying confidence screening. Thus, the creation of doppelgängers allowed us to validate our methodology more rigorously.
 
 For the rest of our discussion, we define a doppelgänger as a synthetic smoker designed to be a ``behavioural twin'' of a specific human participant from the feasibility study, although this definition can be extended to other types of participants and studies. The goal is to create an agent that, when exposed to MI counselling, behaves similarly to its human counterpart in terms of language use, psychological profile, and changes in readiness to quit.
 
@@ -32,9 +26,7 @@ where $\textbf{A}^\textbf{C} = \{a \in \textbf{A} \mid a \sim \textbf{C}(\gamma)
 \section{The Conversational Impact Modelling Experiment}
 \label{sec:transcript-autoplay}
 
-Before attempting to install attributes in doppelgängers and have them engage in novel conversations with MIBot, we needed to establish a baseline understanding of the LLM's ability to model the psychological impact of a conversation and contextualize numerical readiness rulers with other installed attributes. For this purpose, we designed the ``Conversational Impact Modelling'' experiment.
-
-If an LLM-based synthetic smoker (a doppelgänger) is given the pre-conversation attributes of a human participant and the exact transcript of the MIBot--human conversation (acting as if the doppelgänger itself is speaking the human's lines), can it accurately report the same post-conversation readiness rulers as the human?
+Before attempting to install attributes in doppelgängers and have them engage in novel conversations with MIBot, we needed to establish a baseline understanding of the LLM's ability to model the psychological impact of a conversation and contextualize numerical readiness rulers with other installed attributes. For this purpose, we designed the ``Conversational Impact Modelling'' experiment to determine if an LLM-based synthetic smoker (a doppelgänger), when given the pre-conversation attributes of a human participant and the exact transcript of the MIBot--human conversation, can accurately report the same post-conversation readiness rulers as the human.
 
 \subsubsection{Methodology}
 \begin{enumerate}
@@ -45,7 +37,7 @@ If an LLM-based synthetic smoker (a doppelgänger) is given the pre-conversation
 
 In other words, the doppelgänger was provided with the participant's actual pre-conversation readiness rulers (importance, confidence, and readiness) and the full transcript of their conversation with MIBot. After processing this information, the doppelgänger was asked to report its post-conversation readiness rulers.
 
-The doppelgänger was given the system prompt detailed in Appendix~\ref{app:doppelganger-prompts}. An excerpt is shown below:
+The doppelgänger was given the system prompt detailed in \Cref{app:doppelganger-prompts}. An excerpt is shown below:
 
 \includesystemprompt{Conversational Impact Modelling Prompt}{
 You are a participant in a study who is trying to quit smoking.\\
@@ -86,14 +78,14 @@ The Conversational Impact Modelling experiments consistently outperformed this s
 \cmidrule(r){1-2}
 \textbf{Input Provided to GPT-4o} & \textbf{Mean Squared Error (MSE)} & \\
 \cmidrule(r){1-2}
-Transcript ONLY & 5.5 & \\
-Pre-Conversation Confidence ONLY & 3.7 & \\
-\textcolor{gray}{Linear Regression (Pre-Conf. $\rightarrow$ Post-Conf.)} & \textcolor{gray}{3.2} & \textcolor{red}{\small $\leftarrow$ Baseline} \\
+Transcript only & 5.5 & \\
+Pre-Conversation Confidence only & 3.7 & \\
+\textcolor{gray}{Linear Regression (Pre-Conf. $\rightarrow$ Post-Conf.)} & \textcolor{gray}{3.2} & \\
 Pre-Conversation Confidence + Transcript & 3.1 & \\
 \textbf{Full Pre-Conversation Rulers + Transcript} & \textbf{2.9} & \\
 \cmidrule(r){1-2}
 \end{tabular}
-\caption[Ablation study on doppelgängers' self-reported post-conversation confidence]{Impact of different attributes on GPT-4o-based doppelgängers' self-reported post-conversation confidence. Both the pre-conversation readiness rulers and the conversation transcript are necessary for the doppelgängers to accurately report post-conversation confidence.}
+\caption[Ablation study on doppelgängers' self-reported post-conversation confidence]{Impact of different attributes on GPT-4o-based doppelgängers' self-reported post-conversation confidence. Both the pre-conversation readiness rulers and the conversation transcript are necessary for the doppelgängers to accurately report post-conversation confidence. The linear regression model serves as a baseline.}
 \label{tab:ablation_results}
 \end{table}
 
@@ -339,7 +331,7 @@ The most significant finding emerged in experiment 6, where explicitly installin
 
 However, despite achieving a strong rank correlation, a closer look at the population-level statistics reveals a systematic bias. As shown in the histograms in \Cref{fig:cf_comparison}, the distribution of \%CT for doppelgängers is shifted significantly higher than for humans (mean 0.76 vs. 0.59). The doppelgänger distribution is also more compressed and left-skewed, indicating a lower variance and a strong tendency to produce high levels of change talk, regardless of the human baseline.
 
-This discrepancy is further visualized in the scatter plot in \Cref{fig:cf_human_vs_doppel}. While the points follow a positive trend that confirms the correlation, the majority lie above the identity line ($y=x$). This visually demonstrates that doppelgängers consistently overproduced change talk relative to their human counterparts. Even when a human participant had a low \%CT (e.g., below 0.4), their doppelgänger often produced a \%CT above 0.6 (see Appendix~\ref{app:doppelganger-transcript} for an example transcript).
+This discrepancy is further visualized in the scatter plot in \Cref{fig:cf_human_vs_doppel}. While the points follow a positive trend that confirms the correlation, the majority lie above the identity line ($y=x$). This visually demonstrates that doppelgängers consistently overproduced change talk relative to their human counterparts. Even when a human participant had a low \%CT (e.g., below 0.4), their doppelgänger often produced a \%CT above 0.6 (see \Cref{app:doppelganger-transcript} for an example transcript).
 
 Finally, we investigated the system's uniform fidelity by stratifying the results by sex, as detailed in \Cref{tab:doppelgänger-fidelity-sex}. While the mean \%CT for both human males and females was nearly identical ($\sim$59\%), the fidelity of their doppelgängers differed. The correlation for males ($r_s = 0.65$) was notably stronger than for females ($r_s = 0.52$), indicating a performance bias. This lack of uniform fidelity suggests the model may simulate one demographic group more accurately than another, an issue requiring further investigation to ensure representative synthetic populations. Other observations include:
 
@@ -457,7 +449,7 @@ To assess the utility of synthetic smokers in testing and training applications,
     \begin{itemize}
         \item \textbf{Good MI Counsellor (MIBot v6.3A):} A high-quality, MI-adherent chatbot.
         
-        \item \textbf{Bad (Confrontational) Counsellor:} An LLM prompted to be directive, judgmental, and confrontational (see Appendix~\ref{app:doppelganger-prompts} for the full prompt).
+        \item \textbf{Bad (Confrontational) Counsellor:} An LLM prompted to be directive, judgmental, and confrontational (see \Cref{app:doppelganger-prompts} for the full prompt).
     \end{itemize}
 \end{enumerate}
 
