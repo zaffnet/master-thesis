@@ -146,24 +146,27 @@
       {\@deptpre} {\@deptname}\\
       University of Toronto\\
       {\@gradyear}\\
-      \section*{Abstract}
+      \vspace{20pt}
+    \centering{\Large{\textbf{Abstract}}}
    \end{center}
    \begingroup
    \doublespacing}%
   {\par\endgroup\cleardoublepage}
+
 \newenvironment*{dedication}%
   {\thispagestyle{plain}
    \null
    \vfill
-   \begin{flushright}}%
-  {\end{flushright}
-   \vfill
+   }%
+  {\vfill
    \vfill
    \clearpage}
+
 \newenvironment*{acknowledgements}%
   {\thispagestyle{plain}
    \begin{center}
-   \section*{Acknowledgements}
+      \vspace{20pt}
+\centering{\Large{\textbf{Acknowledgements}}}\vspace{10pt}
    \end{center}
    \begingroup}%
   {\endgroup\clearpage}

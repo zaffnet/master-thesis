@@ -108,7 +108,7 @@ While metrics like MAE provide a quantitative summary, a visual comparison of th
 		\includegraphics[width=\linewidth]{fig/post-conf-gpt4-o.pdf}
 		\subcaption{Doppelgänger-reported post-conversation confidence scores}
 	\end{minipage}
-	\caption{Distribution of post-conversation confidence scores. While the overall shapes are similar, the doppelgänger's scores are more concentrated around a single peak (score of 7), whereas human responses are more distributed across several high-confidence values.}
+	\caption[Distribution of post-conversation confidence scores for humans compared to doppelgängers]{Distribution of post-conversation confidence scores for humans compared to doppelgängers. While the overall shapes are similar, the doppelgänger's scores are more concentrated around a single peak (score of 7), whereas human responses are more distributed across several high-confidence values.}
 	\label{fig:post_conf_distributions}
 \end{figure}
 
@@ -129,7 +129,7 @@ Next, we compared the performance of different underlying models and prompting t
 		\textbf{Claude 3.7 Sonnet (Thinking)} & \textbf{1.1} & \textbf{2.6} & \textbf{0.8}               & \textbf{32}                 \\
 		\bottomrule
 	\end{tabular}
-	\caption[Effect of LLM type and reasoning on synthetic smokers' self-reported confidence.]{Comparison of different models and prompting techniques and their impact on the self-reporting of post-conversation confidence (N=159). Reflective techniques, especially Claude 3.7 Sonnet's ``thinking'' feature, yielded the best results across all metrics.}
+	\caption[Effect of LLM type and reasoning on synthetic smokers' self-reported confidence]{Comparison of different models and prompting techniques and their impact on the self-reporting of post-conversation confidence (N=159). Reflective techniques, especially Claude 3.7 Sonnet's ``thinking'' feature, yielded the best results across all metrics.}
 	\label{tab:model_comparison}
 \end{table}
 
@@ -139,7 +139,7 @@ The baseline GPT-4o doppelgänger achieved a strong correlation of \textbf{$r=0.
 \begin{figure}[htpb]
 	\centering
 	\includegraphics[width=0.5\textwidth]{fig/post_conf_gpt4o_vs_human.png}
-	\caption{Scatter plot of human-reported vs. doppelgänger-reported post-conversation confidence for the baseline GPT-4o model, showing a Spearman's correlation of r=0.70. The diagonal line represents perfect agreement.}
+	\caption[Scatter plot of human-reported vs. doppelgänger-reported post-conversation confidence]{Scatter plot of human-reported vs. doppelgänger-reported post-conversation confidence for the baseline GPT-4o model, showing a Spearman's correlation of r=0.70. The diagonal line represents perfect agreement.}
 	\label{fig:post-conf-gpt4o-vs-human}
 \end{figure}
 
@@ -216,7 +216,7 @@ We analyzed the data from MIV6.3A ($N=106$ participants). The analysis confirmed
 		\bottomrule
 		\multicolumn{2}{l}{\footnotesize{**** $p < 0.0001$, *** $p < 0.001$, ** $p < 0.01$, * $p < 0.05$}.}
 	\end{tabular}
-	\caption{Correlation between \%CT and human smoker attributes in the MIBot dataset.}
+	\caption{Correlation between \%CT and human smoker attributes in the MIBot dataset}
 	\label{tab:ct-correlation}
 \end{table}
 
@@ -269,7 +269,7 @@ The overall workflow for creating and validating doppelgängers using this compa
 \begin{figure}[htpb]
 	\centering
 	\includegraphics[width=0.98\textwidth]{fig/doppelganger-study.png}
-	\caption{The doppelgänger creation and validation process. For each of the 106 human participants ($H_i$), a synthetic twin ($S_i$) is created by installing their attributes. Both agents' conversations with MIBot are analyzed to extract a behavioural metric (\%CT), and the correlation between the two sets of metrics is used to assess fidelity.}
+	\caption[Doppelgänger creation and validation process]{Doppelgänger creation and validation process. For each of the 106 human participants ($H_i$), a synthetic twin ($S_i$) is created by installing their attributes. Both agents' conversations with MIBot are analyzed to extract a behavioural metric (\%CT), and the correlation between the two sets of metrics is used to assess fidelity.}
 	\label{fig:doppelgänger-study}
 \end{figure}
 
@@ -315,7 +315,7 @@ The overall workflow for creating and validating doppelgängers using this compa
 \begin{figure}[htpb]
 	\centering
 	\includegraphics[width=0.98\textwidth]{fig/doppelganger_process.png}
-	\caption{The doppelgänger creation and validation process. For each human participant ($H_i$), a synthetic twin ($S_i$) is created by installing their attributes ($A_{H_i}$). Both agents' conversations are analyzed to extract a behavioural metric (\%CT), and the correlation between the two sets of metrics is used to assess fidelity.}
+	\caption[Brief overview of doppelgänger creation and validation process]{Brief overview of doppelgänger creation and validation process.}
 	\label{fig:doppelgänger-creation-process}
 \end{figure}
 
@@ -372,7 +372,7 @@ Finally, we investigated the system's uniform fidelity by stratifying the result
 			\item[****] $p < 0.0001$
 		\end{tablenotes}
 	\end{threeparttable}
-	\caption[Incremental attribute installation and its effect on the fidelity of doppelgängers.]{
+	\caption[Incremental attribute installation and its effect on the fidelity of doppelgängers]{
 		Incremental attribute installation and its effect on the fidelity of doppelgängers. Fidelity is measured by the Spearman correlation of percentage change talk (\%CT) between human participants and their doppelgängers (N=20). Each row represents a model where attributes were cumulatively added to the installation prompt.
 	}
 	\label{tab:doppelgänger-correlations}
@@ -422,7 +422,7 @@ Finally, we investigated the system's uniform fidelity by stratifying the result
 			\item[****] \footnotesize $p < 0.0001$.
 		\end{tablenotes}
 	\end{threeparttable}
-	\caption[Fidelity of doppelgänger's motivational language stratified by sex.]{Fidelity of doppelgänger's motivational language stratified by sex. Fidelity is measured by the Spearman correlation between the percentage change talk (\%CT) of human participants and their corresponding doppelgängers.}
+	\caption[Fidelity of doppelgänger's motivational language stratified by sex]{Fidelity of doppelgänger's motivational language stratified by sex. Fidelity is measured by the Spearman correlation between the percentage change talk (\%CT) of human participants and their corresponding doppelgängers.}
 	\label{tab:doppelgänger-fidelity-sex}
 \end{table}
 
@@ -468,7 +468,7 @@ We measured the change fraction (CF), the change in confidence after a simulated
 		\multirow{2}{*}{Bad (Confrontational)} & High-CF Doppelgängers      & 0.68        & 1.1                         & 41.0          \\
 		                                       & Low-CF Doppelgängers       & 0.22        & 0.5                         & 23.0          \\ \bottomrule
 	\end{tabular}
-	\caption[Effect of counselling quality on doppelgängers' motivational language.]{Doppelgänger outcomes when interacting with good (MIBot 6.3A) vs. bad (confrontational) automated counsellors.}
+	\caption[Effect of counselling quality on doppelgängers' motivational language]{Doppelgänger outcomes when interacting with good (MIBot 6.3A) vs. bad (confrontational) automated counsellors.}
 	\label{tab:good-vs-bad-counselling}
 \end{table}
 
