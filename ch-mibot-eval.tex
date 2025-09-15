@@ -5,14 +5,14 @@ This chapter presents a thorough evaluation of MIBot's effectiveness through a f
 
 The chapter is organized to progress from primary outcomes through measurements of therapeutic process, and finally, to behavioural changes and user experiences. First, we report the primary outcome of changes in readiness to quit smoking (\Cref{sec:primary-outcome}). We then analyse how the chatbot performed on perceived empathy—measured using the CARE scale—and compare its performance to that of human healthcare professionals (\Cref{sec:perceived-empathy}). Next, we examine MIBot's adherence to MI principles through AutoMISC analysis and examine whether MIBot could maintain fidelity to therapeutic standards while successfully eliciting change talk from clients (\Cref{sec:mi-adherence}).
 
-Following these core metrics, we investigate behavioural outcomes, including quit attempts and self-reported changes; examine conversation dynamics, both quantitatively and qualitatively (\Cref{sec:conversation-dynamics}); and examine illustrative case studies and sample outliers. Finally, we analyse participant feedback (\Cref{sec:feedback}) and discuss broader implications of our findings (\Cref{sec:synthesis}).
+Following these core metrics, we investigate behavioural outcomes, including quit attempts and self-reported changes; examine conversation flow, both quantitatively and qualitatively (\Cref{sec:conversation-dynamics}); and examine illustrative case studies and sample outliers. Finally, we analyse participant feedback (\Cref{sec:feedback}) and discuss broader implications of our findings (\Cref{sec:synthesis}).
 
 \section{Primary Outcome: Readiness to Quit}
 \label{sec:primary-outcome}
 
 \subsection*{Overall Changes in Readiness Rulers}
 
-\Cref{table:mibot_ruler_summary} summarizes the mean (and standard deviation) of each readiness ruler before the conversation, immediately afterwards, and one week later. The table includes the change between the pre-conversation metric and one week later ($\Delta$). The Wilcoxon signed-rank test was applied to assess the significance of the change. Participants' confidence increased markedly from a baseline mean of 2.8 to 4.5 one week later ($\Delta=1.66, p<10^{-9}$). This represents an approximately 59\% relative improvement and constitutes our primary outcome measure, aligning with MI theory that confidence (self-efficacy) is a key predictor of behaviour change~\citep{Gwaltney2009-wj,Abar2013}. Importance also increased, albeit more modestly ($\Delta=0.5, p<0.005$), while readiness exhibited a small, non-significant change $(\Delta=0.23, p=0.22)$.
+\Cref{table:mibot_ruler_summary} summarizes the mean (and standard deviation) of each readiness ruler before the conversation, immediately afterwards, and one week later. The table includes the change between the pre-conversation metric and one week later ($\Delta$). The Wilcoxon signed-rank test was applied to assess the significance of the change. Participants' confidence increased markedly from a baseline mean of 2.8 to 4.5 one week later ($\Delta=1.66, p<10^{-9}$). This represents an approximately 59\% relative improvement and constitutes our primary outcome measure, aligning with MI theory that confidence (self-efficacy) is a major predictor of behaviour change~\citep{Gwaltney2009-wj,Abar2013}. Importance also increased, albeit more modestly ($\Delta=0.5, p<0.005$), while readiness exhibited a small, non-significant change $(\Delta=0.23, p=0.22)$.
 
 \begin{table}[ht!]
 	\centering
@@ -145,7 +145,7 @@ Participants with moderate nicotine dependence (HSI 2--3) showed the greatest ga
 	\label{table:demographics_wise_conf}
 \end{table}
 
-Demographic stratification reveals several patterns that warrant careful interpretation. Younger participants ($<30$ years) had higher baseline confidence (3.7, SD 2.1) than older groups (2.5, SD 1.8) and showed numerically larger improvements (mean +1.9, SD 3.1) compared to older participants (mean +1.6, SD 2.1). While baseline confidence differed by sex (2.5 for females vs 3.2 for males), week-later changes were identical (1.7). Participants identifying as non-white ethnicities had higher baseline confidence than white participants (3.3 vs 2.7) and showed larger gains (2.5 vs 1.4). These exploratory findings must be interpreted cautiously, as the study was not powered for subgroup analyses and baseline demographic differences were not statistically controlled for. See \Cref{table:demographics_wise_conf} for a summary of confidence changes by demographic characteristics.
+Demographic stratification reveals several patterns that warrant careful interpretation. Younger participants ($<30$ years) had higher baseline confidence (3.7, SD 2.1) than older groups (2.5, SD 1.8) and showed numerically larger improvements (mean +1.9, SD 3.1) compared to older participants (mean +1.6, SD 2.1). While baseline confidence differed by sex (2.5 for females vs 3.2 for males), week-later changes were identical (1.7). Participants identifying as non-white ethnicities had higher baseline confidence than white participants (3.3 vs 2.7) and showed larger gains (2.5 vs 1.4). These preliminary findings must be interpreted cautiously, as the study was not powered for subgroup analyses and baseline demographic differences were not statistically controlled for. See \Cref{table:demographics_wise_conf} for a summary of confidence changes by demographic characteristics.
 
 
 \section{Perceived Empathy: CARE Scale Assessment}
@@ -336,7 +336,7 @@ from baseline to one week later among 100 participants, and
 MIBot v6.3A achieved an increase of 1.7 (SD 2.4, $p<0.001$) among 106 participants.
 This difference was not statistically significant ($t(203.60) = 0.98$,
 $p = 0.165$, one-tailed, Cohen's $d = 0.14$). As shown in \Cref{fig:confidence_distributions},
-the distribution of confidence changes reveals interesting patterns: MIBot v6.3A
+the distribution of confidence changes reveals several patterns: MIBot v6.3A
 resulted in more participants maintaining their baseline confidence (28\% vs.\ 23\%
 with no change) and fewer experiencing decreased confidence (13\% vs.\ 17\%).
 
@@ -372,7 +372,7 @@ For importance to quit, MIBot v5.2 achieved a significant increase of 0.7 (SD 2.
 
 MIBot v5.2 achieved a mean CARE score of 36 (SD = 9.1), with only 3\% of participants awarding a perfect score, while MIBot v6.3A achieved a mean score of 42 (SD = 7.5), with 11\% receiving perfect scores. This difference was statistically significant ($t(191.67) = 4.96$, $p < .001$, Cohen's $d = 0.70$), representing a medium-to-large effect size, and suggests that the fully generative responses of v6.3A markedly improved perceived empathy. \Cref{fig:care_distributions} illustrates the distributional shift between versions. The hybrid v5.2 shows a relatively normal distribution centred in the mid-30s, with considerable spread across all score ranges, whereas v6.3A demonstrates a clear rightward skew, with 40\% of participants rating the chatbot in the highest range (46--50).
 
-To understand which aspects of empathetic interaction improved most, \Cref{fig:care_questions} presents the mean scores across all ten CARE dimensions. The fully generative approach exhibits improvements across every dimension, with particularly notable gains in emotional and communicative aspects. The largest relative improvement was observed in ``showing care and compassion'' (+32\%), reflecting the chatbot's improved ability to maintain an encouraging tone. Interestingly, the dimension of ``making a plan of action with you'' remained the weakest aspect for both versions (2.73 for v5.2, 3.59 for v6.3A), despite showing considerable relative improvement (+32\%). Notably, MIBot v6.3 was prompted with detailed guidelines on how to make a plan of action with the client. Despite this, planning appears to be one of its weak areas.
+To understand which aspects of empathetic interaction improved most, \Cref{fig:care_questions} presents the mean scores across all ten CARE dimensions. The fully generative approach exhibits improvements across every dimension, with particularly notable gains in emotional and communicative aspects. The largest relative improvement was observed in ``showing care and compassion'' (+32\%), reflecting the chatbot's improved ability to maintain an encouraging tone. The dimension of ``making a plan of action with you'' remained the weakest aspect for both versions (2.73 for v5.2, 3.59 for v6.3A), despite showing considerable relative improvement (+32\%). Notably, MIBot v6.3 was prompted with detailed guidelines on how to make a plan of action with the client. Despite this, planning appears to be one of its weak areas.
 
 
 
@@ -514,10 +514,10 @@ These incremental changes, while not constituting complete cessation, represent 
 \section{Conversation Analysis}
 \label{sec:conversation-analysis}
 
-\subsection*{Quantitative Dynamics}
+\subsection*{Quantitative Flow}
 \label{sec:conversation-dynamics}
 
-Conversations ranged from 36 to 163 utterances (median 78; mean 80.7, SD 29.4), with counsellor utterances comprising 55\% of the total. The median conversation lasted approximately 19 minutes based on participant self-report. \Cref{table:conversation_metrics} summarizes key quantitative metrics.
+Conversations ranged from 36 to 163 utterances (median 78; mean 80.7, SD 29.4), with counsellor utterances comprising 55\% of the total. The median conversation lasted approximately 19 minutes based on participant self-report. \Cref{table:conversation_metrics} summarizes main quantitative metrics.
 
 \begin{table}[ht]
 	\centering
@@ -554,7 +554,7 @@ The most common theme (78\% of conversations) involved smoking as emotional regu
 	\textit{``It's like my safety blanket. When work gets overwhelming, that cigarette break is the only thing that keeps me sane. I know it's killing me, but it's also what's keeping me functional right now.''}
 \end{quote}
 
-In these situations, the chatbot's responses often involved reflective listening to validate users' feelings before exploring alternatives, a pattern consistent with the double-sided reflection technique in MI.
+In these situations, the chatbot's responses often involved reflective listening to validate users' feelings before considering alternatives, a pattern consistent with the double-sided reflection technique in MI.
 
 \subsubsection*{Social and Ritualistic Aspects}
 
@@ -618,7 +618,7 @@ Three open-ended questions captured immediate post-conversation reactions. Thema
 \textbf{Positive Themes (92\% enjoyed the experience):}
 \begin{itemize}
 	\item Non-judgmental approach: ``Finally someone (something?) that didn't lecture me.''
-	\item Structured exploration: ``Helped me organize my thoughts about quitting.''
+	\item Structured discussion: ``Helped me organize my thoughts about quitting.''
 	\item Convenience and privacy: ``Could be honest without embarrassment.''
 	\item Surprising depth: ``More helpful than expected from a bot.''
 \end{itemize}
@@ -656,7 +656,7 @@ Cross-tabulation revealed four user segments, as shown in \Cref{table:user_segme
 	\label{table:user_segments}
 \end{table}
 
-``Entertained Skeptics''---those who enjoyed but didn't find it helpful---often wanted more directive advice or concrete tools rather than exploratory conversation.
+``Entertained Skeptics''---those who enjoyed but didn't find it helpful---often wanted more directive advice or concrete tools rather than open-ended conversation.
 
 
 \section{Discussion}
@@ -726,9 +726,9 @@ Several limitations constrain the generalisability of our findings:
 \section{Conclusion}
 \label{sec:conclusion}
 
-This chapter presented a detailed evaluation of MIBot, a fully generative MI chatbot. The study demonstrated that MIBot can produce a clinically meaningful increase in smokers' confidence to quit, with high fidelity to MI principles and strong user engagement. The analysis identified key predictors of success, highlighting that the chatbot was most effective for younger, low-confidence smokers who had recently attempted to quit.
+This chapter presented a detailed evaluation of MIBot, a fully generative MI chatbot. The study demonstrated that MIBot can produce a clinically meaningful increase in smokers' confidence to quit, with high fidelity to MI principles and strong user engagement. The analysis identified major predictors of success, highlighting that the chatbot was most effective for younger, low-confidence smokers who had recently attempted to quit.
 
-While the results are promising, the study also revealed limitations in building deep therapeutic alliance and translating engagement into perceived helpfulness for all users. These findings establish a strong proof-of-concept for AI-delivered MI as a scalable public health intervention, while also underscoring the areas for future research and development, particularly in hybrid models of care that combine AI with human support.
+While the results are encouraging, the study also revealed limitations in building deep therapeutic alliance and translating engagement into perceived helpfulness for all users. These findings establish a strong proof-of-concept for AI-delivered MI as a scalable public health intervention, while also underscoring the areas for future research and development, particularly in hybrid models of care that combine AI with human support.
 
 
 \section*{Chatbot Contribution Attribution}
