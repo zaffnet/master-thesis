@@ -54,8 +54,11 @@
 \usepackage{cleveref}
 \usepackage{tgtermes}
 \usepackage{xspace}  
-\usepackage{titlesec}
 \usepackage{parskip} % For space between paragraphs instead of indentation
+\usepackage{libertine}
+% \usepackage[hyphens]{url}
+
+\usepackage{etoolbox}
 
 \newcommand{\sysname}{\textit{MIBot}\xspace}
 \newcommand{\sysnamewithv}{\textit{MIBot v6.3A}\xspace}
@@ -358,6 +361,16 @@
 \newcommand\citet{\textcite}
 \setlength\bibitemsep{1em}
 
+\definecolor{tablehead}{gray}{0.9}
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
+
+\definecolor{lightgray}{gray}{0.8}
+
+
+
+
+
+
 
 \addbibresource{main.bib}
 
@@ -470,6 +483,7 @@
 \input{app-architecture-diagrams}
 \input{app-dataset}
 \input{app-consent}
+\input{app-lit-review}
 \input{app-doppelganger-prompts}
 \input{app-doppelganger-transcript}
 

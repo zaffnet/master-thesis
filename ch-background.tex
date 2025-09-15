@@ -219,6 +219,20 @@ Although prior works have made important strides in developing LLM-based doppelg
 Unlike \citet{argyle2023}'s demographic backstories or \citet{aher2023}'s game outcomes, our validation focuses on conversational indicators of motivation, which are specialized and domain-specific. Similarly, in contrast to the general plausibility ratings used by \citet{Cook2025} and \citet{Haider2025}, our approach uses validated psycholinguistic coding (e.g., the MISC scheme for MI dialogue) to measure the doppelgänger's behaviour against established human benchmarks for ``change talk'' frequency. We also borrow the concept of a readiness ruler from clinical psychology and ask the synthetic smokers to self-report their readiness to quit before and after a counselling dialogue --mirroring exactly what the real participants did --- to see if the LLM's self-assessment shifts in tandem with the human's, and if not, where the discrepancies lie.
 
 
+
+
+
+
+
+
+\Cref{tab:llm_validation} highlights a persistent "validation gap" in the field, where behavioral outcomes are often validated without confirming the fidelity of the underlying cognitive processes. It also reveals a methodological schism between studies targeting aggregate statistical fidelity and those aiming for individual behavioral believability. A recurring limitation across diverse simulations is the failure to capture the nuanced emotional and social dynamics of human interaction. This curated reference serves as a tool for researchers to navigate the rapidly evolving landscape of LLM-based human simulation and to identify critical areas for future methodological innovation.
+
+
+Our review of recent literature on the validation of LLM-based doppelgängers (or human proxies) reveals a lagging rigour in validation methodology. While LLMs demonstrate a remarkable ability to replicate the outcomes of human behaviour across diverse domains, this capability may not synonymous with replicating the human experience or cognitive process. The recurring limitations identified in this analysis point to a clear agenda for future research. The primary challenge is to move beyond outcome-based validation and develop robust methods for assessing process fidelity. This will require interdisciplinary approaches that integrate techniques from cognitive science, psychology, and linguistics to probe the reasoning, emotional, and social dynamics of agent behaviour. Bridging the gap between aggregate statistical accuracy and individual believability remains a critical open problem, suggesting a need for hybrid validation frameworks. Ultimately, for LLM agents to become truly reliable proxies for human subjects, the field must prioritize the development of validation techniques that are as sophisticated as the models they seek to evaluate.
+
+
+\section*{Conclusion and Future Directions}
+
 So far, we have established the foundations for this work, drawing from two distinct but converging areas: the clinical science of Motivational Interviewing and the engineering of Large Language Models. We reviewed MI as an evidence-based method for smoking cessation that guides individuals to articulate their own reasons for change. Its effectiveness is measurable through specific behavioural indicators like the balance of client ``change talk'' versus ``sustain talk'' and shifts in self-reported readiness scores. We also traced the evolution of therapeutic chatbots, from early rule-based systems to modern generative agents powered by LLMs, which offer unprecedented conversational fluidity.
 
 The creation of synthetic agents introduces a significant challenge: how can we confidently test and validate these systems? The recent practice of using LLMs to create synthetic ``doppelgängers'' of human participants for behavioural research offers a path forward, but existing validation techniques often lack rigour. Methods that rely on aggregate statistical matching or subjective plausibility ratings do not confirm whether a synthetic subject behaves realistically within the specific dynamics of a therapeutic conversation.

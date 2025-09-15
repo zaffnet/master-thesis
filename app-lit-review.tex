@@ -1,0 +1,74 @@
+\chapter{Summary of Literature Survey on Synthetic Doppelgängers}
+
+{ % Start a group to keep the arrayrulecolor local
+\arrayrulecolor{lightgray}
+\begin{longtable}{| L{4.5cm} | L{3.5cm} | L{3.5cm} | L{3.5cm} |}
+
+%================== CAPTION AND HEADERS ==================
+\caption{Validation Methods for LLM-based Synthetic Subjects}
+\label{tab:llm_validation}\\
+
+% --- Header for the first page ---
+\hline
+\rowcolor{tablehead}
+\textbf{Publication} & \textbf{Installation Method} & \textbf{Validation Approach} & \textbf{Limitation of Validation}\\
+\hline
+\endfirsthead
+
+% --- Header for subsequent pages ---
+\hline
+\rowcolor{tablehead}
+\textbf{Publication} & \textbf{Installation Method} & \textbf{Validation Approach} & \textbf{Limitation of Validation}\\
+\hline
+\endhead
+
+% --- Footer for all pages except the last ---
+\endfoot
+
+% --- Footer for the last page ---
+\endlastfoot
+
+%================== TABLE BODY (SORTED BY YEAR) ==================
+Andreas, J. (2022). \href{https://aclanthology.org/2022.findings-emnlp.423/}{\textit{Language Models as Agent Models}}. & Not described. & Evaluation based on an informal demonstration of an LM's ability to infer agent properties in a closed-world setting. The paper is a conceptual argument, not an empirical study. & The validation is limited to a theoretical argument and a toy experiment on static text, rather than a quantifiable, dynamic agent simulation.
+\\\hline
+Aher, G. V., et al. (2023). \href{https://proceedings.mlr.press/v202/aher23a.html}{\textit{Using Large Language Models to Simulate Multiple Humans and Replicate Human Subject Studies}}. & Prompting LLMs to act as participants in classic economic games (e.g., Ultimatum Game). & Quantitative replication of aggregate behavioral distributions from human experiments (e.g., in the Ultimatum Game, Prisoner's Dilemma). & The validation confirms outcome replication but not process fidelity; a "hyper-accuracy distortion" reveals a non-humanlike bias in some models.
+\\\hline
+Argyle, L. P., et al. (2023). \href{https://doi.org/10.1017/pan.2023.2}{\textit{Out of one, many: Using language models to simulate human samples}}. & Conditioning GPT-3 with thousands of socio-demographic backstories from real human survey participants. & Comparison of the response distributions of the "silicon sample" to the human sample to assess "algorithmic fidelity" at the population level. & The validation focuses on aggregate statistical patterns, not on the fidelity of individual-level responses or the realism of conversational interaction.
+\\\hline
+Ayers, J. W., et al. (2023). \href{https://doi.org/10.1001/jamainternmed.2023.1284}{\textit{Comparing Physician and Artificial Intelligence Chatbot Responses to Patient Questions}}. & A chatbot (ChatGPT) and physicians were prompted with real-world patient questions posted on a public social media forum. & A panel of licensed healthcare professionals blindly evaluated the quality and empathy of both human and AI responses. & The Turing-style test focuses on the quality of static, written advice, not on interactive diagnostic capabilities or the ability to manage a longitudinal patient relationship.
+\\\hline
+Binz, M., \& Schulz, E. (2023). \href{https://doi.org/10.1073/pnas.2218523120}{\textit{Using cognitive psychology to understand GPT-3}}. & Zero-shot prompting of GPT-3 with classic cognitive bias scenarios (e.g., the Linda problem). & Comparison of the model's pattern of choices and errors against the well-documented results from human experiments. & The validation shows the model reproduces human-like biases in constrained tasks but does not prove the underlying cognitive mechanisms are the same, or that this behavior generalizes to novel tasks.
+\\\hline
+Cho, D., et al. (2024). \href{https://arxiv.org/abs/2403.02959}{\textit{Jury LLM: Simulating a Jury's Verdict in Legal Cases}}. & Agents are assigned roles (e.g., judge, plaintiff, defendant) and given case evidence to simulate court debates and deliberate a verdict. & Comparison of the LLM jury's final verdict and legal reasoning to the outcomes from human mock jury studies or real-world legal precedents. & The validation focuses on the legal and logical outputs, but fails to model the emotional, social, and group dynamics that heavily influence real jury deliberations.
+\\\hline
+Gao, L., et al. (2023). \href{https://arxiv.org/abs/2310.00322}{\textit{S³: A Platform for Large-Scale Multi-Agent Simulation with Interacting Language Agents}}. & A scalable multi-agent platform where agents are prompted to act as players in classic cooperation games (e.g., Public Goods Game). & Comparison of emergent agent behaviors (e.g., levels of cooperation, free-riding) with the established patterns from human trials of the same games. & The validation is limited to strategic outcomes in games; the paper focuses more on the simulation platform's architecture than on rigorous validation of agent fidelity.
+\\\hline
+Horton, J. J. (2023). \href{https://www.nber.org/papers/w31122}{\textit{Large Language Models as Simulated Economic Agents: What Can We Learn from Them?}}. & LLMs are instructed to act as players in classic economic games, being given endowments, information, and preferences. & Comparison of LLM decisions to established patterns of human behavior, showing qualitatively similar results to original laboratory experiments. & The validation confirms replication of known qualitative outcomes but does not validate the underlying cognitive processes, suggesting its primary use is for piloting studies, not replacing them.
+\\\hline
+Kosinski, M. (2023). \href{https://arxiv.org/abs/2302.02083}{\textit{Theory of Mind May Have Spontaneously Emerged in Large Language Models}}. & Zero-shot prompting on classic false-belief tasks. & Performance on standardized psychological tests for Theory of Mind (ToM), comparing newer models (e.g., GPT-4) to older versions and child development benchmarks. & Tests puzzle-solving ability on static, text-based scenarios, which may not equate to genuine social inference or the imputation of mental states in dynamic, real-world interactions.
+\\\hline
+Masters, K. (2023). \href{https://doi.org/10.3390/pr11041289}{\textit{The Role of Artificial Intelligence in Medical Education: A Scoping Review}}. & Not described (Review paper). & Discusses prevalent validation methods in the field, such as performance on medical exams, user satisfaction, and expert review. & The review highlights a field-wide limitation: a lack of rigorous, comparative validation studies that benchmark AI performance systematically against human experts.
+\\\hline
+Park, J. S., et al. (2023). \href{https://arxiv.org/abs/2304.03442}{\textit{Generative Agents: Interactive Simulacra of Human Behavior}}. & Agents are instantiated with seed memories and personalities via natural language prompts in an interactive sandbox environment. & Ablation studies on agent architecture components and qualitative author evaluation of "believability" of emergent social behaviors. & The validation relies on subjective author assessment of believability and lacks a rigorous, systematic comparison to a quantitative human baseline.
+\\\hline
+Santurkar, S., et al. (2023). \href{https://proceedings.mlr.press/v202/santurkar23a.html}{\textit{Whose Opinions Do Language Models Reflect?}}. & Prompting LLMs with questions from public opinion polls (Pew Research) with and without demographic steering. & Quantitative comparison of the distribution of LM opinions against the responses of 60 U.S. demographic groups using the OpinionQA dataset. & The validation reveals substantial misalignment between LM opinions and U.S. demographic groups, which persists even when the model is explicitly steered toward a target group.
+\\\hline
+Spatharioti, S. E., et al. (2023). \href{https://arxiv.org/abs/2307.03744}{\textit{Comparing Traditional and LLM-based Search for Consumer Choice}}. & Participants in a randomized experiment are assigned to use either an LLM-based search tool or a traditional search engine. & Comparison of task completion time, query complexity, user satisfaction, and decision accuracy between the two groups. & Validation shows users with LLMs are faster, but it also reveals a limitation: users exhibit overreliance on the LLM and fail to spot incorrect information when the model errs.
+\\\hline
+Argyle, L. P., et al. (2024). \href{https://doi.org/10.1073/pnas.2406322121}{\textit{AI language models can be fine-tuned to predict public opinion}}. & Agents are fine-tuned on text data reflecting specific media diets (e.g., transcripts from Fox News vs. The New York Times). & The model's ability to predict public opinion on held-out surveys is shown to be superior to predictions from demographic models alone. & The validation is correlational; it demonstrates predictive improvement but does not prove that the agents replicate the causal cognitive mechanisms of human media consumption and belief formation.
+\\\hline
+Aron, M., et al. (2024). \href{https://doi.org/10.1038/s41746-024-01053-1}{\textit{Clinical Turing tests for large language models}}. & LLMs are prompted to act as patients with specific conditions, generating conversational responses in simulated clinical encounters. & Human clinicians interact with both LLM "patients" and human confederates, then attempt to distinguish between them. & The test primarily evaluates conversational plausibility and stylistic mimicry, not the underlying accuracy of the simulated physiological state or the model's clinical knowledge.
+\\\hline
+Fischer, N., et al. (2024). \href{https://arxiv.org/abs/2405.11883}{\textit{Evaluating Large Language Model-based Virtual Patients for Communication Skills Training}}. & Virtual patients are configured with preset preferences, histories, and personalities via system prompts for medical training simulations. & Validation is based on checklist adherence (e.g., did the model provide all necessary information) and subjective satisfaction ratings from non-blinded medical experts. & The validation method is susceptible to evaluator bias and primarily assesses script-following and information retrieval rather than authentic, spontaneous patient behavior.
+\\\hline
+Goel, A., et al. (2024). \href{https://dl.acm.org/doi/10.1145/3613904.3642118}{\textit{Measuring the Impact of Ideological Self-Identification on LLM-Generated Survey Responses}}. & Simulating survey respondents by prompting an LLM to answer questions from the perspective of different U.S. political ideologies. & Comparing the ideological consistency, polarization levels, and response patterns of the simulated agents to data from human survey respondents. & The validation reveals that the models often generate more extreme, stereotypical, and ideologically pure responses than are typically found in human populations.
+\\\hline
+Grossman, I., et al. (2024). \href{https://doi.org/10.1073/pnas.2405460121}{\textit{Wise reasoning in large language models}}. & Prompting LLMs to exhibit "wise reasoning" traits (e.g., intellectual humility, perspective-taking) when responding to social conflict scenarios. & Human experts rated the wisdom of LLM responses to interpersonal and societal conflicts, comparing them to human responses. & The validation relies on subjective expert ratings and may capture the linguistic style or semantic patterns associated with wisdom, rather than the authentic cognitive state itself.
+\\\hline
+Hu, Z., et al. (2024). \href{https://arxiv.org/abs/2402.04049}{\textit{Faithful to the Character? A Faithful-to-Character Evaluation for Role-Playing Language Models}}. & LLMs are prompted to act as both interviewer and candidate in simulated job interviews, embodying specific roles. & Human evaluators rate the realism, coherence, and consistency of the simulated dialogues based on the assigned character profiles. & Validation relies on subjective human ratings, which may not be sensitive enough to detect subtle non-human conversational patterns, stereotypical biases, or strategic inconsistencies.
+\\\hline
+Jiang, H., et al. (2024). \href{https://aclanthology.org/2024.findings-naacl.229/}{\textit{PersonaLLM: Investigating the Ability of Large Language Models to Express Personality Traits}}. & Prompting LLM personas with Big Five personality trait profiles to create "LLM personas." & LLM personas complete the Big Five Inventory (BFI) personality test; human evaluators assess personality from stories written by the personas. & Human accuracy in perceiving the correct personality drops significantly when evaluators are informed of AI authorship, suggesting the perception of personality is fragile.
+\\\hline
+
+\end{longtable}
+} % End of the \arrayrulecolor scope
