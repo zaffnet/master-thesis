@@ -91,7 +91,7 @@ The Conversational Impact Modelling experiments consistently outperformed this s
 
 
 
-While metrics like MAE provide a quantitative summary, a visual comparison of the distributions reveals some discrepancies. \Cref{fig:post_conf_distributions} plots the distribution of human-reported confidence scores alongside the distribution of GPT-4o-based doppelgänger. Both distributions are similarly left-skewed, indicating that the model correctly identifies that most participants land in the higher-confidence range (6--10). However, the doppelgänger predictions were less varied than the human responses. The human data shows a broader plateau of high confidence across scores of 6, 7, and 8, whereas the doppelgängers exhibit a pronounced peak at a score of 7. This suggests that while the model is effective at capturing the overall positive trend, it may be less sensitive to the subtle individual differences in participants' final confidence levels, tending to revert to a more common or ``average'' high-confidence outcome.
+While metrics like MAE provide a quantitative summary, a visual comparison of the distributions reveals some discrepancies. \Cref{fig:post_conf_distributions} plots the distribution of human-reported confidence scores alongside the distribution of GPT-4o-based doppelgänger. Both distributions are similarly left-skewed, indicating that the model correctly identifies that most participants land in the higher-confidence range (6--10). However, the doppelgänger predictions were less varied than the human responses. The human data shows a broader plateau of high confidence across scores of 6, 7, and 8, whereas the doppelgängers exhibit a pronounced peak at a score of 7. This suggests that while the model is effective at capturing the overall positive trend, it may be less sensitive to the minor individual differences in participants' final confidence levels, tending to revert to a more common or ``average'' high-confidence outcome.
 
 
 
@@ -167,13 +167,13 @@ We further extended this analysis to include the other two readiness rulers: imp
 	\label{tab:autoplay_results_full}
 \end{table}
 
-\Cref{tab:autoplay_results_full} summarizes the performance of the Conversational Impact Modelling experiment across all three readiness rulers. The results demonstrate high correlations (ranging from 0.7 to 0.9) across all rulers for both GPT-4o and Claude 3.7 models, affirming the robustness of the methodology.
+\Cref{tab:autoplay_results_full} summarizes the performance of the Conversational Impact Modelling experiment across all three readiness rulers. The results demonstrate high correlations (ranging from 0.7 to 0.9) across all rulers for both GPT-4o and Claude 3.7 models, affirming the reliability of the methodology.
 
 It is interesting to note that the performance metrics for post-importance and post-readiness are generally stronger than for post-confidence. For example, the correlations for importance (0.9 for both models) are notably higher, and the MAEs are lower than for confidence. This suggests that the doppelgängers found it easier to accurately model the conversational impact on a participant's sense of importance and readiness to quit than on their self-efficacy (confidence) in their ability to do so. Overall, the Claude 3.7 model utilizing its ``thinking'' feature demonstrated slightly better performance in modelling confidence (correlation 0.8, MAE 1.1) compared to GPT-4o (correlation 0.7, MAE 1.2).
 
 
 
-This experiment served as a check on the doppelgänger's ability to infer the psychological state resulting from the conversation. The underlying model possesses the necessary reasoning capabilities to allow the doppelgänger to understand how conversational dynamics influenced the participant's motivation and confidence. This serves as a baseline to confirm the doppelgänger's internal consistency before attempting to generate the conversation itself.
+This experiment served as a check on the doppelgänger's ability to infer the psychological state resulting from the conversation. The underlying model possesses the necessary reasoning capabilities to allow the doppelgänger to understand how conversational patterns influenced the participant's motivation and confidence. This serves as a baseline to confirm the doppelgänger's internal consistency before attempting to generate the conversation itself.
 
 
 
@@ -327,7 +327,7 @@ For each experiment with a set of attributes, we calculated the Spearman's corre
 \subsection{Results}
 The results of the incremental attribute installation are summarized in \Cref{tab:doppelgänger-correlations}. The fidelity, measured as the Spearman's rank correlation between the \%CT of humans and their doppelgängers, evolved as more attributes were added. Initially, adding attributes like pre-conversation importance and readiness led to a gradual increase in correlation. However, the process was not strictly monotonic; for instance, adding `pre-conversation confidence' in experiment 5 unexpectedly lowered the correlation from 0.40 to 0.22.
 
-The most significant finding emerged in experiment 6, where explicitly installing the human's \%CT value as a numerical instruction resulted in a strong and statistically significant correlation of $r_s = 0.57$ ($p < 0.0001$). This suggests an LLM-based doppelgänger can directly operationalize a behavioural target when provided, modulating its language to match a specified proportion of change versus sustain talk.
+The most noteworthy finding emerged in experiment 6, where explicitly installing the human's \%CT value as a numerical instruction resulted in a strong and statistically significant correlation of $r_s = 0.57$ ($p < 0.0001$). This suggests an LLM-based doppelgänger can directly operationalize a behavioural target when provided, modulating its language to match a specified proportion of change versus sustain talk.
 
 However, despite achieving a strong rank correlation, a closer look at the population-level statistics reveals a systematic bias. As shown in the histograms in \Cref{fig:cf_comparison}, the distribution of \%CT for doppelgängers is shifted significantly higher than for humans (mean 0.76 vs. 0.59). The doppelgänger distribution is also more compressed and left-skewed, indicating a lower variance and a strong tendency to produce high levels of change talk, regardless of the human baseline.
 
@@ -478,7 +478,7 @@ These findings suggest that synthetic doppelgängers react in a predictable mann
 
 \section{Conclusion}
 
-This chapter detailed an advanced, data-driven approach to the development and validation of synthetic smokers, centred on the ``doppelgänger'' methodology. The experiments showed that installing pre-conversation readiness rulers was a key factor in aligning the doppelgänger's self-reported outcomes with those of their human counterparts. The conversational impact modelling and incremental attribute installation experiments yielded high correlations between synthetic and human data. Notably, the explicit installation of a participant's change fraction value led to the doppelgänger's conversational output correlating strongly with the human data (Spearman's $r_{s}=0.57$).
+This chapter detailed an advanced, data-driven approach to the development and validation of synthetic smokers, centred on the ``doppelgänger'' methodology. The experiments showed that installing pre-conversation readiness rulers was an important factor in aligning the doppelgänger's self-reported outcomes with those of their human counterparts. The conversational impact modelling and incremental attribute installation experiments yielded high correlations between synthetic and human data. Notably, the explicit installation of a participant's change fraction value led to the doppelgänger's conversational output correlating strongly with the human data (Spearman's $r_{s}=0.57$).
 
 However, the process also revealed several challenges. For example, the correlation of CARE scores was negligible, and a population-level bias was observed, with doppelgängers generally exhibiting higher average change talk than humans.
 
