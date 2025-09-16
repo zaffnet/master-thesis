@@ -13,7 +13,7 @@
 We present the pairwise Cohen's $\kappa$ values, for both counsellor and client codes, in \Cref{fig:ck}. All $\kappa$ values fall between 0.55-0.81, indicating moderate to substantial agreement between each pair of raters beyond chance~\cite{cohenrange}. The Cohen's $\kappa$ values between AutoMISC and the expert annotators (Annotators 1 and 2) were \textbf{0.63} and \textbf{0.58} for counsellor codes, and \textbf{0.63} and \textbf{0.69} for client codes, respectively.
 
 \section*{Statistical Validation of Inter-Rater Reliability}
-To estimate how these reliability findings generalize to more transcripts, we computed the \textbf{asymptotic variance} of Fleiss' $\kappa$ to calculate two-tailed $p$-values. For both counsellor and client codes, the asymptotic variance was on the order of $10^{-6}$, resulting in $p$-values of $p<.001$. These extremely low $p$-values indicate that the inter-rater agreement is highly statistically significant beyond chance. A post-hoc power analysis confirmed that our study had high statistical power (estimated power: 1.00) to detect nonzero agreement, i.e., there is a near-certain probability to detect significant inter-rater reliability.
+To estimate how these reliability findings generalize to more transcripts, we computed the \textbf{asymptotic variance} of Fleiss' $\kappa$ to calculate two-tailed $p$-values. For both counsellor and client codes, the asymptotic variance was on the order of $10^{-6}$, resulting in $p$-values of $p<.001$. These extremely low $p$-values indicate that the inter-rater agreement is highly statistically significant beyond chance. A post-hoc power analysis confirmed that our study was highly powered (estimated power: 1.00) to detect nonzero agreement, i.e., there is a near-certain probability to detect significant inter-rater reliability.
 
 \begin{figure*}[!ht]
 	\centering
@@ -58,7 +58,7 @@ To estimate how these reliability findings generalize to more transcripts, we co
 		title=\subsection*{Parser Prompt}
 	]
 
-	You are an accurate Motivational Interviewing (MI) counselling session annotator.
+	You are a highly accurate Motivational Interviewing (MI) counselling session annotator.
 	Your task is to segment the given volley into utterances.\\
 
 	Definitions:
@@ -107,7 +107,7 @@ Output: ["I don't want to go to the bars every day.", "I don't want my kids to s
 		fontupper=\small,
 		title=\subsection*{Counsellor Utterance Classification Prompt}]
 
-	You are an accurate Motivational Interviewing (MI) counselling session annotator.
+	You are a highly accurate Motivational Interviewing (MI) counselling session annotator.
 	Your task is to analyze an excerpt from a counselling session of up to five volleys and categorize the counsellor's final utterance.\\
 
 	Definitions:
@@ -179,7 +179,7 @@ Output: ["I don't want to go to the bars every day.", "I don't want my kids to s
 		fontupper=\small,
 		title=\subsection*{Client Utterance Classification Prompt}]
 
-	You are an accurate Motivational Interviewing (MI) counselling session annotator.
+	You are a highly accurate Motivational Interviewing (MI) counselling session annotator.
 	Your task is to analyze an excerpt from a counselling session of up to five volleys and categorize the client's final utterance.
 	The target behaviour change of this conversation is smoking cessation.
 
