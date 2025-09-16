@@ -3,7 +3,7 @@
 
 The iterative development of MIBot, as described in \Cref{ch:mibot}, required that we thoroughly test it after every change in its prompt. To automate the testing of some aspects of the chatbot's behaviour, we started the development of ``synthetic smokers''\footnote{Notably, we also used human role-playing as smokers during our testing of MIBot.}. A synthetic smoker, in the context of this research, is a prompted instance of an LLM tasked with simulating the behaviour, language, and psychological responses of a human smoker engaged in a counselling session.
 
-This chapter details the initial conceptualization and preliminary experiments in the development of these synthetic agents. We begin by defining the theoretical approach for creating realistic agents, followed by our early experiments to control behavioural attributes like verbosity and resistance to quitting. These initial steps show the core challenges of attribute installation and validation. In the subsequent chapter, we use a more advanced, data-driven methodology for attribute installation and validation.
+This chapter details the initial conceptualization and preliminary experiments in the development of these synthetic agents. We begin by defining the theoretical approach for creating realistic agents, followed by our early experiments to control behavioural attributes like verbosity and resistance to quitting. These initial steps show the core challenges of attribute installation and validation. In the subsequent chapter, we use a data-driven methodology for attribute installation and validation.
 
 \section{Objectives and Overview}
 \label{sec:synthetic-smoker-goals}
@@ -35,7 +35,7 @@ A successful system (or methodology) for creating synthetic smokers must produce
 
 \textbf{Fidelity} refers to the requirement that any attribute installed in the synthetic smoker must be demonstrably evidenced by its language and behaviour. For example, if a synthetic smoker is installed with high resistance, its dialogue should contain more Sustain Talk than Change Talk. The core challenge of this research is to develop methods to install these attributes and subsequently validate that this installation was successful.
 
-\textbf{Representativeness} encompasses two key requirements:
+\textbf{Representativeness} encompasses two main requirements:
 
 \begin{enumerate}
 	\item The system must generate a different range of smokers whose attributes mirror the variability of the target real-world population. It must avoid the bias of over-representing a narrow or easily simulated archetype at the expense of mirroring the population's true statistical makeup. This may happen for a variety of reasons. For example, if the system is built on biased data, it may fail to generate a statistically accurate population.
@@ -135,7 +135,7 @@ These observations showed the necessity of explicitly controlling these attribut
 To address the issue of excessive verbosity, we undertook a prompt engineering effort to constrain the synthetic smoker's utterance length and style.
 
 \subsubsection{Methodology}
-We modified the prompt to encourage a more natural, concise conversational style. Key additions to the prompt included:
+We modified the prompt to encourage a more natural, concise conversational style. Main additions to the prompt included:
 
 \begin{itemize}
 	\item Stylistic Guidance: Instructions such as ``Imagine you're texting a friend. Keep it casual...'' and encouraging the use of emojis.
@@ -147,7 +147,7 @@ We modified the prompt to encourage a more natural, concise conversational style
 To validate the effectiveness of these changes, we generated a new set of conversations ($n=5$) using the modified prompt (``Fixed Verbosity'') and with GPT-4 Turbo (temperature $=1.0$) and compared them against the baseline prompt (``Default Verbosity''). We also compared these results against human-human MI conversations from the HLQC datasets~\citep{perez-rosas-etal-2019-makes}.
 
 \subsubsection{Results}
-The prompt modifications markedly reduced the verbosity of the synthetic smoker. \Cref{fig:verbosity-comparison} illustrates the distribution of volley lengths (in terms of number of words).
+The prompt modifications markedly reduced the verbosity of the synthetic smoker. \Cref{fig:verbosity-comparison} illustrates the distribution of volley lengths (regarding number of words).
 
 
 \begin{figure}[htpb]
@@ -177,7 +177,7 @@ The prompt modifications markedly reduced the verbosity of the synthetic smoker.
 
 The default verbosity condition showed a wide distribution with a high median utterance length. The fixed-verbosity synthetic smokers successfully matched the utterance length distribution of humans from the HLQC dataset. \Cref{tab:utterance_stats} provides detailed statistics on the volley lengths.
 
-Interestingly, we observed that the counsellor bot reciprocated the client's verbosity. When the synthetic smoker spoke less, the counsellor bot also reduced its utterance length. We also verified that these prompt modifications were reliable and transferable across different LLMs (GPT-4 Turbo and GPT-4 Omni).
+We observed that the counsellor bot reciprocated the client's verbosity. When the synthetic smoker spoke less, the counsellor bot also reduced its utterance length. We also verified that these prompt modifications were reliable and transferable across different LLMs (GPT-4 Turbo and GPT-4 Omni).
 
 \subsection{Installing Resistance}
 \label{sec:synthetic-smoker-resistance}
@@ -254,7 +254,7 @@ Using modified prompts and GPT-4 Turbo (temperature=1.0), we generated conversat
 The analysis confirmed a clear distinction between the two personas (\Cref{tab:resistance-ct-st}). The High Resistance smoker used markedly more Sustain Talk (44\% vs. 9\%) and less Change Talk (31\% vs. 61\%) than the Low Resistance smoker.
 
 
-The readiness ruler scores demonstrated that the synthetic smokers provided responses consistent with their installed resistance levels (\Cref{tab:resistance-readiness-rulers}). The ``high-resistance'' synthetic smokers reported lower mean scores on all three dimensions of the readiness rulers. Interestingly, their week-later change in confidence was lower than ``low-resistance'' smokers by 0.8 points, while the change in importance and readiness was slightly higher.
+The readiness ruler scores demonstrated that the synthetic smokers provided responses consistent with their installed resistance levels (\Cref{tab:resistance-readiness-rulers}). The ``high-resistance'' synthetic smokers reported lower mean scores on all three dimensions of the readiness rulers. Their week-later change in confidence was lower than ``low-resistance'' smokers by 0.8 points, while the change in importance and readiness was slightly higher.
 
 
 
