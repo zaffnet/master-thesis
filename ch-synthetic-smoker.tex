@@ -1,21 +1,21 @@
 \chapter{Development of Synthetic Smokers: Preliminary Experiments}
 \label{ch:synthetic-smoker}
 
-The iterative development of MIBot, as described in \Cref{ch:mibot}, required that we thoroughly test it after every change in its prompt. To automate the testing of some aspects of the chatbot's behaviour, we started the development of ``synthetic smokers''\footnote{Notably, we also used human role-playing as smokers during our testing of MIBot.}. A synthetic smoker, in the context of this research, is a prompted instance of an LLM tasked with simulating the behaviour, language, and psychological responses of a human smoker engaged in a counselling session.
+The iterative development of MIBot, as described in \Cref{ch:mibot}, required thorough testing after every change to its prompt. To automate the testing of some aspects of the chatbot's behaviour, we began developing ``synthetic smokers''\footnote{Notably, we also used human role-playing as smokers during our testing of MIBot.}. A synthetic smoker, in the context of this research, is a prompted instance of an LLM tasked with simulating the behaviour, language, and psychological responses of a human smoker engaged in a counselling session.
 
-This chapter details the initial conceptualization and preliminary experiments in the development of these synthetic agents. We begin by defining the theoretical approach for creating realistic agents, followed by our early experiments to control behavioural attributes like verbosity and resistance to quitting. These initial steps show the core challenges of attribute installation and validation. In the subsequent chapter, we use a data-driven methodology for attribute installation and validation.
+This chapter details the initial conceptualization of and preliminary experiments in the development of these synthetic agents. We begin by defining the theoretical approach for creating realistic agents, followed by our early experiments to control behavioural attributes like verbosity and resistance to quitting. These initial steps show the core challenges of attribute installation and validation. In the subsequent chapter, we use a data-driven methodology for attribute installation and validation.
 
 \section{Objectives and Overview}
 \label{sec:synthetic-smoker-goals}
 
-The primary goal of developing synthetic smokers is to create realistic and controllable proxies for human participants. This endeavour serves two primary objectives:
+The primary goal in developing synthetic smokers is to create realistic and controllable proxies for human participants. This endeavour serves two primary objectives:
 
 \begin{enumerate}
-	\item \textbf{Testing Automated Systems:} Synthetic smokers provide a basis for the rapid iterative development and testing of automated counselling chatbots. By simulating interactions, developers may identify weaknesses, improve conversational strategies, and assess potential efficiency without the logistical overhead of recruiting human subjects for every iteration.
-	\item \textbf{Training Human Clinicians:} In the role of standardized patients, synthetic smokers can be used to train novice clinicians. They offer a consistent experience and can be programmed to simulate specific challenging scenarios or different demographic profiles, which could help trainees receive varied practice opportunities.
+	\item \textbf{Testing Automated Systems:} Synthetic smokers provide a basis for the rapid iterative development and testing of automated counselling chatbots. By simulating interactions, developers can identify weaknesses, improve conversational strategies, and assess potential efficiency without the logistical overhead of recruiting human subjects for every iteration.
+	\item \textbf{Training Human Clinicians:} As standardized patients, synthetic smokers can be used to train novice clinicians. They offer a consistent experience and can be programmed to simulate specific challenging scenarios or different demographic profiles, which could help trainees receive varied practice opportunities.
 \end{enumerate}
 
-The development of a truly representative synthetic smoker poses a scientific challenge. It requires not only the generation of coherent dialogue but the accurate embodiment of specific human attributes ranging from demographics to complex psychological states like resistance to change. Importantly, the validation of these synthetic agents (i.e., proving that they behave realistically according to their installed attributes) is exceptionally difficult, as establishing the \textit{construct validity} of behavioural measurements remains a persistent challenge; that is, it is difficult to ensure that an instrument truly measures the specific psychological attribute it purports to assess~\cite{Cronbach1955}.
+Developing a truly representative synthetic smoker poses a scientific challenge. It requires not only generating coherent dialogue but also accurately embodying specific human attributes, from demographics to complex psychological states like resistance to change. Importantly, the validation of these synthetic agents (i.e., proving that they behave realistically according to their installed attributes) is exceptionally difficult, as establishing the \textit{construct validity} of behavioural measurements remains a persistent challenge; that is, it is difficult to ensure that an instrument truly measures the specific psychological attribute it purports to assess~\cite{Cronbach1955}.
 
 
 \section{Goals for a Synthetic Smoker}
@@ -33,12 +33,12 @@ We conceptualize a synthetic smoker based on a collection of attributes that def
 
 A successful system (or methodology) for creating synthetic smokers must produce agents that exhibit both high \emph{fidelity} and \emph{representativeness}.
 
-\textbf{Fidelity} refers to the requirement that any attribute installed in the synthetic smoker must be demonstrably evidenced by its language and behaviour. For example, if a synthetic smoker is installed with high resistance, its dialogue should contain more Sustain Talk than Change Talk. The core challenge of this research is to develop methods to install these attributes and subsequently validate that this installation was successful.
+\textbf{Fidelity} refers to the requirement that any attribute installed in the synthetic smoker must be demonstrably evidenced by its language and behaviour. For example, if a synthetic smoker is installed with high resistance, its dialogue should contain more Sustain Talk than Change Talk. The core challenge of this research is to develop methods for installing these attributes and subsequently validating that this installation was successful.
 
 \textbf{Representativeness} encompasses two main requirements:
 
 \begin{enumerate}
-	\item The system must generate a different range of smokers whose attributes mirror the variability of the target real-world population. It must avoid the bias of over-representing a narrow or easily simulated archetype at the expense of mirroring the population's true statistical makeup. This may happen for a variety of reasons. For example, if the system is built on biased data, it may fail to generate a statistically accurate population.
+	\item The system must generate a different range of smokers whose attributes mirror the variability of the target real-world population. It must avoid the bias of over-representing a narrow or easily simulated archetype at the expense of mirroring the population's true statistical composition. This may happen for a variety of reasons. For example, if the system is built on biased data, it may fail to generate a statistically accurate population.
 
 	\item The smokers created by the system should exhibit uniform fidelity, i.e., it should not have performance biases where specific profiles are simulated more accurately than others. A system might, for instance, be highly effective at simulating a 55-year-old, heavily dependent smoker with low motivation to quit, while failing to simulate a 22-year-old ``social smoker'' who is ambivalent about quitting. Representativeness requires that the quality of the simulation remains high across the entire range of generated profiles.
 \end{enumerate}
@@ -80,7 +80,7 @@ Representativeness ($\mathcal{R}$) ensures that the synthetic population is both
 
 The first requirement, which we term \textbf{distributional representativeness} ($\mathcal{R}_{dist}$), is that the statistical makeup of the generated synthetic smokers matches that of the target human population. Let $P_H(\textbf{A})$ be the true probability distribution of attribute vectors in the target population. If we generate synthetic agents using a distribution $P_S(\textbf{A})$, this component is high when $P_S(\textbf{A})$ is close to $P_H(\textbf{A})$. We can measure this similarity using the \emph{Kullback-Leibler (KL) Divergence}:
 \[\mathcal{R}_{dist} = D_{KL}(P_H(\textbf{A}) \,||\, P_S(\textbf{A})) = \sum_{\textbf{A} \in \mathcal{A}} P_H(\textbf{A}) \log\frac{P_H(\textbf{A})}{P_S(\textbf{A})}\]
-A system with high distributional representativeness will minimize this divergence, ensuring that the generated population is not biased towards easily simulated archetypes. Alternatively, to assess whether the system's outputs preserve the population's statistical distribution, one can compare the original input distribution, $P_H(\textbf{A})$, to the distribution of attributes measured from the synthetic agent's final output, $P_S(M(\gamma_S))$.
+A system with high distributional representativeness will minimize this divergence, ensuring that the generated population is not biased toward easily simulated archetypes. Alternatively, to assess whether the system's outputs preserve the population's statistical distribution, one can compare the original input distribution, $P_H(\textbf{A})$, to the distribution of attributes measured from the synthetic agent's final output, $P_S(M(\gamma_S))$.
 
 The KL divergence is a measure of the distortion between the intended input attributes and the measured output attributes:
 \[\mathcal{R}_{dist-M} = D_{KL}(P_H(\textbf{A}) \,||\, P_S(M(\gamma_S)))\]
@@ -254,7 +254,7 @@ Using modified prompts and GPT-4 Turbo (temperature=1.0), we generated conversat
 The analysis confirmed a clear distinction between the two personas (\Cref{tab:resistance-ct-st}). The High Resistance smoker used markedly more Sustain Talk (44\% vs. 9\%) and less Change Talk (31\% vs. 61\%) than the Low Resistance smoker.
 
 
-The readiness ruler scores demonstrated that the synthetic smokers provided responses consistent with their installed resistance levels (\Cref{tab:resistance-readiness-rulers}). The ``high-resistance'' synthetic smokers reported lower mean scores on all three dimensions of the readiness rulers. Their week-later change in confidence was lower than ``low-resistance'' smokers by 0.8 points, while the change in importance and readiness was slightly higher.
+The readiness ruler scores demonstrated that the synthetic smokers provided responses consistent with their installed resistance levels (\Cref{tab:resistance-readiness-rulers}). The 'high-resistance' synthetic smokers reported lower mean scores on all three dimensions of the readiness rulers. Their week-later change in confidence was lower than ``low-resistance'' smokers by 0.8 points, while the change in importance and readiness was slightly higher.
 
 
 
