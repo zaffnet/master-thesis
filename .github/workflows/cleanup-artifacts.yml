@@ -1,0 +1,64 @@
+name: Cleanup old artifacts
+
+on:
+  schedule:
+    - cron: '0 0 * * *'
+  workflow_dispatch:
+
+jobs:
+  cleanup:
+    name: Delete artifacts older than five days
+    runs-on: ubuntu-latest
+    permissions:
+      actions: write
+    steps:
+      - name: Delete old artifacts
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const core = require('@actions/core');
+
+            const days = 5;
+            const cutoff = new Date(Date.now() - days * 24 * 60 * 60 * 1000);
+            const owner = context.repo.owner;
+            const repo = context.repo.repo;
+            const perPage = 100;
+            let page = 1;
+            let deleted = 0;
+
+            core.info(`Deleting artifacts in ${owner}/${repo} created before ${cutoff.toISOString()}`);
+
+            while (true) {
+              const artifacts = await github.rest.actions.listArtifactsForRepo({
+                owner,
+                repo,
+                per_page: perPage,
+                page,
+              });
+
+              if (artifacts.data.artifacts.length === 0) {
+                break;
+              }
+
+              for (const artifact of artifacts.data.artifacts) {
+                const createdAt = new Date(artifact.created_at);
+
+                if (createdAt < cutoff && !artifact.expired) {
+                  core.info(`Deleting artifact ${artifact.id} ("${artifact.name}") created at ${artifact.created_at}`);
+                  await github.rest.actions.deleteArtifact({
+                    owner,
+                    repo,
+                    artifact_id: artifact.id,
+                  });
+                  deleted += 1;
+                }
+              }
+
+              if (artifacts.data.artifacts.length < perPage) {
+                break;
+              }
+
+              page += 1;
+            }
+
+            core.info(`Deleted ${deleted} artifact(s).`);
