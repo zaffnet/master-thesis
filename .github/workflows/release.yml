@@ -47,21 +47,24 @@ jobs:
       - name: Rename PDF
         run: mv main.pdf "${{ steps.meta.outputs.pdf }}"
 
-      - name: Install AWS CLI
-        run: sudo apt-get update && sudo apt-get install -y awscli
+      - name: Install AWS CLI v2
+        uses: aws-actions/setup-aws-cli@v4
+        with:
+          aws-access-key-id: ${{ secrets.R2_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          aws-region: auto
 
       - name: Upload to Cloudflare R2
         id: upload
         env:
-          AWS_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
-          AWS_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
-          AWS_EC2_METADATA_DISABLED: "true"
+          R2_ENDPOINT: https://${{ secrets.R2_ACCOUNT_ID }}.r2.cloudflarestorage.com
+          R2_BUCKET: ${{ secrets.R2_BUCKET }}
+          BASE_URL: ${{ secrets.CDN_BASE_URL }}
         run: |
           KEY="${{ steps.meta.outputs.safe }}.pdf"
           aws s3 cp "${{ steps.meta.outputs.pdf }}" "s3://${R2_BUCKET}/${KEY}" \
             --endpoint-url "${R2_ENDPOINT}" \
-            --content-type application/pdf \
-            --metadata-directive REPLACE
+            --content-type application/pdf
           echo "url=${BASE_URL}/${KEY}" >> "$GITHUB_OUTPUT"
 
       - name: Comment URL on PR
