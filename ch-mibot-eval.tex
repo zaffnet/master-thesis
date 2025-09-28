@@ -458,7 +458,7 @@ We computed summary scores separately for these subsets and then compared MIBot'
 		\toprule
 		\textbf{Metric}      & \textbf{MIBot} & \textbf{HLQC\_HI (high-quality)} \\
 		\midrule
-		\%Change Talk (\%CT) & 59 (29.6)      & 53 (28.54)                       \\
+		\%Change Talk (\%CT) & 59 (25.6)      & 53 (28.4)                       \\
 		\bottomrule
 	\end{tabular}
 	\caption[AutoMISC Client Metrics for MIBot vs. Human]{Client-specific summary metric from AutoMISC for MIBot, compared to high-quality human counselling sessions from the HLQC dataset. The table shows the mean (and standard deviation) for the percentage of change talk (\%CT).}
@@ -495,21 +495,8 @@ We computed summary scores separately for these subsets and then compared MIBot'
 	\label{table:quit_attempts}
 \end{table}
 
-Participants who made quit attempts post-conversation showed larger confidence gains (mean +2.43) compared to those who did not attempt (+1.35, $p<0.05$). This bidirectional relationship---where confidence predicts attempts and attempts reinforce confidence---aligns with social cognitive theory~\citep{Bandura1986}.
+Participants who made quit attempts post-conversation showed larger confidence gains (mean +2.24) compared to those who did not attempt (+1.49, $p=0.0664$). This bidirectional relationship---where confidence predicts attempts and attempts reinforce confidence---aligns with social cognitive theory~\citep{Bandura1986}.
 
-\subsection*{Self-Reported Behavioural Changes}
-
-Beyond formal quit attempts, participants reported various harm reduction behaviours. Analysis of open-ended responses revealed five main categories of behavioural change:
-
-\begin{enumerate}
-	\item \textbf{Reduced consumption} (42\% of participants): ``Cut down from 20 to 12 cigarettes a day.''
-	\item \textbf{Delayed first cigarette} (28\%): ``Now waiting until after breakfast instead of immediately upon waking.''
-	\item \textbf{Substitution strategies} (31\%): ``Using nicotine gum when cravings hit at work.''
-	\item \textbf{Environmental changes} (19\%): ``Removed ashtrays from the house and car.''
-	\item \textbf{Social support seeking} (23\%): ``Told my partner about wanting to quit and asked for support.''
-\end{enumerate}
-
-These incremental changes, while not constituting complete cessation, represent important steps in the behaviour change process and align with harm reduction approaches increasingly recognized in tobacco control~\citep{Abrams2018}.
 
 \section{Conversation Analysis}
 \label{sec:conversation-analysis}
@@ -517,36 +504,103 @@ These incremental changes, while not constituting complete cessation, represent 
 \subsection*{Quantitative Flow}
 \label{sec:conversation-dynamics}
 
-Conversations ranged from 36 to 163 utterances (median 78; mean 80.7, SD 29.4), with counsellor utterances comprising 55\% of the total. The median conversation lasted approximately 19 minutes based on participant self-report. \Cref{table:conversation_metrics} summarizes main quantitative metrics.
+
+Conversations ranged from 36 to 163 utterances (median 78; mean 80.71, SD 25.54), with counsellor utterances comprising 71.7\% of the total. The median conversation lasted approximately 30 minutes based on the lone participant self-report that mentioned duration. Table~\ref{table:conversation-dynamics} summarizes main quantitative metrics.
 
 \begin{table}[ht]
-	\centering
-	\small
-	\setlength{\tabcolsep}{4pt}
-	\renewcommand{\arraystretch}{1.1}
-	\begin{tabular}{@{}lcc@{}}
-		\toprule
-		\textbf{Metric}                & \textbf{Mean (SD)} & \textbf{Range} \\
-		\midrule
-		Total utterances               & 80.7 (29.4)        & 36--163        \\
-		Counsellor utterances          & 44.4 (16.2)        & 20--90         \\
-		Client utterances              & 36.3 (13.2)        & 16--73         \\
-		Words per counsellor utterance & 42.3 (18.7)        & 15--95         \\
-		Words per client utterance     & 28.6 (15.4)        & 8--72          \\
-		Session duration (minutes)     & 19 (9)             & 8--45          \\
-		\bottomrule
-	\end{tabular}
+\centering
+\small
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{@{}lrr@{}}
+\toprule
+\textbf{Metric} & \textbf{Mean (SD)} & \textbf{Range} \\
+\midrule
+Total utterances               & 80.7 (25.5) & 36--163 \\
+Counsellor utterances          & 57.9 (20.0) & 26--123 \\
+Client utterances              & 22.8 (6.9)  & 9--40 \\
+Words per counsellor utterance & 14.6 (1.5)  & 11--19 \\
+Words per client utterance     & 7.0 (2.6)   & 1--13 \\
+\bottomrule
+\end{tabular}
 	\caption[Conversation Dynamics between Participants and MIBot: Quantitative Metrics]{Quantitative metrics of the conversation dynamics between participants and MIBot. The table includes statistics on the total number of utterances, counsellor and client utterances, words per utterance, and session duration.}
-	\label{table:conversation_metrics}
+	\label{table:conversation-dynamics}
 \end{table}
 
-Longer conversations correlated with better outcomes ($r=0.20$ for confidence change), but the relationship was non-linear. Conversations under 50 utterances rarely produced substantial gains, while those exceeding 120 utterances showed diminishing returns, suggesting an optimal engagement window of 60--100 exchanges.
+Longer conversations correlated with better outcomes ($r = 0.29$ for confidence change), but the relationship was non-linear. Conversations under 60 utterances rarely produced substantial gains (only 21\% reached $\geq$2-point confidence increases), while those exceeding 130 utterances showed diminishing returns (50\% achieving $\geq$2-point gains with a small sample). This suggests an optimal engagement window of roughly 110--120 exchanges before improvements level off.
+
 
 \subsection*{Qualitative Thematic Analysis}
 
 To understand the qualitative aspects of the conversations, a thematic analysis was performed on the full corpus of transcripts. The analysis was conducted by two researchers who independently reviewed the transcripts to identify recurring patterns and themes. They then met to compare their findings, discuss discrepancies, and collaboratively develop a final set of themes that characterized successful therapeutic engagement. This process revealed three recurring patterns:
 
+
+
+
+%%%%%%%%
 \subsubsection*{Stress and Coping Narratives}
+
+56\% of conversations referenced this theme across 59 transcripts.
+Participants described cigarettes as tools for emotion regulation and short-term relief. Discussions often focused on stress at work, family pressures, or using smoke breaks as a momentary escape.
+
+\begin{quote}
+\emph{"It is a stress reliever for me."} \\
+\emph{"Everytime I have tried to quit, other things in my life have come up and it helps me to calm down to deal with them."} \\
+\emph{"My job becomes more stressful."}
+\end{quote}
+
+\subsubsection*{Social and Ritualistic Aspects}
+
+51\% of conversations referenced this theme across 54 transcripts.
+Smoking was entwined with social identity and daily rituals. Clients highlighted smoke breaks with colleagues, shared routines with partners, and the fear of losing social contact if they quit.
+
+\begin{quote}
+\emph{"I'm embarrassed that I can't just quit by myself."} \\
+\emph{"I feel like if I actually commit to making a change, it could be possible."} \\
+\emph{"I could speak to my friends and family about seeing a counsellor to get their support and advice."}
+\end{quote}
+
+\subsubsection*{Ambivalence Themes}
+
+19\% of conversations referenced this theme across 20 transcripts.
+Clients expressed motivational ambivalence, simultaneously acknowledging reasons to quit while defending the role of smoking in their lives. Conversations frequently normalized these mixed feelings before exploring change talk.
+
+\begin{quote}
+\emph{"My health and the appearance of my teeth are probably the main reasons I want to quit."} \\
+\emph{"It makes me want to quit"} \\
+\emph{"My wife wants me to quit and I want to quit for my health and my marriage."}
+\end{quote}
+
+\subsubsection*{Success Stories}
+
+Two clients reported marked increases in confidence within one week, moving from very low to high confidence after extended dialogues. Their narratives illustrate shifts in perspective:
+\begin{itemize}
+    \item Reflecting on past attempts: \emph{"I'd love to quit smoking before the day."}
+    \item Reframing setbacks: \emph{"As you implement these mindfulness practices, it's important to remember that change can be a journey full of learning experiences."}
+    \item Planning next steps: \emph{"It sounds like it's an important goal for you."}
+    \item Coping strategies: \emph{"Is there anything else on your mind that you'd like to talk about before we look at ways to support you in this journey?"}
+\end{itemize}
+
+\begin{quote}
+\emph{"Seeing underage kids smoke has made me see it in a negative light."} \\
+\emph{"Perhaps you tell me how you would wish to help me as you have stated above."}
+\end{quote}
+
+\subsubsection*{Non-Responders and Negative Cases}
+
+Two clients reported declines in confidence after the session. The qualitative review focused on three hypothesised patterns of disengagement:
+\begin{itemize}
+
+    \item \textbf{Enjoyment-Focused Smokers.} Example quotes include:
+    \begin{quote}
+    \emph{"At night you can enjoy the cooler air and watch the stars and think about things."} \\
+    \emph{"Frankly, I enjoy it, and long ago I tried hypnosis and it worked; I found it distasteful."}
+    \end{quote}
+\end{itemize}
+
+%%%%%%%%%
+
+\subsubsection{Stress and Coping Narratives}
 
 The most common theme (78\% of conversations) involved smoking as emotional regulation. Participants frequently described smoking as their primary stress management tool:
 
