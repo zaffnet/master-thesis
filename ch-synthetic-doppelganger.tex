@@ -178,7 +178,7 @@ This experiment served as a check on the doppelgänger's ability to infer the ps
 
 
 \section{Experiments with the Incremental Installation of Attributes}
-Having gained insights into the LLM's ability to model conversations and its intuitive understanding of numerical attributes such as readiness rulers, we set out to systematically install attributes in LLM-based synthetic smokers and validate their installation. Recall from our discussion on the benefits of creating doppelgängers (\Cref{sec:synthetic-smoker-doppelgänger}). They provide a way to approximate the fidelity of an installation and make the validation of synthetic agents easier. We can approximate the fidelity of synthetic smokers with the correlation between some metric on the observable outer space (e.g., transcripts) of doppelgängers and their human twins. As an example, to validate whether the behavioural attribute of resistance to change has been successfully installed, we can analyze the transcripts from both humans and their doppelgängers and calculate the correlation between the percentage of Change Talk (\%CT) exhibited by both groups. A high correlation would then suggest a successful installation of this attribute.
+Having gained insights into the LLM's ability to model conversations and its intuitive understanding of numerical attributes such as readiness rulers, we set out to systematically install attributes in LLM-based synthetic smokers and validate their installation. Recall from our discussion on the benefits of creating doppelgängers (\Cref{sec:synthetic-smoker-doppelgänger}). They provide a way to approximate the fidelity of an installation and make the validation of synthetic agents easier. We can approximate the fidelity of synthetic smokers with the correlation between some metric on the observable outer space (e.g., transcripts) of doppelgängers and their human twins. As an example, to validate whether the behavioural attribute of resistance to change has been successfully installed, we can analyse the transcripts from both humans and their doppelgängers and calculate the correlation between the percentage of Change Talk (\%CT) exhibited by both groups. A high correlation would then suggest a successful installation of this attribute.
 
 
 \subsection*{Percentage Change Talk: A Major Metric for Validating Behavioural Fidelity}
@@ -187,7 +187,7 @@ To validate the synthetic smokers developed using the doppelgänger method, we n
 We identified the percentage change talk metric (also referred to as change fraction or CF, calculated as CT / (CT + ST)) to fit our requirements, as it is grounded in the client's language and is strongly associated with behavioural change outcomes in MI~\cite{Barnett2014,Houck2018,Moyers2009,Baer2008}.
 We also tested if \%CT is a valid proxy for a client's internal state, i.e., if it correlates with established metrics of readiness in human participants.
 
-We analyzed the data from MIV6.3A ($N=106$ participants). The analysis confirmed strong, statistically significant correlations between \%CT and all readiness rulers (\Cref{tab:ct-correlation}). For example, the correlation with post-conversation confidence was 0.41 ($p < 0.0001$). These results motivated us to use \%CT as a primary metric for validating the installation of behavioural attributes in the synthetic smoker.
+We analysed the data from MIV6.3A ($N=106$ participants). The analysis confirmed strong, statistically significant correlations between \%CT and all readiness rulers (\Cref{tab:ct-correlation}). For example, the correlation with post-conversation confidence was 0.41 ($p < 0.0001$). These results motivated us to use \%CT as a primary metric for validating the installation of behavioural attributes in the synthetic smoker.
 
 
 \begin{table}[!ht]
@@ -269,7 +269,7 @@ The overall workflow for creating and validating doppelgängers using this compa
 \begin{figure}[htpb]
 	\centering
 	\includegraphics[width=0.98\textwidth]{fig/doppelganger-study.png}
-	\caption[Doppelgänger creation and validation process]{Doppelgänger creation and validation process. For each of the 106 human participants ($H_i$), a synthetic twin ($S_i$) is created by installing their attributes. Both agents' conversations with MIBot are analyzed to extract a behavioural metric (\%CT), and the correlation between the two sets of metrics is used to assess fidelity.}
+	\caption[Doppelgänger creation and validation process]{Doppelgänger creation and validation process. For each of the 106 human participants ($H_i$), a synthetic twin ($S_i$) is created by installing their attributes. Both agents' conversations with MIBot are analysed to extract a behavioural metric (\%CT), and the correlation between the two sets of metrics is used to assess fidelity.}
 	\label{fig:doppelgänger-study}
 \end{figure}
 
