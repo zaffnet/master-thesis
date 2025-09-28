@@ -34,13 +34,7 @@ jobs:
 
       - name: Build PDF
         run: |
-          docker run --rm -v "$PWD":/workspace -w /workspace texlive/texlive:TL2024-historic bash -c "
-            pdflatex -interaction=nonstopmode main.tex
-            biber main || true
-            pdflatex -interaction=nonstopmode main.tex
-            makeindex main || true
-            pdflatex -interaction=nonstopmode main.tex
-          "
+          bash build.sh --docker
           test -f main.pdf
 
       - name: Compute branch-safe name
