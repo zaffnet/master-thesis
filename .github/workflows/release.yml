@@ -6,11 +6,15 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    outputs:
+      pdf_filename: ${{ steps.build_pdf.outputs.output_pdf }}
+      artifact_name: ${{ steps.build_pdf.outputs.artifact_name }}
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
 
       - name: Build PDF
+        id: build_pdf
         run: |
           docker run --rm -v "$(pwd)":/workspace -w /workspace texlive/texlive:TL2024-historic bash -c "
               pdflatex main.tex
@@ -19,12 +23,19 @@ jobs:
               makeindex main
               pdflatex main.tex
           "
+          BRANCH_NAME="${GITHUB_REF_NAME}"
+          SANITIZED_BRANCH="${BRANCH_NAME//\//-}"
+          OUTPUT_PDF="main-${SANITIZED_BRANCH}.pdf"
+          ARTIFACT_NAME="main-pdf-${SANITIZED_BRANCH}"
+          mv main.pdf "${OUTPUT_PDF}"
+          echo "output_pdf=${OUTPUT_PDF}" >> "${GITHUB_OUTPUT}"
+          echo "artifact_name=${ARTIFACT_NAME}" >> "${GITHUB_OUTPUT}"
 
       - name: Upload PDF as Artifact
         uses: actions/upload-artifact@v4
         with:
-          name: main-pdf
-          path: main.pdf
+          name: ${{ steps.build_pdf.outputs.artifact_name }}
+          path: ${{ steps.build_pdf.outputs.output_pdf }}
 
   release:
     runs-on: ubuntu-latest
@@ -36,13 +47,13 @@ jobs:
       - name: Download PDF artifact
         uses: actions/download-artifact@v4
         with:
-          name: main-pdf
+          name: ${{ needs.build.outputs.artifact_name }}
 
       - name: Create Release
         id: create_release
         uses: softprops/action-gh-release@v2
         with:
-          files: main.pdf
+          files: ${{ needs.build.outputs.pdf_filename }}
           tag_name: release-${{ github.run_id }}
           body: |
             Automated release of the PDF compiled from commit ${{ github.sha }}.
