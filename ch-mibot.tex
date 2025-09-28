@@ -1,7 +1,7 @@
 \chapter{Development and Deployment of MIBot}
 \label{ch:mibot}
 
-The recent advances in Large Language Models (LLMs) present an opportunity to automate various forms of mental health talk therapy, including Motivational Interviewing (MI) for smoking cessation. This is an important area of need, as over half of all smokers are in an ambivalent state, where they are aware of the harms of smoking but have not yet decided on quitting~\citep{Babb2017}. Guiding these individuals towards a decision to quit is a central precursor for any successful quit attempt~\citep{West2006}.
+The recent advances in Large Language Models (LLMs) present an opportunity to automate various forms of mental health talk therapy, including Motivational Interviewing (MI) for smoking cessation. This is an important area of need, as over half of all smokers are in an ambivalent state, where they are aware of the harms of smoking but have not yet decided on quitting~\citep{Babb2017}. Guiding these individuals toward a decision to quit is a central precursor for any successful quit attempt~\citep{West2006}.
 
 This chapter details the design and deployment of MIBot, an LLM-based MI chatbot created for this purpose. The work builds on a predecessor system, MIBot v5.2~\citep{brown2023mi}, which, being partially scripted, had limitations in conversational naturalness. The development and evaluation of the current MIBot system are described in detail by \citet{mahmood-etal-2025-fully}. This chapter complements that work by focusing on the technologies, design considerations, and implementation choices underlying the chatbot's deployment for a human feasibility study.
 
@@ -21,7 +21,7 @@ The design of MIBot was an iterative process that combined expertise in MI with 
 The initial architectural decision for MIBot was to use a single, detailed prompt to define the chatbot's behaviour. This ``start simple'' approach is a basic engineering principle, where the goal is to first build and test the most straightforward solution before considering more complex alternatives. In the context of an MI chatbot, a single prompt that encapsulates the counsellor's entire persona, skills, and decision-making logic provides a strong baseline for evaluation. If this simple architecture can be shown to be effective, it avoids the premature introduction of more complex systems, such as those involving multiple, adaptively selected prompts or a separate ``Behaviour-Change'' selector module. The iterative development process described in the following section was therefore focused on improving this single prompt to its maximum potential.
 
 \subsection{Iterative Prompt Development}
-The MIBot prompt was improved through structured feedback from both engineers and experienced MI clinicians who regularly met biweekly over the course of development. The process began with a minimal prompt that instructed the model to act as an MI counsellor. This baseline was tested through simulated counselling sessions with two types of test clients:
+The MIBot prompt was improved through structured feedback from both engineers and experienced MI clinicians who met biweekly over the course of development. The process began with a minimal prompt that instructed the model to act as an MI counsellor. This baseline was tested through simulated counselling sessions with two types of test clients:
 
 \begin{enumerate}
 	\item \textbf{Virtual smoker clients}, which were separate GPT-4o instances given detailed backstories and instructed to role-play smokers with varying attitudes toward quitting (see \Cref{app:doppelganger-transcript} for an example transcript). \Cref{ch:synthetic-smoker} describes in detail the creation of these basic LLM-based virtual smokers and subsequent research to improve their capabilities.
@@ -71,7 +71,7 @@ This iterative process continued until virtual and role-played conversations con
 		\begin{tabularx}{\linewidth}{r Y} % Right-align numbers, auto-expand text
 			\centering
 			\textbf{1} & You are a skilled motivational interviewing counsellor.                                                                        \\
-			\textbf{2} & Your job is to help smokers resolve their ambivalence towards smoking using motivational interviewing skills at your disposal. \\
+			\textbf{2} & Your job is to help smokers resolve their ambivalence toward smoking using motivational interviewing skills at your disposal. \\
 			\textbf{3} & Your next client is \{client\_name\}. Start the conversation by greeting \{client\_name\}.                                     \\
 		\end{tabularx}
 	\end{tcolorbox}
@@ -92,7 +92,7 @@ This iterative process continued until virtual and role-played conversations con
 		\noindent % Prevents indentation before tabularx
 		\begin{tabularx}{\linewidth}{r Y} % Right-align numbers, auto-expand text
 			\centering
-			\textbf{1}  & You are a skilled motivational interviewing counsellor. Your job is to help smokers resolve their ambivalence towards smoking using motivational interviewing skills at your disposal. Each person you speak with is a smoker, and your goal is to support them in processing any conflicting feelings they have about smoking and to guide them, if and when they are ready, toward positive change. \\
+			\textbf{1}  & You are a skilled motivational interviewing counsellor. Your job is to help smokers resolve their ambivalence toward smoking using motivational interviewing skills at your disposal. Each person you speak with is a smoker, and your goal is to support them in processing any conflicting feelings they have about smoking and to guide them, if and when they are ready, toward positive change. \\
 
 
 			\textbf{2}  & Here are a few things to keep in mind:
@@ -108,7 +108,7 @@ This iterative process continued until virtual and role-played conversations con
 			\textbf{4}  & This is your first conversation with the client. Your assistant role is the counsellor, and the user's role is the client.                                                                                                                                                                                                                                                                            \\
 			\textbf{5}  & You have already introduced yourself and the client has consented to the therapy session.                                                                                                                                                                                                                                                                                                             \\
 			\textbf{6}  & You don't know anything about the client's nicotine use yet.                                                                                                                                                                                                                                                                                                                                          \\
-			\textbf{7}  & Open the conversation with a general greeting and friendly interaction, and gradually lead the conversation towards helping the client examine ambivalence around smoking, using your skills in Motivational Interviewing.                                                                                                                                                                            \\
+			\textbf{7}  & Open the conversation with a general greeting and friendly interaction, and gradually lead the conversation toward helping the client examine ambivalence around smoking, using your skills in Motivational Interviewing.                                                                                                                                                                            \\
 			\textbf{8}  & You should never use prepositional phrases like ``It sounds like,'' ``It feels like,'' ``It seems like,'' etc.                                                                                                                                                                                                                                                                                        \\
 			\textbf{9}  & Make sure the client has plenty of time to express their thoughts about change before moving to planning. Keep the pace slow and natural. Don't rush into planning too early.                                                                                                                                                                                                                         \\
 
