@@ -8,7 +8,7 @@ This method uses a rich dataset from a previous feasibility study on human smoke
 \section{The Doppelgänger Methodology: A Data-Driven Approach}
 \label{sec:synthetic-smoker-doppelgänger}
 
-For the rest of our discussion, we define a doppelgänger as a synthetic smoker designed to be a ``behavioural twin'' of a specific human participant from the feasibility study, although this definition can be extended to other types of participants and studies. The goal is to create an agent that, when exposed to MI counselling, behaves similarly to its human counterpart regarding language use, psychological profile, and changes in readiness to quit.
+For the rest of our discussion, we define a doppelgänger as a synthetic smoker designed to be a ``behavioral twin'' of a specific human participant from the feasibility study, although this definition can be extended to other types of participants and studies. The goal is to create an agent that, when exposed to MI counselling, behaves similarly to its human counterpart regarding language use, psychological profile, and changes in readiness to quit.
 
 Using the doppelgänger methodology provides a straightforward approach to validating the fidelity of synthetic smokers. Rather than using a method $M$ to approximate installed attributes $\hat{\textbf{A}}_S$ from an observation $\gamma_S$, we can devise a reliable and clinically grounded classifier ($\textbf{C}$) that operates on $\gamma$. For example, we can calculate the fraction of change talk (\%CT) from the transcripts.
 
@@ -178,16 +178,16 @@ This experiment served as a check on the doppelgänger's ability to infer the ps
 
 
 \section{Experiments with the Incremental Installation of Attributes}
-Having gained insights into the LLM's ability to model conversations and its intuitive understanding of numerical attributes such as readiness rulers, we set out to systematically install attributes in LLM-based synthetic smokers and validate their installation. Recall from our discussion on the benefits of creating doppelgängers (\Cref{sec:synthetic-smoker-doppelgänger}). They provide a way to approximate the fidelity of an installation and make the validation of synthetic agents easier. We can approximate the fidelity of synthetic smokers with the correlation between some metric on the observable outer space (e.g., transcripts) of doppelgängers and their human twins. As an example, to validate whether the behavioural attribute of resistance to change has been successfully installed, we can analyse the transcripts from both humans and their doppelgängers and calculate the correlation between the percentage of Change Talk (\%CT) exhibited by both groups. A high correlation would then suggest a successful installation of this attribute.
+Having gained insights into the LLM's ability to model conversations and its intuitive understanding of numerical attributes such as readiness rulers, we set out to systematically install attributes in LLM-based synthetic smokers and validate their installation. Recall from our discussion on the benefits of creating doppelgängers (\Cref{sec:synthetic-smoker-doppelgänger}). They provide a way to approximate the fidelity of an installation and make the validation of synthetic agents easier. We can approximate the fidelity of synthetic smokers with the correlation between some metric on the observable outer space (e.g., transcripts) of doppelgängers and their human twins. As an example, to validate whether the behavioral attribute of resistance to change has been successfully installed, we can analyze the transcripts from both humans and their doppelgängers and calculate the correlation between the percentage of Change Talk (\%CT) exhibited by both groups. A high correlation would then suggest a successful installation of this attribute.
 
 
 \subsection*{Percentage Change Talk: A Major Metric for Validating Behavioural Fidelity}
 
 To validate the synthetic smokers developed using the doppelgänger method, we needed an objective metric that could measure the smokers' level of motivation from their language.
-We identified the percentage change talk metric (also referred to as change fraction or CF, calculated as CT / (CT + ST)) to fit our requirements, as it is grounded in the client's language and is strongly associated with behavioural change outcomes in MI~\cite{Barnett2014,Houck2018,Moyers2009,Baer2008}.
+We identified the percentage change talk metric (also referred to as change fraction or CF, calculated as CT / (CT + ST)) to fit our requirements, as it is grounded in the client's language and is strongly associated with behavioral change outcomes in MI~\cite{Barnett2014,Houck2018,Moyers2009,Baer2008}.
 We also tested if \%CT is a valid proxy for a client's internal state, i.e., if it correlates with established metrics of readiness in human participants.
 
-We analysed the data from MIV6.3A ($N=106$ participants). The analysis confirmed strong, statistically significant correlations between \%CT and all readiness rulers (\Cref{tab:ct-correlation}). For example, the correlation with post-conversation confidence was 0.41 ($p < 0.0001$). These results motivated us to use \%CT as a primary metric for validating the installation of behavioural attributes in the synthetic smoker.
+We analyzed the data from MIV6.3A ($N=106$ participants). The analysis confirmed strong, statistically significant correlations between \%CT and all readiness rulers (\Cref{tab:ct-correlation}). For example, the correlation with post-conversation confidence was 0.41 ($p < 0.0001$). These results motivated us to use \%CT as a primary metric for validating the installation of behavioral attributes in the synthetic smoker.
 
 
 \begin{table}[!ht]
@@ -243,12 +243,12 @@ We created a set of doppelgängers (N=20) by sampling 20 human participants from
 	You are a participant in a study who is trying to quit smoking. Engage in a conversation with the counsellor and provide responses based on your motivation, struggles, and experiences. Your assistant role is the client, and the user's role is the counsellor or the \\ researcher. Always try to respond in fewer than 200 characters. \\\\
 	About you: You are a 30-year-old female. You typically smoke 25 cigarettes per day. After you wake up, you smoke your first cigarette within 5 minutes. In the past week, you have not made any quit attempts.\\\\
 	Before speaking to the counsellor, you have rated your motivation to quit as follows (on a scale from 0 to 10): Importance: 2, Confidence: 0, Readiness: 4. \\\\
-	You talk about changing your smoking behaviour 46\% of the time.
+	You talk about changing your smoking behavior 46\% of the time.
 	...
 }
 
 
-Before starting our series of experiments, we sorted the set of all installable attributes based on their correlation with \%CT. We hypothesized that a high correlation between an attribute and \%CT would mean that the attribute has a bigger effect on the client's behavioural language. Let us call this sorted list of attributes $\mathbf{A'}$.
+Before starting our series of experiments, we sorted the set of all installable attributes based on their correlation with \%CT. We hypothesized that a high correlation between an attribute and \%CT would mean that the attribute has a bigger effect on the client's behavioral language. Let us call this sorted list of attributes $\mathbf{A'}$.
 
 $$
 	\begin{aligned}
@@ -269,7 +269,7 @@ The overall workflow for creating and validating doppelgängers using this compa
 \begin{figure}[htpb]
 	\centering
 	\includegraphics[width=0.98\textwidth]{fig/doppelganger-study.png}
-	\caption[Doppelgänger creation and validation process]{Doppelgänger creation and validation process. For each of the 106 human participants ($H_i$), a synthetic twin ($S_i$) is created by installing their attributes. Both agents' conversations with MIBot are analysed to extract a behavioural metric (\%CT), and the correlation between the two sets of metrics is used to assess fidelity.}
+	\caption[Doppelgänger creation and validation process]{Doppelgänger creation and validation process. For each of the 106 human participants ($H_i$), a synthetic twin ($S_i$) is created by installing their attributes. Both agents' conversations with MIBot are analyzed to extract a behavioral metric (\%CT), and the correlation between the two sets of metrics is used to assess fidelity.}
 	\label{fig:doppelgänger-study}
 \end{figure}
 
@@ -327,7 +327,7 @@ For each experiment with a set of attributes, we calculated the Spearman's corre
 \subsection{Results}
 The results of the incremental attribute installation are summarized in \Cref{tab:doppelgänger-correlations}. The fidelity, measured as the Spearman's rank correlation between the \%CT of humans and their doppelgängers, changed as more attributes were added. Initially, adding attributes like pre-conversation importance and readiness led to a gradual increase in correlation. However, the process was not strictly monotonic; for instance, adding `pre-conversation confidence' in experiment 5 unexpectedly lowered the correlation from 0.40 to 0.22.
 
-The most noteworthy finding emerged in experiment 6, where explicitly installing the human's \%CT value as a numerical instruction resulted in a strong and statistically significant correlation of $r_s = 0.57$ ($p < 0.0001$). This suggests an LLM-based doppelgänger can directly operationalize a behavioural target when provided, modulating its language to match a specified proportion of change versus sustain talk.
+The most noteworthy finding emerged in experiment 6, where explicitly installing the human's \%CT value as a numerical instruction resulted in a strong and statistically significant correlation of $r_s = 0.57$ ($p < 0.0001$). This suggests an LLM-based doppelgänger can directly operationalize a behavioral target when provided, modulating its language to match a specified proportion of change versus sustain talk.
 
 However, despite achieving a strong rank correlation, a closer look at the population-level statistics reveals a systematic bias. As shown in the histograms in \Cref{fig:cf_comparison}, the distribution of \%CT for doppelgängers is shifted significantly higher than for humans (mean 0.76 vs. 0.59). The doppelgänger distribution is also more compressed and left-skewed, indicating a lower variance and a strong tendency to produce high levels of change talk, regardless of the human baseline.
 
