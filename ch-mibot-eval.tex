@@ -3,9 +3,9 @@
 
 This chapter presents a thorough evaluation of MIBot's effectiveness through a feasibility study with 106 smokers. Building on the system design and implementation described in previous chapters, we assess MIBot's performance across four critical dimensions established in the smoking cessation and motivational interviewing literature: behavioural change readiness, perceived therapeutic empathy, adherence to MI principles, and elicitation of client change talk.
 
-The chapter is organized to progress from primary outcomes through measurements of therapeutic process, and finally, to behavioural changes and user experiences. First, we report the primary outcome of changes in readiness to quit smoking (\Cref{sec:primary-outcome}). We then analyse how the chatbot performed on perceived empathy—measured using the CARE scale—and compare its performance to that of human healthcare professionals (\Cref{sec:perceived-empathy}). Next, we examine MIBot's adherence to MI principles through AutoMISC analysis and examine whether MIBot could maintain fidelity to therapeutic standards while successfully eliciting change talk from clients (\Cref{sec:mi-adherence}).
+The chapter is organized to progress from primary outcomes to measurements of therapeutic process and, finally, to behavioural changes and user experiences. First, we report the primary outcome of changes in readiness to quit smoking (\Cref{sec:primary-outcome}). We then analyse how the chatbot performed on perceived empathy—measured using the CARE scale—and compare its performance to that of human healthcare professionals (\Cref{sec:perceived-empathy}). Next, we examine MIBot's adherence to MI principles through AutoMISC analysis and evaluate whether MIBot could maintain fidelity to therapeutic standards while successfully eliciting change talk from clients (\Cref{sec:mi-adherence}).
 
-Following these core metrics, we investigate behavioural outcomes, including quit attempts and self-reported changes; examine conversation flow, both quantitatively and qualitatively (\Cref{sec:conversation-dynamics}); and examine illustrative case studies and sample outliers. Finally, we analyse participant feedback (\Cref{sec:feedback}) and discuss broader implications of our findings (\Cref{sec:synthesis}).
+Following these core metrics, we investigate behavioural outcomes, including quit attempts and self-reported changes; analyse conversation flow, both quantitatively and qualitatively (\Cref{sec:conversation-dynamics}); and present illustrative case studies and sample outliers. Finally, we analyse participant feedback (\Cref{sec:feedback}) and discuss broader implications of our findings (\Cref{sec:synthesis}).
 
 \section{Primary Outcome: Readiness to Quit}
 \label{sec:primary-outcome}
@@ -166,7 +166,7 @@ The Consultation and Relational Empathy (CARE) scale~\citep{10.1093/fampra/cmh62
 		Human healthcare professionals$^*$ & 46                 & 48                         \\
 		\bottomrule
 	\end{tabular}
-	\caption[MIBot vs. Human CARE Scores]{Comparison of average CARE (Consultation and Relational Empathy) scores and the percentage of perfect scores between MIBot and typical human healthcare professionals. The data for human professionals is from~\cite{Bikker2015}.}
+        \caption[MIBot vs. Human CARE Scores]{Comparison of average CARE (Consultation and Relational Empathy) scores and the percentage of perfect scores between MIBot and typical human healthcare professionals. The data for human professionals are from~\cite{Bikker2015}.}
 	\label{table:care_comparison}
 \end{table}
 
@@ -247,7 +247,7 @@ While MIBot's mean score approaches that of human providers, the percentage of M
 				\end{tabular}
 				\begin{tablenotes}[para,flushleft]  % `para' makes notes in paragraph form to save space
 					\tiny  % Tiny font for notes
-					\item Mean(SD). $^\dagger$Higher mean(sig). \textsuperscript{a}Mann-Whitney; \textsuperscript{b}Kruskal-Wallis. ***p<.001, **p<.01, *p<.05
+                                        \item Mean (SD). $^\dagger$ Higher mean (significant). \textsuperscript{a} Mann–Whitney; \textsuperscript{b} Kruskal–Wallis. ***$p<0.001$, **$p<0.01$, *$p<0.05$
 				\end{tablenotes}
 			\end{threeparttable}
 		\end{adjustbox} % END of the wrapper
@@ -340,7 +340,7 @@ the distribution of confidence changes reveals several patterns: MIBot v6.3A
 resulted in more participants maintaining their baseline confidence (28\% vs.\ 23\%
 with no change) and fewer experiencing decreased confidence (13\% vs.\ 17\%).
 
-For importance to quit, MIBot v5.2 achieved a significant increase of 0.7 (SD 2.0, $p<0.001$), while MIBot v6.3A showed a more modest but still significant gain of 0.5 (SD 1.7, $p<0.005$). Readiness changes were minimal and non-significant for both versions (v5.2: 0.4, SD 1.7, $p=0.01$; v6.3A: 0.3, SD 2.4, $p=0.22$).
+Regarding importance to quit, MIBot v5.2 achieved a significant increase of 0.7 points (SD 2.0, $p<0.001$), while MIBot v6.3A showed a more modest yet still significant gain of 0.5 points (SD 1.7, $p<0.005$). Readiness changes were minimal and non-significant for both versions (v5.2: 0.4 points, SD 1.7, $p=0.01$; v6.3A: 0.3 points, SD 2.4, $p=0.22$).
 
 \subsection*{Perceived Empathy Comparisons}
 
@@ -370,15 +370,15 @@ For importance to quit, MIBot v5.2 achieved a significant increase of 0.7 (SD 2.
 	\label{fig:care_questions}
 \end{figure}
 
-MIBot v5.2 achieved a mean CARE score of 36 (SD = 9.1), with only 3\% of participants awarding a perfect score, while MIBot v6.3A achieved a mean score of 42 (SD = 7.5), with 11\% receiving perfect scores. This difference was statistically significant ($t(191.67) = 4.96$, $p < .001$, Cohen's $d = 0.70$), representing a medium-to-large effect size, and suggests that the fully generative responses of v6.3A markedly improved perceived empathy. \Cref{fig:care_distributions} illustrates the distributional shift between versions. The hybrid v5.2 shows a relatively normal distribution centred in the mid-30s, with considerable spread across all score ranges, whereas v6.3A demonstrates a clear rightward skew, with 40\% of participants rating the chatbot in the highest range (46--50).
+MIBot v5.2 achieved a mean CARE score of 36 (SD 9.1), with only 3\% of participants awarding a perfect score, while MIBot v6.3A achieved a mean score of 42 (SD 7.5), with 11\% receiving perfect scores. This difference was statistically significant ($t(191.67) = 4.96$, $p < 0.001$, Cohen's $d = 0.70$), representing a medium-to-large effect size and suggesting that the fully generative responses of v6.3A markedly improved perceived empathy. \Cref{fig:care_distributions} illustrates the distributional shift between versions. The hybrid v5.2 shows a relatively normal distribution centred in the mid-30s, with considerable spread across all score ranges, whereas v6.3A demonstrates a clear rightward skew, with 40\% of participants rating the chatbot in the highest range (46--50).
 
-To understand which aspects of empathetic interaction improved most, \Cref{fig:care_questions} presents the mean scores across all ten CARE dimensions. The fully generative approach exhibits improvements across every dimension, with particularly notable gains in emotional and communicative aspects. The largest relative improvement was observed in ``showing care and compassion'' (+32\%), reflecting the chatbot's improved ability to maintain an encouraging tone. The dimension of ``making a plan of action with you'' remained the weakest aspect for both versions (2.73 for v5.2, 3.59 for v6.3A), despite showing considerable relative improvement (+32\%). Notably, MIBot v6.3 was prompted with detailed guidelines on how to make a plan of action with the client. Despite this, planning appears to be one of its weak areas.
+To understand which aspects of empathetic interaction improved most, \Cref{fig:care_questions} presents the mean scores across all ten CARE dimensions. The fully generative approach exhibits improvements across every dimension, with particularly notable gains in emotional and communicative aspects. The largest relative improvement was observed in ``showing care and compassion'' (+32\%), reflecting the chatbot's improved ability to maintain an encouraging tone. The dimension of ``making a plan of action with you'' remained the weakest aspect for both versions (2.73 for v5.2, 3.59 for v6.3A), despite showing considerable relative improvement (+32\%). Notably, MIBot v6.3A was prompted with detailed guidelines on how to make a plan of action with the client. Despite this, planning remains one of its weaker areas.
 
 
 
 \subsection*{Implications of the Comparison}
 
-The fully generative MIBot v6.3A chatbot scored higher on CARE, the measure of perceived therapeutic alliance. This improvement suggests that participants experienced more authentic, personalized interactions when the entire conversation---not just reflections---emerged from the language model's contextual understanding. However, both chatbots scored similarly on our primary metric of effectiveness, viz. the week-later change in confidence, indicating that the core therapeutic mechanism of MI may be responsible for most of the gains in confidence. This finding aligns with prior work showing that even simple question-asking can produce substantial benefits~\citep{brown2023mi}, though the improved empathy of full generation may improve engagement and retention in real-world deployment.
+The fully generative MIBot v6.3A chatbot scored higher on CARE, a measure of perceived therapeutic alliance. This improvement suggests that participants experienced more authentic, personalized interactions when the entire conversation---not just reflections---emerged from the language model's contextual understanding. However, both chatbots scored similarly on our primary metric of effectiveness, namely the week-later change in confidence, indicating that the core therapeutic mechanism of MI may be responsible for most of the gains in confidence. This finding aligns with prior work showing that even simple question-asking can produce substantial benefits~\citep{brown2023mi}, though the improved empathy of full generation may improve engagement and retention in real-world deployment.
 
 \section{AutoMISC Analysis}
 \label{sec:mi-adherence}
@@ -545,7 +545,7 @@ Participants described cigarettes as tools for emotion regulation and short-term
 
 \begin{quote}
 \emph{"It is a stress reliever for me."} \\
-\emph{"Everytime I have tried to quit, other things in my life have come up and it helps me to calm down to deal with them."} \\
+\emph{"Every time I have tried to quit, other things in my life have come up and it helps me to calm down to deal with them."} \\
 \emph{"My job becomes more stressful."}
 \end{quote}
 
@@ -580,7 +580,7 @@ Two clients reported marked increases in confidence within one week, moving from
 \emph{"Perhaps you tell me how you would wish to help me as you have stated above."}
 \end{quote}
 
-\subsubsection{Enjoyment-Focused Smokers.}
+\subsubsection{Enjoyment-Focused Smokers}
 
 Example quotes include:
     \begin{quote}
@@ -600,7 +600,7 @@ Three open-ended questions captured immediate post-conversation reactions. Thema
 
 \textbf{Positive Themes (92\% enjoyed the experience):}
 \begin{itemize}
-	\item Non-judgmental approach: ``Finally someone (something?) that didn't lecture me.''
+        \item Non-judgemental approach: ``Finally someone (something?) that didn't lecture me.''
 	\item Structured discussion: ``Helped me organize my thoughts about quitting.''
 	\item Convenience and privacy: ``Could be honest without embarrassment.''
 	\item Surprising depth: ``More helpful than expected from a bot.''
@@ -635,11 +635,11 @@ Cross-tabulation revealed four user segments, as shown in \Cref{table:user_segme
 		Dissatisfied            & No \& No                  & 3\%                   \\
 		\bottomrule
 	\end{tabular}
-	\caption[Segmentation of MIBot Participants based on their Experiences]{Segmentation of users based on their reported enjoyment and perceived helpfulness of the MIBot conversation. The table shows the percentage of participants in each of the four segments: Enthusiasts, Entertained Skeptics, Reluctant Beneficiaries, and Dissatisfied.}
+        \caption[Segmentation of MIBot Participants based on their Experiences]{Segmentation of users based on their reported enjoyment and perceived helpfulness of the MIBot conversation. The table shows the percentage of participants in each of the four segments: Enthusiasts, Entertained Sceptics, Reluctant Beneficiaries, and Dissatisfied.}
 	\label{table:user_segments}
 \end{table}
 
-``Entertained Skeptics''---those who enjoyed but didn't find it helpful---often wanted more directive advice or concrete tools rather than open-ended conversation.
+``Entertained Sceptics''---those who enjoyed but did not find it helpful---often wanted more directive advice or concrete tools rather than open-ended conversation.
 
 
 \section{Discussion}
@@ -687,7 +687,7 @@ Several limitations constrain the generalisability of our findings:
 	\item Short follow-up period (one week) precludes assessment of sustained behaviour change.
 	\item Self-reported outcomes without biochemical verification may overestimate quit attempts.
 	\item Lack of control group prevents causal attribution.
-	\item Single-session design doesn't capture potential for repeated engagement.
+        \item Single-session design does not capture potential for repeated engagement.
 \end{itemize}
 
 \textbf{Sample Limitations:}
