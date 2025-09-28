@@ -1,13 +1,13 @@
 # Fdb version 4
-["biber main"] 1759049335.40649 "main.bcf" "main.bbl" "main" 1759049600.60914 0
-  "main.bcf" 1759049600.25008 134888 98f4ace55a7c9867729e439de50768e3 "pdflatex"
+["biber main"] 1759087043.86407 "main.bcf" "main.bbl" "main" 1759087163.82924 0
+  "main.bcf" 1759087163.45479 134821 1338d8c42c7d01a0fc4aea5cc027312f "pdflatex"
   "main.bib" 1759049242.00603 102781 a9355b994468740e708907455c73f7d7 ""
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1759049376.07843 "/Users/zafarmahmood/Desktop/src/master-thesis/main.tex" "main.pdf" "main" 1759049600.60961 0
-  "/Users/zafarmahmood/Desktop/src/master-thesis/main.tex" 1759049242.00634 12578 442855d92e8223ddf3bee94c31eb86a5 ""
+["pdflatex"] 1759087124.76582 "/Users/zafarmahmood/Desktop/src/master-thesis/main.tex" "main.pdf" "main" 1759087163.82969 0
+  "/Users/zafarmahmood/Desktop/src/master-thesis/main.tex" 1759087004.26624 12525 60d6dcf8b88df00236184b8458370e83 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/libertine/lbtn_76gpa5.enc" 1490131464 2933 9ad527ce78d7c5fa0a642dead095f172 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/libertine/lbtn_7grukw.enc" 1490131464 2934 a4a9158faed2e9e89c771b4e3b7fc12f ""
   "/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/libertine/lbtn_dhi6qf.enc" 1558472472 2914 3d1e3c4123f03ab27df5767d5039d109 ""
@@ -375,7 +375,7 @@
   "app-doppelganger-transcript.tex" 1759049242.00011 19666 54b87d0394b0248a0d56ddd809e8ce34 ""
   "app-example-conversation.tex" 1757261793.42657 0 d41d8cd98f00b204e9800998ecf8427e ""
   "app-feedback.tex" 1759049242.00051 3234 3b9508b3f093f8f92423a465641e325e ""
-  "app-lit-review.tex" 1759049242.00072 10636 3763fc01ca3b973bba165b2fcee947bb ""
+  "app-lit-review.tex" 1759087004.26538 10662 6cc0d7b0d8a205a86b9c78d59099f27a ""
   "app-mibot-history.tex" 1759049242.00102 4558 89b9e647510340296655a2749570b22f ""
   "app-mibot-prompts.tex" 1757261790.9004 8976 16f9583cdd49e0637b1cd3eac6600faf ""
   "app-observer-prompts.tex" 1759049242.00132 4340 105169a728e305584ba740a89a6d5105 ""
@@ -384,7 +384,7 @@
   "ch-background.tex" 1759049242.0021 59610 8bdcec984b4a23d729849749e17a294a ""
   "ch-conclusion.tex" 1759049242.00244 4607 e35ce63b58040927b3e5b5e3edacc26e ""
   "ch-intro.tex" 1759049242.00296 9565 de06805c3523d319b5fb6239518374e3 ""
-  "ch-mibot-eval.tex" 1759049242.00328 64157 e92d7425ffb92471c4a14b6ae53ba7e8 ""
+  "ch-mibot-eval.tex" 1759087004.26585 61633 4f31a248e60f58ef8629c89de9bd087a ""
   "ch-mibot-feasibility-study.tex" 1759049242.00363 14294 f123030bb30455475fa7b638b9e229d2 ""
   "ch-mibot.tex" 1759049242.0039 30291 c9032c29760c769d1ca108eaf8e0a1f0 ""
   "ch-synthetic-doppelganger.tex" 1759049242.00419 40071 158a9ded9902413ba086e5c270d74327 ""
@@ -417,14 +417,14 @@
   "fig/sysdiag.pdf" 1755537182.18814 383272 e33c6d69f6062267533015c450a157aa ""
   "fig/utterance_length_violin_plot.pdf" 1755973108.58168 179989 46413acc0b91e4886e3c087a45d8ca25 ""
   "fig/wordcloud.png" 1757243442.30345 4125787 aa9816709354cd823cce59d2f1aa00aa ""
-  "main.aux" 1759049600.14677 115767 36ccf2bcaa1500fadae675c16175fbb7 "pdflatex"
-  "main.bbl" 1759049338.21355 318781 1deeebb90f82e6a8a3e3eeef52bd59d0 "biber main"
-  "main.lof" 1759049600.25122 3630 9ac77f6598f38ec5781197b7296531aa "pdflatex"
-  "main.lot" 1759049600.25119 5077 b8c22f321b69c0fbd2134fce785cdb02 "pdflatex"
-  "main.out" 1759049600.24658 20975 597fddf7cc58396944bd90bf3eb862aa "pdflatex"
-  "main.run.xml" 1759049600.25096 2305 7d78890bd7c48e4d5c0c7a1a1fb94149 "pdflatex"
-  "main.tex" 1759049242.00634 12578 442855d92e8223ddf3bee94c31eb86a5 ""
-  "main.toc" 1759049600.25105 11976 27ed88b56da46d0e057cb3b812f97ac9 "pdflatex"
+  "main.aux" 1759087163.34412 115236 c74649e80485550f02c899e143338182 "pdflatex"
+  "main.bbl" 1759087047.17174 315855 33ac38048f7f18188907f0959714a59a "biber main"
+  "main.lof" 1759087163.45629 3629 cd7530225dd69aef61136cac2c5443b1 "pdflatex"
+  "main.lot" 1759087163.45613 5077 8f1c169a8054eac35c70ecfe980ee968 "pdflatex"
+  "main.out" 1759087163.45056 20975 597fddf7cc58396944bd90bf3eb862aa "pdflatex"
+  "main.run.xml" 1759087163.45582 2305 7d78890bd7c48e4d5c0c7a1a1fb94149 "pdflatex"
+  "main.tex" 1759087004.26624 12525 60d6dcf8b88df00236184b8458370e83 ""
+  "main.toc" 1759087163.45593 11832 22ab9d6a638fda114af3b7056d479a4e "pdflatex"
   "ut-thesis.cls" 1759049242.00678 6595 0f7751533329979481e30e9fcfeaca87 ""
   (generated)
   "main.aux"
