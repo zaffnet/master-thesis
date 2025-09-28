@@ -31,6 +31,15 @@ jobs:
           echo "output_pdf=${OUTPUT_PDF}" >> "${GITHUB_OUTPUT}"
           echo "artifact_name=${ARTIFACT_NAME}" >> "${GITHUB_OUTPUT}"
 
+      - name: Determine PDF filename
+        id: determine_pdf_name
+        run: |
+          SANITIZED_BRANCH="${GITHUB_REF_NAME//\//-}"
+          echo "pdf_name=main-${SANITIZED_BRANCH}.pdf" >> "$GITHUB_OUTPUT"
+
+      - name: Rename PDF to include branch name
+        run: mv main.pdf "${{ steps.determine_pdf_name.outputs.pdf_name }}"
+
       - name: Upload PDF as Artifact
         uses: actions/upload-artifact@v4
         with:
