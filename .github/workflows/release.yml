@@ -1,61 +1,86 @@
-name: Build and Release PDF
+name: Build PDF and Publish (Cloudflare R2)
 
 on:
-  push
+  pull_request:
+    types: [opened, synchronize, reopened]
+  push:
+    branches: [main]
+
+concurrency:
+  group: pdf-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
-  build:
+  build-publish:
     runs-on: ubuntu-latest
-    outputs:
-      pdf_name: ${{ steps.determine_pdf_name.outputs.pdf_name }}
+    permissions:
+      contents: read
+      pull-requests: write
+
+    env:
+      R2_ENDPOINT: https://${{ secrets.R2_ACCOUNT_ID }}.r2.cloudflarestorage.com
+      R2_BUCKET: ${{ secrets.R2_BUCKET }}
+      BASE_URL: ${{ secrets.CDN_BASE_URL }}
+
     steps:
-      - name: Check out repository
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
       - name: Build PDF
         run: |
-          docker run --rm -v "$(pwd)":/workspace -w /workspace texlive/texlive:TL2024-historic bash -c "
-              pdflatex main.tex
-              biber main
-              pdflatex main.tex
-              makeindex main
-              pdflatex main.tex
+          docker run --rm -v "$PWD":/workspace -w /workspace texlive/texlive:TL2024-historic bash -c "
+            pdflatex -interaction=nonstopmode main.tex
+            biber main || true
+            pdflatex -interaction=nonstopmode main.tex
+            makeindex main || true
+            pdflatex -interaction=nonstopmode main.tex
           "
+          test -f main.pdf
 
-      - name: Determine PDF filename
-        id: determine_pdf_name
+      - name: Compute branch-safe name
+        id: meta
         run: |
-          SANITIZED_BRANCH="${GITHUB_REF_NAME//\//-}"
-          echo "pdf_name=main-${SANITIZED_BRANCH}.pdf" >> "$GITHUB_OUTPUT"
+          BR="${GITHUB_HEAD_REF:-${GITHUB_REF_NAME}}"
+          SAFE="${BR//\//-}"
+          echo "safe=${SAFE}" >> "$GITHUB_OUTPUT"
+          echo "pdf=main-${SAFE}.pdf" >> "$GITHUB_OUTPUT"
 
-      - name: Rename PDF to include branch name
-        run: mv main.pdf "${{ steps.determine_pdf_name.outputs.pdf_name }}"
+      - name: Rename PDF
+        run: mv main.pdf "${{ steps.meta.outputs.pdf }}"
 
-      - name: Upload PDF as Artifact
+      - name: Install AWS CLI
+        run: sudo apt-get update && sudo apt-get install -y awscli
+
+      - name: Upload to Cloudflare R2
+        id: upload
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          AWS_EC2_METADATA_DISABLED: "true"
+        run: |
+          KEY="${{ steps.meta.outputs.safe }}.pdf"
+          aws s3 cp "${{ steps.meta.outputs.pdf }}" "s3://${R2_BUCKET}/${KEY}" \
+            --endpoint-url "${R2_ENDPOINT}" \
+            --content-type application/pdf \
+            --metadata-directive REPLACE
+          echo "url=${BASE_URL}/${KEY}" >> "$GITHUB_OUTPUT"
+
+      - name: Comment URL on PR
+        if: github.event_name == 'pull_request'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const url = `${{ toJSON(steps.upload.outputs.url) }}`
+            const body = `Built PDF: ${url}`
+            github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.payload.pull_request.number,
+              body
+            })
+
+      - name: Upload artifact (optional)
         uses: actions/upload-artifact@v4
         with:
-          name: ${{ steps.determine_pdf_name.outputs.pdf_name }}
-          path: ${{ steps.determine_pdf_name.outputs.pdf_name }}
-
-  release:
-    runs-on: ubuntu-latest
-    needs: build
-    if: github.ref == 'refs/heads/main'
-    permissions:
-      contents: write
-    steps:
-      - name: Download PDF artifact
-        uses: actions/download-artifact@v4
-        with:
-          name: ${{ needs.build.outputs.pdf_name }}
-
-      - name: Create Release
-        id: create_release
-        uses: softprops/action-gh-release@v2
-        with:
-          files: ${{ needs.build.outputs.pdf_name }}
-          tag_name: release-${{ github.run_id }}
-          body: |
-            Automated release of the PDF compiled from commit ${{ github.sha }}.
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          name: ${{ steps.meta.outputs.pdf }}
+          path: ${{ steps.meta.outputs.pdf }}
+          retention-days: 3
