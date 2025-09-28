@@ -6,6 +6,8 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    outputs:
+      pdf_name: ${{ steps.determine_pdf_name.outputs.pdf_name }}
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
@@ -20,11 +22,20 @@ jobs:
               pdflatex main.tex
           "
 
+      - name: Determine PDF filename
+        id: determine_pdf_name
+        run: |
+          SANITIZED_BRANCH="${GITHUB_REF_NAME//\//-}"
+          echo "pdf_name=main-${SANITIZED_BRANCH}.pdf" >> "$GITHUB_OUTPUT"
+
+      - name: Rename PDF to include branch name
+        run: mv main.pdf "${{ steps.determine_pdf_name.outputs.pdf_name }}"
+
       - name: Upload PDF as Artifact
         uses: actions/upload-artifact@v4
         with:
-          name: main-pdf
-          path: main.pdf
+          name: ${{ steps.determine_pdf_name.outputs.pdf_name }}
+          path: ${{ steps.determine_pdf_name.outputs.pdf_name }}
 
   release:
     runs-on: ubuntu-latest
@@ -36,13 +47,13 @@ jobs:
       - name: Download PDF artifact
         uses: actions/download-artifact@v4
         with:
-          name: main-pdf
+          name: ${{ needs.build.outputs.pdf_name }}
 
       - name: Create Release
         id: create_release
         uses: softprops/action-gh-release@v2
         with:
-          files: main.pdf
+          files: ${{ needs.build.outputs.pdf_name }}
           tag_name: release-${{ github.run_id }}
           body: |
             Automated release of the PDF compiled from commit ${{ github.sha }}.
