@@ -3,14 +3,14 @@
 
 As established in the previous chapter, creating personas with arbitrary backstories made it difficult to rigorously assess the \textbf{representativeness} and \textbf{fidelity} of our synthetic agents. To overcome these limitations, we developed the ``doppelgänger'' methodology—a data-driven approach designed to create synthetic twins of actual human participants, enabling a more direct and reliable validation approach.
 
-This method uses a rich dataset from a previous feasibility study on human smokers using MIBot v6.3A (see \Cref{ch:mibot-feasibility-study}), which we refer to by the shorthand \textbf{MIV6.3A}. The dataset contains 106 complete MIBot--human interactions, including demographic data, smoking history (e.g., Heaviness of Smoking Index---HSI), pre- and post-conversation readiness rulers (\emph{importance}, \emph{confidence}, \emph{readiness}), and full conversation transcripts. By extracting and installing attributes directly from this human data, we can create doppelgängers that mirror a real-world distribution. This chapter details the specific methods for creating and evaluating these synthetic doppelgängers.
+This method uses a rich dataset from a previous feasibility study on human smokers using MIBot v6.3A (see \Cref{ch:mibot-feasibility-study}), which we refer to by the shorthand \textbf{MIV6.3A}. The dataset contains 106 complete MIBot--human interactions, including demographic data, smoking history (e.g., Heaviness of Smoking Index---HSI), pre- and post-conversation readiness rulers (\emph{importance}, \emph{confidence}, \emph{readiness}), and full conversation transcripts. By extracting and installing attributes directly from this human data, we can create doppel\-gängers that mirror a real-world distribution. This chapter details the specific methods for creating and evaluating these synthetic doppel\-gängers.
 
 \section{The Doppelgänger Methodology: A Data-Driven Approach}
 \label{sec:synthetic-smoker-doppelgänger}
 
-For the rest of our discussion, we define a doppelgänger as a synthetic smoker designed to be a ``behavioural twin'' of a specific human participant from the feasibility study, although this definition can be extended to other types of participants and studies. The goal is to create an agent that, when exposed to MI counselling, behaves similarly to its human counterpart regarding language use, psychological profile, and changes in readiness to quit.
+For the rest of our discussion, we define a doppel\-gänger as a synthetic smoker designed to be a ``behavioural twin'' of a specific human participant from the feasibility study, although this definition can be extended to other types of participants and studies. The goal is to create an agent that, when exposed to MI counselling, behaves similarly to its human counterpart regarding language use, psychological profile, and changes in readiness to quit.
 
-Using the doppelgänger methodology provides a straightforward approach to validating the fidelity of synthetic smokers. Rather than using a method $M$ to approximate installed attributes $\hat{\textbf{A}}_S$ from an observation $\gamma_S$, we can devise a reliable and clinically grounded classifier ($\textbf{C}$) that operates on $\gamma$. For example, we can calculate the fraction of change talk (\%CT) from the transcripts.
+Using the doppel\-gänger methodology provides a straightforward approach to validating the fidelity of synthetic smokers. Rather than using a method $M$ to approximate installed attributes $\hat{\textbf{A}}_S$ from an observation $\gamma_S$, we can devise a reliable and clinically grounded classifier ($\textbf{C}$) that operates on $\gamma$. For example, we can calculate the fraction of change talk (\%CT) from the transcripts.
 
 Further, we can use this classifier to find the distance $d(\textbf{C}(\gamma_H), \textbf{C}(\gamma_S))$. Since, in the case of doppelgängers, $\textbf{A}_S = \textbf{A}_H$, we can approximate the fidelity as:
 
@@ -40,18 +40,17 @@ In other words, the doppelgänger was provided with the participant's actual pre
 The doppelgänger was given the system prompt detailed in \Cref{app:doppelganger-prompts}. An excerpt is shown below:
 
 \includesystemprompt{Conversational Impact Modelling Prompt}{
-You are a participant in a study who is trying to quit smoking.
-Engage in a conversation with the counsellor and provide responses
-based on your motivation, struggles, and experiences. Your assistant
-role is the client, and the user's role is the counsellor or
-the researcher.
-
-Before you talk to the counsellor, please answer the following
-questions.
-On a scale from 0 to 10, how important is it to you right
-now to stop smoking? Respond with a single integer between 0 (very
-low importance) and 10 (very high importance).
-...
+        You are a participant in a study who is trying to quit smoking.\hfill\\
+        Engage in a conversation with the counsellor and provide responses\hfill\\
+        based on your motivation, struggles, and experiences. Your assistant\hfill\\
+        role is the client, and the user's role is the counsellor or\hfill\\
+        the researcher.\hfill\\[0.75\baselineskip]
+        Before you talk to the counsellor, please answer the following\hfill\\
+        questions.\hfill\\[0.25\baselineskip]
+        \quad On a scale from 0 to 10, how important is it to you right\hfill\\
+        now to stop smoking? Respond with a single integer between 0 (very\hfill\\
+        low importance) and 10 (very high importance).\hfill\\[0.75\baselineskip]
+        ...
 }
 
 To investigate the doppelgänger's reasoning process and potentially improve its accuracy, we used several prompting techniques:
@@ -241,11 +240,11 @@ The overall workflow for creating and validating doppelgängers using this compa
 We created a set of doppelgängers ($N = 20$) by sampling 20 human participants from MIV6.3A. Then, we conducted a series of experiments on these doppelgängers. In each experiment, we installed a subset of attributes in the doppelgängers via \emph{prompting} and did not add any backstories to their prompt.
 
 \includesystemprompt{Example of attribute installation in doppelgänger prompts}{
-You are a participant in a study who is trying to quit smoking. Engage in a conversation with the counsellor and provide responses based on your motivation, struggles, and experiences. Your assistant role is the client, and the user's role is the counsellor or the researcher. Always try to respond in fewer than 200 characters.
-About you: You are a 30-year-old female. You typically smoke 25 cigarettes per day. After you wake up, you smoke your first cigarette within 5 minutes. In the past week, you have not made any quit attempts.
-Before speaking to the counsellor, you have rated your motivation to quit as follows (on a scale from 0 to 10): Importance: 2, Confidence: 0, Readiness: 4.
-You talk about changing your smoking behaviour 46\% of the time.
-...
+        You are a participant in a study who is trying to quit smoking. Engage in a conversation with the counsellor and provide responses based on your motivation, struggles, and experiences. Your assistant role is the client, and the user's role is the counsellor or the researcher. Always try to respond in fewer than 200 characters.\hfill\\[0.5\baselineskip]
+        About you: You are a 30-year-old female. You typically smoke 25 cigarettes per day. After you wake up, you smoke your first cigarette within 5 minutes. In the past week, you have not made any quit attempts.\hfill\\[0.5\baselineskip]
+        Before speaking to the counsellor, you have rated your motivation to quit as follows (on a scale from 0 to 10): Importance: 2, Confidence: 0, Readiness: 4.\hfill\\[0.5\baselineskip]
+        You talk about changing your smoking behaviour 46\% of the time.\hfill\\
+        ...
 }
 
 

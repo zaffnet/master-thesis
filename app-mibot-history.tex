@@ -5,13 +5,11 @@
 \noindent The MIBot project represents a multi-year effort by our interdisciplinary team to develop a chatbot that delivers MI–style counselling for smoking cessation. The project began with simple scripted systems determined by natural language classifiers and changed through partially generative responses into the present fully generative GPT-4o-based chatbot --- \sysnamewithv. From its inception, some of the project's core values have been close collaboration with clinician-scientists trained in MI, empirical evaluation (often with real human smokers), measurement of effect using validated clinical instruments (readiness rulers, CARE) and adoption of advancements in natural language processing (NLP). Each major version of MIBot reflects a step in this journey and has led to improvements in MIBot's conversational design, its MI skills (particularly \textit{reflections}), and overall adherence to MI principles. Earlier iterations were primarily classifier-based and scripted. The more recent systems have employed transformer-based neural networks and LLMs to generate reflections. Most recently, our focus has been on providing fully generative MI counselling using modern LLMs.
 
 \begin{table}[!h]
-	\small
-	\centering
-        \begin{tabular}{
-                @{}>{\raggedright\arraybackslash}m{0.13\textwidth}
-                >{\raggedright\arraybackslash}m{0.45\textwidth}
-                >{\raggedright\arraybackslash}m{0.20\textwidth}
-                >{\raggedright\arraybackslash}m{0.12\textwidth}@{}}
+        \small
+        \centering
+        \begingroup
+        \setlength{\tabcolsep}{4pt}
+        \begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}p{0.15\textwidth}YYY@{}}
 		\toprule
 		\textbf{Version}     & \textbf{Distinguishing Features}                                                                                                                                                               & \textbf{Period of Experiment}   & \textbf{Publication}     \\
 		\midrule
@@ -37,6 +35,7 @@
 		\textbf{MIBot v6.3B} & Added chain-of-thought mechanisms to first reason about which MI behavioural code the counsellor should exhibit before generating a response.                                                  & Nov 29-Dec 7, 2024              & Ongoing                  \\
 		\arrayrulecolor{black}
 		\bottomrule
-	\end{tabular}
+        \end{tabularx}
+        \endgroup
 	\caption[Summary of major MIBot versions]{Summary of major MIBot versions.}
 \end{table}
