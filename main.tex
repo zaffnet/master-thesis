@@ -50,13 +50,17 @@
             uniquelist=false,
             uniquename=false,
             defernumbers=true]{biblatex}
-\usepackage[colorlinks=true, linkcolor=cyan, citecolor=cyan, urlcolor=cyan]{hyperref}
+\usepackage[colorlinks=true, linkcolor=cyan, citecolor=cyan, urlcolor=cyan, breaklinks=true]{hyperref}
 \usepackage{cleveref}
 \usepackage{xspace}
 \usepackage{parskip} % For space between paragraphs instead of indentation
 \usepackage[scaled]{inconsolata}
 \usepackage{microtype}
 % \usepackage[hyphens]{url}
+
+\emergencystretch=3em           % extra slack for bad lines
+\frenchspacing                  % uniform interword spacing
+\usepackage{xurl}               % URL line breaks
 
 \usepackage{etoolbox}
 
