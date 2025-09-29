@@ -67,6 +67,11 @@
 % Use semibold instead of bold extended to reduce heaviness of bold text
 \renewcommand{\bfdefault}{sb}
 
+% Inconsolata does not provide a dedicated semibold shape, so fall back to bold
+\DeclareFontShape{T1}{zi4}{sb}{n}{<->ssub*zi4/b/n}{}
+\DeclareFontShape{T1}{zi4}{sb}{it}{<->ssub*zi4/b/it}{}
+\DeclareFontShape{T1}{zi4}{sb}{sl}{<->ssub*zi4/b/sl}{}
+
 \usepackage{etoolbox}
 
 \newcommand{\sysname}{\textit{MIBot}\xspace}
