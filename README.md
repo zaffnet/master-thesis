@@ -1,3 +1,4 @@
+[![PDF (Cloudflare R2)](https://github.com/zaffnet/master-thesis/actions/workflows/release.yml/badge.svg?branch=main)](https://files.zafarmahmood.com/main)
 # A Fully Generative Motivational Interviewing Chatbot for Moving Smokers Towards the Decision to Quit and LLM-Based Synthetic Smokers
 
 **Author:** Zafarullah Mahmood
