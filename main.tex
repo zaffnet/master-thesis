@@ -59,6 +59,12 @@
 \usepackage{microtype}
 % \usepackage[hyphens]{url}
 
+% Provide a semibold typewriter fallback for Inconsolata when sb series is requested
+\DeclareFontShape{T1}{zi4}{sb}{n}{<->ssub*zi4/m/n}{}
+\DeclareFontShape{T1}{zi4}{sb}{it}{<->ssub*zi4/m/n}{}
+\DeclareFontShape{T1}{zi4}{sb}{sl}{<->ssub*zi4/m/n}{}
+\DeclareFontShape{T1}{zi4}{sb}{sc}{<->ssub*zi4/m/n}{}
+
 \emergencystretch=3em           % extra slack for bad lines
 \frenchspacing                  % uniform interword spacing
 \usepackage{xurl}               % URL line breaks
