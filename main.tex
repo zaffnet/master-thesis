@@ -59,6 +59,9 @@
 \usepackage{microtype}
 % \usepackage[hyphens]{url}
 
+% Provide a semibold variant for Inconsolata when requested by \bfseries
+\DeclareFontShape{T1}{zi4}{sb}{n}{<->ssub*zi4/b/n}{}
+
 \emergencystretch=3em           % extra slack for bad lines
 \frenchspacing                  % uniform interword spacing
 \usepackage{xurl}               % URL line breaks
