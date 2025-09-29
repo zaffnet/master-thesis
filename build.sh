@@ -6,7 +6,7 @@ trap 'echo "Compilation failed!" >&2' ERR
 # Default values
 USE_DOCKER=false
 CLEAN=false
-TEXLIVE_VERSION="texlive/texlive:TL2024-historic"
+TEXLIVE_VERSION="ghcr.io/xu-cheng/texlive-debian:latest"
 MAIN_TEX_FILE="main"
 REQUIRED_TEX_PACKAGES=("newtx")
 
@@ -94,7 +94,9 @@ EOF
 # Build the project
 if [ "$USE_DOCKER" = true ]; then
     echo "Running LaTeX compilation with Docker ${TEXLIVE_VERSION}..."
-    docker run --rm -v "$(pwd)":/workspace -w /workspace ${TEXLIVE_VERSION} bash -lc "${DOCKER_COMPILE_COMMAND}"
+    docker run --rm -e TEXLIVE_NO_DEFAULT_RECEIPT=1 -v "$(pwd)":/workspace -w /workspace ${TEXLIVE_VERSION} bash -c "
+    latexmk -pdf -interaction=nonstopmode -halt-on-error main.tex
+    "
 else
     echo "Running LaTeX compilation locally..."
     ensure_tex_packages
@@ -105,8 +107,12 @@ else
     pdflatex ${MAIN_TEX_FILE}.tex
 fi
 
-trap - ERR
-echo "Compilation completed successfully!"
-if [ -f ${MAIN_TEX_FILE}.pdf ]; then
-    echo "PDF generated: ${MAIN_TEX_FILE}.pdf"
+if [ $? -eq 0 ]; then
+    echo "Compilation completed successfully!"
+    if [ -f ${MAIN_TEX_FILE}.pdf ]; then
+        echo "PDF generated: ${MAIN_TEX_FILE}.pdf"
+    fi
+else
+    echo "Compilation failed!"
+    exit 1
 fi
