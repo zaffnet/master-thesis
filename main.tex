@@ -59,6 +59,14 @@
 \usepackage{microtype}
 % \usepackage[hyphens]{url}
 
+% Provide semibold shapes for the Inconsolata typewriter font used in listings.
+% Without these declarations, enabling semibold as the default bold weight causes
+% LaTeX to raise "Font shape `T1/zi4/sb/n' undefined" when \ttfamily text is
+% emboldened (e.g., for keywords inside listings).
+\makeatletter
+\DeclareFontShape{T1}{zi4}{sb}{n}{<->ssub*zi4/b/n}{}
+\makeatother
+
 \emergencystretch=3em           % extra slack for bad lines
 \frenchspacing                  % uniform interword spacing
 \usepackage{xurl}               % URL line breaks
