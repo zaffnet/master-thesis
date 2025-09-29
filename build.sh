@@ -8,7 +8,7 @@ USE_DOCKER=false
 CLEAN=false
 TEXLIVE_VERSION="ghcr.io/xu-cheng/texlive-debian:latest"
 MAIN_TEX_FILE="main"
-REQUIRED_TEX_PACKAGES=("newtx")
+REQUIRED_TEX_PACKAGES=("newtx" "libertine" "inconsolata")
 
 TLMGR_INSTALL_ARGS=""
 if [ ${#REQUIRED_TEX_PACKAGES[@]} -gt 0 ]; then
@@ -20,12 +20,51 @@ ensure_tex_packages() {
         return 0
     fi
 
-    if command -v tlmgr >/dev/null 2>&1; then
-        echo "Ensuring required TeX packages are installed: ${REQUIRED_TEX_PACKAGES[*]}"
-        tlmgr install "${REQUIRED_TEX_PACKAGES[@]}"
-    else
+    if ! command -v tlmgr >/dev/null 2>&1; then
         echo "tlmgr command not found. Please ensure the following packages are available in your TeX distribution: ${REQUIRED_TEX_PACKAGES[*]}"
+        return 0
     fi
+
+    if [ ! -d "$HOME/texmf" ]; then
+        echo "Initialising tlmgr user tree at $HOME/texmf"
+        if ! tlmgr init-usertree; then
+            cat <<'EOF' >&2
+Warning: Failed to initialise tlmgr user tree; continuing without automatic package installation.
+EOF
+            return 0
+        fi
+    fi
+
+    if [ -z "${TLMGR_REPOSITORY:-}" ]; then
+        # Debian ships an older TeX Live; pin tlmgr to a matching historic repo to avoid cross-release errors.
+        if tlmgr --version 2>/dev/null | grep -q "version 2023"; then
+            TLMGR_REPOSITORY="https://ftp.math.utah.edu/pub/tex/historic/systems/texlive/2023/tlnet-final"
+        fi
+    fi
+
+    if [ -n "${TLMGR_REPOSITORY:-}" ]; then
+        tlmgr option repository "${TLMGR_REPOSITORY}" || {
+            cat <<'EOF' >&2
+Warning: Failed to set tlmgr repository; falling back to default mirror.
+EOF
+        }
+    fi
+
+    echo "Ensuring required TeX packages are installed: ${REQUIRED_TEX_PACKAGES[*]}"
+    if ! tlmgr install "${REQUIRED_TEX_PACKAGES[@]}"; then
+        cat <<'EOF' >&2
+Warning: tlmgr failed to install the requested packages (perhaps user mode isn't initialised).
+Continuing without automatic package installation; please ensure the packages are available manually if compilation fails.
+EOF
+    fi
+}
+
+run_with_pdflatex_pipeline() {
+    pdflatex ${MAIN_TEX_FILE}.tex
+    biber ${MAIN_TEX_FILE}
+    pdflatex ${MAIN_TEX_FILE}.tex
+    makeindex ${MAIN_TEX_FILE}
+    pdflatex ${MAIN_TEX_FILE}.tex
 }
 
 # Parse command line arguments
@@ -100,11 +139,12 @@ if [ "$USE_DOCKER" = true ]; then
 else
     echo "Running LaTeX compilation locally..."
     ensure_tex_packages
-    pdflatex ${MAIN_TEX_FILE}.tex
-    biber ${MAIN_TEX_FILE}
-    pdflatex ${MAIN_TEX_FILE}.tex
-    makeindex ${MAIN_TEX_FILE}
-    pdflatex ${MAIN_TEX_FILE}.tex
+    if command -v latexmk >/dev/null 2>&1; then
+        latexmk -pdf -interaction=nonstopmode -halt-on-error ${MAIN_TEX_FILE}.tex
+    else
+        echo "latexmk not found; falling back to manual pdflatex/biber pipeline"
+        run_with_pdflatex_pipeline
+    fi
 fi
 
 if [ $? -eq 0 ]; then
