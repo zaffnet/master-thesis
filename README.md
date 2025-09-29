@@ -77,6 +77,9 @@ Once you have a LaTeX distribution installed, you can build the PDF by running:
 ./build.sh
 ```
 
+The build script will ensure that the required font package (`newtx`) is installed when `tlmgr` is available. If your
+distribution does not provide `tlmgr`, install the `newtx` package manually before running the build.
+
 ### Docker Build
 
 If you have Docker installed, you can build the project without installing LaTeX locally. This is the recommended method.
@@ -87,4 +90,5 @@ To build the PDF using Docker, run the following command:
 ./build.sh --docker
 ```
 
-This will pull the necessary Docker image and compile the thesis. The final PDF will be available in the root of the repository. A `Dockerfile` is included in the repository for reference.
+This will pull the necessary Docker image, install any missing TeX packages (including `newtx`), and compile the thesis. The
+final PDF will be available in the root of the repository. A `Dockerfile` is included in the repository for reference.
