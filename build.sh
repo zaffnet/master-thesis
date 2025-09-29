@@ -3,7 +3,7 @@
 # Default values
 USE_DOCKER=false
 CLEAN=false
-TEXLIVE_VERSION="texlive/texlive:TL2024-historic"
+TEXLIVE_VERSION="ghcr.io/xu-cheng/texlive-debian:latest"
 MAIN_TEX_FILE="main"
 
 # Parse command line arguments
@@ -56,12 +56,8 @@ fi
 # Build the project
 if [ "$USE_DOCKER" = true ]; then
     echo "Running LaTeX compilation with Docker ${TEXLIVE_VERSION}..."
-    docker run --rm -v "$(pwd)":/workspace -w /workspace ${TEXLIVE_VERSION} bash -c "
-        pdflatex main.tex
-        biber main
-        pdflatex main.tex
-        makeindex main
-        pdflatex main.tex
+    docker run --rm -e TEXLIVE_NO_DEFAULT_RECEIPT=1 -v "$(pwd)":/workspace -w /workspace ${TEXLIVE_VERSION} bash -c "
+    latexmk -pdf -interaction=nonstopmode -halt-on-error main.tex
     "
 else
     echo "Running LaTeX compilation locally..."
