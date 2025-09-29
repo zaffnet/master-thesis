@@ -4,9 +4,9 @@
 \documentclass{ut-thesis}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
-\usepackage{textcomp}
-\usepackage{amsmath}
-\usepackage{amssymb}
+\usepackage{newtxtext}   % text font
+\usepackage{amsmath}     % math environments, aligned, cases, etc.
+\usepackage{newtxmath}   % math font (includes AMS symbols)
 \usepackage{xparse}
 \usepackage{graphicx}
 \usepackage{adjustbox}
@@ -58,11 +58,15 @@
 \usepackage[libertine]{newtxmath}
 \usepackage[final]{microtype}
 \usepackage[scaled]{inconsolata}
+\usepackage{microtype}
 % \usepackage[hyphens]{url}
 
 \emergencystretch=3em           % extra slack for bad lines
 \frenchspacing                  % uniform interword spacing
 \usepackage{xurl}               % URL line breaks
+
+% Use semibold instead of bold extended to reduce heaviness of bold text
+\renewcommand{\bfdefault}{sb}
 
 \usepackage{etoolbox}
 
