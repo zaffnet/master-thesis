@@ -237,7 +237,7 @@ The overall workflow for creating and validating doppelgängers using this compa
 
 
 
-We created a set of doppelgängers (N=20) by sampling 20 human participants from MIV6.3A. Then, we conducted a series of experiments on these doppelgängers. In each experiment, we installed a subset of attributes in the doppelgängers via \emph{prompting} and did not add any backstories to their prompt.
+We created a set of doppelgängers ($N = 20$) by sampling 20 human participants from MIV6.3A. Then, we conducted a series of experiments on these doppelgängers. In each experiment, we installed a subset of attributes in the doppelgängers via \emph{prompting} and did not add any backstories to their prompt.
 
 \includesystemprompt{Example of attribute installation in doppelgänger prompts}{
 	You are a participant in a study who is trying to quit smoking. Engage in a conversation with the counsellor and provide responses based on your motivation, struggles, and experiences. Your assistant role is the client, and the user's role is the counsellor or the \\ researcher. Always try to respond in fewer than 200 characters. \\\\
@@ -248,7 +248,7 @@ We created a set of doppelgängers (N=20) by sampling 20 human participants from
 }
 
 
-Before starting our series of experiments, we sorted the set of all installable attributes based on their correlation with \%CT. We hypothesized that a high correlation between an attribute and \%CT would mean that the attribute has a bigger effect on the client's behavioural language. Let us call this sorted list of attributes $\mathbf{A'}$.
+Before starting our series of experiments, we sorted the set of all installable attributes based on their correlation with \%CT. We hypothesized that a high correlation between an attribute and \%CT would mean that the attribute has a greater effect on the client's behavioural language. Let us call this sorted list of attributes $\mathbf{A'}$.
 
 $$
 	\begin{aligned}
@@ -373,7 +373,7 @@ Finally, we investigated the system's uniform fidelity by stratifying the result
 		\end{tablenotes}
 	\end{threeparttable}
 	\caption[Incremental attribute installation and its effect on the fidelity of doppelgängers]{
-		Incremental attribute installation and its effect on the fidelity of doppelgängers. Fidelity is measured by the Spearman correlation of percentage change talk (\%CT) between human participants and their doppelgängers (N=20). Each row represents a model where attributes were cumulatively added to the installation prompt.
+		Incremental attribute installation and its effect on the fidelity of doppelgängers. Fidelity is measured by the Spearman correlation of percentage change talk (\%CT) between human participants and their doppelgängers ($N = 20$). Each row represents a model where attributes were cumulatively added to the installation prompt.
 	}
 	\label{tab:doppelgänger-correlations}
 \end{table}
@@ -472,7 +472,7 @@ We measured the change fraction (CF), the change in confidence after a simulated
 	\label{tab:good-vs-bad-counselling}
 \end{table}
 
-The results, as detailed in Table 7.6, indicate that the synthetic smokers were sensitive to counselling quality. When interacting with the bad counsellor, outcomes were significantly worse across all metrics. The change fraction (CF) dropped markedly, particularly for the Low-CF group (from 0.48 to 0.22), suggesting increased resistance. The change in confidence was lower, and the CARE scores showed a pronounced difference (e.g., 23.0 vs. 47.8 for the Low-CF group).
+The results, as detailed in \Cref{tab:good-vs-bad-counselling}, indicate that the synthetic smokers were sensitive to counselling quality. When interacting with the bad counsellor, outcomes were significantly worse across all metrics. The change fraction (CF) dropped markedly, particularly for the Low-CF group (from 0.48 to 0.22), suggesting increased resistance. The change in confidence was lower, and the CARE scores showed a pronounced difference (e.g., 23.0 vs. 47.8 for the Low-CF group).
 
 These findings suggest that synthetic doppelgängers react in a predictable manner, responding negatively to poor-quality counselling. This sensitivity highlights their potential utility as evaluation and training tools.
 

@@ -4,9 +4,9 @@
 \documentclass{ut-thesis}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
-\usepackage{lmodern}
-\usepackage{amsmath}
-\usepackage{amssymb}
+\usepackage{newtxtext}   % text font
+\usepackage{amsmath}     % math environments, aligned, cases, etc.
+\usepackage{newtxmath}   % math font (includes AMS symbols)
 \usepackage{xparse}
 \usepackage{graphicx}
 \usepackage{adjustbox}
@@ -50,13 +50,20 @@
             uniquelist=false,
             uniquename=false,
             defernumbers=true]{biblatex}
-\usepackage[colorlinks=true, linkcolor=cyan, citecolor=cyan, urlcolor=cyan]{hyperref}
+\usepackage[colorlinks=true, linkcolor=cyan, citecolor=cyan, urlcolor=cyan, breaklinks=true]{hyperref}
 \usepackage{cleveref}
-\usepackage{tgtermes}
-\usepackage{xspace}  
+\usepackage{xspace}
 \usepackage{parskip} % For space between paragraphs instead of indentation
-\usepackage{libertine}
+\usepackage[scaled]{inconsolata}
+\usepackage{microtype}
 % \usepackage[hyphens]{url}
+
+\emergencystretch=3em           % extra slack for bad lines
+\frenchspacing                  % uniform interword spacing
+\usepackage{xurl}               % URL line breaks
+
+% Use semibold instead of bold extended to reduce heaviness of bold text
+\renewcommand{\bfdefault}{sb}
 
 \usepackage{etoolbox}
 
