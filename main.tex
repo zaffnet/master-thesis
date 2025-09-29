@@ -66,6 +66,8 @@
 
 % Use semibold instead of bold extended to reduce heaviness of bold text
 \renewcommand{\bfdefault}{sb}
+% Inconsolata lacks a semibold series, so keep bold extended for typewriter fonts
+\DeclareFontSeriesDefault[\ttdefault]{bf}{bx}
 
 \usepackage{etoolbox}
 
