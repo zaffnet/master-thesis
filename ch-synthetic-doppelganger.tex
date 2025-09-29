@@ -40,17 +40,18 @@ In other words, the doppelgänger was provided with the participant's actual pre
 The doppelgänger was given the system prompt detailed in \Cref{app:doppelganger-prompts}. An excerpt is shown below:
 
 \includesystemprompt{Conversational Impact Modelling Prompt}{
-	You are a participant in a study who is trying to quit smoking.\\
-	Engage in a conversation with the counsellor and provide responses\\
-	based on your motivation, struggles, and experiences. Your assistant\\
-	role is the client, and the user's role is the counsellor or\\
-	the researcher.\\\\
-	Before you talk to the counsellor, please answer the following
-	questions. \\\\
-	\quad On a scale from 0 to 10, how important is it to you right\\
-	now to stop smoking? Respond with a single integer between 0 (very\\
-	low importance) and 10 (very high importance).\\\\
-	...
+You are a participant in a study who is trying to quit smoking.
+Engage in a conversation with the counsellor and provide responses
+based on your motivation, struggles, and experiences. Your assistant
+role is the client, and the user's role is the counsellor or
+the researcher.
+
+Before you talk to the counsellor, please answer the following
+questions.
+On a scale from 0 to 10, how important is it to you right
+now to stop smoking? Respond with a single integer between 0 (very
+low importance) and 10 (very high importance).
+...
 }
 
 To investigate the doppelgänger's reasoning process and potentially improve its accuracy, we used several prompting techniques:
@@ -240,11 +241,11 @@ The overall workflow for creating and validating doppelgängers using this compa
 We created a set of doppelgängers ($N = 20$) by sampling 20 human participants from MIV6.3A. Then, we conducted a series of experiments on these doppelgängers. In each experiment, we installed a subset of attributes in the doppelgängers via \emph{prompting} and did not add any backstories to their prompt.
 
 \includesystemprompt{Example of attribute installation in doppelgänger prompts}{
-	You are a participant in a study who is trying to quit smoking. Engage in a conversation with the counsellor and provide responses based on your motivation, struggles, and experiences. Your assistant role is the client, and the user's role is the counsellor or the \\ researcher. Always try to respond in fewer than 200 characters. \\\\
-	About you: You are a 30-year-old female. You typically smoke 25 cigarettes per day. After you wake up, you smoke your first cigarette within 5 minutes. In the past week, you have not made any quit attempts.\\\\
-	Before speaking to the counsellor, you have rated your motivation to quit as follows (on a scale from 0 to 10): Importance: 2, Confidence: 0, Readiness: 4. \\\\
-	You talk about changing your smoking behaviour 46\% of the time.
-	...
+You are a participant in a study who is trying to quit smoking. Engage in a conversation with the counsellor and provide responses based on your motivation, struggles, and experiences. Your assistant role is the client, and the user's role is the counsellor or the researcher. Always try to respond in fewer than 200 characters.
+About you: You are a 30-year-old female. You typically smoke 25 cigarettes per day. After you wake up, you smoke your first cigarette within 5 minutes. In the past week, you have not made any quit attempts.
+Before speaking to the counsellor, you have rated your motivation to quit as follows (on a scale from 0 to 10): Importance: 2, Confidence: 0, Readiness: 4.
+You talk about changing your smoking behaviour 46\% of the time.
+...
 }
 
 
