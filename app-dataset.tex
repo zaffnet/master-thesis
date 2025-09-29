@@ -107,25 +107,39 @@ and \texttt{scrubadub}\footnote{\url{https://github.com/LeapBeyond/scrubadub}} (
 \vspace{1em}
 
 
-\begin{table}[ht]
-	\centering
-	% \small
-	\renewcommand{\arraystretch}{1.2}
-	\begin{tabular}{l p{10cm}}
-		\toprule
-		\textbf{Column Name}         & \textbf{Description}                                                                                                                                                                                                 \\
-		\midrule
-		\texttt{ParticipantID}       & Unique participant ID.                                                                                                                                                                                               \\
-		\texttt{Speaker}             & Indicates whether the speaker is the \texttt{counsellor} (i.e., \sysname) or the \texttt{client}.                                                                                                                    \\
-		\texttt{Volley\#}            & Serial number of the volley in the transcript. ``A volley is an uninterrupted utterance or sequence of utterances by one party, before another party speaks.''~\citep{MISC}                                          \\
-		\texttt{Utterance\#}         & Serial number of the utterance in the transcript.                                                                                                                                                                    \\
-                \texttt{CumulativeVolley}    & \begin{tabular}[t]{@{}l@{}}Represents the volley up to utterance \# \texttt{Utterance\#}.\\
-                The \texttt{CumulativeVolley} corresponding to the last utterance of the volley is the complete volley, which can be used to generate the transcript.\end{tabular} \\
-		\texttt{Utterance}           & ``An utterance is a complete thought, or a thought unit.''~\citep{MISC}                                                                                                                                              \\
-		\texttt{AutoMISCLabel}       & Utterance label according to AutoMISC. It can be one of the following: \texttt{R}, \texttt{Q}, \texttt{Other}, \texttt{C}, \texttt{N}, ... (See \cref{subsec:automisc}.)                                             \\
-		\texttt{AutoMISCExplanation} & Explanation provided by the AutoMISC LLM as part of its chain-of-thought.                                                                                                                                            \\
-		\bottomrule
-	\end{tabular}
-	\caption{Description of the Columns in \texttt{conversations.csv}}
-	\label{tab:conversations_description}
-\end{table}
+\renewcommand{\arraystretch}{1.2} % more vertical space
+
+\renewcommand{\arraystretch}{1.2} % vertical breathing space
+
+\begin{longtable}{@{}l p{10cm}@{}}
+\caption{Description of the Columns in \texttt{conversations.csv}} \\
+\toprule
+\textbf{Column Name} & \textbf{Description} \\
+\midrule
+\endfirsthead
+
+\toprule
+\textbf{Column Name} & \textbf{Description} \\
+\midrule
+\endhead
+
+\texttt{ParticipantID}       & Unique participant ID. \\
+\texttt{Speaker}             & Indicates whether the speaker is the \texttt{counsellor} (i.e., \sysname) or the \texttt{client}. \\
+\texttt{Volley\#}            & Serial number of the volley in the transcript. ``A volley is an uninterrupted utterance or sequence of utterances by one party, before another party speaks.''~\citep{MISC} \\
+\texttt{Utterance\#}         & Serial number of the utterance in the transcript. \\
+\texttt{CumulativeVolley}    & Represents the volley up to utterance \# \texttt{Utterance\#}. The \texttt{CumulativeVolley} corresponding to the last utterance of the volley is the complete volley, which can be used to generate the transcript. \\
+\texttt{Utterance}           & ``An utterance is a complete thought, or a thought unit.''~\citep{MISC} \\
+\texttt{AutoMISCLabel}       & Utterance label according to AutoMISC. It can be one of the following: \texttt{R}, \texttt{Q}, \texttt{Other}, \texttt{C}, \texttt{N}, ... (See \cref{subsec:automisc}.) \\
+\texttt{AutoMISCExplanation} & Explanation provided by the AutoMISC LLM as part of its chain-of-thought. \\[1em] % adds extra vertical space
+
+\texttt{AutoMISC\_Other}     & \\
+\texttt{AutoMISC\_C}         & \\
+\texttt{AutoMISC\_S}         & \\
+\texttt{AutoMISC\_N}         & \\
+\texttt{AutoMISC\_\%MIC}     & \\
+\texttt{AutoMISC\_R:Q}       & \\
+\texttt{AutoMISC\_C:S}       & \\
+
+\bottomrule
+\label{tab:conversations_description}
+\end{longtable}
