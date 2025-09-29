@@ -66,6 +66,12 @@
 
 % Use semibold instead of bold extended to reduce heaviness of bold text
 \renewcommand{\bfdefault}{sb}
+% Inconsolata (zi4) does not provide a semibold weight; substitute the medium
+% weight instead so listings that request bold text do not trigger missing font
+% shape errors.
+\DeclareFontShape{T1}{zi4}{sb}{n}{<->ssub*zi4/m/n}{}
+\DeclareFontShape{T1}{zi4}{sb}{it}{<->ssub*zi4/m/it}{}
+\DeclareFontShape{T1}{zi4}{sb}{sl}{<->ssub*zi4/m/sl}{}
 
 \usepackage{etoolbox}
 
