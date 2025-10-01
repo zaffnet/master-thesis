@@ -66,6 +66,9 @@
 
 % Use semibold instead of bold extended to reduce heaviness of bold text
 \renewcommand{\bfdefault}{sb}
+% Inconsolata (zi4) lacks a semibold series; map it to the available bold face.
+\DeclareFontShape{T1}{zi4}{sb}{n}{<->ssub*zi4/bx/n}{}
+\DeclareFontShape{T1}{zi4}{sb}{sl}{<->ssub*zi4/bx/sl}{}
 
 \usepackage{etoolbox}
 
