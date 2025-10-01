@@ -66,6 +66,9 @@
 
 % Use semibold instead of bold extended to reduce heaviness of bold text
 \renewcommand{\bfdefault}{sb}
+% The inconsolata typewriter font (family zi4) does not provide a semibold shape,
+% so emulate it by falling back to the medium weight when sb is requested.
+\DeclareFontShape{T1}{zi4}{sb}{n}{<->ssub*zi4/m/n}{}
 
 \usepackage{etoolbox}
 
