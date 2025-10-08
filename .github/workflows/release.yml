@@ -1,3 +1,4 @@
+# Assuming this is the main build step that produces 'thesis.pdf'
 name: Build PDF and Publish (Cloudflare R2)
 
 on:
@@ -36,41 +37,78 @@ jobs:
         run: |
           bash build.sh --docker
           test -f main.pdf
-
+          mv main.pdf thesis.pdf
+          
       - name: Compute branch-safe name
         id: meta
+        # This step will only run if the branch name is NOT 'main'
+        if: github.ref_name != 'main'
         run: |
+          # Get the branch name, using GITHUB_HEAD_REF as a fallback
           BR="${GITHUB_HEAD_REF:-${GITHUB_REF_NAME}}"
+          # Replace forward slashes with hyphens for a safe file name
           SAFE="${BR//\//-}"
           echo "safe=${SAFE}" >> "$GITHUB_OUTPUT"
-          echo "pdf=main-${SAFE}.pdf" >> "$GITHUB_OUTPUT"
+          # Define the target PDF name (e.g., thesis-feature-branch.pdf)
+          echo "pdf=thesis-${SAFE}.pdf" >> "$GITHUB_OUTPUT"
 
-      - name: Rename PDF
-        run: mv main.pdf "${{ steps.meta.outputs.pdf }}"
+      - name: Rename PDF (Branch)
+        # Only runs if 'meta' ran (i.e., not on main)
+        if: github.ref_name != 'main'
+        run: mv thesis.pdf "${{ steps.meta.outputs.pdf }}"
 
-      - name: Upload to Cloudflare R2
-        id: upload
+      - name: Upload Branch PDF to Cloudflare R2
+        id: upload_branch
+        # Only runs if 'meta' ran (i.e., not on main)
+        if: github.ref_name != 'main'
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
           AWS_EC2_METADATA_DISABLED: "true"
         run: |
-          KEY="${{ steps.meta.outputs.safe }}.pdf"
+          # The key uses the branch-safe name
+          KEY="${{ steps.meta.outputs.pdf }}"
+          # The file being uploaded is the one renamed in the previous step
           aws s3 cp "${{ steps.meta.outputs.pdf }}" "s3://${R2_BUCKET}/${KEY}" \
             --endpoint-url "${R2_ENDPOINT}" \
             --content-type application/pdf
           echo "url=${BASE_URL}/${KEY}" >> "$GITHUB_OUTPUT"
 
+      - name: Upload Main PDF to Cloudflare R2
+        id: upload_main
+        # This step runs ONLY if the branch name IS 'main'
+        if: github.ref_name == 'main'
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          AWS_EC2_METADATA_DISABLED: "true"
+        run: |
+          # Uploads the file 'thesis.pdf' to the fixed key 'thesis.pdf'
+          KEY="thesis.pdf"
+          aws s3 cp thesis.pdf "s3://${R2_BUCKET}/${KEY}" \
+            --endpoint-url "${R2_ENDPOINT}" \
+            --content-type application/pdf
+          echo "url=${BASE_URL}/${KEY}" >> "$GITHUB_OUTPUT"
+
       - name: Comment URL on PR
+        # Runs on every 'pull_request' event type (opened, reopened, and synchronize/push)
         if: github.event_name == 'pull_request'
         uses: actions/github-script@v7
         with:
           script: |
-            const url = `${{ toJSON(steps.upload.outputs.url) }}`
-            const body = `Built PDF: ${url}`
-            github.rest.issues.createComment({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              issue_number: context.payload.pull_request.number,
-              body
-            })
+            // This URL comes from the branch-specific upload step.
+            const url = `${{ steps.upload_branch.outputs.url }}`
+            
+            // Check if a URL was generated before commenting
+            if (url && url !== 'null') {
+              const body = `Built PDF: ${url}`
+              github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: context.payload.pull_request.number,
+                body
+              })
+            } else {
+              // This is expected if the PR branch is 'main', but the workflow should typically prevent that.
+              console.log('Skipping PR comment: URL output not found from branch upload step.');
+            }
