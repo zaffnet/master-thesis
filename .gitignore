@@ -7,7 +7,8 @@
 *.log
 *.lof
 *.lot
-8.fdb_latexmk
+*.fdb_latexmk
+*.fls
 *.out
 *.run.xml
 *.synctex.gz
